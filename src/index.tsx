@@ -1,2 +1,2 @@
-export { Header } from './Header/Header';
-export {} from './MyHeader';
+export { Header } from './components/UIShell';
+export { Dark, GlobalStyle } from './themes';

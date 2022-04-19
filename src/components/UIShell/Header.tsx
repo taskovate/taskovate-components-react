@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
+import styled from 'styled-components';
 
-import './header.css';
+import './Header.css';
 
 type User = {
   name: string;
@@ -13,7 +14,7 @@ interface HeaderProps {
   onCreateAccount: () => void;
 }
 
-export const Header: FC<HeaderProps> = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => {
+const Header: FC<HeaderProps> = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => {
   return (
     <header>
       <div className="wrapper">
@@ -25,7 +26,6 @@ export const Header: FC<HeaderProps> = ({ user, onLogin, onLogout, onCreateAccou
               <path d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z" fill="#91BAF8" />
             </g>
           </svg>
-          <h1>Acme</h1>
         </div>
         <div>
           {user ? (
@@ -47,3 +47,5 @@ export const Header: FC<HeaderProps> = ({ user, onLogin, onLogout, onCreateAccou
 Header.defaultProps = {
   user: undefined,
 };
+
+export default Header;
