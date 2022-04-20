@@ -1,8 +1,8 @@
 import { addDecorator } from '@storybook/react';
 import { withThemes } from '@react-theming/storybook-addon';
-import { ThemeProvider } from 'styled-components';
-import { TaskovateDark, GlobalStyle } from '../src/themes';
 import { withThemesProvider } from "storybook-addon-styled-component-theme";
+import { ThemeProvider } from 'styled-components';
+import { TaskovateDark, GlobalStyle } from '@theme/core';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -17,11 +17,11 @@ export const parameters = {
   }
 };
 
-const onThemeSwitch = ({ theme: { colors } }) => {
+const onThemeSwitch = ({ theme }) => {
   return {
     parameters: {
       backgrounds: {
-        default: colors.background(),
+        default: theme.background(),
       }
     }
   };

@@ -19,13 +19,13 @@ export const yellow = {
 };
 
 export const green = {
-  50: '#FFFAE6',
-  75: '#FFF0B3',
-  100: '#FFE380',
-  200: '#FFC400',
-  300: '#FFAB00',
-  400: '#FF991F',
-  500: '#FF8B00'
+  50: '#E3FCEF',
+  75: '#ABF5D1',
+  100: '#79F2C0',
+  200: '#57D9A3',
+  300: '#36B37E',
+  400: '#00875A',
+  500: '#006644'
 };
 
 export const blue = {
@@ -90,19 +90,3 @@ export const midnight = {
   400: '#141414',
   500: '#121212'
 };
-
-export const background = () => midnight[500];
-export const text = () => neutral[900];
-export const textHover = () => neutral[0];
-export const textActive = () => neutral[0];
-export const subtleText = () => neutral[0];
-export const placeholderText = () => neutral[0];
-export const heading = () => neutral[0];
-export const subtleHeading = () => neutral[0];
-export const codeBlock = () => neutral[0];
-export const link = () => neutral[0];
-export const linkHover = () => neutral[0];
-export const linkActive = () => neutral[0];
-export const linkOutline = () => neutral[0];
-export const primary = () => neutral[0];
-export const skeleton = () => neutral[20];
