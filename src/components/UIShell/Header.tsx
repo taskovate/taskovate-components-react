@@ -1,20 +1,56 @@
 import React, { useEffect, useState } from 'react';
 import styled, { useTheme } from 'styled-components';
-
+// import { colors, gridSize, borderRadius, gradients }
 // type User = {
 //   name: string;
 // };
 
 // interface HeaderProps {
+//   borderWidth: string;
+//   height: number;
+//   offset: string;
 // }
 
-const HeaderWrapper = styled.div`${({ theme }) => `
-  display: flex;
-  position: sticky;
-  height: 56px;
-  width: 100%;
-  background-color: ${theme.colors.D500};
-`}`;
+const Container = styled.div`
+  ${({ theme }) => `
+    z-index: ${theme.layers.navigation()};
+
+    ::after {
+      display: flex;
+      content: '';
+      position: sticky;
+      height: ${theme.gridSize() * 7}px;
+      background-color: ${theme.colors.red[500]};
+      margin-top: ${theme.gridSize() * 1}px;
+      top: ${theme.gridSize() * 1}px;
+      width: calc(100% - ${theme.gridSize() * 2.5}px);
+      border-radius: ${theme.borderRadius() * 0.75}px;
+    }
+
+    ::before {
+      display: flex;
+      content: '';
+      position: absolute;
+      background: ${theme.gradients.primary()};
+      width: calc(100% - ${theme.gridSize() * 2}px);
+      height: ${theme.gridSize() * 8}px;
+      margin-top: -${theme.gridSize() * 0.5}px;
+      border-radius: ${theme.borderRadius() * 1}px;
+    }
+  `}
+`;
+
+const Border = styled.div`
+  ${({ theme }) => `
+      display: block;
+      position: fixed;
+      content: '';
+      background-color: green;
+      width: 100%;
+      height: ${theme.gridSize() * 8}px;
+      z-index: 0;
+  `}
+`;
 
 const Header: React.FC<any> = (props: any) => {
   const theme = useTheme();
@@ -33,11 +69,11 @@ const Header: React.FC<any> = (props: any) => {
   }, []);
   
   return (
-    <HeaderWrapper />
+    <>
+      <Container />
+      {/* <Border /> */}
+    </>
   );
-};
-
-Header.defaultProps = {
 };
 
 export default Header;

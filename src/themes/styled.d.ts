@@ -3,17 +3,20 @@ import 'styled-components';
 declare module 'styled-components' {
   export interface DefaultTheme {
     name: string;
-    animation: any;
-    breakpoints: any;
-    colors: any;
-    gradients: any;
-    fonts: any;
-    mediaQueries: any;
-    fontSizes: array<number>;
-    fontWeights: any;
-    lineHeights: any;
-    grid: array<number>;
-    radii: any;
-    shadows: any;
+    animation: any,
+    breakpoints: any,
+    colors: any,
+    gradients: any,
+    layers: any,
+    focusRing: () => string,
+    noFocusRing: () => string,
+    skeletonShimmer: () => any,
+    borderRadius: () => number,
+    gridSize: () => number,
+    fontSize: () => number,
+    fontSizeSmall: () => number,
+    fontFamily: () => string,
+    headerFontFamily: () => string,
+    codeFontFamily: () => string
   }
 }

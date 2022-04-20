@@ -16,4 +16,3 @@ const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />;
 export const EmptyHeader = Template.bind({});
 EmptyHeader.args = {
 };
-

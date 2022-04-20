@@ -1,7 +1,8 @@
 import { addDecorator } from '@storybook/react';
 import { withThemes } from '@react-theming/storybook-addon';
 import { ThemeProvider } from 'styled-components';
-import { Dark as Theme, GlobalStyle } from '../src/themes';
+import { TaskovateDark, GlobalStyle } from '../src/themes';
+import { withThemesProvider } from "storybook-addon-styled-component-theme";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -15,13 +16,25 @@ export const parameters = {
     disable: true
   }
 };
-const onThemeSwitch = ({ theme }) => ({
-  parameters: {
-    backgrounds: {
-      default: theme.name === 'Dark theme' ? '#2c2f33' : 'white',
-    }
-  }
-});
 
-addDecorator(withThemes(ThemeProvider, [Theme], { onThemeSwitch }));
-addDecorator(s => <>{ThemeProvider({ theme: Theme, children: <GlobalStyle /> })}{s()}</>);
+const onThemeSwitch = ({ theme: { colors } }) => {
+  return {
+    parameters: {
+      backgrounds: {
+        default: colors.background(),
+      }
+    }
+  };
+};
+
+const providerFn = ({ theme, children }) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      {children}
+    </ThemeProvider>
+  );
+};
+
+addDecorator(withThemesProvider([TaskovateDark], ThemeProvider));
+addDecorator(withThemes(null, [TaskovateDark], { onThemeSwitch, providerFn }));

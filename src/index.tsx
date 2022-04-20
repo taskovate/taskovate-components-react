@@ -1,2 +1,2 @@
 export { Header } from './components/UIShell';
-export { Dark, GlobalStyle } from './themes';
+export { TaskovateDark, GlobalStyle } from './themes';

@@ -1,17 +1,17 @@
 module.exports = {
-  "stories": [
+  stories: [
     "../src/components/**/*.stories.mdx",
     "../src/components/**/*.stories.@(js|jsx|ts|tsx)"
   ],
-  "addons": [
+  addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/preset-create-react-app",
-    "@react-theming/storybook-addon"
+    "storybook-addon-styled-component-theme/dist/preset"
   ],
-  "framework": "@storybook/react",
-  "core": {
+  framework: "@storybook/react",
+  core: {
     "builder": "webpack5"
   }
 }
