@@ -1,12 +1,12 @@
 {
-  "name": "react-typescript-teamplate",
+  "name": "taskovate-components-react",
   "version": "0.1.0",
   "module": "./dist/esm/index.js",
   "main": "./dist/cjs/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "start": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook --output-dir ./dist-storybook",
     "build": "parcel build src/index.tsx"
   },
   "lint-staged": {
@@ -82,7 +82,7 @@
     "webpack": "^5.70.0"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   }
 }
