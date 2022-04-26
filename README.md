@@ -7,4 +7,4 @@
 * Styled-Components
 
 # Links
-Live Storybook Preview: https://taskovate.com/
+Live Storybook Preview: https://taskovate-components-react.netlify.app/
