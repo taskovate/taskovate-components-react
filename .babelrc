@@ -3,7 +3,9 @@
     ["babel-plugin-module-resolver", {
       "alias": {
         "@theme/core": "./src/theme/index",
-        "@theme/constants": "./src/theme/constants"
+        "@theme/helpers": "./src/theme/helpers",
+        "@theme/constants": "./src/theme/constants",
+        "@components/core": "./src/components/index"
       }
     }]
   ]

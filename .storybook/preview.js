@@ -37,4 +37,4 @@ const providerFn = ({ theme, children }) => {
 };
 
 addDecorator(withThemesProvider([TaskovateDark], ThemeProvider));
-addDecorator(withThemes(null, [TaskovateDark], { onThemeSwitch, providerFn }));
+addDecorator(withThemes(ThemeProvider, [TaskovateDark], { onThemeSwitch, providerFn }));

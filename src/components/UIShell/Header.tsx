@@ -12,47 +12,63 @@ import { gridSize, layers, animation, borderRadius, gradients } from '@theme/con
 //   offset: string;
 // }
 
-const HeaderWrapper = styled.div<any>`
+const Border = styled.header<any>`
+  display: flex;
+  position: sticky;
   z-index: ${layers.navigation()};
   transition: ${animation.normal()};
+  background: ${gradients.primary()};
+  border-top-right-radius: ${borderRadius() * 0.75}px;
+  border-bottom-right-radius: ${borderRadius() * 0.75}px;
+  flex-grow: 1;
+  margin-right: ${gridSize() * 1}px;
+  height: calc(${gridSize() * 6.5}px);
+  top: calc(${gridSize() * 0.375}px + ${gridSize() * 0.25}px);
+  margin-top: calc(${gridSize() * 0.375}px - ${gridSize() * 0.5}px + ${gridSize() * 0.25}px);
 
-  ::after {
-    display: flex;
-    content: '';
-    position: sticky;
-    height: ${gridSize() * 7}px;
-    background-color: ${({ theme }) => theme.background()};
-    margin-top: ${gridSize() * 1}px;
-    top: ${gridSize() * 1}px;
-    width: calc(100% - ${gridSize() * 6.5}px);
-    border-top-right-radius: ${borderRadius() * 0.6}px;
-    border-bottom-right-radius: ${borderRadius() * 0.6}px;
-    padding: 0 ${gridSize() * 2}px;
-  }
-
-  ::before {
-    display: flex;
-    content: '';
-    position: absolute;
-    background: ${gradients.primary()};
-    width: calc(100% - ${gridSize() * 2}px - ${gridSize() / 4}px);
-    height: calc(${gridSize() * 7}px + ${gridSize() / 2}px);
-    top: calc(${gridSize() * 1}px - ${gridSize() / 8}px);
-    margin-top: -${gridSize() / 8}px;
+  ${({ theme, mode }) => mode === 'scroll' && `
+    height: calc(${gridSize() * 6.5}px + ${gridSize() * 0.5}px);
+    top: ${gridSize() * 0.375}px;
+    margin-top: calc(${gridSize() * 0.375}px - ${gridSize() / 2}px);
+    margin-right: ${gridSize() * 0.75}px;
     border-top-right-radius: ${borderRadius() * 1}px;
     border-bottom-right-radius: ${borderRadius() * 1}px;
-    opacity: ${({ mode }) => mode === 'scroll' ? 0 : 1};
-  }
+    box-shadow: ${theme.elevation[200]};
+    transition: ${animation.fast()};
+  `}
 `;
 
+const Content = styled.div<any>`
+  display: flex;
+  position: sticky;
+  flex-direction: row;
+  border-top-right-radius: ${borderRadius() * 0.75}px;
+  border-bottom-right-radius: ${borderRadius() * 0.75}px;
+  padding: 0 ${gridSize() * 3}px;
+  justify-content: start;
+  align-items: center;
+  align-content: center;
+  background-color: ${({ theme }) => theme.background()};
+  flex-grow: 1;
+  height: ${gridSize() * 6.5}px;
+  margin: auto 0;
+  transition: ${animation.normal()};
+  box-shadow: 0 0 0 0.5px ${({ theme }) => theme.background()};
 
-const Header: React.FC<any> = (props: any) => {
-  const theme = useTheme();
+  ${({ mode }) => mode === 'scroll' && `
+    transition: ${animation.fast()};
+    margin-right: ${gridSize() * 0.25}px;
+    box-shadow: none;
+  `}
+`;
+
+const Header: React.FC<any> = ({
+  children
+}) => {
   const [mode, setMode] = useState('noscroll');
 
   const onScroll = () => {
-    const yScrolling = window.pageYOffset >= 18;
-    setMode(yScrolling ? 'scroll' : 'noscroll');
+    setMode(window.pageYOffset >= gridSize() * 2 ? 'scroll' : 'noscroll');
   };
 
   useEffect(() => {
@@ -63,10 +79,11 @@ const Header: React.FC<any> = (props: any) => {
   }, []);
   
   return (
-    <>
-      <HeaderWrapper mode={mode}/>
-      {/* <Border /> */}
-    </>
+    <Border mode={mode}>
+      <Content mode={mode}>
+        {children}
+      </Content>
+    </Border>
   );
 };
 

@@ -4,6 +4,7 @@
     "paths": {
       "@*": ["./*"],
       "@theme/*": ["theme/*"],
+      "@components/*": ["components/*"]
     },
     "outDir": "dist",
     "target": "es5",
@@ -26,6 +27,8 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": [
+    "src"
+  ],
   "exclude": ["node_modules"]
 }

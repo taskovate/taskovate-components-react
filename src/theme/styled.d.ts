@@ -17,7 +17,13 @@ declare module 'styled-components' {
     linkActive: () => string;
     linkOutline: () => cstring;
     primary: () => string;
+    tooltip: () => string;
     skeleton: () => string;
     skeletonShimmer: () => any;
+    label: () => string;
+    elevation: any;
+    scrollStyles: any;
+    navigationStyles: any;
+    buttonStyles: any;
   }
 }
