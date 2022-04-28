@@ -87,15 +87,15 @@ export default createGlobalStyle<DefaultTheme>`
 
   /* Links */
   a {
-    color: ${colors.b[400]};
+    color: ${colors.b[500]};
     text-decoration: none;
   }
   a:hover {
-    color: ${colors.b[300]};
-    text-decoration: underline;
+    color: ${colors.b[400]};
+    // text-decoration: underline;
   }
   a:active {
-    color: ${colors.b[500]};
+    color: ${colors.b[600]};
   }
   // a:focus {
   //   outline: 2px solid ${colors.b[100]};
@@ -229,10 +229,10 @@ export default createGlobalStyle<DefaultTheme>`
     cursor: help;
   }
 
-  form {
-    label {
-      ${typography.heading.h100()}
-      font-weight: normal;
-    }
+  label {
+    ${typography.heading.h100()}
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: ${gridSize() * 0.5}px;
   }
 `;

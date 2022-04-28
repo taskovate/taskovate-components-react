@@ -2,6 +2,7 @@ export { Tooltip } from './Tooltip';
 export { Button } from './Button';
 export { Spinner } from './Spinner';
 export { Plate } from './Plate';
+export { TextField } from './TextField';
 export { 
   Form,
   Field,

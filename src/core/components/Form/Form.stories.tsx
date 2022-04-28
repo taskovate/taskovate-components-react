@@ -5,11 +5,18 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Form, FormFooter, FormHeader } from '.';
 import FormSection from './FormSection';
 import Field from './Field';
-import { Button } from '..';
+import { 
+  Button,
+  Plate,
+  TextField
+ } from '..';
 
 export default {
   title: 'Design System/Form',
   component: Form,
+  parameters: {
+    layout: 'centered',
+  },
 } as ComponentMeta<typeof Form>;
 
 const Col = styled.div`
@@ -31,24 +38,50 @@ const onSubmit = async (data: any) => {
   window.alert(JSON.stringify(data));
 };
 
-export const Basic: ComponentStory<typeof Form> = () => (
-  <Row>
+export const SignupForm: ComponentStory<typeof Form> = () => (
+  <Plate>
     <Form>
       {({ formState: { isSubmitting }, handleSubmit }) => (
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormHeader
-            title="Sign up"
-            description="This is a sign up form example"
+            title="Let's get you set up"
+            description={<>If your team is already using Taskovate, you can <a href="">log in</a>.</>}
           />
-          <FormSection title="Form Section" />
-          <Field name="username" label="Username">
-            {({ fieldProps }) => (
-              <input 
-                {...fieldProps}
-                placeholder="Enter your username"
-              />
-            )}
-          </Field>
+          <FormSection title="Account Details">
+            <Field name="firstName" label="First Name">
+              {({ fieldProps }) => (
+                <TextField 
+                  {...fieldProps}
+                  placeholder="Enter your username"
+                />
+              )}
+            </Field>
+            <Field name="lastName" label="Last Name">
+              {({ fieldProps }) => (
+                <TextField 
+                  {...fieldProps}
+                  placeholder="Enter your username"
+                />
+              )}
+            </Field>
+            <Field 
+              name="email" 
+              label="Email Address"
+              rules={{
+                required: { 
+                  value: true, 
+                  message: "Please fill out this field." 
+                }
+              }}
+            >
+              {({ fieldProps }) => (
+                <TextField 
+                  {...fieldProps}
+                  placeholder="Enter your username"
+                />
+              )}
+            </Field>
+          </FormSection>
           <FormFooter>
             <Button
               type="submit"
@@ -60,5 +93,5 @@ export const Basic: ComponentStory<typeof Form> = () => (
         </form>
       )}
     </Form>
-  </Row>
+  </Plate>
 );

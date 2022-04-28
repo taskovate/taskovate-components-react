@@ -5,6 +5,15 @@ import { useForm, useFormContext, Controller, UseControllerProps, UseControllerR
 import { FaAsterisk } from 'react-icons/fa';
 
 const Styled = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: ${gridSize() * 2}px;
+
+  svg {
+    height: ${gridSize() * 1.5 / fontSize()}em;
+    width: ${gridSize() * 1.5 / fontSize()}em;
+    margin-left: ${gridSize() * 1}px;
+  }
 `;
 
 interface FieldProps extends Omit<UseControllerReturn, 'field'> {
@@ -27,7 +36,7 @@ const Field = ({
 
   const renderField = ({ field: fieldProps, ...rest}: UseControllerReturn) => (
     <>
-      {label && <small>{[label, rules?.required && <FaAsterisk />]}</small>}
+      {label && <label htmlFor={name}>{[label, rules?.required && <FaAsterisk color={colors.r[600]}/>]}</label>}
       {children({ fieldProps, ...rest })}
     </>
   );
