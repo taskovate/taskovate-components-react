@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "src/",
     "paths": {
-      "@*": ["./*"],
-      "@theme/*": ["theme/*"],
-      "@components/*": ["components/*"]
+      "@theme/core": ["core/theme/index.ts"],
+      "@theme/helpers": ["core/theme/helpers.ts"],
+      "@theme/constants": ["core/theme/constants.ts"],
+      "@components/core": ["core/components/index.ts"],
+      "@components/docs": ["docs/components/index.ts"]
     },
     "outDir": "dist",
     "target": "es5",
@@ -28,7 +30,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
   ],
   "exclude": ["node_modules"]
 }

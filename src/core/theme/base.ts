@@ -23,6 +23,11 @@ export default createGlobalStyle<DefaultTheme>`
     flex-grow: 1;
   }
 
+  * {
+    font-family: ${fontFamily()};
+    backface-visibility: hidden;
+  }
+
   body {
     color: ${({ theme }) => theme.text()};
     font-family: ${fontFamily()};
@@ -222,5 +227,12 @@ export default createGlobalStyle<DefaultTheme>`
   abbr {
     border-bottom: 1px #ccc dotted;
     cursor: help;
+  }
+
+  form {
+    label {
+      ${typography.heading.h100()}
+      font-weight: normal;
+    }
   }
 `;

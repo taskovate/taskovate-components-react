@@ -11,10 +11,13 @@ type TooltipProps = {
   placement: Placement;
 }
 
+type Appearance = 'unset' | 'primary' | 'special' | 'warning' | 'danger' | 'subtle' | 'sublte-link' | 'link';
+
 interface ButtonProps {
   href: string;
+  to: string;
   tooltip: TooltipProps;
-  appearance: string;
+  appearance: Appearance;
   isLoading: boolean;
   isDisabled: boolean;
   children: any;
@@ -22,6 +25,7 @@ interface ButtonProps {
 
 const Button: React.FC<any> = ({
   href,
+  to,
   tooltip,
   appearance,
   isLoading,
@@ -38,8 +42,8 @@ const Button: React.FC<any> = ({
     </Tooltip>
   );
 
-  if (href) return (
-    <Link to={href}>
+  if (href||to) return (
+    <Link href={href} to={to} style={{ textDecoration: 'none' }}>
       {renderComponent}
     </Link>
   );
@@ -65,7 +69,12 @@ const Container = styled.button<any>`
   text-align: center;
   user-select: none;
   
-  cursor: ${({ disabled, loading }) => disabled && 'not-allowed' || loading ? 'wait' : 'pointer'};
+  cursor: ${({ disabled, loading }) => {
+    if(disabled) return 'not-allowed';
+    if(loading) return 'wait';
+    return 'pointer'
+  }};
+  
   box-shadow: ${({ theme, appearance }) => appearance === 'special' ? theme.elevation[200] : 'auto'};
 
   background-color: ${({ theme: { buttonStyles }, appearance, disabled, loading}) => 

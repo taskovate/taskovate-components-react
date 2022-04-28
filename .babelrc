@@ -1,12 +1,8 @@
 {
+  "presets": [
+    "@babel/preset-typescript"
+  ],
   "plugins": [
-    ["babel-plugin-module-resolver", {
-      "alias": {
-        "@theme/core": "./src/theme/index",
-        "@theme/helpers": "./src/theme/helpers",
-        "@theme/constants": "./src/theme/constants",
-        "@components/core": "./src/components/index"
-      }
-    }]
+    "tsconfig-paths-module-resolver"
   ]
 }

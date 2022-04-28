@@ -65,7 +65,6 @@ export const r = {
 
 // light, neutral
 export const n = {
-  0: '#ffffff',
   100: '#efecf7',
   200: '#dedaee',
   300: '#cac5e0',

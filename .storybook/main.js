@@ -1,13 +1,17 @@
 const path = require('path');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   stories: [
-    "../src/guides/**/*.stories.mdx",
-    "../src/guides/**/*.stories.@(js|jsx|ts|tsx)",
-    "../src/components/**/*.stories.mdx",
-    "../src/components/**/*.stories.@(js|jsx|ts|tsx)"
+    "../src/docs/**/**/*.stories.@(js|jsx|ts|tsx|mdx)",
+    "../src/core/components/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   addons: [
+    { name: "@storybook/addon-docs",
+      options: {
+        configureJSX: true,
+      },
+    },
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
@@ -19,14 +23,8 @@ module.exports = {
     "builder": "webpack5"
   },
   webpackFinal: async (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@theme/core': path.resolve(__dirname, "../src/theme/index"),
-      '@theme/helpers': path.resolve(__dirname, "../src/theme/helpers"),
-      '@theme/constants': path.resolve(__dirname, "../src/theme/constants"),
-      '@components/core': path.resolve(__dirname, "../src/components/index")
-    };
-
+    config.resolve.plugins = [new TsconfigPathsPlugin()];
+    config.resolve.extensions = ['.ts', '.js', '.tsx'];
     return config;
   },
   staticDirs: [path.resolve(__dirname, "../static")]

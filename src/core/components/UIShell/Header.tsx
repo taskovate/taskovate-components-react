@@ -23,13 +23,13 @@ const Border = styled.header<any>`
   flex-grow: 1;
   margin-right: ${gridSize() * 1}px;
   height: calc(${gridSize() * 6.5}px);
-  top: calc(${gridSize() * 0.375}px + ${gridSize() * 0.25}px);
-  margin-top: calc(${gridSize() * 0.375}px - ${gridSize() * 0.5}px + ${gridSize() * 0.25}px);
+  top: calc(${gridSize() * 0.5}px + ${gridSize() * 0.25}px);
+  margin-top: calc(${gridSize() * 0.5}px - ${gridSize() * 0.5}px + ${gridSize() * 0.25}px);
 
   ${({ theme, mode }) => mode === 'scroll' && `
     height: calc(${gridSize() * 6.5}px + ${gridSize() * 0.5}px);
-    top: ${gridSize() * 0.375}px;
-    margin-top: calc(${gridSize() * 0.375}px - ${gridSize() / 2}px);
+    top: ${gridSize() * 0.5}px;
+    margin-top: calc(${gridSize() * 0.5}px - ${gridSize() / 2}px);
     margin-right: ${gridSize() * 0.75}px;
     border-top-right-radius: ${borderRadius() * 1}px;
     border-bottom-right-radius: ${borderRadius() * 1}px;

@@ -78,7 +78,7 @@ export const Options: ComponentStory<typeof Button> = (args) => (
   <Col>
     <Row style={{ justifyContent: 'start', borderBottom: `1px solid ${colors.d[800]}` }}><p>Tooltip</p></Row>
     <Row>
-      <Button tooltip={{ label: "Ara ara!", placement: 'left'}} >Dont do it!</Button>
+      <Button tooltip={{ label: "Nice! 😁", placement: 'left'}} >Try me!</Button>
     </Row>
   </Col>
 );

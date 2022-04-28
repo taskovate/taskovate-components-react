@@ -8,7 +8,7 @@ import { Tooltip, Spinner } from '..';
 
 type TooltipProps = {
   label: any;
-  placement: Placement;
+  placement?: Placement;
 }
 
 interface HeaderGlobalActionProps {
@@ -30,7 +30,7 @@ const HeaderGlobalAction: React.FC<any> = ({
 }: HeaderGlobalActionProps) => {
 
   const renderComponent = (
-    <Tooltip label={tooltip?.label} placement={tooltip?.placement}>
+    <Tooltip label={typeof tooltip === 'string' ? tooltip : tooltip?.label} placement={tooltip?.placement}>
       <Container 
         appearance={themedOrNull(appearance)} 
         disabled={isDisabled} 
@@ -57,7 +57,7 @@ const Container = styled.button<any>`
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  padding: ${gridSize() * 1}px ${gridSize() * 1}px;
+  padding: ${gridSize() * 1}px ${gridSize() * 1.25}px;
   border-radius: ${borderRadius()}px;
   margin-left: ${gridSize() * 0.75}px;
   font-size: ${fontSize()}px;

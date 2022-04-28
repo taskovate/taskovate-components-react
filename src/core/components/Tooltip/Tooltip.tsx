@@ -49,7 +49,7 @@ const Tooltip = ({ children, label, placement = "top" }: Props) => {
     placement,
     open,
     onOpenChange: setOpen,
-    middleware: [offset(gridSize() * 2), flip(), shift()]
+    middleware: [offset(gridSize() * 1.75), flip(), shift()]
   });
 
   const { getReferenceProps, getFloatingProps } = useInteractions([

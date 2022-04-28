@@ -8,6 +8,6 @@ export {
   HeaderGlobalBar,
   HeaderMenuBar,
   HeaderMenuItem
-} from './components';
+} from './core/components';
 
-export { TaskovateDark, GlobalStyle } from './theme';
+export { TaskovateDark, GlobalStyle } from './core/theme';

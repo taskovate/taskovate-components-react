@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { gridSize } from '@theme/constants';
-import { HiOutlineLogin } from "react-icons/hi";
+import { MdLogin } from "react-icons/md";
 import { 
   Header,
   HeaderDesignation,
@@ -58,8 +58,8 @@ export const NavigationExample: ComponentStory<typeof Header> = () => (
         </HeaderMenuItem>
       </HeaderMenuBar>
       <HeaderGlobalBar>
-        <HeaderGlobalAction>
-          <HiOutlineLogin />
+        <HeaderGlobalAction tooltip="Log in">
+          <MdLogin />
         </HeaderGlobalAction>
         <HeaderGlobalAction appearance="primary">
           Sign up

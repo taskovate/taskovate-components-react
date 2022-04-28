@@ -22,11 +22,11 @@ export const skeleton = () => colors.n[200];
 export const label = () => colors.n[100];
 
 export const elevation = {
-  100: `0 1px 1px ${hex2rgba('#000007', 0.6)}`,
-  200: `0 4px 8px -2px ${hex2rgba('#000007', 0.6)}`,
-  300: `0 8px 16px -4px ${hex2rgba('#000007', 0.6)}`,
-  400: `0 12px 24px -6px ${hex2rgba('#000007', 0.6)}`,
-  500: `0 20px 32px -8px ${hex2rgba('#000007', 0.6)}`,
+  100: `0 1px 1px ${hex2rgba('#000007', 0.6)}, 0 1px 1px #0009`,
+  200: `0 4px 8px -2px ${hex2rgba('#000007', 0.6)}, 0 1px 1px #0009`,
+  300: `0 8px 16px -4px ${hex2rgba('#000007', 0.6)}, 0 1px 1px #0009`,
+  400: `0 12px 24px -6px ${hex2rgba('#000007', 0.6)}, 0 1px 1px #0009`,
+  500: `0 20px 32px -8px ${hex2rgba('#000007', 0.6)}, 0 1px 1px #0009`,
 };
 
 export const scrollStyles = {

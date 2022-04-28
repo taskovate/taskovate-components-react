@@ -10,9 +10,9 @@ export const gridSize = () => 8;
 export const fontSize = () => 14;
 export const fontSizeSmall = () => 11;
 
-export const fontFamily = () => `'IBM Plex Sans'`;
+export const fontFamily = () => `'Open Sans'`;
 export const headerFontFamily = () => `'Poppins', sans-serif`;
-export const codeFontFamily = () => `'IBM Plex Mono', monospace`;
+export const codeFontFamily = () => `'Ubuntu Mono', monospace`;
 
 export const breakpoints = {
   mobile: () => '320px',
@@ -37,7 +37,8 @@ export const noFocusRing = () => `
 `;
 
 export const layers = {
-  card: () => 100,
+  plate: () => 100,
+  card: () => 110,
   dialog: () => 300,
   navigation: () => 200,
   layer: () => 400,

@@ -14,6 +14,11 @@ export const parameters = {
   },
   backgrounds: {
     disable: true
+  },
+  previewTabs: {
+    'storybook/docs/panel': {
+      hidden: true
+    }
   }
 };
 
