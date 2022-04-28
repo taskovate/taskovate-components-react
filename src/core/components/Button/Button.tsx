@@ -18,8 +18,8 @@ interface ButtonProps {
   to: string;
   tooltip: TooltipProps;
   appearance: Appearance;
-  isLoading: boolean;
-  isDisabled: boolean;
+  isisLoading: boolean;
+  isisDisabled: boolean;
   children: any;
 }
 
@@ -28,16 +28,16 @@ const Button: React.FC<any> = ({
   to,
   tooltip,
   appearance,
-  isLoading,
-  isDisabled,
+  isisLoading = false,
+  isisDisabled,
   children
 }: ButtonProps) => {
 
   const renderComponent = (
     <Tooltip label={tooltip?.label} placement={tooltip?.placement}>
-      <Container appearance={themedOrNull(appearance)} disabled={isDisabled} loading={isLoading}>
-        {isLoading && <Spinner />}
-        {!isLoading && children}
+      <Container appearance={themedOrNull(appearance)} isisDisabled={isisDisabled} isisLoading={isisLoading}>
+        {isisLoading && <Spinner />}
+        {!isisLoading && children}
       </Container>
     </Tooltip>
   );
@@ -69,41 +69,41 @@ const Container = styled.button<any>`
   text-align: center;
   user-select: none;
   
-  cursor: ${({ disabled, loading }) => {
-    if(disabled) return 'not-allowed';
-    if(loading) return 'wait';
+  cursor: ${({ isDisabled, isLoading }) => {
+    if(isDisabled) return 'not-allowed';
+    if(isLoading) return 'wait';
     return 'pointer'
   }};
   
   box-shadow: ${({ theme, appearance }) => appearance === 'special' ? theme.elevation[200] : 'auto'};
 
-  background-color: ${({ theme: { buttonStyles }, appearance, disabled, loading}) => 
-    (disabled||loading) ? buttonStyles.background[appearance ?? 'unset'].disabled() : buttonStyles.background[appearance ?? 'unset'].default()
+  background-color: ${({ theme: { buttonStyles }, appearance, isDisabled, isLoading}) => 
+    (isDisabled||isLoading) ? buttonStyles.background[appearance ?? 'unset'].disabled() : buttonStyles.background[appearance ?? 'unset'].default()
   };
 
-  color: ${({ theme: { buttonStyles }, appearance, disabled, loading }) => 
-    (disabled||loading) ? buttonStyles.color[appearance ?? 'unset'].disabled() : buttonStyles.color[appearance ?? 'unset'].default()
+  color: ${({ theme: { buttonStyles }, appearance, isDisabled, isLoading }) => 
+    (isDisabled||isLoading) ? buttonStyles.color[appearance ?? 'unset'].disabled() : buttonStyles.color[appearance ?? 'unset'].default()
   };
 
   :hover { 
-    box-shadow: ${({ theme, appearance, disabled }) => disabled ? 'auto' : appearance === 'special' && theme.elevation[300]};
+    box-shadow: ${({ theme, appearance, isDisabled }) => isDisabled ? 'auto' : appearance === 'special' && theme.elevation[300]};
 
-    background-color: ${({ theme: { buttonStyles }, appearance, disabled, loading }) => 
-      (disabled||loading) ? 'auto' : buttonStyles.background[appearance ?? 'unset'].hover()
+    background-color: ${({ theme: { buttonStyles }, appearance, isDisabled, isLoading }) => 
+      (isDisabled||isLoading) ? 'auto' : buttonStyles.background[appearance ?? 'unset'].hover()
     };
 
-    color: ${({ theme: { buttonStyles }, appearance, disabled, loading }) => 
-      (disabled||loading) ? 'auto' : buttonStyles.color[appearance ?? 'unset'].hover()
+    color: ${({ theme: { buttonStyles }, appearance, isDisabled, isLoading }) => 
+      (isDisabled||isLoading) ? 'auto' : buttonStyles.color[appearance ?? 'unset'].hover()
     };
   }
 
   :active {
-    background-color: ${({ theme: { buttonStyles }, appearance, disabled, loading }) => 
-      (disabled||loading) ? 'auto' : buttonStyles.background[appearance ?? 'unset'].active()
+    background-color: ${({ theme: { buttonStyles }, appearance, isDisabled, isLoading }) => 
+      (isDisabled||isLoading) ? 'auto' : buttonStyles.background[appearance ?? 'unset'].active()
     };
 
-    color: ${({ theme: { buttonStyles }, appearance, disabled, loading }) => 
-      (disabled||loading) ? 'auto' : buttonStyles.color[appearance ?? 'unset'].active()
+    color: ${({ theme: { buttonStyles }, appearance, isDisabled, isLoading }) => 
+      (isDisabled||isLoading) ? 'auto' : buttonStyles.color[appearance ?? 'unset'].active()
     };
   }
 

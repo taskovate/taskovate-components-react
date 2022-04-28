@@ -6,7 +6,7 @@ type Mode = 'default' | 'display' | 'brimming';
 
 interface PlateProps {
   children: React.ReactNode,
-  mode: Mode;
+  mode?: Mode;
   isLoading?: boolean;
 }
 
@@ -37,7 +37,7 @@ const Content = styled.div<any>`
   display: flex;
   flex-grow: 1;
   background-color: ${({ theme }) => theme.background()};
-  padding: ${gridSize() * 3}px;
+  padding: ${gridSize() * 5}px ${gridSize() * 5}px;
 
   ${({ mode }) => {
     if(mode === 'display') return `

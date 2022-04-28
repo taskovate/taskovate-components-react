@@ -6,26 +6,10 @@ const Styled = styled.div`
 `;
 
 const HeaderTitle = styled.h1`
-  line-height: initial;
-  margin-top: -3px !important;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin-bottom: ${gridSize() * 0.5}px;
-  margin-right: ${gridSize() * 0.25}px;
-  width: 100%;
-  min-width: 0;
-  overflow: hidden;
-  
-  small {
-    vertical-align: super;
-  }
+
 `;
 
 const HeaderDescription = styled.h4`
-  margin-top: 0;
-  margin-bottom: ${gridSize() * 0.5}px;
-  margin-right: ${gridSize() * 0.25}px;
-  width: 100%;
 `;
 
 const HeaderChildren = styled.div`
@@ -34,12 +18,11 @@ const HeaderChildren = styled.div`
 const FormHeader = ({
   title,
   description,
-  children,
-  wrap
+  children
 }: any) => {
   return (
       <Styled>
-        {title && <HeaderTitle style={wrap && { whiteSpace: 'break-spaces' }}>{title}</HeaderTitle>}
+        {title && <HeaderTitle>{title}</HeaderTitle>}
         {description && <HeaderDescription>{description}</HeaderDescription>}
         {children && <HeaderChildren>{children}</HeaderChildren>}
       </Styled>
