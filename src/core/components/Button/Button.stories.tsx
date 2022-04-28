@@ -19,6 +19,7 @@ const Row = styled.div`
   flex-direction: row;
   margin-bottom: ${gridSize() * 1}px;
   justify-content: end;
+  align-items: center;
 `;
 
 export const Appearances: ComponentStory<typeof Button> = (args) => (
@@ -70,6 +71,18 @@ export const Appearances: ComponentStory<typeof Button> = (args) => (
       <Button appearance='subtle-link'>Preview</Button>
       <Button appearance='subtle-link' isDisabled>Disabled</Button>
       <Button appearance='subtle-link' isLoading>Loading</Button>
+    </Row>
+  </Col>
+);
+
+export const Spacing: ComponentStory<typeof Button> = (args) => (
+  <Col>
+    <Row style={{ justifyContent: 'start', borderBottom: `1px solid ${colors.d[800]}` }}><p>Spacing</p></Row>
+    <Row>
+      <Button spacing="none">None</Button>
+      <Button spacing="compact">Compact</Button>
+      <Button spacing="default">Default</Button>
+      <Button spacing="pleasant">Pleasant</Button>
     </Row>
   </Col>
 );

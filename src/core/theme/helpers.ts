@@ -27,7 +27,7 @@ export function hex2rgba(hex: string, alpha = 1) {
   throw new Error('Bad Hex');
 }
 
-export function themedOrNull(appearance: string) {
+export function themedOrNull(appearance: any) {
   const themedAppearances = [
     'unset',
     'primary',
