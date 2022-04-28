@@ -30,7 +30,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src",
+    "src", "src/core/theme/*"
   ],
   "exclude": ["node_modules"]
 }
