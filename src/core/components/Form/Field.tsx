@@ -27,7 +27,7 @@ const Field = ({
 
   const renderField = ({ field: fieldProps, ...rest}: UseControllerReturn) => (
     <>
-      {label && <label>{[label, rules?.required && <FaAsterisk />]}</label>}
+      {label && <small>{[label, rules?.required && <FaAsterisk />]}</small>}
       {children({ fieldProps, ...rest })}
     </>
   );

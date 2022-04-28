@@ -24,6 +24,7 @@ module.exports = {
     "react/jsx-props-no-spreading": 0,
     "dot-notation": 0,
     "no-nested-ternary": 0,
-    "react/require-default-props": 0
+    "react/require-default-props": 0,
+    "react/no-unescaped-entities": 0
   },
 };

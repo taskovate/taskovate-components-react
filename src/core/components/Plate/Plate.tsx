@@ -26,9 +26,10 @@ const Border = styled.div<any>`
       background-color: ${theme.background()};
       border: none;
     `;
-    else if(mode === 'default' || mode === 'brimming') return `
+    if(mode === 'default' || mode === 'brimming') return `
       box-shadow: ${theme.elevation[300]};
     `;
+    return ``;
   }}
 `;
 
@@ -42,14 +43,16 @@ const Content = styled.div<any>`
     if(mode === 'display') return `
       padding: 0;
     `;
-    else if(mode === 'brimming') return `
+    if(mode === 'brimming') return `
       background-color: transparent;
     `;
+    return ``;
   }}
 `;
 
 const Plate = ({
   mode = 'default',
+  isLoading,
   children
 }: PlateProps) => {
 
