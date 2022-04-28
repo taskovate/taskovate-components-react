@@ -45,7 +45,7 @@ export const SignupForm: ComponentStory<typeof Form> = () => (
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormHeader
             title="Let's get you set up"
-            description={<>If your team is already using Taskovate, you can <a href="">log in</a>.</>}
+            description={<>If your team is already using Taskovate, you can <a href="/">log in</a>.</>}
           />
           <FormSection title="Account Details">
             <Field name="firstName" label="First Name">
