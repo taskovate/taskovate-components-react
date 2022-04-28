@@ -12,32 +12,35 @@ type TooltipProps = {
 }
 
 type Appearance = 'unset' | 'primary' | 'special' | 'warning' | 'danger' | 'subtle' | 'sublte-link' | 'link';
+type Spacing = 'none' | 'compact' | 'default' | 'pleasant';
 
 interface ButtonProps {
-  href: string;
-  to: string;
-  tooltip: TooltipProps;
-  appearance: Appearance;
-  isisLoading: boolean;
-  isisDisabled: boolean;
-  children: any;
+  href?: string;
+  to?: string;
+  tooltip?: any;
+  appearance?: Appearance;
+  spacing?: Spacing;
+  isLoading?: boolean;
+  isDisabled?: boolean;
+  children: () => React.ReactNode;
 }
 
 const Button: React.FC<any> = ({
   href,
   to,
   tooltip,
-  appearance,
-  isisLoading = false,
-  isisDisabled,
+  appearance = 'unset',
+  spacing = 'default',
+  isLoading = false,
+  isDisabled,
   children
 }: ButtonProps) => {
 
   const renderComponent = (
     <Tooltip label={tooltip?.label} placement={tooltip?.placement}>
-      <Container appearance={themedOrNull(appearance)} isisDisabled={isisDisabled} isisLoading={isisLoading}>
-        {isisLoading && <Spinner />}
-        {!isisLoading && children}
+      <Container appearance={themedOrNull(appearance)} spacing={spacing} isDisabled={isDisabled} isLoading={isLoading}>
+        {isLoading && <Spinner />}
+        {!isLoading && children}
       </Container>
     </Tooltip>
   );
@@ -57,7 +60,15 @@ const Container = styled.button<any>`
   // flex-grow: 1;
   justify-content: start;
   align-items: center;
-  padding: ${gridSize() * 1}px ${gridSize() * 1.25}px;
+  padding: ${({ spacing }) => {
+    switch(spacing) {
+      case 'none': return 0;
+      case 'compact': return `${gridSize() * 0.5}px ${gridSize() * 1}px`;
+      case 'default': return `${gridSize() * 1}px ${gridSize() * 1.25}px`;
+      case 'pleasant': return `${gridSize() * 1.5}px ${gridSize() * 1.5}px`;
+      default: return ``;
+    }
+  }};
   border-radius: ${borderRadius()}px;
   margin-right: ${gridSize() * 2}px;
   font-size: ${fontSize()}px;
@@ -78,32 +89,32 @@ const Container = styled.button<any>`
   box-shadow: ${({ theme, appearance }) => appearance === 'special' ? theme.elevation[200] : 'auto'};
 
   background-color: ${({ theme: { buttonStyles }, appearance, isDisabled, isLoading}) => 
-    (isDisabled||isLoading) ? buttonStyles.background[appearance ?? 'unset'].disabled() : buttonStyles.background[appearance ?? 'unset'].default()
+    (isDisabled||isLoading) ? buttonStyles.background[appearance].disabled() : buttonStyles.background[appearance].default()
   };
 
   color: ${({ theme: { buttonStyles }, appearance, isDisabled, isLoading }) => 
-    (isDisabled||isLoading) ? buttonStyles.color[appearance ?? 'unset'].disabled() : buttonStyles.color[appearance ?? 'unset'].default()
+    (isDisabled||isLoading) ? buttonStyles.color[appearance].disabled() : buttonStyles.color[appearance].default()
   };
 
   :hover { 
     box-shadow: ${({ theme, appearance, isDisabled }) => isDisabled ? 'auto' : appearance === 'special' && theme.elevation[300]};
 
     background-color: ${({ theme: { buttonStyles }, appearance, isDisabled, isLoading }) => 
-      (isDisabled||isLoading) ? 'auto' : buttonStyles.background[appearance ?? 'unset'].hover()
+      (isDisabled||isLoading) ? 'auto' : buttonStyles.background[appearance].hover()
     };
 
     color: ${({ theme: { buttonStyles }, appearance, isDisabled, isLoading }) => 
-      (isDisabled||isLoading) ? 'auto' : buttonStyles.color[appearance ?? 'unset'].hover()
+      (isDisabled||isLoading) ? 'auto' : buttonStyles.color[appearance].hover()
     };
   }
 
   :active {
     background-color: ${({ theme: { buttonStyles }, appearance, isDisabled, isLoading }) => 
-      (isDisabled||isLoading) ? 'auto' : buttonStyles.background[appearance ?? 'unset'].active()
+      (isDisabled||isLoading) ? 'auto' : buttonStyles.background[appearance].active()
     };
 
     color: ${({ theme: { buttonStyles }, appearance, isDisabled, isLoading }) => 
-      (isDisabled||isLoading) ? 'auto' : buttonStyles.color[appearance ?? 'unset'].active()
+      (isDisabled||isLoading) ? 'auto' : buttonStyles.color[appearance].active()
     };
   }
 
