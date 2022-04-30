@@ -85,6 +85,7 @@ export const SignupForm: ComponentStory<typeof Form> = () => (
           <FormFooter>
             <Button
               type="submit"
+              spacing="pleasant"
               isLoading={isSubmitting}
             >
                 Submit

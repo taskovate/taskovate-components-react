@@ -2,15 +2,15 @@ import * as colors from './colors';
 import { hex2rgba } from './helpers';
 
 export const name = 'Taskovate Dark';
-
+export const colorScheme = () => 'dark';
 export const background = () => colors.d[900];
 export const text = () => colors.n[200];
 export const textHover = () => colors.n[100];
 export const textActive = () => colors.n[100];
 export const subtleText = () => colors.n[100];
 export const placeholderText = () => colors.n[100];
-export const heading = () => colors.n[100];
-export const subtleHeading = () => colors.n[600];
+export const heading = () => colors.n[200];
+export const subtleHeading = () => colors.n[500];
 export const codeBlock = () => colors.n[100];
 export const link = () => colors.n[100];
 export const linkHover = () => colors.n[100];
@@ -27,6 +27,35 @@ export const elevation = {
   300: `0 8px 16px -4px ${hex2rgba('#000007', 0.6)}, 0 1px 1px #0009`,
   400: `0 12px 24px -6px ${hex2rgba('#000007', 0.6)}, 0 1px 1px #0009`,
   500: `0 20px 32px -8px ${hex2rgba('#000007', 0.6)}, 0 1px 1px #0009`,
+};
+
+export const inputStyles = {
+  background: {
+    'body': {
+      default: () => colors.d[500],
+    }
+  },
+  menuBackground: {
+    'body': {
+      default: () => colors.d[500],
+      hover: () => colors.d[400],
+      active: () => colors.d[300],
+      selected: () => colors.d[200],
+    }
+  },
+  borderColor: {
+    'body': {
+      default: () => colors.d[500],
+      hover: () => colors.p[500],
+      focus: () => colors.p[400]
+    }
+  },
+  color: {
+    'body': {
+      default: () => colors.n[100],
+      placeholder: () => colors.d[100]
+    }
+  }
 };
 
 export const scrollStyles = {

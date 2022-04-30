@@ -25,7 +25,7 @@ const Container = styled.div`
   background: ${({ theme }) => theme.tooltip()};
   color: ${({ theme }) => theme.label()};
   pointer-events: none;
-  border-radius: ${borderRadius()}px;
+  border-radius: ${borderRadius() * 1.5}px;
   padding: ${gridSize() * 0.5}px ${gridSize() * 1}px;
   box-shadow: ${({ theme }) => theme.elevation[200]};
   z-index: ${layers.tooltip()};

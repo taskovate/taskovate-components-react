@@ -12,7 +12,8 @@ const Styled = styled.div`
   svg {
     height: ${gridSize() * 1.5 / fontSize()}em;
     width: ${gridSize() * 1.5 / fontSize()}em;
-    margin-left: ${gridSize() * 1}px;
+    margin-left: ${gridSize() * 0.75}px;
+    vertical-align: text-top;
   }
 `;
 

@@ -3,6 +3,7 @@ export { Button } from './Button';
 export { Spinner } from './Spinner';
 export { Plate } from './Plate';
 export { TextField } from './TextField';
+export { TextArea } from './TextArea';
 export { 
   Form,
   Field,
