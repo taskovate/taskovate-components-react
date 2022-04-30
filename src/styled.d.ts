@@ -3,6 +3,7 @@ import 'styled-components';
 declare module 'styled-components' {
   export interface DefaultTheme {
     name: string;
+    colorScheme: () => 'light' | 'dark';
     background: () => string;
     text: () => string;
     textHover: () => string;
@@ -22,6 +23,7 @@ declare module 'styled-components' {
     skeletonShimmer: () => any;
     label: () => string;
     elevation: any;
+    inputStyles: any;
     scrollStyles: any;
     navigationStyles: any;
     buttonStyles: any;

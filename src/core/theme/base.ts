@@ -9,10 +9,16 @@ import {
   animation,
   borderRadius,
   gradients,
-  typography
+  typography,
+  fontSize,
+  fontSizeSmall
 } from '@theme/constants';
 
 export default createGlobalStyle<DefaultTheme>`
+  :root {
+    color-scheme: ${({ theme }) => theme.colorScheme()};
+  }
+
   .sb-show-main {
     background-color: ${({ theme }) => theme.background()} !important;
   }
@@ -234,5 +240,9 @@ export default createGlobalStyle<DefaultTheme>`
     font-weight: normal;
     margin-top: 0;
     margin-bottom: ${gridSize() * 0.5}px;
+  }
+  
+  input {
+    font-size: ${fontSize()}px;
   }
 `;

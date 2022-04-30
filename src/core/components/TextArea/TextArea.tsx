@@ -1,13 +1,12 @@
 import React, { useEffect, cloneElement, useState  } from 'react';
 import styled from 'styled-components';
 import { colors, gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall } from '@theme/constants';
-import { inputStyles } from 'core/theme/dark';
 
 const Styled = styled.div`
   display: flex;
 `;
 
-const Input = styled.input`
+const Input = styled.textarea`
   display: flex;
   transition: ${animation.normal()};
   padding: ${gridSize() * 0.75}px ${gridSize() * 1.25}px;
@@ -16,7 +15,6 @@ const Input = styled.input`
   background-color: ${({ theme: { inputStyles } }) => inputStyles.background['body'].default()};
   color: ${({ theme: { inputStyles } }) => inputStyles.color['body'].default()};
   outline: none;
-  min-width: 0;
   :hover {
     border-color: ${({ theme: { inputStyles } }) => inputStyles.borderColor['body'].hover()};
   }
@@ -26,19 +24,19 @@ const Input = styled.input`
   ::placeholder {
     color: ${({ theme: { inputStyles } }) => inputStyles.color['body'].placeholder()};
   }
+  
   min-width: 200px;
 `;
 
-const TextField = ({
-  placeholder,
+const TextArea = ({
   children
 }: any) => {
 
   return (
     <Styled>
-      <Input placeholder={placeholder} />
+      <Input />
     </Styled>
   );
 };
 
-export default TextField;
+export default TextArea;

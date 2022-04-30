@@ -2,12 +2,12 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import styled from 'styled-components';
 import { gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall } from '@theme/constants';
-import { TextField } from '.';
+import { TextArea } from '.';
 
 export default {
-  title: 'Design System/TextField',
-  component: TextField,
-} as ComponentMeta<typeof TextField>;
+  title: 'Design System/TextArea',
+  component: TextArea,
+} as ComponentMeta<typeof TextArea>;
 
 const Area = styled.div`
   display: flex;
@@ -17,8 +17,8 @@ const Area = styled.div`
   height: calc(100% + ${gridSize() * 10}px);
 `;
 
-export const Basic: ComponentStory<typeof TextField> = () => (
+export const Basic: ComponentStory<typeof TextArea> = () => (
   <Area>
-    <TextField />
+    <TextArea />
   </Area>
 );
