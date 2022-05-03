@@ -10,9 +10,10 @@ const Styled = styled.div`
 const Input = styled.input`
   display: flex;
   transition: ${animation.normal()};
-  padding: ${gridSize() * 0.75}px ${gridSize() * 1.25}px;
-  border-radius: ${borderRadius() * 1}px;
-  border: ${gridSize() * 0.25}px solid ${({ theme: { inputStyles } }) => inputStyles.borderColor['body'].default()};;
+  padding: ${gridSize() * 1.125}px ${gridSize() * 0}px;
+  // border-radius: ${borderRadius() * 1}px;
+  border: none;
+  border-bottom: ${gridSize() * 0.25}px solid ${({ theme: { inputStyles } }) => inputStyles.borderColor['body'].default()};;
   background-color: ${({ theme: { inputStyles } }) => inputStyles.background['body'].default()};
   color: ${({ theme: { inputStyles } }) => inputStyles.color['body'].default()};
   outline: none;

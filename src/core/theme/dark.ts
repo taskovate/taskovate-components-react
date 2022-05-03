@@ -4,13 +4,13 @@ import { hex2rgba } from './helpers';
 export const name = 'Taskovate Dark';
 export const colorScheme = () => 'dark';
 export const background = () => colors.d[900];
-export const text = () => colors.n[200];
+export const text = () => colors.n[100];
 export const textHover = () => colors.n[100];
 export const textActive = () => colors.n[100];
 export const subtleText = () => colors.n[100];
 export const placeholderText = () => colors.n[100];
 export const heading = () => colors.n[200];
-export const subtleHeading = () => colors.n[500];
+export const subtleHeading = () => colors.n[400];
 export const codeBlock = () => colors.n[100];
 export const link = () => colors.n[100];
 export const linkHover = () => colors.n[100];
@@ -32,7 +32,7 @@ export const elevation = {
 export const inputStyles = {
   background: {
     'body': {
-      default: () => colors.d[600],
+      default: () => colors.d[900],
       hover: () => colors.d[500],
       active: () => colors.d[400],
       selected: () => colors.d[300],
@@ -110,10 +110,10 @@ export const navigationStyles = {
 export const buttonStyles = {
   background: {
     'unset': {
-      disabled: () => colors.d[700],
-      default: () => colors.d[600],
-      hover: () => colors.d[500],
-      active: () => colors.d[400],
+      disabled: () => colors.d[800],
+      default: () => colors.d[700],
+      hover: () => colors.d[600],
+      active: () => colors.d[500],
     },
     'primary': {
       disabled: () => colors.p[700],
