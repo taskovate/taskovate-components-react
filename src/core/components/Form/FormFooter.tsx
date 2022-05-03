@@ -5,7 +5,7 @@ import { gridSize, layers, animation, fontSize, borderRadius, gradients, fontSiz
 const Styled = styled.div<any>`
   display: flex;
   justify-content: ${props => props.align || 'flex-start'};
-  margin-top: ${gridSize() * 4}px;
+  margin-top: ${gridSize() * 5}px;
 `;
 
 const FormFooter = ({

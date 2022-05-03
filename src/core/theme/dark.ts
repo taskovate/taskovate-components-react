@@ -32,15 +32,15 @@ export const elevation = {
 export const inputStyles = {
   background: {
     'body': {
-      default: () => colors.d[500],
-      hover: () => colors.d[400],
-      active: () => colors.d[300],
-      selected: () => colors.d[200],
+      default: () => colors.d[600],
+      hover: () => colors.d[500],
+      active: () => colors.d[400],
+      selected: () => colors.d[300],
     }
   },
   borderColor: {
     'body': {
-      default: () => colors.d[500],
+      default: () => colors.d[600],
       hover: () => colors.p[500],
       focus: () => colors.p[400]
     }

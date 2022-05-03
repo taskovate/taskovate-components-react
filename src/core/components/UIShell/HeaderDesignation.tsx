@@ -19,7 +19,7 @@ const Logo = styled.img<any>`
   align-self: center;
   height: ${fontSize() * 2.75}px;
   width: ${fontSize() * 2.75}px;
-  margin-right: ${gridSize() * 3}px;
+  margin-right: ${gridSize() * 2}px;
 `;
 
 

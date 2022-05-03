@@ -85,8 +85,8 @@ const Container = styled.div<any>`
   user-select: none;
 
   svg {
-    height: ${fontSize() * 1.5}px;
-    width: ${fontSize() * 1.5}px;
+    height: ${gridSize() * 2.5}px;
+    width: ${gridSize() * 2.5}px;
   }
   
   cursor: ${({ disabled, loading }) => disabled && 'not-allowed' || loading ? 'wait' : 'pointer'};
