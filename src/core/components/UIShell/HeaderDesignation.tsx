@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled, { useTheme } from 'styled-components';
-import { gridSize, layers, animation, borderRadius, gradients } from '@theme/constants';
+import { gridSize, layers, animation, borderRadius, gradients, fontSize } from '@theme/constants';
 
 const logo = '/images/logo.svg';
 
@@ -15,8 +15,10 @@ const logo = '/images/logo.svg';
 // }
 
 const Logo = styled.img<any>`
-  height: ${gridSize() * 5}px;
-  width: ${gridSize() * 5}px;
+  display: flex;
+  align-self: center;
+  height: ${fontSize() * 2.75}px;
+  width: ${fontSize() * 2.75}px;
   margin-right: ${gridSize() * 3}px;
 `;
 

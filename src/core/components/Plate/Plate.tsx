@@ -1,6 +1,6 @@
 import React, { useEffect, cloneElement, useState  } from 'react';
 import styled from 'styled-components';
-import { gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall } from '@theme/constants';
+import { colors, gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall } from '@theme/constants';
 
 type Mode = 'default' | 'display' | 'brimming';
 
@@ -10,9 +10,48 @@ interface PlateProps {
   isLoading?: boolean;
 }
 
-const Styled = styled.div`
+const Styled = styled.div<any>`
   display: flex;
+  flex-direction: column;
   z-index: ${layers.plate()};
+  :before {
+    content: '';
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+    height: ${gridSize() * 1}px;
+    margin-left: -${gridSize() * 0.4}px;
+    margin-bottom: -${gridSize() * 0.6}px;
+    width: calc(100% + ${gridSize() * 0.75}px);
+    ${({ mode }) => {
+      if(mode === 'display') return `
+        background: ${gradients.subtle()};
+      `;
+      return `
+        background: ${gradients.primary()};
+      `;
+    }}
+    clip-path: polygon(0% 0%, 0% 100%, ${gridSize() * 1}px 100%, ${gridSize() * 1}px 0, calc(100% - ${gridSize() * 1}px) 0, calc(100% - ${gridSize() * 1}px) 100%, 25% 100%, 25% 100%, 100% 100%, 100% 0%);
+  }
+  :after {
+    content: '';
+    display: flex;
+    transform: rotate(180deg);
+    flex-grow: 1;
+    position: relative;
+    height: ${gridSize() * 1}px;
+    margin-left: -${gridSize() * 0.4}px;
+    margin-top: -${gridSize() * 0.6}px;
+    width: calc(100% + ${gridSize() * 0.75}px);
+    ${({ mode }) => {
+      if(mode === 'display') return `
+        background: ${gradients.subtle()};
+      `;
+      return `
+        background: ${gradients.primary()};
+      `;
+    }}    clip-path: polygon(0% 0%, 0% 100%, ${gridSize() * 1}px 100%, ${gridSize() * 1}px 0, calc(100% - ${gridSize() * 1}px) 0, calc(100% - ${gridSize() * 1}px) 100%, 25% 100%, 25% 100%, 100% 100%, 100% 0%);
+  }
 `;
 
 const Border = styled.div<any>`
@@ -57,7 +96,7 @@ const Plate = ({
 }: PlateProps) => {
 
   return (
-    <Styled>
+    <Styled mode={mode}>
       <Border mode={mode}>
         <Content mode={mode}>
           {children}

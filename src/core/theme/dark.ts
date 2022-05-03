@@ -33,11 +33,6 @@ export const inputStyles = {
   background: {
     'body': {
       default: () => colors.d[500],
-    }
-  },
-  menuBackground: {
-    'body': {
-      default: () => colors.d[500],
       hover: () => colors.d[400],
       active: () => colors.d[300],
       selected: () => colors.d[200],
@@ -53,7 +48,7 @@ export const inputStyles = {
   color: {
     'body': {
       default: () => colors.n[100],
-      placeholder: () => colors.d[100]
+      placeholder: () => colors.n[900]
     }
   }
 };

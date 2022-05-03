@@ -1,7 +1,7 @@
 import { Button } from '@components/core';
 import styled from 'styled-components';
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
-import { GlobalColorsShowcase } from '@components/docs';
+import { ColorsShowcase } from '@components/docs';
 
 <Meta 
   title="Documentation/Colors" 
@@ -13,8 +13,17 @@ import { GlobalColorsShowcase } from '@components/docs';
 <Preview>
   <Story name="Colors">
     <h1>Colors</h1>
-    <h2>Global Colors</h2>
-    <GlobalColorsShowcase />
+    <h2>Primary Colors</h2>
+    <p>Purple is the primary brand color.</p>
+    <ColorsShowcase include={['p']} />
+    <h2>Neutral Colors</h2>
+    <p>These colors are commonly used for the user interface. There is a subtle Purple hue to these colors.</p> 
+    <ColorsShowcase include={['d', 'n']} />
+    <h2>Semantic Colors</h2>
+    <p>Commonly Blue is used for information, Yellow for warnings, Green for success, Red for danger.</p>
+    <ColorsShowcase include={['b', 'y', 'g', 'r']} />
+    <h2>All Colors</h2>
+    <ColorsShowcase include={['b', 'd', 'g', 'n', 'p', 'r', 'y']} />
   </Story>
 </Preview>
  

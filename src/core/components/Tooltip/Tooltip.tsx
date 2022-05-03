@@ -25,12 +25,13 @@ const Container = styled.div`
   background: ${({ theme }) => theme.tooltip()};
   color: ${({ theme }) => theme.label()};
   pointer-events: none;
-  border-radius: ${borderRadius() * 1.5}px;
-  padding: ${gridSize() * 0.5}px ${gridSize() * 1}px;
+  border-radius: ${borderRadius() * 1.25}px;
+  padding: ${gridSize() * 0.5}px ${gridSize() * 0.75}px;
   box-shadow: ${({ theme }) => theme.elevation[200]};
   z-index: ${layers.tooltip()};
-  line-height: ${gridSize() * 2 / fontSizeSmall()}em;
+  line-height: ${fontSizeSmall()}px;
   font-size: ${fontSizeSmall()}px;
+  white-space: nowrap;
 `;
 
 const Tooltip = ({ children, label, placement = "top" }: Props) => {
@@ -49,7 +50,7 @@ const Tooltip = ({ children, label, placement = "top" }: Props) => {
     placement,
     open,
     onOpenChange: setOpen,
-    middleware: [offset(gridSize() * 1.75), flip(), shift()]
+    middleware: [offset(gridSize() * 2), flip(), shift()]
   });
 
   const { getReferenceProps, getFloatingProps } = useInteractions([

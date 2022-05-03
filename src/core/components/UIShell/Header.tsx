@@ -1,65 +1,54 @@
 import React, { useEffect, useState } from 'react';
-import styled, { useTheme } from 'styled-components';
+import styled, { css, useTheme } from 'styled-components';
 import { gridSize, layers, animation, borderRadius, gradients } from '@theme/constants';
 
-// type User = {
-//   name: string;
-// };
+const Styled = styled.div`
+`;
 
-// interface HeaderProps {
-//   borderWidth: string;
-//   height: number;
-//   offset: string;
-// }
+interface HeaderStyleProps {
+  height?: number;
+  offset?: number;
+  borderWidth?: number;
+  paddingX?: number;
+  paddingY?: number;
+}
 
-const Border = styled.header<any>`
+const baseHeaderStyle = ({
+  height = gridSize() * 7,
+  offset = 1,
+  borderWidth = 0,
+  paddingX = gridSize() * 4,
+  paddingY = gridSize() * 0,
+}: HeaderStyleProps = {}) => css<any>`
   display: flex;
-  position: sticky;
+  flex-direction: row;
+  position: fixed;
+  align-items: center;
   z-index: ${layers.navigation()};
-  transition: ${animation.normal()};
-  background: ${gradients.primary()};
-  border-top-right-radius: ${borderRadius() * 0.75}px;
-  border-bottom-right-radius: ${borderRadius() * 0.75}px;
-  flex-grow: 1;
-  margin-right: ${gridSize() * 1}px;
-  height: calc(${gridSize() * 6.5}px);
-  top: calc(${gridSize() * 0.5}px + ${gridSize() * 0.25}px);
-  margin-top: calc(${gridSize() * 0.5}px - ${gridSize() * 0.5}px + ${gridSize() * 0.25}px);
+  padding: ${paddingY}px ${paddingX * 0.5}px ${paddingY}px ${paddingX}px;
+  width: calc(100% - ${gridSize() * 1 + paddingX * 2 - borderWidth / 2}px);
+  top: ${({ mode }) => gridSize() * (mode === 'scroll' ? 0.375 : offset) - borderWidth / 2}px;
+  height: ${height + borderWidth - paddingY * 2}px;
+  border-top-right-radius: ${borderWidth ? borderRadius() * 1 : borderRadius() * 0.75}px;
+  border-bottom-right-radius: ${borderWidth ? borderRadius() * 1 : borderRadius() * 0.75}px;
+  transition: ${animation.slow()};
+  will-change: top, transform;
+`;
 
-  ${({ theme, mode }) => mode === 'scroll' && `
-    height: calc(${gridSize() * 6.5}px + ${gridSize() * 0.5}px);
-    top: ${gridSize() * 0.5}px;
-    margin-top: calc(${gridSize() * 0.5}px - ${gridSize() / 2}px);
-    margin-right: ${gridSize() * 0.75}px;
-    border-top-right-radius: ${borderRadius() * 1}px;
-    border-bottom-right-radius: ${borderRadius() * 1}px;
-    box-shadow: ${theme.elevation[200]};
-    transition: ${animation.fast()};
+const Border = styled.div<any>`
+  ${({ mode }) => baseHeaderStyle({ borderWidth: mode === 'scroll' ? gridSize() * 0.5 : -1 })}
+  background: ${gradients.primary()};
+  opacity: 0;
+  
+  ${({ theme, mode }) => `
+    opacity: ${mode === 'scroll' ? 1 : 0};
+    box-shadow: ${mode === 'scroll' ? theme.elevation[200] : 'none'}; 
   `}
 `;
 
 const Content = styled.div<any>`
-  display: flex;
-  position: sticky;
-  flex-direction: row;
-  border-top-right-radius: ${borderRadius() * 0.75}px;
-  border-bottom-right-radius: ${borderRadius() * 0.75}px;
-  padding: 0 ${gridSize() * 3}px;
-  justify-content: start;
-  align-items: center;
-  align-content: center;
+  ${baseHeaderStyle()}
   background-color: ${({ theme }) => theme.background()};
-  flex-grow: 1;
-  height: ${gridSize() * 6.5}px;
-  margin: auto 0;
-  transition: ${animation.normal()};
-  box-shadow: 0 0 0 0.5px ${({ theme }) => theme.background()};
-
-  ${({ mode }) => mode === 'scroll' && `
-    transition: ${animation.fast()};
-    margin-right: ${gridSize() * 0.25}px;
-    box-shadow: none;
-  `}
 `;
 
 const Header: React.FC<any> = ({
@@ -68,7 +57,7 @@ const Header: React.FC<any> = ({
   const [mode, setMode] = useState('noscroll');
 
   const onScroll = () => {
-    setMode(window.pageYOffset >= gridSize() * 2 ? 'scroll' : 'noscroll');
+    setMode(window.pageYOffset >= gridSize() * 4 ? 'scroll' : 'noscroll');
   };
 
   useEffect(() => {
@@ -79,11 +68,12 @@ const Header: React.FC<any> = ({
   }, []);
   
   return (
-    <Border mode={mode}>
+    <Styled>
+      <Border mode={mode} />
       <Content mode={mode}>
         {children}
       </Content>
-    </Border>
+    </Styled>
   );
 };
 
