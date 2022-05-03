@@ -57,27 +57,27 @@ const Button: React.FC<any> = ({
 const Container = styled.button<any>`
   display: flex;
   flex-direction: row;
-  // flex-grow: 1;
   justify-content: start;
   align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  font-size: ${fontSize() * 1}px;
+  // line-height: ${fontSize() * 1}px;
   padding: ${({ spacing }) => {
     switch(spacing) {
       case 'none': return 0;
-      case 'compact': return `${gridSize() * 0.5}px ${gridSize() * 1.125}px`;
+      case 'compact': return `${gridSize() * 0.5}px ${gridSize() * 1}px`;
       case 'default': return `${gridSize() * 1}px ${gridSize() * 1.25}px`;
-      case 'pleasant': return `${gridSize() * 1.5}px ${gridSize() * 1.375}px`;
+      case 'pleasant': return `${gridSize() * 1.5}px ${gridSize() * 1.5}px`;
       default: return ``;
     }
   }};
-  border-radius: ${borderRadius()}px;
+  border-radius: ${borderRadius() * 1}px;
   margin-right: ${gridSize() * 2}px;
-  font-size: ${fontSize()}px;
   cursor: pointer;
   font-weight: 500;
   transition: ${animation.normal()};
   border: none;
-  line-height: ${gridSize() * 2 / fontSize()}em;
-  text-align: center;
   user-select: none;
   
   cursor: ${({ isDisabled, isLoading }) => {

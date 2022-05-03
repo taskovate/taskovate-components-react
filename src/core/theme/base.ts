@@ -37,10 +37,10 @@ export default createGlobalStyle<DefaultTheme>`
   body {
     color: ${({ theme }) => theme.text()};
     font-family: ${fontFamily()};
-    font-size: 14px;
+    font-size: ${fontSize()};
     font-style: normal;
     font-weight: 400;
-    line-height: 1.42857142857143;
+    line-height: 1.5em;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     text-decoration-skip-ink: auto;
 

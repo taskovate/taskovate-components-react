@@ -17,6 +17,8 @@ interface HeaderGlobalActionProps {
   appearance?: any;
   isLoading?: boolean;
   isDisabled?: boolean;
+  iconBefore?: () => React.ReactNode;
+  iconAfter?: () => React.ReactNode;
   children: any;
 }
 
@@ -26,19 +28,29 @@ const HeaderGlobalAction: React.FC<any> = ({
   appearance,
   isLoading,
   isDisabled,
+  iconBefore,
+  iconAfter,
   children
 }: HeaderGlobalActionProps) => {
 
   const renderComponent = (
     <Tooltip label={typeof tooltip === 'string' ? tooltip : tooltip?.label} placement={tooltip?.placement}>
-      <Container 
+      <Container
         appearance={themedOrNull(appearance)} 
         disabled={isDisabled} 
         loading={isLoading} 
         style={{ padding: typeof children === 'object' && `0 ${gridSize() * 0.75}px`}}
+        hasIcon={(iconAfter||iconBefore)}
       >
+        
         {isLoading && <Spinner />}
-        {!isLoading && children}
+        {!isLoading && (
+          <>
+            {iconBefore && iconBefore()}
+            {children}
+            {iconAfter && iconAfter()}
+          </>
+        )}
       </Container>
     </Tooltip>
   );
@@ -52,27 +64,29 @@ const HeaderGlobalAction: React.FC<any> = ({
   return renderComponent;
 };
 
-const Container = styled.button<any>`
+const Container = styled.div<any>`
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  padding: ${gridSize() * 1}px ${gridSize() * 1.25}px;
+  vertical-align: middle;
+  text-align: center;
+  font-size: ${fontSize() * 1}px;
+  // line-height: ${fontSize() * 1}px;
+  padding: ${({ hasIcon }) => hasIcon ? gridSize() * 0.75 : gridSize() * 0.5}px 
+           ${({ hasIcon }) => hasIcon ? gridSize() * 0.75 : gridSize() * 1}px;
   border-radius: ${borderRadius()}px;
   margin-left: ${gridSize() * 0.75}px;
-  font-size: ${fontSize()}px;
   cursor: pointer;
   font-weight: 500;
-  transition: ${animation.fast()};
+  transition: ${animation.normal()};
   border: none;
-  line-height: ${gridSize() * 2 / fontSize()}em;
-  text-align: center;
   overflow: hidden;
   user-select: none;
 
   svg {
-    height: ${gridSize() * 2.5 / fontSize()}em;
-    width: ${gridSize() * 2.5 / fontSize()}em;
+    height: ${fontSize() * 1.5}px;
+    width: ${fontSize() * 1.5}px;
   }
   
   cursor: ${({ disabled, loading }) => disabled && 'not-allowed' || loading ? 'wait' : 'pointer'};

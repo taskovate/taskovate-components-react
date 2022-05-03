@@ -10,8 +10,8 @@ export const gridSize = () => 8;
 export const fontSize = () => 14;
 export const fontSizeSmall = () => 11;
 
-export const fontFamily = () => `'Open Sans'`;
-export const headerFontFamily = () => `'Poppins', sans-serif`;
+export const fontFamily = () => `Signika`;
+export const headerFontFamily = () => `'K2D', sans-serif`;
 export const codeFontFamily = () => `'Ubuntu Mono', monospace`;
 
 export const breakpoints = {
@@ -45,7 +45,7 @@ export const layers = {
   layer: () => 400,
   modal: () => 510,
   flag: () => 600,
-  tooltip: () => 800,
+  tooltip: () => 800
 };
 
 export const animation = {
@@ -57,5 +57,5 @@ export const animation = {
 export const gradients = {
   primary: () => `linear-gradient(-185deg, #403294 0%, #008DA6 66%, #36B37E 100%)`,
   secondary: () => `linear-gradient(-9deg, #403294 0%, #008DA6 66%, #36B37E 100%)`,
-  subtle: () => ''
+  subtle: () => `linear-gradient(-9deg, #444 0%, #333 66%, #555 100%)`,
 };

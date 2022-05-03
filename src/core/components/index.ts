@@ -4,6 +4,7 @@ export { Spinner } from './Spinner';
 export { Plate } from './Plate';
 export { TextField } from './TextField';
 export { TextArea } from './TextArea';
+export { Checkbox } from './Checkbox';
 export { 
   Form,
   Field,

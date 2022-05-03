@@ -16,7 +16,8 @@ const Container = styled.div<any>`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  flex-grow: 1;
+  flex: 0 1 100%;
+  align-items: center;
 `;
 
 const HeaderGlobalBar: React.FC<any> = ({ children }: any) => {

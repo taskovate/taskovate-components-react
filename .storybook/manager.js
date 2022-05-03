@@ -3,7 +3,7 @@ import { addons } from '@storybook/addons';
 
 const theme = create({
   base: 'light',
-  fontBase: 'Open Sans',
+  fontBase: 'Signika',
   fontCode: 'Ubuntu Mono',
   brandTitle: 'Taskovate Storybook',
   brandUrl: 'https://taskovate.com',

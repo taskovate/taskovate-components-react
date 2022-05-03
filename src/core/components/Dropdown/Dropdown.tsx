@@ -82,7 +82,7 @@ const Styled = styled<any>(ReactSelect)`
     &__option {
       transition: ${animation.normal()};
       padding: ${gridSize() * 0.75}px ${gridSize() * 1.25}px;
-      // line-height: normal;
+      line-height: normal;
       background-color: ${({ theme: { inputStyles } }) => inputStyles.background['body'].default()};
       color: ${({ theme: { inputStyles } }) => inputStyles.color['body'].default()};
       &:hover {
@@ -105,7 +105,7 @@ const DropdownIndicator = () => (
   <FaChevronDown />
 );
 
-const Select = ({
+const Dropdown = ({
   placeholder = 'Select',
   options,
 }: SelectProps) => {
@@ -137,4 +137,4 @@ const Select = ({
   );
 };
 
-export default Select;
+export default Dropdown;

@@ -5,10 +5,8 @@ import { Tooltip } from '@components/core';
 import { ShowcaseArea } from '.';
 
 const FlexRow = styled.div`
-  display: flex:
-  width: 100%;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 80px 80px 80px 80px 80px 80px 80px 80px 80px;
   row-gap: ${gridSize() * 3}px;
   margin-bottom: ${gridSize() * 2}px;
 `;
@@ -32,7 +30,6 @@ const Color = styled.div`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1 0 11%;
   align-items: center;
   justify-content: start;
   small {
@@ -50,7 +47,9 @@ const Container = styled.div`
 
 const initialTooltip = 'Click Color to Copy';
 
-const GlobalColorsShowcase = (props: any) => {
+const ColorsShowcase = ({
+  include,
+}: any) => {
   const [tooltip, setTooltip] = useState(initialTooltip);
 
   const copyToClipboard = async (hexCode: any) => {
@@ -66,7 +65,7 @@ const GlobalColorsShowcase = (props: any) => {
 
   const colorsKeys = Object.keys(colors);
 
-  const renderColorGrid = () => colorsKeys.map(palette => {
+  const renderColorGrid = () => colorsKeys.filter(palette => include.includes(palette)).map(palette => {
     const paletteKeys = Object.keys((colors as any)[palette]);
 
     return paletteKeys.map((name, index) => {
@@ -95,4 +94,4 @@ const GlobalColorsShowcase = (props: any) => {
   );
 };
 
-export default GlobalColorsShowcase;
+export default ColorsShowcase;
