@@ -62,13 +62,12 @@ const Container = styled.button<any>`
   text-align: center;
   vertical-align: middle;
   font-size: ${fontSize() * 1}px;
-  // line-height: ${fontSize() * 1}px;
   padding: ${({ spacing }) => {
     switch(spacing) {
       case 'none': return 0;
-      case 'compact': return `${gridSize() * 0.5}px ${gridSize() * 1}px`;
-      case 'default': return `${gridSize() * 1}px ${gridSize() * 1.25}px`;
-      case 'pleasant': return `${gridSize() * 1.5}px ${gridSize() * 1.5}px`;
+      case 'compact': return `${gridSize() * 0.4375}px ${gridSize() * 1}px`;
+      case 'default': return `${gridSize() * 0.9375}px ${gridSize() * 1.25}px`;
+      case 'pleasant': return `${gridSize() * 1.4375}px ${gridSize() * 1.5}px`;
       default: return ``;
     }
   }};

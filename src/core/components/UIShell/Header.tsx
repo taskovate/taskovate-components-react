@@ -14,10 +14,10 @@ interface HeaderStyleProps {
 }
 
 const baseHeaderStyle = ({
-  height = gridSize() * 7,
-  offset = 1,
+  height = gridSize() * 6.75,
+  offset = 0.5,
   borderWidth = 0,
-  paddingX = gridSize() * 4,
+  paddingX = gridSize() * 3,
   paddingY = gridSize() * 0,
 }: HeaderStyleProps = {}) => css<any>`
   display: flex;
@@ -25,19 +25,19 @@ const baseHeaderStyle = ({
   position: fixed;
   align-items: center;
   z-index: ${layers.navigation()};
-  padding: ${paddingY}px ${paddingX * 0.5}px ${paddingY}px ${paddingX}px;
+  padding: ${paddingY}px ${paddingX * 0.75}px ${paddingY}px ${paddingX}px;
   width: calc(100% - ${gridSize() * 1 + paddingX * 2 - borderWidth / 2}px);
-  top: ${({ mode }) => gridSize() * (mode === 'scroll' ? 0.375 : offset) - borderWidth / 2}px;
+  top: ${({ mode }) => gridSize() * (mode === 'scroll' ? 0.5 : offset) - borderWidth / 2}px;
   height: ${height + borderWidth - paddingY * 2}px;
   border-top-right-radius: ${borderWidth ? borderRadius() * 1 : borderRadius() * 0.75}px;
   border-bottom-right-radius: ${borderWidth ? borderRadius() * 1 : borderRadius() * 0.75}px;
-  transition: ${animation.slow()};
+  transition: ${animation.normal()};
   will-change: top, transform;
 `;
 
 const Border = styled.div<any>`
   ${({ mode }) => baseHeaderStyle({ borderWidth: mode === 'scroll' ? gridSize() * 0.5 : -1 })}
-  background: ${gradients.primary()};
+  background: ${gradients.secondary()};
   opacity: 0;
   
   ${({ theme, mode }) => `

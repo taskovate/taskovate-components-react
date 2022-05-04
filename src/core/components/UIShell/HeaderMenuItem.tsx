@@ -60,7 +60,7 @@ const Container = styled.div<any>`
   vertical-align: middle;
   text-align: center;
   font-size: ${fontSize() * 1}px;
-  padding: ${gridSize() * 0.75}px ${gridSize() * 1}px;
+  padding: ${gridSize() * 0.5}px ${gridSize() * 1}px;
   border-radius: ${borderRadius()}px;
   margin-right: ${gridSize() * 0.75}px;
   cursor: pointer;

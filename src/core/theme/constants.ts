@@ -10,7 +10,7 @@ export const gridSize = () => 8;
 export const fontSize = () => 14;
 export const fontSizeSmall = () => 11;
 
-export const fontFamily = () => `Signika`;
+export const fontFamily = () => `Rubik`;
 export const headerFontFamily = () => `'K2D', sans-serif`;
 export const codeFontFamily = () => `'Ubuntu Mono', monospace`;
 
@@ -49,9 +49,9 @@ export const layers = {
 };
 
 export const animation = {
-  slow: () => '135ms ease-in',
-  normal: () => '90ms ease-in',
-  fast: () => '45ms ease-in'
+  slow: () => '120ms ease-in',
+  normal: () => '80ms ease-in',
+  fast: () => '40ms ease-in'
 };
 
 export const gradients = {
