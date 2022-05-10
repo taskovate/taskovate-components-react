@@ -73,13 +73,13 @@ export const NavigationApp: ComponentStory<typeof Header> = () => (
     <Header>
       <HeaderDesignation />
       <HeaderMenuBar>
-        <HeaderMenuItem>
+        <HeaderMenuItem tooltip="Your work">
           Your work
         </HeaderMenuItem>
-        <HeaderMenuItem>
+        <HeaderMenuItem tooltip="People">
           People
         </HeaderMenuItem>
-        <HeaderMenuItem>
+        <HeaderMenuItem tooltip="Files">
           Files
         </HeaderMenuItem>
       </HeaderMenuBar>

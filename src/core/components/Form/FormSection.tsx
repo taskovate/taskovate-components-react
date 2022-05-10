@@ -5,7 +5,7 @@ import { colors, gridSize, layers, animation, fontSize, borderRadius, gradients,
 const Styled = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: ${gridSize() * 3}px;
+  margin-top: ${gridSize() * 4.5}px;
 `;
 
 const SectionTitle = styled.h4`
@@ -16,7 +16,7 @@ const SectionDescription = styled.h4`
 `;
 
 const SectionChildren = styled.div`
-  margin-top: ${gridSize() * 1}px;
+  margin-top: ${gridSize() * 1.5}px;
     
   & > :last-child {
     margin-bottom: 0 !important;

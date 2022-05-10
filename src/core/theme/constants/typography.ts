@@ -4,10 +4,11 @@ import { css } from 'styled-components';
 import { gridSize, fontSize, headerFontFamily } from './constants';
 
 const baseHeading = (size: number, lineHeight: number) => `
-  font-family: ${headerFontFamily()};
+  &, * { font-family: ${headerFontFamily()}; }
   font-size: ${size / fontSize()}em;
   font-style: inherit;
   line-height: ${lineHeight / size};
+  font-variation-settings: "MONO" 0, "CASL" 0, "wght" 400, "slnt" -5, "CRSV" 0.5;
 `;
 
 export const heading = {
@@ -21,7 +22,7 @@ export const heading = {
   `,
   // Empty states and feature introductions. Top level headers.
   h800: () => css`
-    ${baseHeading(35, 32)}
+    ${baseHeading(29, 32)}
     color: ${({ theme }) => theme.heading()};
     font-weight: 600;
     letter-spacing: -0.01em;

@@ -13,21 +13,31 @@ const Styled = styled<any>(ReactSelect)`
 
   .react-select {
     &__control {
-      transition: ${animation.normal()};
+      z-index: ${layers.select() + 1};
+      transition: all ${animation.normal()}, 
+      // border-bottom-left-radius 0ms, 
+      // border-bottom-right-radius 0ms,
+      border-bottom-width 0ms;
       margin: 0;
       min-height: 0;
-      border: ${gridSize() * 0.25}px solid ${({ theme: { inputStyles } }) => inputStyles.borderColor['body'].default()};;
+      border: ${gridSize() * 0.25}px solid ${({ theme: { inputStyles } }) => inputStyles.borderColor['body'].default()};
       box-shadow: none;
       border-radius: ${borderRadius() * 1}px;
-      padding: ${gridSize() * 0.75}px ${gridSize() * 1.25}px;
-      line-height: normal;
+      padding: ${gridSize() * 0.5625}px ${gridSize() * 1.25}px;
+      // line-height: normal;
       background-color: ${({ theme: { inputStyles } }) => inputStyles.background['body'].default()};
       color: ${({ theme: { inputStyles } }) => inputStyles.color['body'].default()};
       :hover {
         border-color: ${({ theme: { inputStyles } }) => inputStyles.borderColor['body'].hover()};
       }
-      :focus, &--menu-is-open, &--is-focused {
+      :focus, &--is-focused {
         border-color: ${({ theme: { inputStyles } }) => inputStyles.borderColor['body'].focus()} !important;
+      }
+      &--menu-is-open {
+        // border-bottom-width: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        // border-bottom-color: ${({ theme: { inputStyles } }) => inputStyles.background['body'].default()} !important;
       }
     }
     &__placeholder {
@@ -51,22 +61,28 @@ const Styled = styled<any>(ReactSelect)`
       margin-left: ${gridSize() * 0.75}px;
     }
     &__menu {
-      margin: ${gridSize() * 0.5}px 0 ${gridSize() * 1}px 0;
+      margin: 0 0 ${gridSize() * 1}px 0;
       background-color: ${({ theme: { inputStyles } }) => inputStyles.background['body'].default()};
       box-shadow: ${({ theme }) => theme.elevation[300]};
       z-index: ${layers.select()};
       border-radius: ${borderRadius() * 1.25}px;
-      transition: ${animation.normal()};
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border: ${gridSize() * 0.25}px solid ${({ theme: { inputStyles } }) => inputStyles.borderColor['body'].focus()};
+      border-top: none;
+      z-index: -1;
       @keyframes fadeIn {
         0% {
           opacity: 0;
+          border: none;
         }
         100% {
           opacity: 1;
-        }
+          border: ${gridSize() * 0.25}px solid ${({ theme: { inputStyles } }) => inputStyles.borderColor['body'].focus()};
+          border-top: none;
+    }
       }
       animation: fadeIn ${animation.slow()};
-
       &--close {
         animation: fadeIn ${animation.slow()};
         animation-direction: reverse;
@@ -82,7 +98,7 @@ const Styled = styled<any>(ReactSelect)`
     &__option {
       transition: ${animation.normal()};
       padding: ${gridSize() * 0.75}px ${gridSize() * 1.25}px;
-      line-height: normal;
+      // line-height: normal;
       background-color: ${({ theme: { inputStyles } }) => inputStyles.background['body'].default()};
       color: ${({ theme: { inputStyles } }) => inputStyles.color['body'].default()};
       &:hover {
@@ -119,6 +135,7 @@ const Dropdown = ({
         closeMenuOnScroll
         components={{ DropdownIndicator }}
         hideSelectedOptions
+        // menuIsOpen
         onMenuClose={() => {
           const menuEl = document.querySelector(`.react-select__menu`);
           const containerEl = menuEl?.parentElement;

@@ -6,10 +6,9 @@ const Styled = styled.div`
 `;
 
 const HeaderTitle = styled.h1`
-
 `;
 
-const HeaderDescription = styled.h4`
+const HeaderDescription = styled.h5`
 `;
 
 const HeaderChildren = styled.div`

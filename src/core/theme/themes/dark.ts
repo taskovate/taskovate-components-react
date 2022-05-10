@@ -1,15 +1,15 @@
-import * as colors from './colors';
-import { hex2rgba } from './helpers';
+import { colors } from '@theme/constants';
+import { hex2rgba } from '@theme/helpers';
 
 export const name = 'Taskovate Dark';
 export const colorScheme = () => 'dark';
 export const background = () => colors.d[900];
-export const text = () => colors.n[100];
+export const text = () => colors.n[300];
 export const textHover = () => colors.n[100];
 export const textActive = () => colors.n[100];
-export const subtleText = () => colors.n[100];
+export const subtleTwext = () => colors.n[100];
 export const placeholderText = () => colors.n[100];
-export const heading = () => colors.n[200];
+export const heading = () => colors.n[100];
 export const subtleHeading = () => colors.n[400];
 export const codeBlock = () => colors.n[100];
 export const link = () => colors.n[100];
@@ -32,7 +32,7 @@ export const elevation = {
 export const inputStyles = {
   background: {
     'body': {
-      default: () => colors.d[900],
+      default: () => colors.d[600],
       hover: () => colors.d[500],
       active: () => colors.d[400],
       selected: () => colors.d[300],

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled, { useTheme } from 'styled-components';
 import { Placement } from '@floating-ui/react-dom-interactions';
-import { themedOrNull } from '@theme/helpers';
+import { themedOrNull } from 'core/theme/helpers/helpers';
 import { Link } from 'react-resource-router';
 import { gridSize, layers, animation, borderRadius, gradients, fontSize, headerFontFamily } from '@theme/constants';
 import { Tooltip, Spinner } from '..';
@@ -60,8 +60,9 @@ const Container = styled.div<any>`
   vertical-align: middle;
   text-align: center;
   font-size: ${fontSize() * 1}px;
-  padding: ${gridSize() * 0.5}px ${gridSize() * 1}px;
+  padding: ${gridSize() * 0.8125}px ${gridSize() * 1}px;
   border-radius: ${borderRadius()}px;
+  // line-height: normal;
   margin-right: ${gridSize() * 0.75}px;
   cursor: pointer;
   font-weight: 500;

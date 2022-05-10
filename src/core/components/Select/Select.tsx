@@ -19,8 +19,8 @@ const Styled = styled<any>(ReactSelect)`
       border: ${gridSize() * 0.25}px solid ${({ theme: { inputStyles } }) => inputStyles.borderColor['body'].default()};;
       box-shadow: none;
       border-radius: ${borderRadius() * 1}px;
-      padding: ${gridSize() * 0.75}px ${gridSize() * 1.25}px;
-      line-height: normal;
+      padding: ${gridSize() * 0.5625}px ${gridSize() * 1.25}px;
+      // line-height: normal;
       background-color: ${({ theme: { inputStyles } }) => inputStyles.background['body'].default()};
       color: ${({ theme: { inputStyles } }) => inputStyles.color['body'].default()};
       :hover {

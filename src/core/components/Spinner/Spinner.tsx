@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { colors, gridSize, fontSize, layers, animation, borderRadius } from '@theme/constants';
-import { hex2rgba } from '@theme/helpers';
+import { hex2rgba } from 'core/theme/helpers/helpers';
 
 const motion = () => keyframes`
   0% {

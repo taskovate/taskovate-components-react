@@ -1,18 +1,15 @@
-import * as colorsBase from './colors'; // https://github.com/parcel-bundler/parcel/issues/5911
-import * as typographyBase from './typography'; // https://github.com/parcel-bundler/parcel/issues/5911
-import { hex2rgba } from './helpers';
-
-export const colors = colorsBase; // https://github.com/parcel-bundler/parcel/issues/5911
-export const typography = typographyBase; // https://github.com/parcel-bundler/parcel/issues/5911
+import { hex2rgba } from '@theme/helpers';
+import * as colors from './colors';
+import * as typography from './typography';
 
 export const borderRadius = () => 3;
 export const gridSize = () => 8;
 export const fontSize = () => 14;
 export const fontSizeSmall = () => 11;
 
-export const fontFamily = () => `Rubik`;
-export const headerFontFamily = () => `'K2D', sans-serif`;
-export const codeFontFamily = () => `'Ubuntu Mono', monospace`;
+export const fontFamily = () => `'Noto Sans'`;
+export const headerFontFamily = () => `'Noto Sans Display', sans-serif`;
+export const codeFontFamily = () => `'Noto Sans Mono', monospace`;
 
 export const breakpoints = {
   mobile: () => '320px',
@@ -49,7 +46,7 @@ export const layers = {
 };
 
 export const animation = {
-  slow: () => '120ms ease-in',
+  slow: () => '160ms ease-in',
   normal: () => '80ms ease-in',
   fast: () => '40ms ease-in'
 };
