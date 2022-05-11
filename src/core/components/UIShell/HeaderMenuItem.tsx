@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styled, { useTheme } from 'styled-components';
+import styled, { css, useTheme } from 'styled-components';
 import { Placement } from '@floating-ui/react-dom-interactions';
 import { themedOrNull } from 'core/theme/helpers/helpers';
 import { Link } from 'react-resource-router';
@@ -28,7 +28,7 @@ const HeaderMenuItem: React.FC<any> = ({
   isDisabled,
   children
 }: HeaderMenuItemProps) => {
-
+console.log(typeof children)
   const renderComponent = (
     <Tooltip label={tooltip?.label} placement={tooltip?.placement}>
       <Container 
@@ -36,6 +36,7 @@ const HeaderMenuItem: React.FC<any> = ({
         disabled={isDisabled} 
         loading={isLoading} 
         style={{ padding: typeof children === 'object' && `0 ${gridSize() * 0.75}px`}}
+        type={typeof children}
       >
         {isLoading && <Spinner />}
         {!isLoading && children}
@@ -52,10 +53,7 @@ const HeaderMenuItem: React.FC<any> = ({
   return renderComponent;
 };
 
-const Container = styled.div<any>`
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
+const menuItemStyles = () => css<any>`
   align-items: center;
   vertical-align: middle;
   text-align: center;
@@ -75,7 +73,7 @@ const Container = styled.div<any>`
     height: ${fontSize() * 1.3}px;
     width: ${fontSize() * 1.3}px;
   }
-  
+
   cursor: ${({ disabled, loading }) => disabled && 'not-allowed' || loading ? 'wait' : 'pointer'};
 
   background-color: ${({ theme: { navigationStyles }, appearance, disabled, loading }) => 
@@ -107,6 +105,14 @@ const Container = styled.div<any>`
       (disabled||loading) ? 'auto' : navigationStyles.color[appearance ?? 'unset'].active()
     };
   }
+`;
+
+const Container = styled.div<any>`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+ 
+  ${({ type }) => type == 'string' && menuItemStyles()}
 `;
 
 export default HeaderMenuItem;

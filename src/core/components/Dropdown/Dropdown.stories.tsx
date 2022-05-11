@@ -17,8 +17,14 @@ const Area = styled.div`
   height: calc(100% + ${gridSize() * 10}px);
 `;
 
+const options = [
+  { value: "chocolate", label: "Chocolate" },
+  { value: "strawberry", label: "Strawberry" },
+  { value: "vanilla", label: "Vanilla" }
+];
+
 export const Basic: ComponentStory<typeof Dropdown> = () => (
   <Area>
-    <Dropdown />
+    <Dropdown options={options}/>
   </Area>
 );

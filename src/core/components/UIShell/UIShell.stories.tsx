@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { gridSize } from '@theme/constants';
 import { MdLogin } from 'react-icons/md';
-import { HiOutlineChatAlt, HiOutlineBell, HiOutlineUser } from 'react-icons/hi';
+import { HiOutlineChatAlt, HiOutlineBell, HiOutlineUser, HiHome } from 'react-icons/hi';
 import { 
   Header,
   HeaderDesignation,
@@ -12,6 +12,9 @@ import {
   HeaderGlobalBar,
   HeaderGlobalAction,
 } from '.';
+import {
+  Dropdown
+} from '..';
 
 export default {
   title: 'Design System/UIShell',
@@ -68,11 +71,20 @@ export const NavigationExample: ComponentStory<typeof Header> = () => (
   </ScrollArea>
 );
 
+const options = [
+  { value: "chocolate", label: "Home", icon: HiHome },
+  { value: "strawberry", label: "ATX QA", icon: HiHome  },
+  { value: "vanilla", label: "UK QA", icon: HiHome  }
+];
+
 export const NavigationApp: ComponentStory<typeof Header> = () => (
   <ScrollArea>
     <Header>
       <HeaderDesignation />
       <HeaderMenuBar>
+        <HeaderMenuItem>
+          <Dropdown options={options}/>
+        </HeaderMenuItem>
         <HeaderMenuItem tooltip="Your work">
           Your work
         </HeaderMenuItem>

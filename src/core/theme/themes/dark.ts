@@ -4,7 +4,7 @@ import { hex2rgba } from '@theme/helpers';
 export const name = 'Taskovate Dark';
 export const colorScheme = () => 'dark';
 export const background = () => colors.d[900];
-export const text = () => colors.n[300];
+export const text = () => colors.n[100];
 export const textHover = () => colors.n[100];
 export const textActive = () => colors.n[100];
 export const subtleTwext = () => colors.n[100];
@@ -22,17 +22,41 @@ export const skeleton = () => colors.n[200];
 export const label = () => colors.n[100];
 
 export const elevation = {
-  100: `0 1px 1px ${hex2rgba('#000007', 0.6)}, 0 1px 1px #0009`,
-  200: `0 4px 8px -2px ${hex2rgba('#000007', 0.6)}, 0 1px 1px #0009`,
-  300: `0 8px 16px -4px ${hex2rgba('#000007', 0.6)}, 0 1px 1px #0009`,
-  400: `0 12px 24px -6px ${hex2rgba('#000007', 0.6)}, 0 1px 1px #0009`,
-  500: `0 20px 32px -8px ${hex2rgba('#000007', 0.6)}, 0 1px 1px #0009`,
+  100: `0 1px 1px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0005`,
+  200: `0 4px 8px -2px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0005`,
+  300: `0 8px 16px -4px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0005`,
+  400: `0 12px 24px -6px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0005`,
+  500: `0 20px 32px -8px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0005`,
+};
+
+export const dropdownStyles = {
+  background: {
+    'body': {
+      default: () => background(),
+      hover: () => colors.d[700],
+      active: () => colors.d[600],
+      selected: () => colors.d[500],
+    }
+  },
+  borderColor: {
+    'body': {
+      default: () => background(),
+      hover: () => colors.d[600],
+      focus: () => colors.d[500]
+    }
+  },
+  color: {
+    'body': {
+      default: () => colors.n[200],
+      placeholder: () => colors.n[900]
+    }
+  }
 };
 
 export const inputStyles = {
   background: {
     'body': {
-      default: () => colors.d[600],
+      default: () => colors.d[500],
       hover: () => colors.d[500],
       active: () => colors.d[400],
       selected: () => colors.d[300],
@@ -40,7 +64,7 @@ export const inputStyles = {
   },
   borderColor: {
     'body': {
-      default: () => colors.d[600],
+      default: () => colors.d[500],
       hover: () => colors.p[500],
       focus: () => colors.p[400]
     }
@@ -116,28 +140,28 @@ export const buttonStyles = {
       active: () => colors.d[500],
     },
     'primary': {
-      disabled: () => colors.p[700],
-      default: () => colors.p[600],
-      hover: () => colors.p[500],
-      active: () => colors.p[400],
+      disabled: () => colors.p[800],
+      default: () => colors.p[700],
+      hover: () => colors.p[600],
+      active: () => colors.p[500],
     },
     'special': {
-      disabled: () => colors.n[800],
-      default: () => colors.n[400],
-      hover: () => colors.n[300],
-      active: () => colors.n[200],
+      disabled: () => colors.n[900],
+      default: () => colors.n[500],
+      hover: () => colors.n[400],
+      active: () => colors.n[300],
     },
     'warning': {
-      disabled: () => colors.y[800],
-      default: () => colors.y[600],
-      hover: () => colors.y[500],
-      active: () => colors.y[400],
+      disabled: () => colors.y[900],
+      default: () => colors.y[700],
+      hover: () => colors.y[600],
+      active: () => colors.y[500],
     },
     'danger': {
-      disabled: () => colors.r[800],
-      default: () => colors.r[600],
-      hover: () => colors.r[500],
-      active: () => colors.r[400],
+      disabled: () => colors.r[900],
+      default: () => colors.r[700],
+      hover: () => colors.r[600],
+      active: () => colors.r[500],
     },
     'link': {
       disabled: () => background(),
@@ -163,36 +187,36 @@ export const buttonStyles = {
       default: () => colors.n[300],
       hover: () => colors.n[200],
       active: () => colors.n[100],
-      disabled: () => hex2rgba(colors.n[900], 0.8),
+      disabled: () => hex2rgba(colors.n[100], 0.2)
     },
     'primary': {
       default: () => colors.n[300],
       hover: () => colors.n[200],
       active: () => colors.n[100],
-      disabled: () => hex2rgba(colors.n[900], 0.8),
+      disabled: () => hex2rgba(colors.n[100], 0.2)
     },
     'special': {
       default: () => colors.d[900],
       hover: () => colors.d[800],
       active: () => colors.d[600],
-      disabled: () => hex2rgba(colors.d[300], 0.95),
+      disabled: () => hex2rgba(colors.d[900], 0.5)
     },
     'warning': {
       default: () => colors.d[900],
       hover: () => colors.d[800],
-      active: () => colors.d[600],
-      disabled: () => hex2rgba(colors.d[900], 0.35),
+      active: () => colors.d[700],
+      disabled: () => hex2rgba(colors.d[800], 0.7)
     },
     'danger': {
       default: () => colors.d[900],
       hover: () => colors.d[800],
-      active: () => colors.d[600],
-      disabled: () => hex2rgba(colors.d[900], 0.6),
+      active: () => colors.d[700],
+      disabled: () => hex2rgba(colors.d[800], 0.85)
     },
     'link': {
-      default: () => colors.b[400],
-      hover: () => colors.b[300],
-      active: () => colors.b[500],
+      default: () => colors.b[500],
+      hover: () => colors.b[400],
+      active: () => colors.b[600],
       disabled: () => hex2rgba(colors.d[400], 0.8),
     },
     'subtle': {

@@ -17,14 +17,12 @@ import {
 export default () => css`
 * {
   font-family: ${fontFamily()};
-  // font-variation-settings: "MONO" 0, "CASL" 0, "wght" 425, "slnt" 0, "CRSV" 0.5;
 }
 
 body {
   font-family: ${fontFamily()};
-  // font-variation-settings: "MONO" 0, "CASL" 0, "wght" 425, "slnt" 0, "CRSV" 0.5;
   color: ${({ theme }) => theme.text()};
-  font-size: ${fontSize()};
+  font-size: ${fontSize()}px;
   font-style: normal;
   font-weight: 400;
   -ms-overflow-style: -ms-autohiding-scrollbar;

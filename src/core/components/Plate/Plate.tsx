@@ -28,7 +28,7 @@ const Styled = styled.div<any>`
         background: ${gradients.subtle()};
       `;
       return `
-        background: ${gradients.secondary()};
+        background: ${gradients.primary()};
       `;
     }}
     clip-path: polygon(0% 0%, 0% 100%, ${gridSize() * 1}px 100%, ${gridSize() * 1}px 0, calc(100% - ${gridSize() * 1}px) 0, calc(100% - ${gridSize() * 1}px) 100%, 25% 100%, 25% 100%, 100% 100%, 100% 0%);
@@ -48,7 +48,7 @@ const Styled = styled.div<any>`
         background: ${gradients.subtle()};
       `;
       return `
-        background: ${gradients.secondary()};
+        background: ${gradients.primary()};
       `;
     }}
     clip-path: polygon(0% 0%, 0% 100%, ${gridSize() * 1}px 100%, ${gridSize() * 1}px 0, calc(100% - ${gridSize() * 1}px) 0, calc(100% - ${gridSize() * 1}px) 100%, 25% 100%, 25% 100%, 100% 100%, 100% 0%);

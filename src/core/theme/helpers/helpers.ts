@@ -27,6 +27,15 @@ export function hex2rgba(hex: string, alpha = 1) {
   throw new Error('Bad Hex');
 }
 
+export function hexCombine(colorA: any, colorB: any, amount: number = 0.5) {
+  const [rA, gA, bA] = colorA.match(/\w\w/g).map((c: any) => parseInt(c, 16));
+  const [rB, gB, bB] = colorB.match(/\w\w/g).map((c: any) => parseInt(c, 16));
+  const r = Math.round(rA + (rB - rA) * amount).toString(16).padStart(2, '0');
+  const g = Math.round(gA + (gB - gA) * amount).toString(16).padStart(2, '0');
+  const b = Math.round(bA + (bB - bA) * amount).toString(16).padStart(2, '0');
+  return '#' + r + g + b;
+}
+
 export function themedOrNull(appearance: any) {
   const themedAppearances = [
     'unset',

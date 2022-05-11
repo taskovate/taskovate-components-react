@@ -16,7 +16,7 @@ const SectionDescription = styled.h4`
 `;
 
 const SectionChildren = styled.div`
-  margin-top: ${gridSize() * 1.5}px;
+  margin-top: ${gridSize() * 1}px;
     
   & > :last-child {
     margin-bottom: 0 !important;

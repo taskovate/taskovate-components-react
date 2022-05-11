@@ -49,7 +49,7 @@ const Spinner = ({ color = colors.b[400], size = gridSize() * 2, style }: Spinne
       <Container 
         color={color} 
         size={size}
-        borderWidth={size / gridSize() * 0.75}
+        borderWidth={size / gridSize() * 1.25}
         style={style}
       />
   );

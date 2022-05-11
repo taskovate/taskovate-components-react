@@ -4,7 +4,8 @@ export { Spinner } from './Spinner';
 export { Plate } from './Plate';
 export { TextField } from './TextField';
 export { TextArea } from './TextArea';
-export { Checkbox } from './Checkbox';
+export { Select } from './Select';
+export { Dropdown } from './Dropdown';
 export { 
   Form,
   Field,

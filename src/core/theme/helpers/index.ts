@@ -1,1 +1,1 @@
-export { hex2rgba, themedOrNull } from './helpers';
+export { hex2rgba, hexCombine, themedOrNull } from './helpers';

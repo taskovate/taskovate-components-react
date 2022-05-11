@@ -13,6 +13,10 @@ export default () => css`
     color-scheme: ${({ theme }) => theme.colorScheme()};
   }
 
+  * {
+    backface-visibility: hidden;
+  }
+
   html,
   body {
     display: flex;

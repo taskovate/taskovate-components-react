@@ -76,7 +76,7 @@ const Container = styled.button<any>`
   border-radius: ${borderRadius() * 1}px;
   margin-right: ${gridSize() * 2}px;
   cursor: pointer;
-  font-weight: ${({ isDisabled }) => isDisabled ? 600 : 500};
+  font-weight: 500;
   transition: ${animation.normal()};
   border: none;
   user-select: none;

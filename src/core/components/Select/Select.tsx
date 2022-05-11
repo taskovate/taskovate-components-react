@@ -65,10 +65,10 @@ const Styled = styled<any>(ReactSelect)`
           opacity: 1;
         }
       }
-      animation: fadeIn ${animation.slow()};
+      animation: fadeIn ${animation.normal()};
 
       &--close {
-        animation: fadeIn ${animation.slow()};
+        animation: fadeIn ${animation.normal()};
         animation-direction: reverse;
       }
     }
@@ -77,6 +77,7 @@ const Styled = styled<any>(ReactSelect)`
     }
     &__menu-notice {
       padding: ${gridSize() * 0.75}px ${gridSize() * 1.25}px;
+      padding-bottom: ${gridSize() * 1}px;
       color: ${({ theme: { inputStyles } }) => inputStyles.color['body'].placeholder()};
     }
     &__option {

@@ -73,7 +73,7 @@ const Container = styled.div<any>`
   text-align: center;
   font-size: ${fontSize() * 1}px;
   padding: ${({ hasIcon }) => hasIcon ? gridSize() * 0.75 : gridSize() * 0.8125}px 
-           ${({ hasIcon }) => hasIcon ? gridSize() * 0.75 : gridSize() * 1}px;
+           ${({ hasIcon }) => hasIcon ? gridSize() * 0.75 : gridSize() * 1.25}px;
   // line-height: normal;
   border-radius: ${borderRadius()}px;
   margin-left: ${gridSize() * 0.75}px;
