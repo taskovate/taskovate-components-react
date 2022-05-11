@@ -39,6 +39,7 @@ const baseHeaderStyle = ({
 const Border = styled.div<any>`
   ${({ mode }) => baseHeaderStyle({ borderWidth: mode === 'scroll' ? gridSize() * 0.5 : -1 })}
   background: ${hex2rgba(colors.n[900], 0.25)};
+  background: ${gradients.secondary()};
   opacity: 0;
   
   ${({ theme, mode }) => `

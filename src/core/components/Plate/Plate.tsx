@@ -57,7 +57,7 @@ const Styled = styled.div<any>`
 
 const Border = styled.div<any>`
   display: flex;
-  background: ${gradients.secondary()};
+  background: ${gradients.primary()};
   border-radius: ${borderRadius() * 1}px;
   border: ${gridSize() * 0.25}px solid transparent;
 
