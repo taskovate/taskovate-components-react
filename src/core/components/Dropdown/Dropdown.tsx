@@ -186,8 +186,9 @@ const Option = ({
   innerProps,
   ...rest
 }: any) => {
+  const { label, icon, action } = data || {};
   const [isMouseOverAction, IsMouseOverActionValue] = useState(false);
-  const { label, icon, action } = Object.assign({}, data);
+  
   const onClick = (e: any) => {
     e.preventDefault();
     if(isMouseOverAction) return;
@@ -198,18 +199,18 @@ const Option = ({
     console.log('poop')
   };
   
-  rest.innerProps = Object.assign({}, innerProps, { onClick });
-
   return (
     <StyledOption isMouseOverAction={isMouseOverAction}>
-      <components.Option {...rest}>
+      <components.Option {...rest} innerProps={{ ...innerProps, onClick }}>
         {icon && icon()}
         {label}
         {action && (
           <span 
             style={{  marginLeft: 'auto' }}
             onMouseOver={() => IsMouseOverActionValue(true)}
+            onFocus={() => IsMouseOverActionValue(true)}
             onMouseLeave={() => IsMouseOverActionValue(false)}
+            onBlur={() => IsMouseOverActionValue(false)}
           >
             <Button 
               appearance="starred"
@@ -228,7 +229,7 @@ const SingleValue = ({
   data,
   ...rest
 }: any) => {
-  const { label, icon } = Object.assign({}, data?.options ?? data);
+  const { label, icon } = data?.options ?? data;
   return (
     <components.SingleValue {...rest}>
       {icon && icon()}
