@@ -1,3 +1,9 @@
+import * as colors from './colors';
+import * as typography from './typography';
+
 export * from './constants';
-export * as colors from './colors';
-export * as typography from './typography';
+
+export {
+  colors,
+  typography
+};

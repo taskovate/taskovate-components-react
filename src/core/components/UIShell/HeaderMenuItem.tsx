@@ -111,7 +111,7 @@ const Container = styled.div<any>`
   flex-direction: row;
   justify-content: start;
  
-  ${({ type }) => type == 'string' && menuItemStyles()}
+  ${({ type }) => type === 'string' && menuItemStyles()}
 `;
 
 export default HeaderMenuItem;
