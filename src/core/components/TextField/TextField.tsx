@@ -1,7 +1,7 @@
 import React, { useEffect, cloneElement, useState  } from 'react';
 import styled from 'styled-components';
 import { colors, gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall } from '@theme/constants';
-import { inputStyles } from 'core/theme/dark';
+import { inputStyles } from 'core/theme/themes/dark';
 
 const Styled = styled.div`
   display: flex;
@@ -10,10 +10,9 @@ const Styled = styled.div`
 const Input = styled.input`
   display: flex;
   transition: ${animation.normal()};
-  padding: ${gridSize() * 1.125}px ${gridSize() * 0}px;
-  // border-radius: ${borderRadius() * 1}px;
-  border: none;
-  border-bottom: ${gridSize() * 0.25}px solid ${({ theme: { inputStyles } }) => inputStyles.borderColor['body'].default()};;
+  padding: ${gridSize() * 0.75}px ${gridSize() * 1.125}px;
+  border-radius: ${borderRadius() * 1}px;
+  border: ${gridSize() * 0.25}px solid ${({ theme: { inputStyles } }) => inputStyles.borderColor['body'].default()};;
   background-color: ${({ theme: { inputStyles } }) => inputStyles.background['body'].default()};
   color: ${({ theme: { inputStyles } }) => inputStyles.color['body'].default()};
   outline: none;

@@ -50,13 +50,14 @@ const Styled = styled.div<any>`
       return `
         background: ${gradients.primary()};
       `;
-    }}    clip-path: polygon(0% 0%, 0% 100%, ${gridSize() * 1}px 100%, ${gridSize() * 1}px 0, calc(100% - ${gridSize() * 1}px) 0, calc(100% - ${gridSize() * 1}px) 100%, 25% 100%, 25% 100%, 100% 100%, 100% 0%);
+    }}
+    clip-path: polygon(0% 0%, 0% 100%, ${gridSize() * 1}px 100%, ${gridSize() * 1}px 0, calc(100% - ${gridSize() * 1}px) 0, calc(100% - ${gridSize() * 1}px) 100%, 25% 100%, 25% 100%, 100% 100%, 100% 0%);
   }
 `;
 
 const Border = styled.div<any>`
   display: flex;
-  background: ${gradients.secondary()};
+  background: ${gradients.primary()};
   border-radius: ${borderRadius() * 1}px;
   border: ${gridSize() * 0.25}px solid transparent;
 
@@ -76,7 +77,7 @@ const Content = styled.div<any>`
   display: flex;
   flex-grow: 1;
   background-color: ${({ theme }) => theme.background()};
-  padding: ${gridSize() * 5}px ${gridSize() * 5}px;
+  padding: ${gridSize() * 4}px ${gridSize() * 4.5}px;
 
   ${({ mode }) => {
     if(mode === 'display') return `
@@ -87,6 +88,10 @@ const Content = styled.div<any>`
     `;
     return ``;
   }}
+
+  form {
+    padding-right: ${gridSize() * 2.5}px;
+  }
 `;
 
 const Plate = ({

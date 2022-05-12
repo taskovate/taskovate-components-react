@@ -3,8 +3,8 @@
     "baseUrl": "src/",
     "paths": {
       "@theme/core": ["core/theme/index.ts"],
-      "@theme/helpers": ["core/theme/helpers.ts"],
-      "@theme/constants": ["core/theme/constants.ts"],
+      "@theme/helpers": ["core/theme/helpers/index.ts"],
+      "@theme/constants": ["core/theme/constants/index.ts"],
       "@components/core": ["core/components/index.ts"],
       "@components/docs": ["docs/components/index.ts"]
     },
@@ -30,7 +30,9 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src", "src/core/theme/*"
+    "src",
+    "src/core/**/*",
+    "src/docs/**/*"
   ],
   "exclude": ["node_modules"]
 }

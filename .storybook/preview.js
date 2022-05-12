@@ -2,7 +2,7 @@ import { addDecorator } from '@storybook/react';
 import { withThemes } from '@react-theming/storybook-addon';
 import { withThemesProvider } from "storybook-addon-styled-component-theme";
 import { ThemeProvider } from 'styled-components';
-import { TaskovateDark, GlobalStyle } from '@theme/core';
+import { DarkTheme, GlobalStyle } from '@theme/core';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -41,5 +41,5 @@ const providerFn = ({ theme, children }) => {
   );
 };
 
-addDecorator(withThemesProvider([TaskovateDark], ThemeProvider));
-addDecorator(withThemes(ThemeProvider, [TaskovateDark], { onThemeSwitch, providerFn }));
+addDecorator(withThemesProvider([DarkTheme], ThemeProvider));
+addDecorator(withThemes(ThemeProvider, [DarkTheme], { onThemeSwitch, providerFn }));

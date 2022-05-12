@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled, { useTheme } from 'styled-components';
 import { Placement } from '@floating-ui/react-dom-interactions';
-import { themedOrNull } from '@theme/helpers';
+import { themedOrNull } from 'core/theme/helpers/helpers';
 import { Link } from 'react-resource-router';
 import { gridSize, layers, animation, borderRadius, gradients, fontSize, headerFontFamily } from '@theme/constants';
 import { Tooltip, Spinner } from '..';
@@ -17,8 +17,8 @@ interface HeaderGlobalActionProps {
   appearance?: any;
   isLoading?: boolean;
   isDisabled?: boolean;
-  iconBefore?: () => React.ReactNode;
-  iconAfter?: () => React.ReactNode;
+  iconBefore?: (props?: any) => React.ReactNode;
+  iconAfter?: (props?: any) => React.ReactNode;
   children: any;
 }
 
@@ -46,9 +46,9 @@ const HeaderGlobalAction: React.FC<any> = ({
         {isLoading && <Spinner />}
         {!isLoading && (
           <>
-            {iconBefore && iconBefore()}
+            {iconBefore && <span style={children && { marginLeft: gridSize() * -0.5, marginRight: gridSize() * 0.5 }}>{iconBefore()}</span>}
             {children}
-            {iconAfter && iconAfter()}
+            {iconAfter && <span style={children && { marginRight: gridSize() * -0.5, marginLeft: gridSize() * 0.5 }}>{iconAfter()}</span>}
           </>
         )}
       </Container>
@@ -72,9 +72,9 @@ const Container = styled.div<any>`
   vertical-align: middle;
   text-align: center;
   font-size: ${fontSize() * 1}px;
-  // line-height: ${fontSize() * 1}px;
-  padding: ${({ hasIcon }) => hasIcon ? gridSize() * 0.75 : gridSize() * 0.5}px 
-           ${({ hasIcon }) => hasIcon ? gridSize() * 0.75 : gridSize() * 1}px;
+  padding: ${({ hasIcon }) => hasIcon ? gridSize() * 0.75 : gridSize() * 0.8125}px 
+           ${({ hasIcon }) => hasIcon ? gridSize() * 0.75 : gridSize() * 1.25}px;
+  // line-height: normal;
   border-radius: ${borderRadius()}px;
   margin-left: ${gridSize() * 0.75}px;
   cursor: pointer;

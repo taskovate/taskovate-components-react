@@ -6,7 +6,6 @@ const Styled = styled.div`
 `;
 
 const HeaderTitle = styled.h1`
-
 `;
 
 const HeaderDescription = styled.h4`

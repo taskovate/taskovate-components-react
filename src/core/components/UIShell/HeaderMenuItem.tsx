@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import styled, { useTheme } from 'styled-components';
+import styled, { css, useTheme } from 'styled-components';
 import { Placement } from '@floating-ui/react-dom-interactions';
-import { themedOrNull } from '@theme/helpers';
+import { themedOrNull } from 'core/theme/helpers/helpers';
 import { Link } from 'react-resource-router';
 import { gridSize, layers, animation, borderRadius, gradients, fontSize, headerFontFamily } from '@theme/constants';
 import { Tooltip, Spinner } from '..';
@@ -28,7 +28,6 @@ const HeaderMenuItem: React.FC<any> = ({
   isDisabled,
   children
 }: HeaderMenuItemProps) => {
-
   const renderComponent = (
     <Tooltip label={tooltip?.label} placement={tooltip?.placement}>
       <Container 
@@ -36,6 +35,7 @@ const HeaderMenuItem: React.FC<any> = ({
         disabled={isDisabled} 
         loading={isLoading} 
         style={{ padding: typeof children === 'object' && `0 ${gridSize() * 0.75}px`}}
+        type={typeof children}
       >
         {isLoading && <Spinner />}
         {!isLoading && children}
@@ -52,16 +52,14 @@ const HeaderMenuItem: React.FC<any> = ({
   return renderComponent;
 };
 
-const Container = styled.div<any>`
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
+const menuItemStyles = () => css<any>`
   align-items: center;
   vertical-align: middle;
   text-align: center;
   font-size: ${fontSize() * 1}px;
-  padding: ${gridSize() * 0.5}px ${gridSize() * 1}px;
+  padding: ${gridSize() * 0.6875}px ${gridSize() * 1}px;
   border-radius: ${borderRadius()}px;
+  line-height: 1.5em;
   margin-right: ${gridSize() * 0.75}px;
   cursor: pointer;
   font-weight: 500;
@@ -69,12 +67,12 @@ const Container = styled.div<any>`
   border: none;
   // overflow: hidden;
   user-select: none;
-
+  0.015625
   svg {
     height: ${fontSize() * 1.3}px;
     width: ${fontSize() * 1.3}px;
   }
-  
+
   cursor: ${({ disabled, loading }) => disabled && 'not-allowed' || loading ? 'wait' : 'pointer'};
 
   background-color: ${({ theme: { navigationStyles }, appearance, disabled, loading }) => 
@@ -106,6 +104,14 @@ const Container = styled.div<any>`
       (disabled||loading) ? 'auto' : navigationStyles.color[appearance ?? 'unset'].active()
     };
   }
+`;
+
+const Container = styled.div<any>`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+ 
+  ${({ type }) => type == 'string' && menuItemStyles()}
 `;
 
 export default HeaderMenuItem;

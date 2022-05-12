@@ -7,13 +7,17 @@ import { FaAsterisk } from 'react-icons/fa';
 const Styled = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: ${gridSize() * 1.25}px;
+  margin-bottom: ${gridSize() * 1.5}px;
 
   svg {
-    height: ${gridSize() * 1.25}px;
-    width: ${gridSize() * 1.25}px;
-    margin-left: ${gridSize() * 0.5}px;
-    vertical-align: text-top;
+    height: ${gridSize() * 0.875}px;
+    width: ${gridSize() * 0.875}px;
+    margin-left: ${gridSize() * 0.375}px;
+    vertical-align: super;
+  }
+
+  label { 
+    margin-bottom: ${gridSize() * 0.5}px;
   }
 `;
 
@@ -37,7 +41,7 @@ const Field = ({
 
   const renderField = ({ field: fieldProps, ...rest}: UseControllerReturn) => (
     <>
-      {label && <label htmlFor={name}>{[label, rules?.required && <FaAsterisk color={colors.r[600]}/>]}</label>}
+      {label && <label htmlFor={name}>{[label, rules?.required && <FaAsterisk color={colors.r[700]}/>]}</label>}
       {children({ fieldProps, ...rest })}
     </>
   );

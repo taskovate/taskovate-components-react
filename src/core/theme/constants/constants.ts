@@ -1,18 +1,15 @@
-import * as colorsBase from './colors'; // https://github.com/parcel-bundler/parcel/issues/5911
-import * as typographyBase from './typography'; // https://github.com/parcel-bundler/parcel/issues/5911
-import { hex2rgba } from './helpers';
-
-export const colors = colorsBase; // https://github.com/parcel-bundler/parcel/issues/5911
-export const typography = typographyBase; // https://github.com/parcel-bundler/parcel/issues/5911
+import { hex2rgba, hexCombine } from '@theme/helpers';
+import * as colors from './colors';
+import * as typography from './typography';
 
 export const borderRadius = () => 3;
 export const gridSize = () => 8;
 export const fontSize = () => 14;
 export const fontSizeSmall = () => 11;
 
-export const fontFamily = () => `Rubik`;
-export const headerFontFamily = () => `'K2D', sans-serif`;
-export const codeFontFamily = () => `'Ubuntu Mono', monospace`;
+export const fontFamily = () => `'Noto Sans'`;
+export const headerFontFamily = () => `'Noto Sans Display', sans-serif`;
+export const codeFontFamily = () => `'Noto Sans Mono', monospace`;
 
 export const breakpoints = {
   mobile: () => '320px',
@@ -49,13 +46,13 @@ export const layers = {
 };
 
 export const animation = {
-  slow: () => '120ms ease-in',
+  slow: () => '160ms ease-in',
   normal: () => '80ms ease-in',
   fast: () => '40ms ease-in'
 };
 
 export const gradients = {
-  primary: () => `linear-gradient(-185deg, #403294 0%, #008DA6 66%, #36B37E 100%)`,
-  secondary: () => `linear-gradient(-9deg, #403294 0%, #008DA6 66%, #36B37E 100%)`,
+  primary: () => `linear-gradient(171deg, ${hex2rgba(hexCombine(colors.b[500], colors.g[800], 0.55), 1)} 0%, ${hex2rgba(hexCombine(hexCombine(colors.b[500], colors.p[900], 0.3), colors.g[600], 0.2), 0.9)} 44%, ${hex2rgba(colors.p[600], 1)} 100%)`,
+  secondary: () => `linear-gradient(55deg, ${hex2rgba(hexCombine(colors.b[500], colors.g[800], 0.55), 1)} 0%, ${hex2rgba(hexCombine(hexCombine(colors.b[500], colors.p[900], 0.3), colors.g[600], 0.2), 0.9)} 44%, ${hex2rgba(colors.p[600], 1)} 100%)`,
   subtle: () => `linear-gradient(-9deg, #444 0%, #333 66%, #555 100%)`,
 };

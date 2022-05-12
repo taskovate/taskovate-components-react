@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { gridSize } from '@theme/constants';
 import { MdLogin } from 'react-icons/md';
-import { HiOutlineChatAlt, HiOutlineBell, HiOutlineUser } from 'react-icons/hi';
+import { HiOutlineChatAlt, HiOutlineBell, HiOutlineUser, HiHome, HiStar } from 'react-icons/hi';
 import { 
   Header,
   HeaderDesignation,
@@ -12,6 +12,9 @@ import {
   HeaderGlobalBar,
   HeaderGlobalAction,
 } from '.';
+import {
+  Dropdown
+} from '..';
 
 export default {
   title: 'Design System/UIShell',
@@ -29,16 +32,6 @@ const ScrollArea = styled.div`
   height: calc(100% + ${gridSize() * 10}px);
   width: 100%;
 `;
-
-// export const Navigation0: ComponentStory<typeof Header> = (args) => (
-//   <Header {...args} />
-// );
-
-// export const Navigation1: ComponentStory<typeof Header> = () => (
-//   <Header>
-//     <HeaderDesignation />
-//   </Header>
-// );
 
 export const NavigationExample: ComponentStory<typeof Header> = () => (
   <ScrollArea>
@@ -68,18 +61,44 @@ export const NavigationExample: ComponentStory<typeof Header> = () => (
   </ScrollArea>
 );
 
+const options = [
+  {
+    label: 'Starred',
+    options: [
+      { value: "strawberry", label: "ATX QA", icon: HiHome  },
+    ]
+  },
+  {
+    label: 'My Spaces',
+    options: [
+      { value: "strawberry", label: "ATX QA", icon: HiHome  },
+      { value: "vanilla", label: "UK QA", icon: HiHome, action: { icon: HiStar, onClick: () => console.log('poop')} }
+    ]
+  },
+  {
+    label: 'Feeds',
+    options: [
+      { value: "chocolate", label: "Home", icon: HiHome },
+      { value: "strawberry", label: "All", icon: HiHome  }
+    ]
+  }
+];
+
 export const NavigationApp: ComponentStory<typeof Header> = () => (
   <ScrollArea>
     <Header>
       <HeaderDesignation />
       <HeaderMenuBar>
         <HeaderMenuItem>
+          <Dropdown options={options} />
+        </HeaderMenuItem>
+        <HeaderMenuItem tooltip="Your work">
           Your work
         </HeaderMenuItem>
-        <HeaderMenuItem>
+        <HeaderMenuItem tooltip="People">
           People
         </HeaderMenuItem>
-        <HeaderMenuItem>
+        <HeaderMenuItem tooltip="Files">
           Files
         </HeaderMenuItem>
       </HeaderMenuBar>

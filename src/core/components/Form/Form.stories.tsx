@@ -88,7 +88,7 @@ export const SignupForm: ComponentStory<typeof Form> = () => (
               spacing="pleasant"
               isLoading={isSubmitting}
             >
-                Submit
+                Create Taskovate Account
               </Button>
           </FormFooter>
         </form>

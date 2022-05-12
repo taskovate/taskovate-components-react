@@ -23,6 +23,7 @@ declare module 'styled-components' {
     skeletonShimmer: () => any;
     label: () => string;
     elevation: any;
+    dropdownStyles: any;
     inputStyles: any;
     scrollStyles: any;
     navigationStyles: any;

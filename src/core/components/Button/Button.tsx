@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled, { DefaultTheme, useTheme } from 'styled-components';
 import { gridSize, fontSize, layers, animation, borderRadius } from '@theme/constants';
-import { hex2rgba, themedOrNull } from '@theme/helpers';
+import { hex2rgba, themedOrNull } from 'core/theme/helpers/helpers';
 import { Link } from 'react-resource-router';
 import { Placement } from '@floating-ui/react-dom-interactions';
 import { Tooltip, Spinner } from '..';
@@ -11,7 +11,7 @@ type TooltipProps = {
   placement: Placement;
 }
 
-type Appearance = 'unset' | 'primary' | 'special' | 'warning' | 'danger' | 'subtle' | 'sublte-link' | 'link';
+type Appearance = 'unset' | 'primary' | 'special' | 'warning' | 'danger' | 'subtle' | 'sublte-link' | 'link' | 'starred';
 type Spacing = 'none' | 'compact' | 'default' | 'pleasant';
 
 interface ButtonProps {
@@ -20,9 +20,11 @@ interface ButtonProps {
   tooltip?: any;
   appearance?: Appearance;
   spacing?: Spacing;
+  iconBefore?: () => React.ReactNode,
+  iconAfter?: () => React.ReactNode,
   isLoading?: boolean;
   isDisabled?: boolean;
-  children: () => React.ReactNode;
+  children?: () => React.ReactNode;
 }
 
 const Button: React.FC<any> = ({
@@ -31,6 +33,8 @@ const Button: React.FC<any> = ({
   tooltip,
   appearance = 'unset',
   spacing = 'default',
+  iconBefore,
+  iconAfter,
   isLoading = false,
   isDisabled,
   children
@@ -40,7 +44,13 @@ const Button: React.FC<any> = ({
     <Tooltip label={tooltip?.label} placement={tooltip?.placement}>
       <Container appearance={themedOrNull(appearance)} spacing={spacing} isDisabled={isDisabled} isLoading={isLoading}>
         {isLoading && <Spinner />}
-        {!isLoading && children}
+        {!isLoading && (
+          <>
+            {iconBefore && <span style={children && { marginLeft: gridSize() * -0.5, marginRight: gridSize() * 0.5 }}>{iconBefore()}</span>}
+            {children}
+            {iconAfter && <span style={children && { marginRight: gridSize() * -0.5, marginLeft: gridSize() * 0.5 }}>{iconAfter()}</span>}
+          </>
+        )}
       </Container>
     </Tooltip>
   );
@@ -56,29 +66,38 @@ const Button: React.FC<any> = ({
 
 const Container = styled.button<any>`
   display: flex;
+  box-sizing: border-box;
   flex-direction: row;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   text-align: center;
-  vertical-align: middle;
+  vertical-align: center;
   font-size: ${fontSize() * 1}px;
+  line-height: 1em;
   padding: ${({ spacing }) => {
     switch(spacing) {
       case 'none': return 0;
-      case 'compact': return `${gridSize() * 0.4375}px ${gridSize() * 1}px`;
-      case 'default': return `${gridSize() * 0.9375}px ${gridSize() * 1.25}px`;
-      case 'pleasant': return `${gridSize() * 1.4375}px ${gridSize() * 1.5}px`;
+      case 'compact': return  `${gridSize() * 0.625}px ${gridSize() * 1.25}px`;
+      case 'default': return  `${gridSize() * 1.125}px ${gridSize() * 1.5}px`;
+      case 'pleasant': return `${gridSize() * 1.625}px ${gridSize() * 2}px`;
       default: return ``;
     }
   }};
   border-radius: ${borderRadius() * 1}px;
-  margin-right: ${gridSize() * 2}px;
   cursor: pointer;
   font-weight: 500;
   transition: ${animation.normal()};
   border: none;
   user-select: none;
   
+  svg {
+    display: flex;
+    align-content: center;
+    width: ${gridSize() * 2.5}px;
+    height: ${gridSize() * 2.5}px;
+    margin: -${gridSize() * 1}px 0;
+  }
+
   cursor: ${({ isDisabled, isLoading }) => {
     if(isDisabled) return 'not-allowed';
     if(isLoading) return 'wait';

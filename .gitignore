@@ -29,6 +29,6 @@ yarn-error.log*
 
 /dist
 /storybook-static
-/dist-storybook
 
 /package-lock.json
+

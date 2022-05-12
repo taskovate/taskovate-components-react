@@ -10,4 +10,4 @@ export {
   HeaderMenuItem
 } from './core/components';
 
-export { TaskovateDark, GlobalStyle } from './core/theme';
+export { DarkTheme, GlobalStyle } from './core/theme';
