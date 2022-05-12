@@ -16,7 +16,7 @@ interface HeaderStyleProps {
 
 const baseHeaderStyle = ({
   height = gridSize() * 6.375,
-  offset = 1,
+  offset = 0.875,
   borderWidth = 0,
   paddingX = gridSize() * 3,
   paddingY = gridSize() * 0,

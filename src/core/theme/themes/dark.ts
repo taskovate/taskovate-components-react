@@ -97,10 +97,10 @@ export const navigationStyles = {
       active: () => colors.d[500],
     },
     'primary': {
-      disabled: () => colors.p[700],
-      default: () => colors.p[600],
-      hover: () => colors.p[500],
-      active: () => colors.p[400],
+      disabled: () => colors.p[800],
+      default: () => colors.p[700],
+      hover: () => colors.p[600],
+      active: () => colors.p[500],
     },
     'special': {
       disabled: () => colors.n[800],
@@ -164,23 +164,29 @@ export const buttonStyles = {
       active: () => colors.r[500],
     },
     'link': {
-      disabled: () => background(),
-      default: () => background(),
-      hover: () => background(),
-      active: () => background(),
+      disabled: () => 'transparent',
+      default: () => 'transparent',
+      hover: () => 'transparent',
+      active: () => 'transparent',
     },
     'subtle': {
-      disabled: () => background(),
-      default: () => background(),
+      disabled: () => 'transparent',
+      default: () => 'transparent',
       hover: () => colors.d[700],
       active: () => colors.d[600],
     },
     'subtle-link': {
-      disabled: () => background(),
-      default: () => background(),
-      hover: () => background(),
-      active: () => background(),
+      disabled: () => 'transparent',
+      default: () => 'transparent',
+      hover: () => 'transparent',
+      active: () => 'transparent',
     },
+    'starred': {
+      disabled: () => 'transparent',
+      default: () => 'transparent',
+      hover: () => 'transparent',
+      active: () => 'transparent',
+    }
   },
   color: {
     'unset': {
@@ -211,7 +217,7 @@ export const buttonStyles = {
       default: () => colors.d[900],
       hover: () => colors.d[800],
       active: () => colors.d[700],
-      disabled: () => hex2rgba(colors.d[800], 0.85)
+      disabled: () => hex2rgba(colors.d[800], 0.8)
     },
     'link': {
       default: () => colors.b[500],
@@ -231,6 +237,12 @@ export const buttonStyles = {
       active: () => colors.n[300],
       disabled: () => hex2rgba(colors.d[400], 0.8),
     },
+    'starred': {
+      default: () => colors.p[400],
+      hover: () => colors.p[300],
+      active: () => colors.p[200],
+      disabled: () => hex2rgba(colors.p[600], 0.8),
+    }
   }
 };
 

@@ -28,7 +28,6 @@ const HeaderMenuItem: React.FC<any> = ({
   isDisabled,
   children
 }: HeaderMenuItemProps) => {
-console.log(typeof children)
   const renderComponent = (
     <Tooltip label={tooltip?.label} placement={tooltip?.placement}>
       <Container 
@@ -58,9 +57,9 @@ const menuItemStyles = () => css<any>`
   vertical-align: middle;
   text-align: center;
   font-size: ${fontSize() * 1}px;
-  padding: ${gridSize() * 0.8125}px ${gridSize() * 1}px;
+  padding: ${gridSize() * 0.6875}px ${gridSize() * 1}px;
   border-radius: ${borderRadius()}px;
-  // line-height: normal;
+  line-height: 1.5em;
   margin-right: ${gridSize() * 0.75}px;
   cursor: pointer;
   font-weight: 500;
@@ -68,7 +67,7 @@ const menuItemStyles = () => css<any>`
   border: none;
   // overflow: hidden;
   user-select: none;
-
+  0.015625
   svg {
     height: ${fontSize() * 1.3}px;
     width: ${fontSize() * 1.3}px;

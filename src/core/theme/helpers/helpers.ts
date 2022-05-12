@@ -45,7 +45,8 @@ export function themedOrNull(appearance: any) {
     'danger',
     'link',
     'subtle',
-    'subtle-link'
+    'subtle-link',
+    'starred'
   ];
 
   return themedAppearances.indexOf(appearance) !== -1 ? appearance : null;

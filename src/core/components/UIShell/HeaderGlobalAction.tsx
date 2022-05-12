@@ -17,8 +17,8 @@ interface HeaderGlobalActionProps {
   appearance?: any;
   isLoading?: boolean;
   isDisabled?: boolean;
-  iconBefore?: () => React.ReactNode;
-  iconAfter?: () => React.ReactNode;
+  iconBefore?: (props?: any) => React.ReactNode;
+  iconAfter?: (props?: any) => React.ReactNode;
   children: any;
 }
 
@@ -46,9 +46,9 @@ const HeaderGlobalAction: React.FC<any> = ({
         {isLoading && <Spinner />}
         {!isLoading && (
           <>
-            {iconBefore && iconBefore()}
+            {iconBefore && <span style={children && { marginLeft: gridSize() * -0.5, marginRight: gridSize() * 0.5 }}>{iconBefore()}</span>}
             {children}
-            {iconAfter && iconAfter()}
+            {iconAfter && <span style={children && { marginRight: gridSize() * -0.5, marginLeft: gridSize() * 0.5 }}>{iconAfter()}</span>}
           </>
         )}
       </Container>
