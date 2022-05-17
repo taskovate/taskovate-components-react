@@ -3,52 +3,31 @@ import styled from 'styled-components';
 import { colors, gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall, typography } from '@theme/constants';
 import ReactSelect, { Props as SelectProps, components } from 'react-select';
 import { FaChevronDown } from 'react-icons/fa';
+import { hex2rgba } from '@theme/helpers';
 import { HiOutlineStar, HiSearch, HiStar, HiHome } from 'react-icons/hi';
 import { useStore } from '@store/core';
 import { useQuery } from '@apollo/client';
 import { GET_STARRED_ITEMS } from '@store/queries';
-import { Input, Option, SingleValue } from '.';
+import { Input, Option, SingleValue, MenuList } from '.';
 
 const DropdownIndicator = () => <FaChevronDown />;
-
-
-// const createOptions = ({ starred, spaces }: any) => [
-//   {
-//     label: 'Starred',
-//     starable: true,
-//     options: spaces.filter((opt: any) => starred.indexOf(opt) !== -1)
-//   },
-//   {
-//     label: 'My Spaces',
-//     starable: true,
-//     options: spaces.filter((opt: any) => starred.indexOf(opt) === -1)
-//   },
-//   {
-//     label: 'Feeds',
-//     options: [
-//       { value: "chocolate", label: "Home", image: HiHome },
-//       { value: "strawberry", label: "All", image: HiHome  }
-//     ]
-//   }
-// ];
-
 
 const Dropdown = ({
   placeholder = 'Select',
   defaultValue,
 }: SelectProps) => {
   const store: any = useStore();
-  const { data: { starredItems }} = useQuery(GET_STARRED_ITEMS);
+  const { data: { starredItems } } = useQuery(GET_STARRED_ITEMS);
 
   const options = [
     {
       label: 'Starred',
-      options: store.Space.spaceItemsVar().filter((opt: any) => store.Space.starredItemsVar().indexOf(opt) !== -1) || [],
+      options: store.Space.spaceItemsVar().filter((opt: any) => starredItems.indexOf(opt) !== -1) || [],
       starable: true
-    }, 
+    },
     {
       label: 'My Spaces',
-      options: store.Space.spaceItemsVar().filter((opt: any) => store.Space.starredItemsVar().indexOf(opt) === -1),
+      options: store.Space.spaceItemsVar().filter((opt: any) => starredItems.indexOf(opt) === -1),
       starable: true
     },
     {
@@ -71,12 +50,13 @@ const Dropdown = ({
           DropdownIndicator, 
           Option, 
           SingleValue, 
-          Input, 
+          Input,
+          MenuList,
           IndicatorSeparator: null
         }}
-        hideSelectedOptions
+        // hideSelectedOptions
         defaultValue={defaultValue}
-        menuIsOpen
+        // menuIsOpen
         onMenuClose={() => {
           const menuEl = document.querySelector(`.react-select__menu`);
           const containerEl = menuEl?.parentElement;
@@ -100,7 +80,7 @@ const Styled = styled<any>(ReactSelect)`
     &__control {
       flex-wrap: nowrap;
       z-index: ${layers.select() + 1};
-      transition: all ${animation.normal()};
+      transition: ${animation.normal()};
       margin: 0;
       min-height: 0;
       border: ${gridSize() * 0.25}px solid ${({ theme: { dropdownStyles } }) => dropdownStyles.borderColor['body'].default()};
@@ -118,19 +98,40 @@ const Styled = styled<any>(ReactSelect)`
       :focus, &--is-focused {
         border-color: ${({ theme: { dropdownStyles } }) => dropdownStyles.borderColor['body'].focus()} !important;
       }
+      ::before { 
+        display: block;
+        position: absolute;
+        content: '';
+        background-color: transparent;
+        border-bottom: ${gridSize() * 0.25}px dashed transparent;
+        // border-bottom-right-radius: ${borderRadius() * 1}px;
+        // border-bottom-left-radius: ${borderRadius() * 1}px;
+        left: 0;
+        bottom: -${gridSize() * 0.75}px;
+        height: ${gridSize() * 0.5}px;
+        width: calc(100%);
+        transition: ${animation.normal()};
+      }
+      ::after { 
+        display: block;
+        position: absolute;
+        content: '';
+        background: linear-gradient(0deg, transparent, transparent 100%) bottom;
+        left: 0;
+        bottom: -${gridSize() * 1.25}px;
+        width: calc(100%);
+        height: ${gridSize() * 0.5}px;
+        transition: ${animation.normal()};
+      }
       &--menu-is-open {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
+        ::after {
+          background: linear-gradient(0deg, transparent, ${hex2rgba('#000', 0.375)} 75%) bottom;
+        }
         ::before { 
-          display: block;
-          position: absolute;
-          content: '';
           background-color: ${({ theme: { dropdownStyles } }) => dropdownStyles.background['body'].default()};
-          left: 0;
-          bottom: -${gridSize() * 0.25}px;
-          width: calc(100%);
-          height: ${gridSize() * 0.25}px;
-          transition: all ${animation.normal()};
+          border-bottom-color: ${({ theme: { dropdownStyles } }) => dropdownStyles.borderColor['body'].focus()};
         }
       }
     }
@@ -186,10 +187,12 @@ const Styled = styled<any>(ReactSelect)`
         animation: fadeIn ${animation.normal()};
         animation-direction: reverse;
       }
+      padding-top: ${gridSize() * 1.25}px;
+      padding-bottom: ${gridSize() * 0.75}px;
     }
     &__menu-list {
       padding: 0;
-      max-height: 640px;
+      max-height: 480px;
     }
     &__menu-notice {
       padding: ${gridSize() * 0.75}px ${gridSize() * 1.25}px;
@@ -206,11 +209,13 @@ const Styled = styled<any>(ReactSelect)`
       & > svg {
         height: ${gridSize() * 2.5}px;
         width: ${gridSize() * 2.5}px;
-        margin-right: ${gridSize() * 1}px;
+        margin-right: ${gridSize() * 1.25}px;
         margin-left: 0;
       }
+      border-radius: ${borderRadius() * 1}px;
+      // border-bottom-right-radius: ${borderRadius() * 1}px;
       transition: ${animation.normal()};
-      padding: ${gridSize() * 0.75}px ${gridSize() * 2}px;
+      padding: ${gridSize() * 1}px ${gridSize() * 2}px;
       // padding-right: ${gridSize() * 2.5}px;
       // line-height: normal;
       background-color: ${({ theme: { dropdownStyles } }) => dropdownStyles.background['body'].default()};
@@ -237,10 +242,13 @@ const Styled = styled<any>(ReactSelect)`
         margin-right: ${gridSize() * 1}px;
         margin-left: 0;
       }
+      & > img {
+        margin-right: ${gridSize() * 1}px;
+      }
     }
     &__group {
       padding: ${gridSize() * 0.75}px 0;
-      padding-top: ${gridSize() * 1.25}px;
+      padding-left: ${gridSize() * 0.25}px;
     }
     &__group-heading {
       ${typography.heading.h100()}

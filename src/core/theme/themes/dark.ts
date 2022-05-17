@@ -84,6 +84,12 @@ export const scrollStyles = {
       hover: () => colors.n[600],
       active: () => colors.n[300],
       track: () => background()
+    },
+    'dropdown': {
+      default: () => colors.n[900],
+      hover: () => colors.n[600],
+      active: () => colors.n[300],
+      track: () => background()
     }
   },
 };

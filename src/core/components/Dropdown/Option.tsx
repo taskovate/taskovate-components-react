@@ -10,8 +10,11 @@ import { Button } from '..';
 
 const Styled = styled.div<any>`
   .react-select__option {
-    &:hover {
+    &:hover:not(&--is-selected) {
       background-color: ${({ isMouseOverStar, theme: { dropdownStyles } }) => isMouseOverStar ? dropdownStyles.background['body'].hover() : 'auto'} !important;
+    }
+    &:hover &--is-selected {
+      background-color: ${({ theme: { dropdownStyles } }) => dropdownStyles.background['body'].selected()} !important;
     }
     
     button svg {
@@ -44,7 +47,7 @@ const StarButton = ({
       spacing="none"
       iconBefore={isStarred ? <StarredIcon /> : <UnstarredIcon />}
       onClick={onClick}
-      style={{  marginLeft: 'auto' }}
+      style={{ marginLeft: 'auto' }}
       onMouseOver={onMouseOver}
       onFocus={onFocus}
       onMouseLeave={onMouseLeave}
@@ -60,21 +63,15 @@ const Option = ({
 }: any) => {
   const { Space }: any = useStore();
   const [isMouseOverStar, setIsMouseOverStar] = useState(false);
-  const [isStarred, setStarred] = useState(Space.starredItemsVar().indexOf(data) !== -1);
 
   const onStarClick = (data: any) => {
+    console.log(`onStarClick - ${data.label}`)
     const prevStarred: any = Space.starredItemsVar();
     let newStarred = prevStarred;
     if(prevStarred.indexOf(data) !== -1)
-      setStarred(() => {
-        newStarred = prevStarred.filter((el: any) => el !== data);
-        return false;
-      });
+      newStarred = newStarred.filter((el: any) => el !== data);
     else
-      setStarred(() => {
-        newStarred = prevStarred.concat([data])
-        return true;
-      });
+      newStarred = newStarred.concat([data])
     Space.starredItemsVar(newStarred);
   };
 
@@ -88,7 +85,6 @@ const Option = ({
   .filter((grp: any) => grp.starable === true)
   .some((grp: any) => grp.options.indexOf(data) !== -1);
 
-  
   return (
     <Styled isMouseOverStar={isMouseOverStar}>
       <components.Option {...rest} innerProps={{ ...innerProps, onClick }}>
@@ -96,12 +92,12 @@ const Option = ({
         {data.label}
         {isStarable && (
           <StarButton
+            isStarred={Space.starredItemsVar().indexOf(data) !== -1}
             onClick={() => onStarClick(data)}
             onMouseOver={() => setIsMouseOverStar(true)}
             onFocus={() => setIsMouseOverStar(true)}
             onMouseLeave={() => setIsMouseOverStar(false)}
             onBlur={() => setIsMouseOverStar(false)}
-            isStarred={isStarred}
           />
         )}
       </components.Option>
