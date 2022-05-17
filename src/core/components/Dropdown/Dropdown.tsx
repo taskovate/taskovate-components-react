@@ -3,10 +3,97 @@ import styled from 'styled-components';
 import { colors, gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall, typography } from '@theme/constants';
 import ReactSelect, { Props as SelectProps, components } from 'react-select';
 import { FaChevronDown } from 'react-icons/fa';
-import { HiSearch } from 'react-icons/hi';
-import {
-  Button
-} from '..';
+import { HiOutlineStar, HiSearch, HiStar, HiHome } from 'react-icons/hi';
+import { useStore } from '@store/core';
+import { useQuery } from '@apollo/client';
+import { GET_STARRED_ITEMS } from '@store/queries';
+import { Input, Option, SingleValue } from '.';
+
+const DropdownIndicator = () => <FaChevronDown />;
+
+
+// const createOptions = ({ starred, spaces }: any) => [
+//   {
+//     label: 'Starred',
+//     starable: true,
+//     options: spaces.filter((opt: any) => starred.indexOf(opt) !== -1)
+//   },
+//   {
+//     label: 'My Spaces',
+//     starable: true,
+//     options: spaces.filter((opt: any) => starred.indexOf(opt) === -1)
+//   },
+//   {
+//     label: 'Feeds',
+//     options: [
+//       { value: "chocolate", label: "Home", image: HiHome },
+//       { value: "strawberry", label: "All", image: HiHome  }
+//     ]
+//   }
+// ];
+
+
+const Dropdown = ({
+  placeholder = 'Select',
+  defaultValue,
+}: SelectProps) => {
+  const store: any = useStore();
+  const { data: { starredItems }} = useQuery(GET_STARRED_ITEMS);
+
+  const options = [
+    {
+      label: 'Starred',
+      options: store.Space.spaceItemsVar().filter((opt: any) => store.Space.starredItemsVar().indexOf(opt) !== -1) || [],
+      starable: true
+    }, 
+    {
+      label: 'My Spaces',
+      options: store.Space.spaceItemsVar().filter((opt: any) => store.Space.starredItemsVar().indexOf(opt) === -1),
+      starable: true
+    },
+    {
+      label: 'Feeds',
+      options: [
+        { value: "chocolate", label: "Home", image: HiHome },
+        { value: "strawberry", label: "All", image: HiHome  }
+      ]
+    }
+  ];
+
+  return (
+      <Styled
+        classNamePrefix="react-select"
+        placeholder={placeholder}
+        options={options}
+        escapeClearsValue
+        closeMenuOnScroll
+        components={{ 
+          DropdownIndicator, 
+          Option, 
+          SingleValue, 
+          Input, 
+          IndicatorSeparator: null
+        }}
+        hideSelectedOptions
+        defaultValue={defaultValue}
+        menuIsOpen
+        onMenuClose={() => {
+          const menuEl = document.querySelector(`.react-select__menu`);
+          const containerEl = menuEl?.parentElement;
+          const clonedMenuEl: any = menuEl?.cloneNode(true);
+    
+          if (!clonedMenuEl) return; // safeguard
+    
+          clonedMenuEl.classList.add("react-select__menu--close");
+          clonedMenuEl.addEventListener("animationend", () => {
+            containerEl?.removeChild(clonedMenuEl);
+          });
+    
+          containerEl?.appendChild(clonedMenuEl!);
+        }}
+      />
+  );
+};
 
 const Styled = styled<any>(ReactSelect)`
   .react-select {
@@ -102,6 +189,7 @@ const Styled = styled<any>(ReactSelect)`
     }
     &__menu-list {
       padding: 0;
+      max-height: 640px;
     }
     &__menu-notice {
       padding: ${gridSize() * 0.75}px ${gridSize() * 1.25}px;
@@ -156,150 +244,10 @@ const Styled = styled<any>(ReactSelect)`
     }
     &__group-heading {
       ${typography.heading.h100()}
+      margin: ${gridSize() * 0.75}px 0;
       margin-top: 0;
     }
   }
 `;
-
-const DropdownIndicator = () => (
-  <FaChevronDown />
-);
-
-const StyledOption = styled.span<any>`
-  .react-select__option {
-    &:hover {
-      background-color: ${({ isMouseOverAction, theme: { dropdownStyles } }) => isMouseOverAction ? dropdownStyles.background['body'].hover() : 'auto'} !important;
-    }
-    
-    button svg {
-      display: flex;
-      align-content: center;
-      width: ${gridSize() * 2.5}px;
-      height: ${gridSize() * 2.5}px;
-      margin: -${gridSize() * 1}px 0;
-    }
-  }
-`;
-
-const Option = ({
-  data,
-  innerProps,
-  ...rest
-}: any) => {
-  const { label, icon, action } = data || {};
-  const [isMouseOverAction, IsMouseOverActionValue] = useState(false);
-  
-  const onClick = (e: any) => {
-    e.preventDefault();
-    if(isMouseOverAction) return;
-    innerProps.onClick(e);
-  };
-
-  const onActionClick = (e: any) => {
-    console.log('poop')
-  };
-  
-  return (
-    <StyledOption isMouseOverAction={isMouseOverAction}>
-      <components.Option {...rest} innerProps={{ ...innerProps, onClick }}>
-        {icon && icon()}
-        {label}
-        {action && (
-          <span 
-            style={{  marginLeft: 'auto' }}
-            onMouseOver={() => IsMouseOverActionValue(true)}
-            onFocus={() => IsMouseOverActionValue(true)}
-            onMouseLeave={() => IsMouseOverActionValue(false)}
-            onBlur={() => IsMouseOverActionValue(false)}
-          >
-            <Button 
-              appearance="starred"
-              spacing="none"
-              iconBefore={action.icon}
-              onClick={onActionClick}
-            />
-          </span>
-        )}
-      </components.Option>
-    </StyledOption>
-  );
-};
-
-const SingleValue = ({
-  data,
-  ...rest
-}: any) => {
-  const { label, icon } = data?.options ?? data;
-  return (
-    <components.SingleValue {...rest}>
-      {icon && icon()}
-      {label}
-    </components.SingleValue>
-  );
-};
-
-const GroupHeading = ({
-  ...rest
-}: any) => {
-  return (
-    <components.GroupHeading {...rest} />
-  );
-};
-
-const SearchIcon = styled(HiSearch)`
-  display: flex !important;
-  position: absolute;
-  align-self: center !important;
-  left: ${gridSize() * 0.25}px;
-  height: ${gridSize() * 2.5}px !important;
-  width: ${gridSize() * 2.5}px !important;
-`;
-
-const Input = ({
-  data,
-  ...rest
-}: any) => {
-  return (
-    <>
-      {rest.value && <SearchIcon />}
-      <components.Input {...rest} />
-    </>
-  );
-};
-
-const Dropdown = ({
-  placeholder = 'Select',
-  defaultValue,
-  options,
-}: SelectProps) => {
-
-  return (
-      <Styled
-        classNamePrefix="react-select"
-        placeholder={placeholder}
-        options={options}
-        escapeClearsValue
-        closeMenuOnScroll
-        components={{ DropdownIndicator, Option, SingleValue, Input, GroupHeading, IndicatorSeparator: null }}
-        hideSelectedOptions
-        defaultValue={defaultValue}
-        // menuIsOpen
-        onMenuClose={() => {
-          const menuEl = document.querySelector(`.react-select__menu`);
-          const containerEl = menuEl?.parentElement;
-          const clonedMenuEl: any = menuEl?.cloneNode(true);
-    
-          if (!clonedMenuEl) return; // safeguard
-    
-          clonedMenuEl.classList.add("react-select__menu--close");
-          clonedMenuEl.addEventListener("animationend", () => {
-            containerEl?.removeChild(clonedMenuEl);
-          });
-    
-          containerEl?.appendChild(clonedMenuEl!);
-        }}
-      />
-  );
-};
 
 export default Dropdown;
