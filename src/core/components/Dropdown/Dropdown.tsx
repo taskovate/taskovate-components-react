@@ -107,31 +107,31 @@ const Styled = styled<any>(ReactSelect)`
         // border-bottom-right-radius: ${borderRadius() * 1}px;
         // border-bottom-left-radius: ${borderRadius() * 1}px;
         left: 0;
-        bottom: -${gridSize() * 0.75}px;
-        height: ${gridSize() * 0.5}px;
+        bottom: -${gridSize() * 0.25}px;
+        height: ${gridSize() * 0.25}px;
         width: calc(100%);
         transition: ${animation.normal()};
       }
-      ::after { 
-        display: block;
-        position: absolute;
-        content: '';
-        background: linear-gradient(0deg, transparent, transparent 100%) bottom;
-        left: 0;
-        bottom: -${gridSize() * 1.25}px;
-        width: calc(100%);
-        height: ${gridSize() * 0.5}px;
-        transition: ${animation.normal()};
-      }
+      // ::after { 
+      //   display: block;
+      //   position: absolute;
+      //   content: '';
+      //   background: linear-gradient(0deg, transparent, transparent 100%) bottom;
+      //   left: 0;
+      //   bottom: -${gridSize() * 1}px;
+      //   width: calc(100%);
+      //   height: ${gridSize() * 0.75}px;
+      //   transition: ${animation.normal()};
+      // }
       &--menu-is-open {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
-        ::after {
-          background: linear-gradient(0deg, transparent, ${hex2rgba('#000', 0.375)} 75%) bottom;
-        }
+        // ::after {
+        //   background: linear-gradient(0deg, transparent, ${hex2rgba('#000', 0.375)} 75%) bottom;
+        // }
         ::before { 
           background-color: ${({ theme: { dropdownStyles } }) => dropdownStyles.background['body'].default()};
-          border-bottom-color: ${({ theme: { dropdownStyles } }) => dropdownStyles.borderColor['body'].focus()};
+          // border-bottom-color: ${({ theme: { dropdownStyles } }) => dropdownStyles.borderColor['body'].focus()};
         }
       }
     }
@@ -187,12 +187,13 @@ const Styled = styled<any>(ReactSelect)`
         animation: fadeIn ${animation.normal()};
         animation-direction: reverse;
       }
-      padding-top: ${gridSize() * 1.25}px;
-      padding-bottom: ${gridSize() * 0.75}px;
+      padding-bottom:${gridSize() * 0.75}px;
     }
     &__menu-list {
       padding: 0;
-      max-height: 480px;
+      max-height: 60vh;
+      // padding-left: ${gridSize() * 0.25}px;
+      overflow-y: scroll;
     }
     &__menu-notice {
       padding: ${gridSize() * 0.75}px ${gridSize() * 1.25}px;
@@ -212,10 +213,11 @@ const Styled = styled<any>(ReactSelect)`
         margin-right: ${gridSize() * 1.25}px;
         margin-left: 0;
       }
-      border-radius: ${borderRadius() * 1}px;
-      // border-bottom-right-radius: ${borderRadius() * 1}px;
+      // border-radius: ${borderRadius() * 1}px;
+      border-top-right-radius: ${borderRadius() * 1}px;
+      border-bottom-right-radius: ${borderRadius() * 1}px;
       transition: ${animation.normal()};
-      padding: ${gridSize() * 1}px ${gridSize() * 2}px;
+      padding: ${gridSize() * 0.75}px ${gridSize() * 2}px;
       // padding-right: ${gridSize() * 2.5}px;
       // line-height: normal;
       background-color: ${({ theme: { dropdownStyles } }) => dropdownStyles.background['body'].default()};
@@ -248,7 +250,6 @@ const Styled = styled<any>(ReactSelect)`
     }
     &__group {
       padding: ${gridSize() * 0.75}px 0;
-      padding-left: ${gridSize() * 0.25}px;
     }
     &__group-heading {
       ${typography.heading.h100()}

@@ -23,6 +23,7 @@ const Styled = styled.div<any>`
       width: ${gridSize() * 2.5}px;
       height: ${gridSize() * 2.5}px;
       margin: -${gridSize() * 1}px 0;
+      transition: ${animation.normal()};
     }
   }
 `;
@@ -30,6 +31,7 @@ const Styled = styled.div<any>`
 const StarredIcon = styled(HiStar)`
 `;
 const UnstarredIcon = styled(HiOutlineStar)`
+  opacity: 0.375;
 `;
 
 
@@ -43,7 +45,7 @@ const StarButton = ({
 }: any) => {
   return (
     <Button
-      appearance="starred"
+      appearance={isStarred ? "starred" : 'subtle-link'}
       spacing="none"
       iconBefore={isStarred ? <StarredIcon /> : <UnstarredIcon />}
       onClick={onClick}
