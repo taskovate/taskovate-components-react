@@ -33,10 +33,13 @@
     ]
   },
   "dependencies": {
+    "@apollo/client": "^3.6.2",
     "@floating-ui/react-dom-interactions": "^0.3.1",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "graphql": "^16.5.0",
+    "graphql-tag": "^2.12.6",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-hook-form": "^7.30.0",
@@ -81,6 +84,7 @@
     "parcel": "^2.5.0",
     "prettier": "^2.6.0",
     "react-scripts": "^5.0.1",
+    "storybook-addon-apollo-client": "^4.0.11",
     "storybook-addon-styled-component-theme": "^2.0.0",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
     "typescript": "^4.6.3",

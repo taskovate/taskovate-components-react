@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
-    "baseUrl": "src/",
+    "baseUrl": "src",
     "paths": {
       "@theme/core": ["core/theme/index.ts"],
       "@theme/helpers": ["core/theme/helpers/index.ts"],
       "@theme/constants": ["core/theme/constants/index.ts"],
       "@components/core": ["core/components/index.ts"],
-      "@components/docs": ["docs/components/index.ts"]
+      "@components/docs": ["docs/components/index.ts"],
+      "@store/core": ["core/store/index.ts"],
+      "@store/queries": ["core/store/queries.ts"]
     },
     "outDir": "dist",
     "target": "es5",
@@ -32,7 +34,8 @@
   "include": [
     "src",
     "src/core/**/*",
-    "src/docs/**/*"
+    "src/docs/**/*",
+    ".storybook/*"
   ],
   "exclude": ["node_modules"]
 }

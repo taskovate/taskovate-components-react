@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled, { css, useTheme } from 'styled-components';
 import { Placement } from '@floating-ui/react-dom-interactions';
-import { themedOrNull } from 'core/theme/helpers/helpers';
+import { themedOrNull } from '@theme/helpers';
 import { Link } from 'react-resource-router';
 import { gridSize, layers, animation, borderRadius, gradients, fontSize, headerFontFamily } from '@theme/constants';
 import { Tooltip, Spinner } from '..';
@@ -67,7 +67,6 @@ const menuItemStyles = () => css<any>`
   border: none;
   // overflow: hidden;
   user-select: none;
-  0.015625
   svg {
     height: ${fontSize() * 1.3}px;
     width: ${fontSize() * 1.3}px;
