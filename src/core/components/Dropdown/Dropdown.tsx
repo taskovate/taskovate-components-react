@@ -38,6 +38,7 @@ const Dropdown = ({
       ]
     }
   ];
+  // TODO: add pagination for the menu scroll (dynamically load spaces on scroll)
 
   return (
       <Styled
@@ -254,7 +255,8 @@ const Styled = styled<any>(ReactSelect)`
     &__group-heading {
       ${typography.heading.h100()}
       margin: ${gridSize() * 0.75}px 0;
-      margin-top: 0;
+      margin-top: ${gridSize() * 1}px;
+      // margin-top: 0;
     }
   }
 `;
