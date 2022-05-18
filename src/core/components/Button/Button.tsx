@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled, { DefaultTheme, useTheme } from 'styled-components';
 import { gridSize, fontSize, layers, animation, borderRadius } from '@theme/constants';
-import { hex2rgba, themedOrNull } from 'core/theme/helpers/helpers';
+import { hex2rgba, themedOrNull } from '@theme/helpers';
 import { Link } from 'react-resource-router';
 import { Placement } from '@floating-ui/react-dom-interactions';
 import { Tooltip, Spinner } from '..';
@@ -37,18 +37,30 @@ const Button: React.FC<any> = ({
   iconAfter,
   isLoading = false,
   isDisabled,
-  children
+  children,
+  ...rest
 }: ButtonProps) => {
-
   const renderComponent = (
     <Tooltip label={tooltip?.label} placement={tooltip?.placement}>
-      <Container appearance={themedOrNull(appearance)} spacing={spacing} isDisabled={isDisabled} isLoading={isLoading}>
-        {isLoading && <Spinner />}
+      <Container appearance={themedOrNull(appearance)} spacing={spacing} isDisabled={isDisabled} isLoading={isLoading} {...rest}>
+        {isLoading && 
+          <span style={children && { marginTop: -gridSize() * 0.125, marginBottom: -gridSize() * 0.375 }}>
+            <Spinner />
+          </span>
+        }
         {!isLoading && (
           <>
-            {iconBefore && <span style={children && { marginLeft: gridSize() * -0.5, marginRight: gridSize() * 0.5 }}>{iconBefore()}</span>}
+            {iconBefore && 
+              <span style={children && { marginLeft: gridSize() * -0.5, marginRight: gridSize() * 0.5 }}>
+                {typeof iconBefore === 'function' ? iconBefore() : iconBefore}
+              </span>
+            }
             {children}
-            {iconAfter && <span style={children && { marginRight: gridSize() * -0.5, marginLeft: gridSize() * 0.5 }}>{iconAfter()}</span>}
+            {iconAfter && 
+              <span style={children && { marginRight: gridSize() * -0.5, marginLeft: gridSize() * 0.5 }}>
+                {typeof iconAfter === 'function' ? iconAfter() : iconAfter}
+              </span>
+            }
           </>
         )}
       </Container>

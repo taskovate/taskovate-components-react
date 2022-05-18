@@ -8,3 +8,6 @@
 
 # Links
 Live Storybook Preview: https://uikit.taskovate.com/
+
+# Install
+npm install @taskovate/react-components

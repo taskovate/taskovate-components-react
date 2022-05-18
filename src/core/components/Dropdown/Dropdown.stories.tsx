@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import styled from 'styled-components';
 import { gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall } from '@theme/constants';
 import { HiHome, HiStar } from 'react-icons/hi';
+import { useStore } from '@store/core';
 import { Dropdown } from '.';
 import {
   Header,
@@ -25,37 +26,17 @@ const ScrollArea = styled.div`
   width: 100%;
 `;
 
-const options = [
-  {
-    label: 'Starred',
-    options: [
-    ]
-  },
-  {
-    label: 'My Spaces',
-    options: [
-      { value: "strawberry", label: "ATX QA", icon: HiHome, action: { icon: HiStar, onClick: () => console.log('poop')} },
-      { value: "vanilla", label: "UK QA", icon: HiHome, action: { icon: HiStar, onClick: () => console.log('poop')} }
-    ]
-  },
-  {
-    label: 'Feeds',
-    options: [
-      { value: "chocolate", label: "Home", icon: HiHome },
-      { value: "strawberry", label: "All", icon: HiHome  }
-    ]
-  }
-];
-
-export const Basic: ComponentStory<typeof Header> = () => (
-  <ScrollArea>
-    <Header>
-      <HeaderDesignation />
-      <HeaderMenuBar>
-        <HeaderMenuItem>
-          <Dropdown options={options} />
-        </HeaderMenuItem>
-      </HeaderMenuBar>
-    </Header>
-  </ScrollArea>
-);
+export const Basic: ComponentStory<typeof Header> = () => {
+  return (
+    <ScrollArea>
+      <Header>
+        <HeaderDesignation />
+        <HeaderMenuBar>
+          <HeaderMenuItem>
+            <Dropdown />
+          </HeaderMenuItem>
+        </HeaderMenuBar>
+      </Header>
+    </ScrollArea>
+  );
+};

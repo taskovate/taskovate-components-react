@@ -1,7 +1,6 @@
 import React, { useEffect, cloneElement, useState  } from 'react';
 import styled from 'styled-components';
 import { colors, gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall } from '@theme/constants';
-import { inputStyles } from 'core/theme/themes/dark';
 
 const Styled = styled.div`
   display: flex;

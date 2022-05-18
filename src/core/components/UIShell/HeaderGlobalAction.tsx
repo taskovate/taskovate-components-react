@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled, { useTheme } from 'styled-components';
 import { Placement } from '@floating-ui/react-dom-interactions';
-import { themedOrNull } from 'core/theme/helpers/helpers';
+import { themedOrNull } from '@theme/helpers';
 import { Link } from 'react-resource-router';
 import { gridSize, layers, animation, borderRadius, gradients, fontSize, headerFontFamily } from '@theme/constants';
 import { Tooltip, Spinner } from '..';
@@ -69,6 +69,7 @@ const Container = styled.div<any>`
   flex-direction: row;
   justify-content: start;
   align-items: center;
+  align-content: center;
   vertical-align: middle;
   text-align: center;
   font-size: ${fontSize() * 1}px;
@@ -84,7 +85,11 @@ const Container = styled.div<any>`
   overflow: hidden;
   user-select: none;
 
-  svg {
+  & > span {
+    display: flex;
+    flex-grow: 1;
+  }
+  span > svg {
     height: ${gridSize() * 2.5}px;
     width: ${gridSize() * 2.5}px;
   }
