@@ -1,17 +1,17 @@
 {
   "name": "@taskovate/react-components",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "module": "./dist/esm/index.js",
   "main": "./dist/cjs/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook --output-dir ./dist-storybook",
-    "build": "parcel build src/index.tsx"
+    "build": "parcel build src/index.tsx",
+    "prepare": "parcel build src/index.tsx"
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "lint-staged": {
     "*.(ts|tsx)": [
