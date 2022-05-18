@@ -26,7 +26,6 @@ const Container = styled.div<any>`
   border-color: ${hex2rgba('#fff', 0.25)} transparent transparent;
   will-change: transform;
   animation: ${motion()} 800ms cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  
   :nth-child(1) {
     animation-delay: -0.45s;
   }

@@ -43,7 +43,11 @@ const Button: React.FC<any> = ({
   const renderComponent = (
     <Tooltip label={tooltip?.label} placement={tooltip?.placement}>
       <Container appearance={themedOrNull(appearance)} spacing={spacing} isDisabled={isDisabled} isLoading={isLoading} {...rest}>
-        {isLoading && <Spinner />}
+        {isLoading && 
+          <span style={children && { marginTop: -gridSize() * 0.125, marginBottom: -gridSize() * 0.375 }}>
+            <Spinner />
+          </span>
+        }
         {!isLoading && (
           <>
             {iconBefore && 
