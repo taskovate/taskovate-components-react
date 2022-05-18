@@ -1,6 +1,6 @@
 {
-  "name": "taskovate-components-react",
-  "version": "0.1.0",
+  "name": "@taskovate/react-components",
+  "version": "0.1.1",
   "module": "./dist/esm/index.js",
   "main": "./dist/cjs/index.js",
   "types": "./dist/index.d.ts",
@@ -9,6 +9,10 @@
     "build-storybook": "build-storybook --output-dir ./dist-storybook",
     "build": "parcel build src/index.tsx"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "lint-staged": {
     "*.(ts|tsx)": [
       "eslint --fix",
@@ -93,5 +97,16 @@
   "peerDependencies": {
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
-  }
+  },
+  "description": "* Storybook\r * TypeScript\r * React-Resource-Router\r * Styled-Components",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taskovate/taskovate-components-react.git"
+  },
+  "author": "Elijah Montenegro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taskovate/taskovate-components-react/issues"
+  },
+  "homepage": "https://github.com/taskovate/taskovate-components-react#readme"
 }
