@@ -16,7 +16,7 @@ const Container = styled.div<any>`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  flex: 0 1 100%;
+  flex: 0 1 auto;
   align-items: center;
 `;
 

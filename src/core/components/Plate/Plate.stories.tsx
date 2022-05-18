@@ -22,13 +22,13 @@ const Area = styled.div`
 
 export const Modes: ComponentStory<typeof Plate> = () => (
   <Area>
-    <Plate mode="default">
+    <Plate appearance="default">
       <p>I'm the default Plate. I'm simple and provide content inside of a beautiful outline.</p>
     </Plate>
-    <Plate mode="display">
+    <Plate appearance="display">
       <p>I'm the display Plate. I show content in the raw so it can do the all the talking.</p>
     </Plate>
-    <Plate mode="brimming">
+    <Plate appearance="brimming">
       <p>I'm the brimming Plate. I provide content with a eye grabbing background.</p>
     </Plate>
   </Area>
@@ -43,6 +43,6 @@ export const Options: ComponentStory<typeof Plate> = (args) => (
 );
 
 Options.args = {
-  mode: 'default',
+  appearance: 'default',
   isLoading: false
 }

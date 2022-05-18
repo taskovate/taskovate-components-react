@@ -6,7 +6,7 @@ type Mode = 'default' | 'display' | 'brimming';
 
 interface PlateProps {
   children: React.ReactNode,
-  mode?: Mode;
+  appearance?: Mode;
   isLoading?: boolean;
 }
 
@@ -23,8 +23,8 @@ const Styled = styled.div<any>`
     margin-left: -${gridSize() * 0.4}px;
     margin-bottom: -${gridSize() * 0.6}px;
     width: calc(100% + ${gridSize() * 0.75}px);
-    ${({ mode }) => {
-      if(mode === 'display') return `
+    ${({ appearance }) => {
+      if(appearance === 'display') return `
         background: ${gradients.subtle()};
       `;
       return `
@@ -43,8 +43,8 @@ const Styled = styled.div<any>`
     margin-left: -${gridSize() * 0.4}px;
     margin-top: -${gridSize() * 0.6}px;
     width: calc(100% + ${gridSize() * 0.75}px);
-    ${({ mode }) => {
-      if(mode === 'display') return `
+    ${({ appearance }) => {
+      if(appearance === 'display') return `
         background: ${gradients.subtle()};
       `;
       return `
@@ -61,12 +61,12 @@ const Border = styled.div<any>`
   border-radius: ${borderRadius() * 1}px;
   border: ${gridSize() * 0.25}px solid transparent;
 
-  ${({ theme, mode }) => {
-    if(mode === 'display') return `
+  ${({ theme, appearance }) => {
+    if(appearance === 'display') return `
       background-color: ${theme.background()};
       border: none;
     `;
-    if(mode === 'default' || mode === 'brimming') return `
+    if(appearance === 'default' || appearance === 'brimming') return `
       box-shadow: ${theme.elevation[300]};
     `;
     return ``;
@@ -79,11 +79,11 @@ const Content = styled.div<any>`
   background-color: ${({ theme }) => theme.background()};
   padding: ${gridSize() * 4}px ${gridSize() * 4.5}px;
 
-  ${({ mode }) => {
-    if(mode === 'display') return `
+  ${({ appearance }) => {
+    if(appearance === 'display') return `
       padding: 0;
     `;
-    if(mode === 'brimming') return `
+    if(appearance === 'brimming') return `
       background-color: transparent;
     `;
     return ``;
@@ -95,15 +95,15 @@ const Content = styled.div<any>`
 `;
 
 const Plate = ({
-  mode = 'default',
+  appearance = 'default',
   isLoading,
   children
 }: PlateProps) => {
 
   return (
-    <Styled mode={mode}>
-      <Border mode={mode}>
-        <Content mode={mode}>
+    <Styled appearance={appearance}>
+      <Border appearance={appearance}>
+        <Content appearance={appearance}>
           {children}
         </Content>
       </Border>

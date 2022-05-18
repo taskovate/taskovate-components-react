@@ -33,7 +33,7 @@ const ScrollArea = styled.div`
   width: 100%;
 `;
 
-export const NavigationExample: ComponentStory<typeof Header> = () => (
+export const NavigationWebsiteExample: ComponentStory<typeof Header> = () => (
   <ScrollArea>
     <Header>
       <HeaderDesignation />
@@ -84,7 +84,35 @@ const options = [
   }
 ];
 
-export const NavigationApp: ComponentStory<typeof Header> = () => (
+export const NavigationAppExample: ComponentStory<typeof Header> = () => (
+  <ScrollArea>
+    <Header>
+      <HeaderDesignation />
+      <HeaderMenuBar>
+        <HeaderMenuItem>
+          <Dropdown options={options} />
+        </HeaderMenuItem>
+        <HeaderMenuItem tooltip="Your work">
+          Your work
+        </HeaderMenuItem>
+        <HeaderMenuItem tooltip="People">
+          People
+        </HeaderMenuItem>
+        <HeaderMenuItem tooltip="Files">
+          Files
+        </HeaderMenuItem>
+      </HeaderMenuBar>
+      <HeaderGlobalBar>
+        <HeaderGlobalAction tooltip="Chats" iconBefore={HiOutlineChatAlt} />
+        <HeaderGlobalAction tooltip="Notifications" iconBefore={HiOutlineBell} />
+        <HeaderGlobalAction tooltip="Your profile and settings" iconBefore={HiOutlineUser} />
+      </HeaderGlobalBar>
+    </Header>
+  </ScrollArea>
+);
+
+
+export const LandingPageExample: ComponentStory<typeof Header> = () => (
   <ScrollArea>
     <Header>
       <HeaderDesignation />
