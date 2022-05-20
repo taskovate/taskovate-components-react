@@ -18,6 +18,7 @@ const Container = styled.div<any>`
   justify-content: flex-end;
   flex: 0 1 auto;
   align-items: center;
+  margin-left: auto;
 `;
 
 const HeaderGlobalBar: React.FC<any> = ({ children }: any) => {
