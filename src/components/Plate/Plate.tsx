@@ -23,14 +23,7 @@ const Styled = styled.div<any>`
     margin-left: -${gridSize() * 0.4}px;
     margin-bottom: -${gridSize() * 0.6}px;
     width: calc(100% + ${gridSize() * 0.75}px);
-    ${({ appearance }) => {
-      if(appearance === 'display') return `
-        background: ${gradients.subtle()};
-      `;
-      return `
-        background: ${gradients.primary()};
-      `;
-    }}
+    background: ${({ appearance }) => appearance !== 'display' && gradients.primary()};
     clip-path: polygon(0% 0%, 0% 100%, ${gridSize() * 1}px 100%, ${gridSize() * 1}px 0, calc(100% - ${gridSize() * 1}px) 0, calc(100% - ${gridSize() * 1}px) 100%, 25% 100%, 25% 100%, 100% 100%, 100% 0%);
   }
   :after {
@@ -43,14 +36,7 @@ const Styled = styled.div<any>`
     margin-left: -${gridSize() * 0.4}px;
     margin-top: -${gridSize() * 0.6}px;
     width: calc(100% + ${gridSize() * 0.75}px);
-    ${({ appearance }) => {
-      if(appearance === 'display') return `
-        background: ${gradients.subtle()};
-      `;
-      return `
-        background: ${gradients.primary()};
-      `;
-    }}
+    background: ${({ appearance }) => appearance !== 'display' && gradients.primary()};
     clip-path: polygon(0% 0%, 0% 100%, ${gridSize() * 1}px 100%, ${gridSize() * 1}px 0, calc(100% - ${gridSize() * 1}px) 0, calc(100% - ${gridSize() * 1}px) 100%, 25% 100%, 25% 100%, 100% 100%, 100% 0%);
   }
 `;

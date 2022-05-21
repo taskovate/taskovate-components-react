@@ -4,7 +4,7 @@
 import { ThemeProvider } from 'styled-components';
 import { DarkTheme, GlobalStyle } from '@theme/core';
 import { MockedProvider } from '@apollo/client/testing';
-import { cache, typeDefs } from '@store/core';
+import { cache, typeDefs } from '@internal/core';
 
 // addDecorator(withThemesProvider([DarkTheme], ThemeProvider));
 // addDecorator(withThemes(ThemeProvider, [DarkTheme], { 

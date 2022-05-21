@@ -3,8 +3,8 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   stories: [
-    "../src/docs/**/**/*.stories.@(js|jsx|ts|tsx|mdx)",
-    "../src/core/components/**/*.stories.@(js|jsx|ts|tsx)"
+    "../src/components/**/*.stories.@(js|jsx|ts|tsx)",
+    // "../src/documentation/**/*.stories.@(ts|tsx|mdx)"
   ],
   addons: [
     { name: "@storybook/addon-docs",
@@ -25,7 +25,7 @@ module.exports = {
   },
   webpackFinal: async (config) => {
     config.resolve.plugins = [new TsconfigPathsPlugin()];
-    config.resolve.extensions = ['.ts', '.js', '.tsx'];
+    config.resolve.extensions = ['.js', '.jsx', '.ts', '.tsx'];
     return config;
   },
   staticDirs: [path.resolve(__dirname, "../static")]

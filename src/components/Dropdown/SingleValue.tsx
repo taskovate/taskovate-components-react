@@ -4,17 +4,21 @@ import { colors, gridSize, layers, animation, fontSize, borderRadius, gradients,
 import ReactSelect, { Props as SelectProps, components } from 'react-select';
 import { FaChevronDown } from 'react-icons/fa';
 import { HiOutlineStar, HiSearch, HiStar } from 'react-icons/hi';
-import { useStore } from '@store/core';
+import { useStore } from '@internal/core';
+import { SpaceImage } from '.';
 import { Button } from '..';
 
-const SpaceImage = styled.img<any>`
-  height: ${gridSize() * 2}px;
-  width: ${gridSize() * 2}px;
-  margin-right: ${gridSize() * 1.25}px;
-  margin-left: 0;
-  background-color: ${({ theme: { dropdownStyles } }) => dropdownStyles.borderColor['body'].hover()};
-  padding: ${gridSize() * 0.25}px;
-  border-radius: ${borderRadius() * 1}px;
-`;
+const SingleValue = ({
+  data,
+  ...rest
+}: any) => {
+  const { label, image } = data?.options ?? data;
+  return (
+    <components.SingleValue {...rest}>
+      {typeof data.image === 'string' ? <SpaceImage src={data.image} /> : data.image()}
+      {label}
+    </components.SingleValue>
+  );
+};
 
-export default SpaceImage;
+export default SingleValue;

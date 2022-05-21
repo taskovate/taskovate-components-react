@@ -29,4 +29,4 @@ declare module 'styled-components' {
     navigationStyles: any;
     buttonStyles: any;
   }
-}
+};

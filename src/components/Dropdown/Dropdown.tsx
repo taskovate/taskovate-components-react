@@ -5,9 +5,9 @@ import ReactSelect, { Props as SelectProps, components } from 'react-select';
 import { FaChevronDown } from 'react-icons/fa';
 import { hex2rgba } from '@theme/helpers';
 import { HiOutlineStar, HiSearch, HiStar, HiHome } from 'react-icons/hi';
-import { useStore } from '@store/core';
+import { useStore } from '@internal/core';
 import { useQuery } from '@apollo/client';
-import { GET_STARRED_ITEMS } from '@store/queries';
+import { GET_STARRED_ITEMS } from '@internal/queries';
 import { Input, Option, SingleValue, MenuList } from '.';
 
 const DropdownIndicator = () => <FaChevronDown />;

@@ -4,7 +4,7 @@ import { colors, gridSize, layers, animation, fontSize, borderRadius, gradients,
 import ReactSelect, { Props as SelectProps, components } from 'react-select';
 import { FaChevronDown } from 'react-icons/fa';
 import { HiOutlineStar, HiSearch, HiStar } from 'react-icons/hi';
-import { useStore } from '@store/core';
+import { useStore } from '@internal/core';
 import { SpaceImage } from '.';
 import { Button } from '..';
 

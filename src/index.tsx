@@ -8,6 +8,6 @@ export {
   HeaderGlobalBar,
   HeaderMenuBar,
   HeaderMenuItem
-} from './core/components';
+} from './components';
 
-export { DarkTheme, GlobalStyle } from './core/theme';
+export { DarkTheme, GlobalStyle } from './theme';

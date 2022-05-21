@@ -147,7 +147,6 @@ const Container = styled.button<any>`
       (isDisabled||isLoading) ? 'auto' : buttonStyles.color[appearance].active()
     };
   }
-
 `;
 
 export default Button;
