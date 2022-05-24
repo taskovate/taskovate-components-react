@@ -2,32 +2,34 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+Display&family=Noto+Sans+Mono&family=Ubuntu:wght@300" rel="stylesheet">
 <style>
-  @font-face {
-    font-family: 'Recursive';
-    src: url('/fonts/Recursive.ttf') format('truetype');
+  .sbdocs-wrapper {
+    padding-top: 24px !important;
   }
-  @font-face {
-    font-family: 'MerriweatherSans';
-    src: url('/fonts/MerriweatherSans.ttf') format('truetype');
-    font-weight: 300 1000;
-    font-display: swap;
+
+  body ::-webkit-scrollbar {
+    width: 10px;
   }
-  @font-face {
-    font-family: 'FjallaOne';
-    src: url('/fonts/FjallaOne.ttf') format('truetype');
-    font-weight: 300 1000;
-    font-display: swap;
+
+  body ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 3px;
   }
-  @font-face {
-    font-family: 'Rubik';
-    src: url('/fonts/Rubik.ttf') format('truetype');
-    font-weight: 300 1000;
-    font-display: swap;
+
+  body ::-webkit-scrollbar-thumb {
+      background: #73727E;
+      border-width: 3px;
+      border-style: solid;
+      border-color: #fff;
+      border-radius: 10px;
   }
-  @font-face {
-    font-family: 'Viga';
-    src: url('/fonts/Viga.ttf') format('truetype');
-    font-weight: 300 1000;
-    font-display: swap;
+        
+  body ::-webkit-scrollbar-thumb:hover {
+    background: #8F8D9E;
+    border-width: 2px;
   }
-  </style>
+  
+  body ::-webkit-scrollbar-thumb:active {
+    background: #CAC7D5;
+    border-width: auto;
+  }
+</style>

@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "paths": {
-      "@theme/core": ["core/theme/index.ts"],
-      "@theme/helpers": ["core/theme/helpers/index.ts"],
-      "@theme/constants": ["core/theme/constants/index.ts"],
-      "@components/core": ["core/components/index.ts"],
-      "@components/docs": ["docs/components/index.ts"],
-      "@store/core": ["core/store/index.ts"],
-      "@store/queries": ["core/store/queries.ts"]
+      "@components/core": ["components/index.ts"],
+      "@theme/core": ["theme/index.ts"],
+      "@theme/constants": ["theme/constants/index.ts"],
+      "@theme/helpers": ["theme/helpers/index.ts"],
+      "@internal/core": ["internal/index.ts"],
+      "@internal/store": ["internal/store.ts"],
+      "@internal/queries": ["internal/queries.ts"],
     },
     "outDir": "dist",
     "target": "es5",
@@ -31,11 +31,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src",
-    "src/core/**/*",
-    "src/docs/**/*",
-    ".storybook/*"
-  ],
+  "include": ["src", "src/types"],
   "exclude": ["node_modules"]
 }

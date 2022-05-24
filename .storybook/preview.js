@@ -1,31 +1,8 @@
-// import { addDecorator } from '@storybook/react';
-// import { withThemes } from '@react-theming/storybook-addon';
-// import { withThemesProvider } from "storybook-addon-styled-component-theme";
 import { ThemeProvider } from 'styled-components';
 import { DarkTheme, GlobalStyle } from '@theme/core';
 import { MockedProvider } from '@apollo/client/testing';
-import { cache, typeDefs } from '@store/core';
-
-// addDecorator(withThemesProvider([DarkTheme], ThemeProvider));
-// addDecorator(withThemes(ThemeProvider, [DarkTheme], { 
-//   onThemeSwitch: ({ theme }) => {
-//     return {
-//       parameters: {
-//         backgrounds: {
-//           default: theme.background(),
-//         }
-//       }
-//     };
-//   },
-//   providerFn: ({ theme, children }) => {
-//     return (
-//       <ThemeProvider theme={theme}>
-//         <GlobalStyle />
-//         {children}
-//       </ThemeProvider>
-//     );
-//   }
-// }));
+import { cache, typeDefs } from '@internal/core';
+import { dark } from './themes';
 
 export const decorators = [
   Story => {
@@ -39,24 +16,44 @@ export const decorators = [
 ];
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
-    },
-  },
+  controls: { expanded: true },
   backgrounds: {
     disable: true
   },
   previewTabs: {
     'storybook/docs/panel': {
-      hidden: true
-    }
+      index: -1,
+      title: 'Documentation',
+    },
+    canvas: { title: 'Code', hidden: false },
+  },
+  docs: {
+    theme: dark
+  },
+  options: {
+    storySort: {
+      order: [
+        'Getting started',
+        [
+          'Intro',
+          'Installing the Kit',
+        //   'Using the Kit',
+        //   'Recommended libraries',
+        //   'Design resources',
+        //   'Browser support',
+        //   "What's new",
+        //   'Support and Feedback',
+        //   'Credits',
+        ],
+        // 'Documentation',
+        // 'Templates',
+        'Components',
+      ],
+    },
   },
   apolloClient: {
     MockedProvider,
     cache,
     typeDefs
-  },
+  }
 };
