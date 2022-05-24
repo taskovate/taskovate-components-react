@@ -5,7 +5,7 @@ import { gridSize, layers, animation, fontSize, borderRadius, gradients, fontSiz
 import { TextField } from '.';
 
 export default {
-  title: 'Design System/TextField',
+  title: 'Components/TextField',
   component: TextField,
 } as ComponentMeta<typeof TextField>;
 

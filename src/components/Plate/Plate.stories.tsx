@@ -5,7 +5,7 @@ import { gridSize, layers, animation, fontSize, borderRadius, gradients, fontSiz
 import { Plate } from '.';
 
 export default {
-  title: 'Design System/Plate',
+  title: 'Components/Plate',
   component: Plate,
 } as ComponentMeta<typeof Plate>;
 

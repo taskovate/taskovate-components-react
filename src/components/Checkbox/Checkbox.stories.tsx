@@ -5,7 +5,7 @@ import { gridSize, layers, animation, fontSize, borderRadius, gradients, fontSiz
 import { Checkbox } from '.';
 
 export default {
-  title: 'Design System/Checkbox',
+  title: 'Components/Checkbox',
   component: Checkbox,
 } as ComponentMeta<typeof Checkbox>;
 

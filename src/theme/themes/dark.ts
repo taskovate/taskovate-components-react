@@ -1,5 +1,5 @@
 import { colors } from '@theme/constants';
-import { hex2rgba } from '@theme/helpers';
+import { hex2rgba, hexCombine } from '@theme/helpers';
 
 export const name = 'Taskovate Dark';
 export const colorScheme = () => 'dark';
@@ -22,11 +22,11 @@ export const skeleton = () => colors.n[200];
 export const label = () => colors.n[100];
 
 export const elevation = {
-  100: `0 1px 1px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0005`,
-  200: `0 4px 8px -2px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0005`,
-  300: `0 8px 16px -4px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0005`,
-  400: `0 12px 24px -6px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0005`,
-  500: `0 20px 32px -8px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0005`,
+  100: `0 1px 1px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0008`,
+  200: `0 4px 8px -2px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0008`,
+  300: `0 8px 16px -4px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0008`,
+  400: `0 12px 24px -6px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0008`,
+  500: `0 20px 32px -8px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0008`,
 };
 
 export const dropdownStyles = {
@@ -109,10 +109,10 @@ export const navigationStyles = {
       active: () => colors.p[500],
     },
     'special': {
-      disabled: () => colors.n[800],
-      default: () => colors.n[400],
-      hover: () => colors.n[300],
-      active: () => colors.n[200],
+      disabled: () => hexCombine(colors.n[900], colors.d[900], 0.25),
+      default: () => hexCombine(hexCombine(colors.n[300], colors.p[200], 0.125), colors.b[100], 0.125),
+      hover: () => hexCombine(hexCombine(colors.n[200], colors.p[200], 0.125), colors.b[100], 0.125),
+      active: () => hexCombine(hexCombine(colors.n[100], colors.p[200], 0.125), colors.b[100], 0.125),
     }
   },
   color: {
@@ -152,10 +152,10 @@ export const buttonStyles = {
       active: () => colors.p[500],
     },
     'special': {
-      disabled: () => colors.n[900],
-      default: () => colors.n[500],
-      hover: () => colors.n[400],
-      active: () => colors.n[300],
+      disabled: () => hexCombine(colors.n[900], colors.d[900], 0.25),
+      default: () => hexCombine(hexCombine(colors.n[300], colors.p[200], 0.125), colors.b[100], 0.125),
+      hover: () => hexCombine(hexCombine(colors.n[200], colors.p[200], 0.125), colors.b[100], 0.125),
+      active: () => hexCombine(hexCombine(colors.n[100], colors.p[200], 0.125), colors.b[100], 0.125),
     },
     'warning': {
       disabled: () => colors.y[900],

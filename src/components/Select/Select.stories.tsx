@@ -6,7 +6,7 @@ import { Select } from '.';
 import { TextField } from '..';
 
 export default {
-  title: 'Design System/Select',
+  title: 'Components/Select',
   component: Select,
 } as ComponentMeta<typeof Select>;
 

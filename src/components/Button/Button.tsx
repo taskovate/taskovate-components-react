@@ -3,13 +3,7 @@ import styled, { DefaultTheme, useTheme } from 'styled-components';
 import { gridSize, fontSize, layers, animation, borderRadius } from '@theme/constants';
 import { hex2rgba, themedOrNull } from '@theme/helpers';
 import { Link } from 'react-resource-router';
-import { Placement } from '@floating-ui/react-dom-interactions';
 import { Tooltip, Spinner } from '..';
-
-type TooltipProps = {
-  label: string;
-  placement: Placement;
-}
 
 type Appearance = 'unset' | 'primary' | 'special' | 'warning' | 'danger' | 'subtle' | 'sublte-link' | 'link' | 'starred';
 type Spacing = 'none' | 'compact' | 'default' | 'pleasant';
@@ -25,6 +19,7 @@ interface ButtonProps {
   isLoading?: boolean;
   isDisabled?: boolean;
   children?: () => React.ReactNode;
+  target?: any;
 }
 
 const Button: React.FC<any> = ({
@@ -38,6 +33,7 @@ const Button: React.FC<any> = ({
   isLoading = false,
   isDisabled,
   children,
+  target,
   ...rest
 }: ButtonProps) => {
   const renderComponent = (
@@ -68,7 +64,7 @@ const Button: React.FC<any> = ({
   );
 
   if (href||to) return (
-    <Link href={href} to={to} style={{ textDecoration: 'none' }}>
+    <Link target={target} href={href} to={to} style={{ textDecoration: 'none' }}>
       {renderComponent}
     </Link>
   );
@@ -116,7 +112,7 @@ const Container = styled.button<any>`
     return 'pointer'
   }};
   
-  box-shadow: ${({ theme, appearance }) => appearance === 'special' ? theme.elevation[200] : 'auto'};
+  // box-shadow: ${({ theme, appearance }) => appearance === 'special' ? theme.elevation[200] : 'auto'};
 
   background-color: ${({ theme: { buttonStyles }, appearance, isDisabled, isLoading}) => 
     (isDisabled||isLoading) ? buttonStyles.background[appearance].disabled() : buttonStyles.background[appearance].default()
@@ -127,7 +123,7 @@ const Container = styled.button<any>`
   };
 
   :hover { 
-    box-shadow: ${({ theme, appearance, isDisabled }) => isDisabled ? 'auto' : appearance === 'special' && theme.elevation[300]};
+    // box-shadow: ${({ theme, appearance, isDisabled }) => isDisabled ? 'auto' : appearance === 'special' && theme.elevation[300]};
 
     background-color: ${({ theme: { buttonStyles }, appearance, isDisabled, isLoading }) => 
       (isDisabled||isLoading) ? 'auto' : buttonStyles.background[appearance].hover()

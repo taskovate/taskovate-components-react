@@ -12,11 +12,12 @@ const Container = styled.div<any>`
 `;
 
 const Button: React.FC<any> = ({
-  children
+  children,
+  ...rest
 }: any) => {
 
   return (
-    <Container>
+    <Container {...rest}>
       {children}
     </Container>
   );

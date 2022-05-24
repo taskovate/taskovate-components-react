@@ -6,7 +6,7 @@ import { HiStar } from 'react-icons/hi';
 import { Button, ButtonGroup } from '.';
 
 export default {
-  title: 'Design System/Button',
+  title: 'Components/Button',
   component: Button,
 } as ComponentMeta<typeof Button>;
 

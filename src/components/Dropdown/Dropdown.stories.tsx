@@ -13,7 +13,7 @@ import {
 } from '..';
 
 export default {
-  title: 'Design System/Dropdown',
+  title: 'Components/Dropdown',
   component: Dropdown,
 } as ComponentMeta<typeof Dropdown>;
 

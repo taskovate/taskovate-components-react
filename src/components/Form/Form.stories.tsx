@@ -12,7 +12,7 @@ import {
  } from '..';
 
 export default {
-  title: 'Design System/Form',
+  title: 'Components/Form',
   component: Form,
   parameters: {
     layout: 'centered',

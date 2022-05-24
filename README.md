@@ -10,4 +10,14 @@
 Live Storybook Preview: https://uikit.taskovate.com/
 
 # Install
-npm install @taskovate/react-components
+To install the Kit through `npm`, run:
+
+```bash
+npm install @taskovate/ui --save
+```
+
+To install the Kit through `yarn`, run:
+
+```bash
+yarn add @taskovate/ui
+```

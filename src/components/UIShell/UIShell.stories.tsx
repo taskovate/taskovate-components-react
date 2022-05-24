@@ -17,7 +17,7 @@ import {
 } from '..';
 
 export default {
-  title: 'Design System/UIShell',
+  title: 'Components/UIShell',
   component: Header,
   parameters: {
     layout: 'fullscreen',

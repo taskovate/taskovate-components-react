@@ -5,7 +5,7 @@ import { gridSize, layers, animation, fontSize, borderRadius, gradients, fontSiz
 import { TextArea } from '.';
 
 export default {
-  title: 'Design System/TextArea',
+  title: 'Components/TextArea',
   component: TextArea,
 } as ComponentMeta<typeof TextArea>;
 
