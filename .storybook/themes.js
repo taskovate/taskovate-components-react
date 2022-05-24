@@ -25,9 +25,9 @@ const base = () => ({
   barBg: '#252429',
 
   // Form colors
-  inputBg: 'green',
-  inputBorder: 'red',
-  inputTextColor: 'yellow',
+  inputBg: '#1D1C21',
+  inputBorder: '#4C4B4F',
+  inputTextColor: '#EEEDF2',
   inputBorderRadius: 3,
 
   // Other
