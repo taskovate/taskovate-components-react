@@ -21,11 +21,10 @@ export const parameters = {
     disable: true
   },
   previewTabs: {
+    canvas: { title: 'Sample', hidden: false },
     'storybook/docs/panel': {
-      index: -1,
       title: 'Documentation',
     },
-    canvas: { title: 'Code', hidden: false },
   },
   docs: {
     theme: dark

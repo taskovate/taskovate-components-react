@@ -95,6 +95,10 @@
     "typescript": "^3.9.10",
     "webpack": "^5.51.1"
   },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
   "description": "* Storybook\r * TypeScript\r * React-Resource-Router\r * Styled-Components",
   "repository": {
     "type": "git",
