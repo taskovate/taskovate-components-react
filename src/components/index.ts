@@ -22,5 +22,9 @@ export {
   HeaderGlobalAction,
   HeaderGlobalBar,
   HeaderMenuBar,
-  HeaderMenuItem
+  HeaderMenuItem,
+  Main,
+  Content,
+  Footer,
+  SideBar
  } from './UIShell';

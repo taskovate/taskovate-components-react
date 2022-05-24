@@ -12,6 +12,7 @@ interface PlateProps {
 
 const Styled = styled.div<any>`
   display: flex;
+  flex: 0 0 auto;
   flex-direction: column;
   z-index: ${layers.plate()};
   :before {
@@ -43,6 +44,7 @@ const Styled = styled.div<any>`
 
 const Border = styled.div<any>`
   display: flex;
+  flex: 1 1 auto;
   background: ${gradients.primary()};
   border-radius: ${borderRadius() * 1}px;
   border: ${gridSize() * 0.25}px solid transparent;
@@ -61,7 +63,7 @@ const Border = styled.div<any>`
 
 const Content = styled.div<any>`
   display: flex;
-  flex-grow: 1;
+  flex: 1 1 auto;
   background-color: ${({ theme }) => theme.background()};
   padding: ${gridSize() * 4}px ${gridSize() * 4.5}px;
 

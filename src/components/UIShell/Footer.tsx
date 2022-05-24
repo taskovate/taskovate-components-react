@@ -8,6 +8,7 @@ import { Plate } from '..';
 const Styled = styled.div`
   margin-top: auto;
   padding: ${gridSize() * 2}px;
+  background-color: rgba(255,0,0, 0.5);
 
   h5 {
     color: darkgrey !important;

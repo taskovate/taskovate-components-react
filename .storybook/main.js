@@ -7,8 +7,8 @@ module.exports = {
     "builder": "webpack5"
   },
   stories: [
-    "../src/components/**/*.stories.tsx",
-    "../src/documentation/**/*.stories.mdx"
+    "../src/components/**/*.stories.@(tsx|jsx)",
+    "../src/documentation/**/*.stories.@(mdx|tsx|jsx)"
   ],
   staticDirs: [path.resolve(__dirname, "../static")],
   addons: [

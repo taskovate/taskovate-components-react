@@ -17,10 +17,11 @@ export default () => css`
     backface-visibility: hidden;
   }
 
-  html,
-  body {
+  html, body, #root {
     display: flex;
+    flex-direction: column;
     flex-grow: 1;
+    height: 100%;
   }
 
   /* Default margins */

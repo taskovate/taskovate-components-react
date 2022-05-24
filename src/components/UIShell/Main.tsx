@@ -10,6 +10,7 @@ const Styled = styled.div`
   @media only screen and (min-device-width: 740px) {
     margin-left: ${gridSize() * 1}px;
   }
+  background-color: rgba(0,0,255, 0.5)
   z-index: 10 !important;
 `;
 
