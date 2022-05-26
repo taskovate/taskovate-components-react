@@ -11,7 +11,7 @@
       "@internal/queries": ["internal/queries.ts"],
     },
     "outDir": "dist",
-    "target": "es5",
+    "target": "es2021",
     "lib": [
       "dom",
       "dom.iterable",
@@ -20,6 +20,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -31,6 +32,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "src/types"],
+  "include": ["src", "src/**/*"],
   "exclude": ["node_modules"]
 }

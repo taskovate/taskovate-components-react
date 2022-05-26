@@ -3,16 +3,17 @@ import styled from 'styled-components';
 import { gridSize, layers, animation, borderRadius, gradients, fontSize, headerFontFamily } from '@theme/constants';
 
 const Container = styled.div`
-  display: block;
+  display: inline-flex;
+  flex-direction: column;
   overflow-x: hidden;
-  // width: ;
   min-width: 0;
   flex-grow: 1;
+  // width: 80rem;
   max-width: 80rem;
-  // background-color: rgba(255,0,255,0.25);
+  align-items: start;
+  overflow: visible;
   margin: 0 auto;
-  overflow: visible !important;
-  background-color: rgba(0,0,255, 0.5)
+  // background-color: rgba(0,0,255, 0.5)
 `;
 
 const SideBar = ({ children }: any) => {

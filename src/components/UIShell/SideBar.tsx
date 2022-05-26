@@ -8,7 +8,6 @@ const Styled = styled.div`
   background-color: rgba(0,255,255,0.25);
   padding: ${gridSize() * 0.75}px;
   overflow: visible !important;
-  max-width: 200px;
 `;
 
 const SideBar = ({ children }: any) => {

@@ -11,10 +11,12 @@ interface PlateProps {
 }
 
 const Styled = styled.div<any>`
-  display: flex;
+  display: inline-flex;
   flex: 0 0 auto;
   flex-direction: column;
   z-index: ${layers.plate()};
+  margin-left: ${gridSize() * 0.4}px;
+  margin-right: ${gridSize() * 0.35}px;
   :before {
     content: '';
     display: flex;
