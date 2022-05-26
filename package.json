@@ -1,10 +1,6 @@
 {
   "name": "@taskovate/ui",
-<<<<<<< HEAD
   "version": "0.1.9",
-=======
-  "version": "0.1.8",
->>>>>>> 7a203c763a99c17e85d42e7cfa93a7fe3115f0f2
   "module": "./dist/esm/index.js",
   "main": "./dist/cjs/index.js",
   "types": "./dist/index.d.ts",
@@ -59,10 +55,7 @@
     "@parcel/packager-ts": "^2.6.0",
     "@parcel/transformer-typescript-tsc": "^2.6.0",
     "@parcel/transformer-typescript-types": "^2.6.0",
-<<<<<<< HEAD
-=======
     "@parcel/validator-typescript": "^2.6.0",
->>>>>>> 7a203c763a99c17e85d42e7cfa93a7fe3115f0f2
     "@react-theming/storybook-addon": "^1.1.6",
     "@storybook/addon-actions": "^6.5.5",
     "@storybook/addon-docs": "^6.5.5",
@@ -92,10 +85,7 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "history": "^5.3.0",
     "parcel": "^2.6.0",
-<<<<<<< HEAD
-=======
     "parcel-resolver-tspaths": "^0.0.9",
->>>>>>> 7a203c763a99c17e85d42e7cfa93a7fe3115f0f2
     "prettier": "^2.6.2",
     "react-scripts": "^5.0.1",
     "storybook-addon-apollo-client": "^4.0.11",
