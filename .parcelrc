@@ -1,6 +1,15 @@
 {
   "extends": "@parcel/config-default",
+<<<<<<< HEAD
   "transformers": {
     "*.{ts,tsx}": ["@parcel/transformer-typescript-tsc"]
+=======
+  "resolvers": ["...", "parcel-resolver-tspaths"],
+  "transformers": {
+    "*.{ts,tsx}": ["@parcel/transformer-typescript-tsc"]
+  },
+  "validators": {
+    "*.{ts,tsx}": ["@parcel/validator-typescript"]
+>>>>>>> 7a203c763a99c17e85d42e7cfa93a7fe3115f0f2
   }
 }

@@ -3,6 +3,7 @@ import {
   gridSize,
   borderRadius
 } from '@theme/constants';
+// the alias is not being read by parcel correct
 
 const baseScrollStyle = ( trackWidth = 2.25, thumbWidth = 7 ) => css<any>`
   ${({ theme: { scrollStyles } }) => `

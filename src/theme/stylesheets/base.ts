@@ -1,10 +1,10 @@
-import { css } from 'styled-components';
+import { DefaultTheme, css } from 'styled-components';
 import {
   colors,
   gridSize,
 } from '@theme/constants';
 
-export default () => css`
+export default () => css<DefaultTheme>`
   .sb-show-main {
     background-color: ${({ theme }) => theme.background()} !important;
   }
