@@ -11,7 +11,7 @@
       "@internal/queries": ["internal/queries.ts"],
     },
     "outDir": "dist",
-    "target": "es2021",
+    "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",

@@ -8,12 +8,13 @@ const Container = styled.div`
   overflow-x: hidden;
   min-width: 0;
   flex-grow: 1;
-  // width: 80rem;
+  width: ${1120 - gridSize() * 4}px;
   max-width: 80rem;
   align-items: start;
   overflow: visible;
   margin: 0 auto;
   // background-color: rgba(0,0,255, 0.5)
+  padding: ${gridSize() * 4}px;
 `;
 
 const SideBar = ({ children }: any) => {

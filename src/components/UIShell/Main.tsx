@@ -5,10 +5,11 @@ import { gridSize, layers, animation, borderRadius, gradients, fontSize, headerF
 const Styled = styled.div`
   display: flex;
   flex-direction: row;
+  margin-top: ${gridSize() * 6.375 + 0.375 + 0.5 * 2}px;
   min-width: 0;
   flex-grow: 1;
   @media only screen and (min-device-width: 740px) {
-    margin-left: ${gridSize() * 1}px;
+    margin-left: ${gridSize() * 2.25}px;
   }
   background-color: rgba(0,0,255, 0.5)
   z-index: 10 !important;
