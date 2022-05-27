@@ -45,7 +45,7 @@ const baseHeaderStyle = ({
   border-bottom-right-radius: ${borderWidth ? borderRadius() * 1 : borderRadius() * 0.75}px;
   transition: all ${animation.normal()}, opacity ${animation.slow()}-out, top ${animation.slow()}-out;
   will-change: top, transform;
-  overflow: hidden;
+  // overflow: hidden;
   // outline: 1px solid red;
 `;
 

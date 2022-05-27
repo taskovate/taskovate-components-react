@@ -60,7 +60,7 @@ export const HeaderBase: ComponentStory<any> = ({ children, ...rest}) => (
 );
 
 export const HeaderBaseWGlobalBar = HeaderBase.bind({});
-HeaderBaseWGlobalBar.storyName = "Header Base - Actions";
+HeaderBaseWGlobalBar.storyName = "Header Base|Actions";
 HeaderBaseWGlobalBar.args = {
   children: (
     <>
@@ -75,7 +75,7 @@ HeaderBaseWGlobalBar.args = {
 };
 
 export const HeaderBaseWMenuBar = HeaderBase.bind({});
-HeaderBaseWMenuBar.storyName = "Header Base - Menus";
+HeaderBaseWMenuBar.storyName = "Header Base|Menus";
 HeaderBaseWMenuBar.args = {
   children: (
     <>
@@ -98,7 +98,7 @@ HeaderBaseWMenuBar.args = {
 };
 
 export const HeaderBaseWActionsMenus = HeaderBase.bind({});
-HeaderBaseWActionsMenus.storyName = "Header Base - Actions and Menus";
+HeaderBaseWActionsMenus.storyName = "Header Base|Actions|Menus";
 HeaderBaseWActionsMenus.args = {
   children: (
     <>
@@ -126,22 +126,52 @@ HeaderBaseWActionsMenus.args = {
   )
 };
 
+export const HeaderBaseWDroplistActionsMenus = HeaderBase.bind({});
+HeaderBaseWDroplistActionsMenus.storyName = "Header App";
+HeaderBaseWDroplistActionsMenus.args = {
+  children: (
+    <>
+      <HeaderMenuBar>
+        <HeaderMenuItem>
+          <Dropdown />
+        </HeaderMenuItem>
+        <HeaderMenuItem>
+          Your work
+        </HeaderMenuItem>
+        <HeaderMenuItem>
+          People
+        </HeaderMenuItem>
+        <HeaderMenuItem>
+          Files
+        </HeaderMenuItem>
+      </HeaderMenuBar>
+      <HeaderGlobalBar>
+        <HeaderGlobalAction tooltip="Log in" iconBefore={MdLogin} />
+        <HeaderGlobalAction appearance="primary">
+          Sign up
+        </HeaderGlobalAction>
+      </HeaderGlobalBar>
+    </>
+  )
+};
+
+
 export const HeaderWContent: ComponentStory<any> = ({ children, ...rest}) => (
   <>
     <Header {...rest}>
       <HeaderDesignation />
       <HeaderMenuBar>
         <HeaderMenuItem>
-          Why Taskovate
+          <Dropdown />
         </HeaderMenuItem>
         <HeaderMenuItem>
-          Solutions
+          Your work
         </HeaderMenuItem>
         <HeaderMenuItem>
-          Pricing
+          People
         </HeaderMenuItem>
         <HeaderMenuItem>
-          Getting Started
+          Files
         </HeaderMenuItem>
       </HeaderMenuBar>
       <HeaderGlobalBar>
@@ -155,40 +185,10 @@ export const HeaderWContent: ComponentStory<any> = ({ children, ...rest}) => (
       <SideBar />
       <Content>
         <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
-        <Plate>Placeholder</Plate>
       </Content>
       <SideBar />
     </Main>
     <Footer />
   </>
 );
-HeaderWContent.storyName = "Header and Page"
+HeaderWContent.storyName = "Header App|Page"
