@@ -9,7 +9,12 @@ const Styled = styled.div`
   margin-top: auto;
   padding: ${gridSize() * 2}px;
   background-color: rgba(255,0,0, 0.5);
-
+  margin: 0 ${gridSize() * 0.75}px;
+  
+  @media only screen and (min-device-width: 740px) {
+    margin-left: ${gridSize() * 3}px;
+  }
+  
   h5 {
     color: darkgrey !important;
     margin-bottom: 0px !important;
@@ -20,10 +25,6 @@ const Styled = styled.div`
     :hover { 
       color: darkgrey !important;
     }
-  }
-  
-  @media only screen and (min-device-width: 740px) {
-    margin-left: ${gridSize() * 1}px;
   }
 `;
 

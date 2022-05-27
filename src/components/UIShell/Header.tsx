@@ -26,7 +26,7 @@ interface HeaderStyleProps {
 }
 
 const baseHeaderStyle = ({
-  height = gridSize() * 6.5,
+  height = gridSize() * 6.75,
   offset = 0.375,
   borderWidth = 0,
   paddingX = gridSize() * 2.5,
@@ -72,7 +72,7 @@ const Header: React.FC<any> = ({
   const [mode, setMode] = useState('noscroll');
 
   const onScroll = () => {
-    setMode(window.pageYOffset >= gridSize() * 4 ? 'scroll' : 'noscroll');
+    setMode(window.pageYOffset >= gridSize() * 3 ? 'scroll' : 'noscroll');
   };
 
   useEffect(() => {
