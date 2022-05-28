@@ -38,6 +38,7 @@ const baseScrollStyle = ( trackWidth = 2.25, thumbWidth = 7 ) => css<any>`
 export default () => css`
   body {
     ${baseScrollStyle()}
+    overflow-y: scroll;
   }
 
   .react-select__menu-list {

@@ -11,16 +11,11 @@ import {
   HeaderMenuItem,
   HeaderGlobalBar,
   HeaderGlobalAction,
-  Dropdown,
-  Plate,
-  Main,
-  Content,
-  Footer,
-  SideBar
+  Dropdown
 } from '@components/core';
 
 export default {
-  title: 'Components/UIShell',
+  title: 'Components/UI Shell',
   subcomponents: {
     Header,
     HeaderDesignation,
@@ -28,12 +23,6 @@ export default {
     HeaderMenuItem,
     HeaderGlobalBar,
     HeaderGlobalAction,
-    Dropdown,
-    Plate,
-    Main,
-    Content,
-    Footer,
-    SideBar
   },
   parameters: {
     layout: 'fullscreen',
@@ -58,9 +47,10 @@ export const HeaderBase: ComponentStory<any> = ({ children, ...rest}) => (
     </Header>
   </CanvasWithScroll>
 );
+HeaderBase.storyName = "Header Base";
 
 export const HeaderBaseWGlobalBar = HeaderBase.bind({});
-HeaderBaseWGlobalBar.storyName = "Header Base|Actions";
+HeaderBaseWGlobalBar.storyName = "Header Base w/ [Global Actions]";
 HeaderBaseWGlobalBar.args = {
   children: (
     <>
@@ -75,7 +65,7 @@ HeaderBaseWGlobalBar.args = {
 };
 
 export const HeaderBaseWMenuBar = HeaderBase.bind({});
-HeaderBaseWMenuBar.storyName = "Header Base|Menus";
+HeaderBaseWMenuBar.storyName = "Header Base w/ [Menu Items]";
 HeaderBaseWMenuBar.args = {
   children: (
     <>
@@ -98,7 +88,7 @@ HeaderBaseWMenuBar.args = {
 };
 
 export const HeaderBaseWActionsMenus = HeaderBase.bind({});
-HeaderBaseWActionsMenus.storyName = "Header Base|Actions|Menus";
+HeaderBaseWActionsMenus.storyName = "Header Base w/ [Menu Items, Global Actions]";
 HeaderBaseWActionsMenus.args = {
   children: (
     <>
@@ -155,7 +145,6 @@ HeaderBaseWDroplistActionsMenus.args = {
   )
 };
 
-
 export const HeaderWContent: ComponentStory<any> = ({ children, ...rest}) => (
   <>
     <Header {...rest}>
@@ -181,14 +170,7 @@ export const HeaderWContent: ComponentStory<any> = ({ children, ...rest}) => (
         </HeaderGlobalAction>
       </HeaderGlobalBar>
     </Header>
-    <Main>
-      <SideBar />
-      <Content>
-        <Plate>Placeholder</Plate>
-      </Content>
-      <SideBar />
-    </Main>
-    <Footer />
   </>
 );
-HeaderWContent.storyName = "Header App|Page"
+
+HeaderWContent.storyName = "Header App w/ [SideBars, Content, Footer]";

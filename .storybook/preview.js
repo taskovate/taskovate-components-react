@@ -21,7 +21,7 @@ export const parameters = {
     disable: true
   },
   previewTabs: {
-    canvas: { title: 'Code', hidden: false },
+    canvas: { title: 'Canvas', hidden: false },
     'storybook/docs/panel': {
       title: 'Documentation',
     },
