@@ -97,10 +97,10 @@ export const scrollStyles = {
 export const navigationStyles = {
   background: {
     'unset': {
-      disabled: () => background(),
-      default: () => background(),
-      hover: () => colors.d[600],
-      active: () => colors.d[500],
+      disabled: () => 'transparent',
+      default: () => 'transparent',
+      hover: () => hex2rgba(colors.d[600], 0.75),
+      active: () => hex2rgba(colors.d[500], 0.75),
     },
     'primary': {
       disabled: () => colors.p[800],

@@ -5,13 +5,22 @@ import { gridSize } from '@theme/constants';
 import { MdLogin } from 'react-icons/md';
 import { HiOutlineChatAlt, HiOutlineBell, HiOutlineUser, HiHome, HiStar } from 'react-icons/hi';
 import {
-  Dropdown,
   Header,
   HeaderDesignation,
   HeaderMenuBar,
   HeaderMenuItem,
   HeaderGlobalBar,
   HeaderGlobalAction,
+} from '@components/core';
+
+import {
+  PageLayout,
+  TopNavigation,
+  Content,
+  Footer,
+  Main,
+  LeftSidebar,
+  RightSidebar
 } from '@components/core';
 
 export default {
@@ -22,39 +31,40 @@ export default {
   },
 } as ComponentMeta<typeof Header>;
 
-const ScrollArea = styled.div`
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: calc(100% + ${gridSize() * 10}px);
-  width: 100%;
-`;
-
 export const Default: ComponentStory<typeof Header> = () => (
-  <ScrollArea>
-    <Header>
-      <HeaderDesignation />
-      <HeaderMenuBar>
-        <HeaderMenuItem>
-          Why Taskovate
-        </HeaderMenuItem>
-        <HeaderMenuItem>
-          Solutions
-        </HeaderMenuItem>
-        <HeaderMenuItem>
-          Pricing
-        </HeaderMenuItem>
-        <HeaderMenuItem>
-          Getting Started
-        </HeaderMenuItem>
-      </HeaderMenuBar>
-      <HeaderGlobalBar>
-        <HeaderGlobalAction tooltip="Log in" iconBefore={MdLogin} />
-        <HeaderGlobalAction appearance="primary">
-          Sign up
-        </HeaderGlobalAction>
-      </HeaderGlobalBar>
-    </Header>
-  </ScrollArea>
+  <PageLayout>
+    <TopNavigation>
+      <Header>
+        <HeaderDesignation />
+        <HeaderMenuBar>
+          <HeaderMenuItem>
+            Why Taskovate
+          </HeaderMenuItem>
+          <HeaderMenuItem>
+            Solutions
+          </HeaderMenuItem>
+          <HeaderMenuItem>
+            Pricing
+          </HeaderMenuItem>
+          <HeaderMenuItem>
+            Getting Started
+          </HeaderMenuItem>
+        </HeaderMenuBar>
+        <HeaderGlobalBar>
+          <HeaderGlobalAction tooltip="Log in" iconBefore={MdLogin} />
+          <HeaderGlobalAction appearance="primary">
+            Sign up
+          </HeaderGlobalAction>
+        </HeaderGlobalBar>
+      </Header>
+    </TopNavigation>
+    <Content>
+      <Main>
+        Main
+      </Main>
+    </Content>
+    <Footer>
+      Footer
+    </Footer>
+  </PageLayout>
 );

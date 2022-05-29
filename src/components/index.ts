@@ -23,4 +23,14 @@ export {
   HeaderGlobalBar,
   HeaderMenuBar,
   HeaderMenuItem
- } from './UIShell';
+ } from './Header';
+ export { 
+  Main, 
+  Content,
+  PageLayout,
+  LeftSidebar,
+  RightSidebar,
+  TopNavigation,
+  Footer       
+ } from './PageLayout';
+ 

@@ -6,10 +6,12 @@ const Styled = styled.div`
   display: flex;
   height: auto;
   // background-color: yellow;
-  width: ${gridSize() * 32}px;
+  width: ${gridSize() * 26}px;
 
   outline: 2px dashed ${colors.y[500]};
   outline-offset: -4px;
+
+  padding: ${gridSize() * 1}px ${gridSize() * 3}px;
 `;
 
 const LeftSidebar = ({ children }: any) => {

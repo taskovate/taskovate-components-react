@@ -6,8 +6,11 @@ const Styled = styled.div`
   display: flex;
   grid-area: "top-navigation";
 
-  outline: 2px dashed ${colors.b[500]};
-  outline-offset: -4px;
+  // outline: 2px dashed ${colors.b[500]};
+  // outline-offset: -4px;
+
+  // padding: ${gridSize() * 1}px;
+  background: red;
 `;
 
 const TopNavigation = ({ children }: any) => {

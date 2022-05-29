@@ -30,17 +30,17 @@ export default {
   },
 } as ComponentMeta<typeof PageLayout>;
 
-export const Base: ComponentStory<typeof PageLayout> = ({ children, ...rest}) => (
+export const Basic: ComponentStory<typeof PageLayout> = ({ children, ...rest}) => (
   <>
     <PageLayout>
-      <TopNavigation />
+      <TopNavigation children="Top Navigation"/>
       <Content>
         <LeftSidebar children="Left Sidebar"/>
         <Main children="Main" />
         <RightSidebar children="Right Sidebar"/>
       </Content>
-      <Footer />
+      <Footer children="Footer"/>
     </PageLayout>
   </>
 );
-Base.storyName = "Base";
+Basic.storyName = "Basic";

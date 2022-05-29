@@ -9,6 +9,8 @@ const Styled = styled.div`
 
   outline: 2px dashed ${colors.g[500]};
   outline-offset: -4px;
+
+  padding: ${gridSize() * 1}px;
 `;
 
 const Main = ({ children }: any) => {

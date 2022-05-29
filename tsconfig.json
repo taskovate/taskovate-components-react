@@ -3,6 +3,7 @@
     "baseUrl": "./src",
     "paths": {
       "@components/core": ["components/index.ts"],
+      "@components/*": ["components/*/index.ts"],
       "@theme/core": ["theme/index.ts"],
       "@theme/constants": ["theme/constants/index.ts"],
       "@theme/helpers": ["theme/helpers/index.ts"],
