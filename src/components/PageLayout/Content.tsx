@@ -5,7 +5,6 @@ import { gridSize, layers, animation, borderRadius, gradients, fontSize, headerF
 const Styled = styled.div`
   display: flex;
   height: 100%;
-  // background-color: red;
   grid-area: "content" / "content" / "content";
 `;
 

@@ -5,10 +5,10 @@ import { hex2rgba } from '@theme/helpers';
 
 const Styled = styled.div`
   display: grid;
-  width: 100%;
   grid-template-columns: repeat(100%, 1fr);
   background-color: ${({ theme }) => theme.background()};
   height: calc(100% - ${gridSize() * 0.25}px);
+  width: calc(100% - ${gridSize() * 0.5}px);
   padding-top: ${gridSize() * 0.25}px;
   z-index: ${layers.navigation()};
 `;
@@ -49,7 +49,8 @@ const Content = styled.div<any>`
   border-top-right-radius: ${borderRadius() * 0.75}px;
   border-bottom-right-radius: ${borderRadius() * 0.75}px;
 
-  padding: ${gridSize() * 1}px ${gridSize() * 2.5}px;
+  padding: ${gridSize() * 0}px ${gridSize() * 2.5}px;
+  padding-right: ${gridSize() * 1.5}px;
 
   z-index: ${layers.navigation() + 1};
 `;
@@ -72,7 +73,7 @@ const Header: React.FC<any> = ({
   
   return (
     <Styled>
-      <Border mode={mode} />
+      <Border mode={'scroll'} />
       <Content>
         {children}
       </Content>

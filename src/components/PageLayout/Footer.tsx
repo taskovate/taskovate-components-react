@@ -5,10 +5,6 @@ import { colors, gridSize, layers, animation, borderRadius, gradients, fontSize,
 const Styled = styled.div`
   display: flex;
   grid-area: "footer";
-
-  outline: 2px dashed ${colors.b[500]};
-  outline-offset: -4px;
-
   padding: ${gridSize() * 1}px;
 `;
 

@@ -18,6 +18,7 @@ const Container = styled.div<any>`
   justify-content: flex-start;
   flex: 0 1 auto;
   align-items: center;
+  height: 100%;
 `;
 
 const HeaderMenuBar: React.FC<any> = ({ children }: any) => {

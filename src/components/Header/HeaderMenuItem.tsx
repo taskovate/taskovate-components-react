@@ -57,9 +57,9 @@ const menuItemStyles = () => css<any>`
   vertical-align: middle;
   text-align: center;
   font-size: ${fontSize() * 1}px;
-  padding: ${gridSize() * 0.6875}px ${gridSize() * 1}px;
+  padding: ${gridSize() * 0.75}px ${gridSize() * 0.75}px;
   border-radius: ${borderRadius()}px;
-  line-height: 1.5em;
+  // line-height: 1.5rem;
   margin-right: ${gridSize() * 0.75}px;
   cursor: pointer;
   font-weight: 500;
@@ -67,6 +67,8 @@ const menuItemStyles = () => css<any>`
   border: none;
   // overflow: hidden;
   user-select: none;
+  max-height: ${gridSize() * 4}px;
+
   svg {
     height: ${fontSize() * 1.3}px;
     width: ${fontSize() * 1.3}px;

@@ -2,14 +2,14 @@ import { hex2rgba, hexCombine } from '@theme/helpers';
 import * as colors from './colors';
 import * as typography from './typography';
 
-export const borderRadius = () => 3;
+export const borderRadius = () => 2.5;
 export const gridSize = () => 8;
 export const fontSize = () => 14;
 export const fontSizeSmall = () => 11;
 
-export const fontFamily = () => `'Noto Sans'`;
-export const headerFontFamily = () => `'Noto Sans Display', sans-serif`;
-export const codeFontFamily = () => `'Noto Sans Mono', monospace`;
+export const fontFamily = () => `'Assailand Medium'`;
+export const headerFontFamily = () => `'Electrolize', sans-serif`;
+export const codeFontFamily = () => `'IBM Plex Mono', monospace`;
 
 export const breakpoints = {
   mobile: () => '320px',

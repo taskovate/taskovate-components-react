@@ -5,12 +5,7 @@ import { colors, gridSize, layers, animation, borderRadius, gradients, fontSize,
 const Styled = styled.div`
   display: flex;
   height: auto;
-  // background-color: purple;
   width: ${gridSize() * 23}px;
-
-  outline: 2px dashed ${colors.y[500]};
-  outline-offset: -4px;
-
   padding: ${gridSize() * 1}px;
 `;
 

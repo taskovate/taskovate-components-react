@@ -73,9 +73,9 @@ const Container = styled.div<any>`
   vertical-align: middle;
   text-align: center;
   font-size: ${fontSize() * 1}px;
-  padding: ${({ hasIcon }) => hasIcon ? gridSize() * 0.75 : gridSize() * 0.8125}px 
+  padding: ${({ hasIcon }) => hasIcon ? gridSize() * 0.75 : gridSize() * 0.75}px 
            ${({ hasIcon }) => hasIcon ? gridSize() * 0.75 : gridSize() * 1.25}px;
-  // line-height: normal;
+  // line-height: 1.5em;
   border-radius: ${borderRadius()}px;
   margin-left: ${gridSize() * 0.75}px;
   cursor: pointer;
@@ -84,6 +84,7 @@ const Container = styled.div<any>`
   border: none;
   overflow: hidden;
   user-select: none;
+  max-height: ${gridSize() * 4}px;
 
   & > span {
     display: flex;

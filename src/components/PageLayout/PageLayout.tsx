@@ -12,7 +12,7 @@ const Styled = styled.div`
     "footer"
   ;
 
-  grid-template-rows: ${gridSize() * 7}px auto ${gridSize() * 16}px;
+  grid-template-rows: ${gridSize() * 7.5}px auto ${gridSize() * 16}px;
   grid-template-columns: auto;
 
   // background-color: rgba(255 0 0 / 10%);

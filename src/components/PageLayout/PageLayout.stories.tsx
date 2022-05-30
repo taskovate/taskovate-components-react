@@ -1,7 +1,7 @@
 import React, { Children } from 'react';
 import styled from 'styled-components';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { gridSize } from '@theme/constants';
+import { colors, gridSize } from '@theme/constants';
 import { MdLogin } from 'react-icons/md';
 import { HiOutlineChatAlt, HiOutlineBell, HiOutlineUser, HiHome, HiStar } from 'react-icons/hi';
 import { 
@@ -30,8 +30,20 @@ export default {
   },
 } as ComponentMeta<typeof PageLayout>;
 
+const Styled = styled.div`
+  width: 100%;
+  height: 100%;
+  & > div > :nth-child(1),
+  & > div > :nth-child(2) > div,
+  & > div > :nth-child(3) {
+    outline: 2px dashed ${colors.b[500]};
+    outline-offset: -4px;
+    padding: ${gridSize() * 1}px;
+  }
+`;
+
 export const Basic: ComponentStory<typeof PageLayout> = ({ children, ...rest}) => (
-  <>
+  <Styled>
     <PageLayout>
       <TopNavigation children="Top Navigation"/>
       <Content>
@@ -41,6 +53,6 @@ export const Basic: ComponentStory<typeof PageLayout> = ({ children, ...rest}) =
       </Content>
       <Footer children="Footer"/>
     </PageLayout>
-  </>
+  </Styled>
 );
 Basic.storyName = "Basic";
