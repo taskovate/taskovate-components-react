@@ -73,7 +73,7 @@ const Header: React.FC<any> = ({
   
   return (
     <Styled>
-      <Border mode={'scroll'} />
+      <Border mode={mode} />
       <Content>
         {children}
       </Content>

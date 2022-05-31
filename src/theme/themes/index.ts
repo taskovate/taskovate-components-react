@@ -1,5 +1,5 @@
-import * as DarkTheme from './dark';
+import * as _DarkTheme from './dark';
 
-export {
-  DarkTheme
+export const DarkTheme = {
+  ..._DarkTheme
 };

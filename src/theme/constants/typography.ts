@@ -8,7 +8,6 @@ const baseHeading = (size: number, lineHeight: number) => `
   font-size: ${size / fontSize()}em;
   font-style: inherit;
   line-height: ${lineHeight / size};
-  // font-feature-settings: "salt";
 `;
 
 export const heading = {

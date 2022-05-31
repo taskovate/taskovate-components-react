@@ -26,6 +26,7 @@ body, :root {
   font-style: normal;
   line-height: 1.428571428571429;
   font-weight: 400;
+  font-style: normal;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   text-decoration-skip-ink: auto;
   backface-visibility: hidden;

@@ -56,7 +56,7 @@ export const dropdownStyles = {
 export const inputStyles = {
   background: {
     'body': {
-      default: () => colors.d[500],
+      default: () => colors.d[600],
       hover: () => colors.d[500],
       active: () => colors.d[400],
       selected: () => colors.d[300],
@@ -64,7 +64,7 @@ export const inputStyles = {
   },
   borderColor: {
     'body': {
-      default: () => colors.d[500],
+      default: () => colors.d[600],
       hover: () => colors.p[500],
       focus: () => colors.p[400]
     }
