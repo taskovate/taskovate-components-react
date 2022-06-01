@@ -1,15 +1,18 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": ".",
+    "rootDir": "./src",
+    "declarationDir": "./",
+    "declaration": true,
     "paths": {
-      "@components/core": ["./components/index.ts"],
-      "@components/*": ["./components/*/index.ts"],
-      "@theme/core": ["./theme/index.ts"],
-      "@theme/constants": ["./theme/constants/index.ts"],
-      "@theme/helpers": ["./theme/helpers/index.ts"],
-      "@internal/core": ["./internal/index.ts"],
-      "@internal/store": ["./internal/store.ts"],
-      "@internal/queries": ["./internal/queries.ts"],
+      "@components/core": ["./src/components/index.ts"],
+      "@components/*": ["./src/components/*/index.ts"],
+      "@theme/core": ["./src/theme/index.ts"],
+      "@theme/constants": ["./src/theme/constants/index.ts"],
+      "@theme/helpers": ["./src/theme/helpers/index.ts"],
+      "@internal/core": ["./src/internal/index.ts"],
+      "@internal/store": ["./src/internal/store.ts"],
+      "@internal/queries": ["./src/internal/queries.ts"],
     },
     "outDir": "dist",
     "target": "es5",
@@ -18,7 +21,7 @@
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
+    "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
@@ -32,7 +35,14 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "sourceMap": true
   },
   "include": ["src", "src/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "./dist",
+    "./dist/**/*",
+    "./node_modules",
+    "./src/**/**/*.test.tsx",
+    "./src/**/**/*.stories.tsx",
+  ]
 }
