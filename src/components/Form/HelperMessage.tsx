@@ -4,7 +4,7 @@ import { colors, gridSize, layers, animation, fontSize, borderRadius, gradients,
 import { BsFillExclamationSquareFill } from 'react-icons/bs';
 
 const Styled = styled.p`
-  margin-top: ${gridSize() * 0.25}px;
+  margin-top: ${gridSize() * 0.75}px;
 `;
 
 const HelperMessage = ({

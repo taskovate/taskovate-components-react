@@ -7,8 +7,8 @@ export const gridSize = () => 8;
 export const fontSize = () => 14;
 export const fontSizeSmall = () => 11;
 
-export const fontFamily = () => `'AssailandMedium'`;
-export const headerFontFamily = () => `'AzeriSansRegular', sans-serif`;
+export const fontFamily = () => `'Assailand'`;
+export const headerFontFamily = () => `'Azeri Sans', sans-serif`;
 export const codeFontFamily = () => `'IBM Plex Mono', monospace`;
 
 export const breakpoints = {

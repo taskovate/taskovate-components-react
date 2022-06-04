@@ -12,7 +12,7 @@ const base = () => ({
   appBorderRadius: 3,
 
   // Typography
-  fontBase: `'AssailandMedium'`,
+  fontBase: `'Assailand'`,
   fontCode: `'IBM Plex Mono', monospace`,
 
   // Text colors

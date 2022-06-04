@@ -8,7 +8,7 @@ const Styled = styled.div`
   grid-template-columns: repeat(100%, 1fr);
   background-color: ${({ theme }) => theme.background()};
   height: calc(100% - ${gridSize() * 0.25}px);
-  width: calc(100% - ${gridSize() * 0.5}px);
+  width: calc(100% - ${gridSize() * 1}px);
   padding-top: ${gridSize() * 0.25}px;
   z-index: ${layers.navigation()};
 `;

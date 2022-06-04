@@ -55,7 +55,7 @@ const Dropdown = ({
           MenuList,
           IndicatorSeparator: null
         }}
-        // hideSelectedOptions
+        hideSelectedOptions
         defaultValue={defaultValue}
         // menuIsOpen
         onMenuClose={() => {
@@ -80,7 +80,6 @@ const Styled = styled<any>(ReactSelect)`
   .react-select {
     &__control {
       flex-wrap: nowrap;
-      z-index: ${layers.select() + 1};
       transition: ${animation.normal()};
       margin: 0;
       min-height: 0;
@@ -172,7 +171,7 @@ const Styled = styled<any>(ReactSelect)`
       border-top-right-radius: 0;
       border: ${gridSize() * 0.25}px solid ${({ theme: { dropdownStyles } }) => dropdownStyles.borderColor['body'].focus()};
       border-top: none;
-      z-index: -1;
+      // z-index: -1;
       @keyframes fadeIn {
         0% {
           opacity: 0;

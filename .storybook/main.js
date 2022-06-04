@@ -10,7 +10,7 @@ module.exports = {
     "../src/components/**/*.stories.@(tsx|jsx)",
     "../src/documentation/**/*.stories.@(mdx|tsx|jsx)"
   ],
-  staticDirs: [path.resolve(__dirname, "../static")],
+  staticDirs: [path.resolve(__dirname, "../assets")],
   addons: [
     { name: "@storybook/addon-docs",
       options: {

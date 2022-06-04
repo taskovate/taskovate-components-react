@@ -18,7 +18,7 @@ const Styled = styled.div`
   }
 
   label { 
-    margin-bottom: ${gridSize() * 0.75}px;
+    margin-bottom: ${gridSize() * 0.5}px;
   }
 `;
 

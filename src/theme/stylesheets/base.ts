@@ -22,6 +22,8 @@ export default () => css<DefaultTheme>`
     flex-direction: column;
     flex-grow: 1;
     height: 100%;
+    margin: 0;
+    background-color: ${({ theme }) => theme.background()} !important;
   }
 
   /* Default margins */
