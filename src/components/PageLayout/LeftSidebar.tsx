@@ -17,4 +17,6 @@ const LeftSidebar = ({ children }: any) => {
   )
 };
 
+LeftSidebar.prototype.name = "LeftSidebar";
+
 export default LeftSidebar;

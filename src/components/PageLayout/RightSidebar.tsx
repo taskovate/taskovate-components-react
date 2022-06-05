@@ -17,4 +17,6 @@ const RightSidebar = ({ children }: any) => {
   )
 };
 
+RightSidebar.prototype.name = "RightSidebar";
+
 export default RightSidebar;

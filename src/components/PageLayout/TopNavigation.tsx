@@ -15,4 +15,6 @@ const TopNavigation = ({ children }: any) => {
   )
 };
 
+TopNavigation.prototype.name = "TopNavigation";
+
 export default TopNavigation;

@@ -16,4 +16,6 @@ const Content = ({ children }: any) => {
   )
 };
 
+Content.prototype.name = "Content";
+
 export default Content;

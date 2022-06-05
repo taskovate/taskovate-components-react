@@ -16,4 +16,6 @@ const Footer = ({ children }: any) => {
   )
 };
 
+Footer.prototype.name = "Footer";
+
 export default Footer;
