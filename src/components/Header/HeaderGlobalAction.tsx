@@ -13,6 +13,8 @@ type TooltipProps = {
 
 interface HeaderGlobalActionProps {
   href?: string;
+  to?: string;
+  target?: any;
   tooltip?: TooltipProps;
   appearance?: any;
   isLoading?: boolean;
@@ -23,7 +25,6 @@ interface HeaderGlobalActionProps {
 }
 
 const HeaderGlobalAction: React.FC<any> = ({ 
-  href,
   tooltip,
   appearance,
   isLoading,
@@ -53,12 +54,6 @@ const HeaderGlobalAction: React.FC<any> = ({
         )}
       </Container>
     </Tooltip>
-  );
-
-  if (href) return (
-    <Link to={href}>
-      {renderComponent}
-    </Link>
   );
 
   return renderComponent;

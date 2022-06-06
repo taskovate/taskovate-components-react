@@ -23,8 +23,6 @@ interface ButtonProps {
 }
 
 const Button: React.FC<any> = ({
-  href,
-  to,
   tooltip,
   appearance = 'unset',
   spacing = 'default',
@@ -33,7 +31,6 @@ const Button: React.FC<any> = ({
   isLoading = false,
   isDisabled,
   children,
-  target,
   ...rest
 }: ButtonProps) => {
   const renderComponent = (
@@ -61,12 +58,6 @@ const Button: React.FC<any> = ({
         )}
       </Container>
     </Tooltip>
-  );
-
-  if (href||to) return (
-    <Link target={target} href={href} to={to} style={{ textDecoration: 'none' }}>
-      {renderComponent}
-    </Link>
   );
 
   return renderComponent;

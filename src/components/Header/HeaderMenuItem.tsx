@@ -13,6 +13,8 @@ type TooltipProps = {
 
 interface HeaderMenuItemProps {
   href?: string;
+  to?: string;
+  target?: any;
   tooltip?: TooltipProps;
   appearance?: any;
   isLoading?: boolean;
@@ -21,7 +23,6 @@ interface HeaderMenuItemProps {
 }
 
 const HeaderMenuItem: React.FC<any> = ({ 
-  href,
   tooltip,
   appearance,
   isLoading,
@@ -41,12 +42,6 @@ const HeaderMenuItem: React.FC<any> = ({
         {!isLoading && children}
       </Container>
     </Tooltip>
-  );
-
-  if (href) return (
-    <Link to={href}>
-      {renderComponent}
-    </Link>
   );
 
   return renderComponent;

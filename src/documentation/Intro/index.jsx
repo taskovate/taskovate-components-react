@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { linkTo } from '@storybook/addon-links';
-import LinkTo from '@storybook/addon-links/react';
 import { Plate, Button, ButtonGroup } from '@components/core';
 import styled, { ThemeProvider } from 'styled-components';
 import { DarkTheme, GlobalStyle } from '@theme/core';
@@ -23,7 +22,7 @@ const Introduction = () => (
         <p>The Taskovate User Interface Kit includes guidelines, components, and templates to help you improve the usability of your products.</p>
       <ButtonGroup style={{ marginTop: '48px' }}>
         <Button appearance="special" onClick={linkTo('Getting started', 'Installing the Kit')}>Get Started</Button>
-        <Button target="_blank" to="https://github.com/taskovate/taskovate-components-react">Follow on GitHub</Button>
+        <Button onClick={() => window.open("https://github.com/taskovate/taskovate-components-react",'_blank')}>Follow on GitHub</Button>
       </ButtonGroup>
       </span>
       <Logo src="/images/logo.svg" />
