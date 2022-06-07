@@ -1,5 +1,6 @@
 const path = require('path');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   framework: "@storybook/react",
@@ -10,7 +11,7 @@ module.exports = {
     "../src/components/**/*.stories.@(tsx|jsx)",
     "../src/documentation/**/*.stories.@(mdx|tsx|jsx)"
   ],
-  staticDirs: [path.resolve(__dirname, "../assets")],
+  staticDirs: [path.resolve(__dirname, "../static")],
   addons: [
     { name: "@storybook/addon-docs",
       options: {
@@ -33,7 +34,11 @@ module.exports = {
         extensions: config.resolve.extensions,
       })
     ];
-  
+
+    config.resolve.roots = [
+      path.resolve(__dirname, '../static'),
+    ];
+    
     return config;
   },
 };

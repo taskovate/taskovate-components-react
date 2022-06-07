@@ -32,7 +32,7 @@ export default [
       }),
       terser(),
       static_files({
-        include: ['./assets']
+        include: ['./static']
       })
     ],
     external: ["react", "react-dom", "styled-components"]
