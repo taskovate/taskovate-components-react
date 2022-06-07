@@ -24,7 +24,7 @@ import {
   LeftSidebar,
   RightSidebar
 } from '@components/core';
-import './LandingPage.styles.css';
+import './Land.styles.css';
 
 export default {
   title: 'Templates/Landing page',

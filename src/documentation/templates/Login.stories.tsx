@@ -14,7 +14,7 @@ import {
  } from '@components/core';
 
 export default {
-  title: 'Templates/Login',
+  title: 'Templates/Log in',
   parameters: {
     componentSubtitle: 'Example',
     status: 'legacy',
@@ -23,7 +23,7 @@ export default {
   },
 };
 
-export const Regular: ComponentStory<any> = () => {
+export const LoginRegular: ComponentStory<any> = () => {
   const onSubmit = (data: any) => {
     console.log(data);
   };
@@ -87,3 +87,10 @@ export const Regular: ComponentStory<any> = () => {
     </Plate>
   );
 };
+LoginRegular.storyName = "Log in to Portal"
+
+export const LoginProject: ComponentStory<any> = () => (
+  <>
+  </>
+);
+LoginProject.storyName = "Log in to Project"
