@@ -35,10 +35,6 @@ module.exports = {
       })
     ];
 
-    config.resolve.roots = [
-      path.resolve(__dirname, '../static'),
-    ];
-    
     return config;
   },
 };

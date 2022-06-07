@@ -9,7 +9,7 @@ const Styled = styled.div`
   flex-grow: 1;
   padding: ${gridSize() * 1}px ${gridSize() * 4}px;
   align-items: center;
-  max-width: ${gridSize() * 192}px;
+  // max-width: ${gridSize() * 192}px;
   margin: 0 auto;
 `;
 
