@@ -5,6 +5,9 @@ import { colors, gridSize, layers, animation, borderRadius, gradients, fontSize,
 const Styled = styled.div`
   display: flex;
   grid-area: "top-navigation";
+  position: sticky;
+  top: 0;
+  z-index: ${layers.navigation()};
 `;
 
 const TopNavigation = ({ children }: any) => {

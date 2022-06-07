@@ -11,10 +11,10 @@ interface PlateProps {
 }
 
 const Styled = styled.div<any>`
-  display: inline-flex;
-  flex: 0 0 auto;
-  flex-direction: column;
+  display: block;
   z-index: ${layers.plate()};
+  margin-top: ${gridSize() * 1}px;
+  margin-bottom: ${gridSize() * 1}px;
   margin-left: ${gridSize() * 0.4}px;
   margin-right: ${gridSize() * 0.35}px;
   :before {
@@ -25,6 +25,7 @@ const Styled = styled.div<any>`
     height: ${gridSize() * 1}px;
     margin-left: -${gridSize() * 0.4}px;
     margin-bottom: -${gridSize() * 0.6}px;
+    transform: rotate(180deg);
     width: calc(100% + ${gridSize() * 0.75}px);
     background: ${({ appearance }) => appearance !== 'display' && gradients.primary()};
     clip-path: polygon(0% 0%, 0% 100%, ${gridSize() * 1}px 100%, ${gridSize() * 1}px 0, calc(100% - ${gridSize() * 1}px) 0, calc(100% - ${gridSize() * 1}px) 100%, 25% 100%, 25% 100%, 100% 100%, 100% 0%);
@@ -32,7 +33,6 @@ const Styled = styled.div<any>`
   :after {
     content: '';
     display: flex;
-    transform: rotate(180deg);
     flex-grow: 1;
     position: relative;
     height: ${gridSize() * 1}px;
@@ -46,7 +46,8 @@ const Styled = styled.div<any>`
 
 const Border = styled.div<any>`
   display: flex;
-  flex: 1 1 auto;
+  flex: 1 1 100%;
+  // height: calc(100% - ${gridSize() * 5}px);
   background: ${gradients.primary()};
   border-radius: ${borderRadius() * 1}px;
   border: ${gridSize() * 0.25}px solid transparent;
@@ -65,7 +66,8 @@ const Border = styled.div<any>`
 
 const Content = styled.div<any>`
   display: flex;
-  flex: 1 1 auto;
+  flex: 1 1 100%;
+  // height: calc(100% - ${gridSize() * 5}px);
   background-color: ${({ theme }) => theme.background()};
   padding: ${gridSize() * 4}px ${gridSize() * 4.5}px;
 
@@ -87,11 +89,12 @@ const Content = styled.div<any>`
 const Plate = ({
   appearance = 'default',
   isLoading,
-  children
+  children,
+  ...rest
 }: PlateProps) => {
 
   return (
-    <Styled appearance={appearance}>
+    <Styled {...rest} appearance={appearance}>
       <Border appearance={appearance}>
         <Content appearance={appearance}>
           {children}

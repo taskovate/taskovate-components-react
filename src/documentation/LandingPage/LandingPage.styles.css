@@ -1,0 +1,9 @@
+.banner {
+  width: 100% !important;
+  /* min-height: 256px !important; */
+}
+
+.bannerHalf {
+  width: 50% !important;
+  /* min-height: 256px !important; */
+}

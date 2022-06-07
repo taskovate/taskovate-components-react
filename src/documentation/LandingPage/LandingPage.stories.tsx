@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { gridSize } from '@theme/constants';
+import { colors, gridSize } from '@theme/constants';
 import { MdLogin } from 'react-icons/md';
 import { HiOutlineChatAlt, HiOutlineBell, HiOutlineUser, HiHome, HiStar } from 'react-icons/hi';
 import {
@@ -11,6 +11,8 @@ import {
   HeaderMenuItem,
   HeaderGlobalBar,
   HeaderGlobalAction,
+  Plate,
+  Button
 } from '@components/core';
 
 import {
@@ -22,6 +24,7 @@ import {
   LeftSidebar,
   RightSidebar
 } from '@components/core';
+import './LandingPage.styles.css';
 
 export default {
   title: 'Templates/Landing page',
@@ -38,33 +41,84 @@ export const Default: ComponentStory<typeof Header> = () => (
         <HeaderDesignation />
         <HeaderMenuBar>
           <HeaderMenuItem>
-            Why Taskovate
+            About Taskovate
           </HeaderMenuItem>
           <HeaderMenuItem>
             Solutions
           </HeaderMenuItem>
           <HeaderMenuItem>
-            Pricing
+            Resources
           </HeaderMenuItem>
           <HeaderMenuItem>
-            Getting Started
+            Pricing
           </HeaderMenuItem>
         </HeaderMenuBar>
         <HeaderGlobalBar>
-          <HeaderGlobalAction tooltip="Log in" iconBefore={MdLogin} />
+          <HeaderGlobalAction>
+            Log in
+          </HeaderGlobalAction>
           <HeaderGlobalAction appearance="primary">
-            Sign up
+            Try Taskovate for Free
           </HeaderGlobalAction>
         </HeaderGlobalBar>
       </Header>
     </TopNavigation>
     <Content>
       <Main>
-        Main
+        <h1>Accomplish more every day</h1>
+        <Plate className="banner" appearance="brimming">
+        </Plate>
+
+        <h1>Powerfully productive</h1>
+        <h3>A daily scoped task managment tool to help you and your team stay focused, block distractions and prioritize your most important work.</h3>
+        <Plate appearance="display">
+        </Plate>
+
+        <h1>See the big picture</h1>
+        <h3>We help turn chaos into order with powerful features like forecasting, projects, and tagging.</h3>
+        <Plate>
+        </Plate>
+
+        <h1>Focus on what matters to you</h1>
+        <h3>Your tasking list keeps track of your priorities and shows you the best task to focus on next.</h3>
+        <Plate>
+        </Plate>
+
+        <h1>Stay in control</h1>
+        <h3>Weekly reports make it simple to stay up to date and focused on the work that matters most.</h3>
+        <Plate>
+        </Plate>
+
+        <h1>Automate your workflows today</h1>
+        <Plate appearance="display">
+          <Button spacing="pleasant" appearance="special">Try Taskovate for Free</Button>
+        </Plate>
+        
       </Main>
     </Content>
     <Footer>
-      Footer
+      <Plate appearance="display">
+        <div>
+          <h2>Taskovate<span style={{ fontSize: 16 }}>.com</span></h2>
+          <p>All rights reserved. © 2022 Taskovate.com</p>
+          {/* <p>Website built by Elijah Montenegro</p> */}
+        </div>
+      </Plate>
+      <Plate appearance="display">
+        <span style={{ marginLeft: gridSize() * 10 }}>
+          <h4>Resources</h4>
+          <p>Support</p>
+          <p>Blog</p>
+          <p>Newsletter</p>
+          <p>What's new</p>
+          <p>Sitemap</p>
+        </span>
+        <span style={{ marginLeft: gridSize() * 8 }}>
+          <h4>Company</h4>
+          <p>Your Privacy</p>
+          <p>About us</p>
+        </span>
+      </Plate>
     </Footer>
   </PageLayout>
 );

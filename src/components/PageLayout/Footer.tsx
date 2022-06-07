@@ -5,7 +5,9 @@ import { colors, gridSize, layers, animation, borderRadius, gradients, fontSize,
 const Styled = styled.div`
   display: flex;
   grid-area: "footer";
-  padding: ${gridSize() * 1}px;
+  padding: ${gridSize() * 3}px ${gridSize() * 4}px;
+  align-items: start;
+  justify-content: start;
 `;
 
 const Footer = ({ children }: any) => {

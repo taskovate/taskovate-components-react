@@ -4,9 +4,13 @@ import { colors, gridSize, layers, animation, borderRadius, gradients, fontSize,
 
 const Styled = styled.div`
   display: flex;
+  flex-direction: column;
   height: auto;
   flex-grow: 1;
-  padding: ${gridSize() * 1}px;
+  padding: ${gridSize() * 1}px ${gridSize() * 4}px;
+  align-items: center;
+  max-width: ${gridSize() * 192}px;
+  margin: 0 auto;
 `;
 
 const Main = ({ children }: any) => {

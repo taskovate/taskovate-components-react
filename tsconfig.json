@@ -6,7 +6,6 @@
     "declaration": true,
     "paths": {
       "@components/core": ["./src/components/index.ts"],
-      "@components/*": ["./src/components/*/index.ts"],
       "@theme/core": ["./src/theme/index.ts"],
       "@theme/constants": ["./src/theme/constants/index.ts"],
       "@theme/helpers": ["./src/theme/helpers/index.ts"],
