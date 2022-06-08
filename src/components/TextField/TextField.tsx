@@ -1,12 +1,8 @@
-import React, { useEffect, cloneElement, useState  } from 'react';
+import React, { useEffect, cloneElement, useState, forwardRef  } from 'react';
 import styled from 'styled-components';
 import { colors, gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall } from '@theme/constants';
 
-const Styled = styled.div`
-  display: flex;
-`;
-
-const Input = styled.input`
+const Input = styled.input<any>`
   display: flex;
   flex-grow: 1;
   transition: ${animation.normal()};
@@ -29,16 +25,16 @@ const Input = styled.input`
   min-width: 200px;
 `;
 
-const TextField = ({
-  placeholder,
-  children
-}: any) => {
+const TextField = forwardRef(({
+  placeholder
+}: any, ref) => {
 
   return (
-    <Styled>
-      <Input placeholder={placeholder} />
-    </Styled>
+    <Input 
+      ref={ref} 
+      placeholder={placeholder}
+    />
   );
-};
+});
 
 export default TextField;

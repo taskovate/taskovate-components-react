@@ -10,7 +10,7 @@ export default {
   },
 } as ComponentMeta<any>;
 
-export const Generic: ComponentStory<any> = () => (
+export const Error: ComponentStory<any> = () => (
   <>
   </>
 );

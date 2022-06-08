@@ -42,7 +42,12 @@ const Field = ({
 
   const renderField = ({ field: fieldProps, ...rest}: UseControllerReturn) => (
     <>
-      {label && <label htmlFor={name}>{[label, rules?.required && <FaAsterisk color={colors.r[700]}/>]}</label>}
+      {label && (
+        <label htmlFor={name}>
+          {label}
+          {rules?.required && <FaAsterisk color={colors.r[700]}/>}
+        </label>
+      )}
       {children({ fieldProps, ...rest })}
     </>
   );

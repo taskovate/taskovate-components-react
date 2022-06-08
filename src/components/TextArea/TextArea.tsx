@@ -1,12 +1,8 @@
-import React, { useEffect, cloneElement, useState  } from 'react';
+import React, { useEffect, cloneElement, useState, forwardRef } from 'react';
 import styled from 'styled-components';
 import { colors, gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall } from '@theme/constants';
 
-const Styled = styled.div`
-  display: flex;
-`;
-
-const Input = styled.textarea`
+const Input = styled.textarea<any>`
   display: flex;
   transition: ${animation.normal()};
   padding: ${gridSize() * 0.75}px ${gridSize() * 1.25}px;
@@ -28,15 +24,12 @@ const Input = styled.textarea`
   min-width: 200px;
 `;
 
-const TextArea = ({
-  children
-}: any) => {
-
+const TextArea = forwardRef((props, ref) => {
   return (
-    <Styled>
-      <Input />
-    </Styled>
+    <Input 
+      ref={ref} 
+    />
   );
-};
+});
 
 export default TextArea;

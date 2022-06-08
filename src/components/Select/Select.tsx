@@ -1,4 +1,4 @@
-import React, { useEffect, cloneElement, useState  } from 'react';
+import React, { useEffect, cloneElement, useState, forwardRef } from 'react';
 import styled from 'styled-components';
 import { colors, gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall } from '@theme/constants';
 import ReactSelect, { Props as SelectProps } from 'react-select';
@@ -106,13 +106,13 @@ const DropdownIndicator = () => (
   <FaChevronDown />
 );
 
-const Select = ({
+const Select = forwardRef(({
   placeholder = 'Select',
   options,
-}: SelectProps) => {
-
+}: SelectProps, ref) => {
   return (
       <Styled
+        ref={ref}
         classNamePrefix="react-select"
         placeholder={placeholder}
         options={options}
@@ -124,18 +124,15 @@ const Select = ({
           const menuEl = document.querySelector(`.react-select__menu`);
           const containerEl = menuEl?.parentElement;
           const clonedMenuEl: any = menuEl?.cloneNode(true);
-    
           if (!clonedMenuEl) return; // safeguard
-    
           clonedMenuEl.classList.add("react-select__menu--close");
           clonedMenuEl.addEventListener("animationend", () => {
             containerEl?.removeChild(clonedMenuEl);
           });
-    
           containerEl?.appendChild(clonedMenuEl!);
         }}
       />
   );
-};
+});
 
 export default Select;
