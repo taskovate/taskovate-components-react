@@ -8,7 +8,8 @@ module.exports = {
   },
   stories: [
     "../src/components/**/*.stories.@(tsx|jsx)",
-    "../src/documentation/**/*.stories.@(mdx|tsx|jsx)"
+    "../src/documentation/**/*.stories.@(mdx|tsx|jsx)",
+    "../src/documentation/**/**/*.stories.@(mdx|tsx|jsx)"
   ],
   staticDirs: [path.resolve(__dirname, "../static")],
   addons: [

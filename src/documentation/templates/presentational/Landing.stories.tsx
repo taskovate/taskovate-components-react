@@ -24,10 +24,9 @@ import {
   LeftSidebar,
   RightSidebar
 } from '@components/core';
-import './Land.styles.css';
 
 export default {
-  title: 'Templates/Landing page',
+  title: 'Templates/Landing',
   component: Header,
   parameters: {
     layout: 'fullscreen',
@@ -66,7 +65,7 @@ export const Default: ComponentStory<typeof Header> = () => (
     <Content>
       <Main>
         <h1>Accomplish more every day</h1>
-        <Plate className="fill" appearance="brimming">
+        <Plate appearance="brimming">
         </Plate>
 
         <h1>Powerfully productive</h1>
@@ -76,17 +75,17 @@ export const Default: ComponentStory<typeof Header> = () => (
 
         <h1>See the big picture</h1>
         <h3>We help turn chaos into order with powerful features like forecasting, projects, and tagging.</h3>
-        <Plate className="full">
+        <Plate>
         </Plate>
 
         <h1>Focus on what matters to you</h1>
         <h3>Your tasking list keeps track of your priorities and shows you the best task to focus on next.</h3>
-        <Plate className="full" >
+        <Plate>
         </Plate>
 
         <h1>Stay in control</h1>
         <h3>Weekly reports make it simple to stay up to date and focused on the work that matters most.</h3>
-        <Plate className="full" >
+        <Plate>
         </Plate>
 
         <h1>Automate your workflows today</h1>

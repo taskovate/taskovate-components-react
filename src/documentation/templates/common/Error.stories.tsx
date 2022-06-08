@@ -4,13 +4,23 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { gridSize } from '@theme/constants';
 
 export default {
-  title: 'Templates/Project view',
+  title: 'Templates/Error',
   parameters: {
     layout: 'fullscreen',
   },
 } as ComponentMeta<any>;
 
-export const Default: ComponentStory<any> = () => (
+export const Generic: ComponentStory<any> = () => (
+  <>
+  </>
+);
+
+export const Error401: ComponentStory<any> = () => (
+  <>
+  </>
+);
+
+export const Error404: ComponentStory<any> = () => (
   <>
   </>
 );

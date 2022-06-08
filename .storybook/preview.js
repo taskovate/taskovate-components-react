@@ -55,6 +55,13 @@ export const parameters = {
         ],
         'Documentation',
         'Templates',
+        [
+          'Landing',
+          'Portal',
+          'Profile',
+          'Project',
+          'Space'
+        ],
         'Components',
       ],
     },

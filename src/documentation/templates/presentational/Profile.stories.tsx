@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { gridSize } from '@theme/constants';
 
 export default {
-  title: 'Templates/Organization view',
+  title: 'Templates/Profile',
   parameters: {
     layout: 'fullscreen',
   },

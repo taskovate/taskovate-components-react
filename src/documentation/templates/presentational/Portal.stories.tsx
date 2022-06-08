@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { gridSize } from '@theme/constants';
 
 export default {
-  title: 'Templates/User portal',
+  title: 'Templates/Portal',
   parameters: {
     layout: 'fullscreen',
   },
