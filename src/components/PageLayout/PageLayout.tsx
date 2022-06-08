@@ -12,10 +12,8 @@ const Styled = styled.div`
     "footer"
   ;
 
-  grid-template-rows: ${gridSize() * 7.5}px auto auto;
   grid-template-columns: auto;
-
-  // background-color: rgba(255 0 0 / 10%);
+  grid-template-rows: ${gridSize() * 7.5}px auto minmax(min-content, max-content);;
 `;
 
 const PageLayout = ({ 

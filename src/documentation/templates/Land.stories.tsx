@@ -66,7 +66,7 @@ export const Default: ComponentStory<typeof Header> = () => (
     <Content>
       <Main>
         <h1>Accomplish more every day</h1>
-        <Plate className="banner" appearance="brimming">
+        <Plate className="fill" appearance="brimming">
         </Plate>
 
         <h1>Powerfully productive</h1>
@@ -76,49 +76,52 @@ export const Default: ComponentStory<typeof Header> = () => (
 
         <h1>See the big picture</h1>
         <h3>We help turn chaos into order with powerful features like forecasting, projects, and tagging.</h3>
-        <Plate>
+        <Plate className="full">
         </Plate>
 
         <h1>Focus on what matters to you</h1>
         <h3>Your tasking list keeps track of your priorities and shows you the best task to focus on next.</h3>
-        <Plate>
+        <Plate className="full" >
         </Plate>
 
         <h1>Stay in control</h1>
         <h3>Weekly reports make it simple to stay up to date and focused on the work that matters most.</h3>
-        <Plate>
+        <Plate className="full" >
         </Plate>
 
         <h1>Automate your workflows today</h1>
         <Plate appearance="display">
           <Button spacing="pleasant" appearance="special">Try Taskovate for Free</Button>
         </Plate>
-        
       </Main>
     </Content>
     <Footer>
-      <Plate appearance="display">
+      <div>
+      </div>
+      <div>
         <div>
-          <h2>Taskovate<span style={{ fontSize: 16 }}>.com</span></h2>
-          <p>All rights reserved. © 2022 Taskovate.com</p>
-          {/* <p>Website built by Elijah Montenegro</p> */}
-        </div>
-      </Plate>
-      <Plate appearance="display">
-        <span style={{ marginLeft: gridSize() * 10 }}>
           <h4>Resources</h4>
           <p>Support</p>
           <p>Blog</p>
           <p>Newsletter</p>
           <p>What's new</p>
           <p>Sitemap</p>
-        </span>
-        <span style={{ marginLeft: gridSize() * 8 }}>
+        </div>
+        <div>
           <h4>Company</h4>
           <p>Your Privacy</p>
           <p>About us</p>
-        </span>
-      </Plate>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <p>Contact Us</p>
+          <p>FAQ</p>
+        </div>
+      </div>
+      <div>
+        <h2>Taskovate<span style={{ fontSize: 18 }}>.com</span></h2>
+        <p>All rights reserved. © 2022 Taskovate.com</p>
+      </div>
     </Footer>
   </PageLayout>
 );

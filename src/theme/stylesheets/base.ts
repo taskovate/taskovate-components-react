@@ -24,6 +24,7 @@ export default () => css<DefaultTheme>`
     height: 100%;
     margin: 0;
     background-color: ${({ theme }) => theme.background()} !important;
+    min-width: 0;
   }
 
   /* Default margins */

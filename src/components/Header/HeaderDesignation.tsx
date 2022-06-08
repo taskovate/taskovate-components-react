@@ -17,9 +17,10 @@ const logo = '/images/logo.svg';
 const Logo = styled.img<any>`
   display: flex;
   align-self: center;
-  // height: ${fontSize() * 3}px;
+  // height: ${fontSize() * 4}px;
   width: ${fontSize() * 3}px;
   margin-right: ${gridSize() * 2}px;
+  opacity: 0.9;
 `;
 
 

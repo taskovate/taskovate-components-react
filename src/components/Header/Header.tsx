@@ -41,7 +41,8 @@ const Content = styled.div<any>`
   overflow: hidden;
   align-items: center;
   
-  background-color: ${({ theme }) => hex2rgba(theme.background(), 1)};
+  background-color: ${({ theme, mode }) => hex2rgba(mode === 'scroll' ? colors.d[900] : theme.background(), 1)};
+  // background-color: ${({ theme }) => theme.background()};
 
   margin: ${gridSize() * 0.25}px;
   margin-left: 0;
@@ -53,6 +54,10 @@ const Content = styled.div<any>`
   padding-right: ${gridSize() * 1.75}px;
 
   z-index: ${layers.navigation() + 1};
+
+  
+  transition: all ${animation.normal()};
+  will-change: background-color;
 `;
 
 const Header: React.FC<any> = ({
@@ -74,7 +79,7 @@ const Header: React.FC<any> = ({
   return (
     <Styled>
       <Border mode={mode} />
-      <Content>
+      <Content mode={mode}>
         {children}
       </Content>
     </Styled>

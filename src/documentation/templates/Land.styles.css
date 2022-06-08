@@ -1,6 +1,16 @@
-.banner {
+.fill  {
   width: 100% !important;
-  /* min-height: 256px !important; */
+}
+.fill > div {
+  height: 480px !important;
+}
+
+.full  {
+  width: 100% !important;
+  margin-bottom: 24vh !important;
+}
+.full > div {
+  height: 480px !important;
 }
 
 .bannerHalf {

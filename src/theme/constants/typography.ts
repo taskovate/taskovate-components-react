@@ -15,7 +15,7 @@ export const heading = {
   h900: () => css`
     ${baseHeading(35, 40)}
     color: ${({ theme }) => theme.heading()};
-    font-weight: 500 !important;
+    font-weight: 600 !important;
     letter-spacing: -0.01em !important;
     margin-top: ${gridSize() * 6.5}px;
   `,
@@ -23,7 +23,7 @@ export const heading = {
   h800: () => css`
     ${baseHeading(29, 32)}
     color: ${({ theme }) => theme.heading()};
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     letter-spacing: -0.01em !important;
     margin-top: ${gridSize() * 5}px;
   `,
@@ -31,7 +31,7 @@ export const heading = {
   h700: () => css`
     ${baseHeading(24, 32)}
     color: ${({ theme }) => theme.heading()};
-    font-weight: 500 !important;
+    font-weight: 600 !important;
     letter-spacing: -0.01em !important;
     margin-top: ${gridSize() * 5}px;
   `,
@@ -39,7 +39,7 @@ export const heading = {
   h600: () => css`
     ${baseHeading(20, 24)}
     color: ${({ theme }) => theme.heading()};
-    font-weight: 500 !important;
+    font-weight: 600 !important;
     letter-spacing: -0.008em !important;
     margin-top: ${gridSize() * 3.5}px;
   `,
@@ -47,7 +47,7 @@ export const heading = {
   h500: () => css`
     ${baseHeading(16, 20)}
     color: ${({ theme }) => theme.heading()};
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     letter-spacing: -0.006em !important;
     margin-top: ${gridSize() * 3}px;
   `,
@@ -55,7 +55,7 @@ export const heading = {
   h400: () => css`
     ${baseHeading(14, 16)}
     color: ${({ theme }) => theme.heading()};
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     letter-spacing: -0.003em !important;
     margin-top: ${gridSize() * 2}px;
   `,
@@ -63,7 +63,7 @@ export const heading = {
   h300: () => css`
     ${baseHeading(12, 16)}
     color: ${({ theme }) => theme.subtleHeading()};
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     margin-top: ${gridSize() * 2.5}px;
     text-transform: uppercase !important;
   `,
@@ -71,14 +71,14 @@ export const heading = {
   h200: () => css`
     ${baseHeading(12, 16)}
     color: ${({ theme }) => theme.subtleHeading()};
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     margin-top: ${gridSize() * 2}px;
   `,
   // Lowest level headings.
   h100: () => css`
     ${baseHeading(11, 16)}
     color: ${({ theme }) => theme.subtleHeading()};
-    font-weight: 700 !important;
+    font-weight: 800 !important;
     margin-top: ${gridSize() * 2}px;
   `
 };

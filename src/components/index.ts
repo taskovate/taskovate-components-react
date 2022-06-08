@@ -1,6 +1,6 @@
 export { Tooltip } from './Tooltip';
 export { Button, ButtonGroup } from './Button';
-export { Spinner } from './Spinner';
+export { Spinner } from './Dropdown/Spinner';
 export { Plate } from './Plate';
 export { TextField } from './TextField';
 export { TextArea } from './TextArea';
