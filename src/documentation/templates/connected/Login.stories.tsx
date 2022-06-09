@@ -52,7 +52,7 @@ export const Default: ComponentStory<typeof Header> = () => (
               <form onSubmit={handleSubmit(() => console.log('submitted'))}>
                 <FormHeader
                   title="Log in to Taskovate"
-                  description="Enter your email address and a password."
+                  description="Enter your email address and password."
                 />
                 <FormSection>
                   <Field 
@@ -103,6 +103,11 @@ export const Default: ComponentStory<typeof Header> = () => (
         </Plate>
       </Main>
     </Content>
+    <Footer>
+      <div>
+        <p>By signing in to Taskovate, you agree to our <a href="/">terms of service</a>.</p>
+      </div>
+    </Footer>
   </PageLayout>
 );
 
@@ -117,8 +122,8 @@ export const ForgotPassword: ComponentStory<typeof Header> = () => (
             {({ formState: { isSubmitting }, handleSubmit }) =>
               <form onSubmit={handleSubmit(() => console.log('submitted'))}>
                 <FormHeader
-                  title="Log in to Taskovate"
-                  description="Enter your email address and a password."
+                  title="Reset your password"
+                  description="To reset your password, enter the email address you use to sign in."
                 />
                 <FormSection>
                   <Field 
@@ -138,30 +143,10 @@ export const ForgotPassword: ComponentStory<typeof Header> = () => (
                       />
                     )}
                   </Field>
-                  <Field 
-                    name="password" 
-                    label="Password"
-                    rules={{
-                      required: { 
-                        value: true, 
-                        message: "Please fill out this field." 
-                      }
-                    }}
-                  >
-                    {({ fieldProps }) => (
-                      <TextField 
-                        {...fieldProps}
-                        placeholder="Password"
-                      />
-                    )}
-                  </Field>
                 </FormSection>
                 <FormFooter>
-                  <Button appearance="primary" type="submit" isLoading={isSubmitting}>Log in</Button>
-                  <span>Don't have an account yet? <a href="/">Sign up</a></span>
-                </FormFooter>
-                <FormFooter align="center">
-                  <span><a href="/">Forgot your password?</a></span>
+                  <Button appearance="primary" type="submit" isLoading={isSubmitting}>Get reset link</Button>
+                  <span>Don't need a reset anymore? <a href="/">Take me back to login</a></span>
                 </FormFooter>
               </form>
             }
@@ -171,7 +156,6 @@ export const ForgotPassword: ComponentStory<typeof Header> = () => (
     </Content>
   </PageLayout>
 );
-
 
 export const ResetPassword: ComponentStory<typeof Header> = () => (
   <PageLayout>
@@ -184,13 +168,13 @@ export const ResetPassword: ComponentStory<typeof Header> = () => (
             {({ formState: { isSubmitting }, handleSubmit }) =>
               <form onSubmit={handleSubmit(() => console.log('submitted'))}>
                 <FormHeader
-                  title="Log in to Taskovate"
-                  description="Enter your email address and a password."
+                  title="Reset your password"
+                  description="Enter your new password."
                 />
                 <FormSection>
                   <Field 
-                    name="email" 
-                    label="Email Address"
+                    name="password" 
+                    label="New Password"
                     rules={{
                       required: { 
                         value: true, 
@@ -201,13 +185,13 @@ export const ResetPassword: ComponentStory<typeof Header> = () => (
                     {({ fieldProps }) => (
                       <TextField 
                         {...fieldProps}
-                        placeholder="Email"
+                        placeholder="New password"
                       />
                     )}
                   </Field>
                   <Field 
-                    name="password" 
-                    label="Password"
+                    name="confirm_password" 
+                    label="Confirm Password"
                     rules={{
                       required: { 
                         value: true, 
@@ -218,17 +202,14 @@ export const ResetPassword: ComponentStory<typeof Header> = () => (
                     {({ fieldProps }) => (
                       <TextField 
                         {...fieldProps}
-                        placeholder="Password"
+                        placeholder="Confirm new password"
                       />
                     )}
                   </Field>
                 </FormSection>
                 <FormFooter>
-                  <Button appearance="primary" type="submit" isLoading={isSubmitting}>Log in</Button>
-                  <span>Don't have an account yet? <a href="/">Sign up</a></span>
-                </FormFooter>
-                <FormFooter align="center">
-                  <span><a href="/">Forgot your password?</a></span>
+                  <Button appearance="primary" type="submit" isLoading={isSubmitting}>Reset password</Button>
+                  <span>Don't need a reset anymore? <a href="/">Take me back to login</a></span>
                 </FormFooter>
               </form>
             }
@@ -238,3 +219,26 @@ export const ResetPassword: ComponentStory<typeof Header> = () => (
     </Content>
   </PageLayout>
 );
+
+export const ResetConfirmation: ComponentStory<typeof Header> = (args) => (
+  <PageLayout>
+    <TopNavigation/>
+    <Content>
+      <Main>
+        <img src="/images/logo.svg" height={gridSize() * 5} />
+        <Plate appearance="display">
+          <FormHeader
+            title="Check your email"
+          />
+        </Plate>
+        <p>Check your <strong>{args.email}</strong> inbox for instructions from us on how to reset your password.</p>
+        <br/>
+        <a href="/">Go to login screen</a>
+      </Main>
+    </Content>
+  </PageLayout>
+);
+
+ResetConfirmation.args = {
+  email: "example@example.com"
+};

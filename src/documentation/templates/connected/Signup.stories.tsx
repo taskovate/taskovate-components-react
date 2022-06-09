@@ -173,7 +173,7 @@ export const SignupQuestions: ComponentStory<typeof Header> = () => (
   </PageLayout>
 );
 
-export const VerifyAccount: ComponentStory<typeof Header> = (args) => (
+export const SignupConfirmation: ComponentStory<typeof Header> = (args) => (
   <PageLayout>
     <TopNavigation/>
     <Content>
@@ -192,7 +192,7 @@ export const VerifyAccount: ComponentStory<typeof Header> = (args) => (
   </PageLayout>
 );
 
-VerifyAccount.args = {
+SignupConfirmation.args = {
   email: "example@example.com"
 };
 
