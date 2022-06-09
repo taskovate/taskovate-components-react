@@ -12,7 +12,15 @@ import {
   HeaderGlobalBar,
   HeaderGlobalAction,
   Plate,
-  Button
+  Button,
+  Form,
+  Field,
+  FormHeader,
+  FormSection,
+  FormFooter,
+  TextField,
+  Select,
+  HelperMessage
 } from '@components/core';
 
 import {
@@ -31,68 +39,160 @@ export default {
     layout: 'fullscreen',
   },
 } as ComponentMeta<any>;
-// unique header needed (in main)
-//unique footer needed
+
 export const Default: ComponentStory<typeof Header> = () => (
   <PageLayout>
-    <TopNavigation>
-      <Header>
-        <HeaderDesignation />
-        <HeaderMenuBar>
-          <HeaderMenuItem>
-            About Taskovate
-          </HeaderMenuItem>
-          <HeaderMenuItem>
-            Solutions
-          </HeaderMenuItem>
-          <HeaderMenuItem>
-            Resources
-          </HeaderMenuItem>
-          <HeaderMenuItem>
-            Pricing
-          </HeaderMenuItem>
-        </HeaderMenuBar>
-        <HeaderGlobalBar>
-          <HeaderGlobalAction>
-            Log in
-          </HeaderGlobalAction>
-          <HeaderGlobalAction appearance="primary">
-            Try Taskovate for Free
-          </HeaderGlobalAction>
-        </HeaderGlobalBar>
-      </Header>
-    </TopNavigation>
+    <TopNavigation/>
     <Content>
       <Main>
+        <img src="/images/logo.svg" height={gridSize() * 5} />
+        <Plate appearance="display">
+          <Form>
+            {({ formState: { isSubmitting }, handleSubmit }) =>
+              <form onSubmit={handleSubmit(() => console.log('submitted'))}>
+                <FormHeader
+                  title="Create a Taskovate account"
+                  description="Sign up with your email and a password."
+                />
+                <FormSection>
+                  <Field 
+                    name="email" 
+                    label="Email Address"
+                    rules={{
+                      required: { 
+                        value: true, 
+                        message: "Please fill out this field." 
+                      }
+                    }}
+                  >
+                    {({ fieldProps }) => (
+                      <TextField 
+                        {...fieldProps}
+                        placeholder="Email"
+                      />
+                    )}
+                  </Field>
+                  <Field 
+                    name="password" 
+                    label="Password"
+                    rules={{
+                      required: { 
+                        value: true, 
+                        message: "Please fill out this field." 
+                      }
+                    }}
+                  >
+                    {({ fieldProps }) => (
+                      <TextField 
+                        {...fieldProps}
+                        placeholder="Password"
+                      />
+                    )}
+                  </Field>
+                </FormSection>
+                <FormFooter>
+                  <Button appearance="primary" type="submit" isLoading={isSubmitting}>Sign up</Button>
+                  <span>Already have an account? <a href="/">Log in</a></span>
+                </FormFooter>
+              </form>
+            }
+          </Form>
+        </Plate>
       </Main>
     </Content>
     <Footer>
       <div>
-      </div>
-      <div>
-        <div>
-          <h4>Resources</h4>
-          <p>Support</p>
-          <p>Blog</p>
-          <p>Newsletter</p>
-          <p>What's new</p>
-          <p>Sitemap</p>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <p>Your Privacy</p>
-          <p>About us</p>
-        </div>
-        <div>
-          <h4>Support</h4>
-          <p>Contact Us</p>
-          <p>FAQ</p>
-        </div>
-      </div>
-      <div>
-        <h2>Taskovate<span style={{ fontSize: 18 }}>.com</span></h2>
-        <p>All rights reserved. © 2022 Taskovate.com</p>
+        <p>By signing up for Taskovate, you agree to our <a href="/">terms of service</a>.</p>
       </div>
     </Footer>
   </PageLayout>
 );
+
+export const SignupQuestions: ComponentStory<typeof Header> = () => (
+  <PageLayout>
+    <TopNavigation>
+      <Header>
+        <HeaderDesignation />
+      </Header>
+    </TopNavigation>
+    <Content>
+      <Main>
+        <Plate appearance="display">
+          <Form>
+            {({ formState: { isSubmitting }, handleSubmit }) =>
+              <form onSubmit={handleSubmit(() => console.log('submitted'))}>
+                <FormHeader
+                  title="Set up your Taskovate account"
+                />
+                <FormSection title="Tell us about yourself">
+                  <Field 
+                    name="fName" 
+                    label="First name"
+                    rules={{
+                      required: { 
+                        value: true, 
+                        message: "Please fill out this field." 
+                      }
+                    }}
+                  >
+                    {({ fieldProps }) => (
+                      <TextField 
+                        {...fieldProps}
+                        placeholder="First name"
+                      />
+                    )}
+                  </Field>
+                  <Field 
+                    name="lName" 
+                    label="Last name"
+                    rules={{
+                      required: { 
+                        value: true, 
+                        message: "Please fill out this field." 
+                      }
+                    }}
+                  >
+                    {({ fieldProps }) => (
+                      <TextField 
+                        {...fieldProps}
+                        placeholder="Last name"
+                      />
+                    )}
+                  </Field>
+                </FormSection>
+                <FormFooter>
+                  <Button appearance="primary" type="submit" isLoading={isSubmitting}>Set up and continue</Button>
+                  {/* <span>Already have an account? <a href="/">Log in</a></span> */}
+                </FormFooter>
+              </form>
+            }
+          </Form>
+        </Plate>
+      </Main>
+    </Content>
+  </PageLayout>
+);
+
+export const VerifyAccount: ComponentStory<typeof Header> = (args) => (
+  <PageLayout>
+    <TopNavigation/>
+    <Content>
+      <Main>
+        <img src="/images/logo.svg" height={gridSize() * 5} />
+        <Plate appearance="display">
+          <FormHeader
+            title="Check your email"
+          />
+        </Plate>
+        <p>Check your <strong>{args.email}</strong> inbox for instructions from us on how to verify your account.</p>
+        <br/>
+        <a href="/">Go to login screen</a>
+      </Main>
+    </Content>
+  </PageLayout>
+);
+
+VerifyAccount.args = {
+  email: "example@example.com"
+};
+

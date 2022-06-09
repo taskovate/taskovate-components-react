@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall } from '@theme/constants';
 
 const Styled = styled.div`
+  text-align: center;
 `;
 
 const HeaderTitle = styled.h1`

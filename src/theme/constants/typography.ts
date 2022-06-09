@@ -78,7 +78,7 @@ export const heading = {
   h100: () => css`
     ${baseHeading(11, 16)}
     color: ${({ theme }) => theme.subtleHeading()};
-    font-weight: 800 !important;
+    font-weight: 700 !important;
     margin-top: ${gridSize() * 2}px;
   `
 };

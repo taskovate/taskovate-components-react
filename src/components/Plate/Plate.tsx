@@ -40,6 +40,7 @@ const Styled = styled.div<any>`
   //   background: ${({ appearance }) => appearance !== 'display' && gradients.secondary()};
   //   clip-path: polygon(0% 0%, 0% 100%, ${gridSize() * 1}px 100%, ${gridSize() * 1}px 0, calc(100% - ${gridSize() * 1}px) 0, calc(100% - ${gridSize() * 1}px) 100%, 25% 100%, 25% 100%, 100% 100%, 100% 0%);
   // }
+  text-align: initial;
 `;
 
 const Border = styled.div<any>`
@@ -81,10 +82,7 @@ const Content = styled.div<any>`
     `;
     return ``;
   }}
-
-  form {
-    padding-right: ${gridSize() * 2.5}px;
-  }
+  
 `;
 
 const Plate = ({

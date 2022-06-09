@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { colors, gridSize, layers, animation, borderRadius, gradients, fontSize, headerFontFamily } from '@theme/constants';
 import { hex2rgba } from '@theme/helpers';
 
+// TODO: Restructure Footer into BottomNavigation component, then have Footer with grid as Footer component (like how Header and TopNavigation are setup).
 const Styled = styled.div`
   display: flex;
   flex-grow: 1;
@@ -17,13 +18,13 @@ const Grid = styled.div`
   border-top-right-radius: ${borderRadius() * 1}px;
   border-top-left-radius: ${borderRadius() * 1}px;
   box-shadow: ${({ theme }) => theme.elevation[200]}; 
-  width: calc(100%);
+  // width: calc(100%);
   // max-width: ${gridSize() * 192}px;
   margin: 0 auto;
 `;
 
-const Content = styled.div`
-  display: grid;
+const Content = styled.div<any>`
+  display: ${({ children }) => children.length === 1 ? 'flex' : 'grid'};
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: minmax(min-content, max-content);
   grid-column-gap: ${gridSize() * 1}px;
@@ -37,17 +38,23 @@ const Content = styled.div`
   margin: ${gridSize() * 0.25}px;
   margin-bottom: 0;
   h2 {
-    color: ${colors.n[400]} !important;
+    color: ${colors.n[300]} !important;
   }
   h4 {
     color: ${colors.n[400]} !important;
   }
   p { 
-    color: ${colors.n[200]} !important;
+    color: ${colors.n[500]} !important;
   }
 
   // footnote
-  &>:nth-child(1) {
+  &>:only-child {
+    display: flex;
+    // background-color: red;
+    margin: 0 auto;
+    gap: ${gridSize() * 4}px;
+  }
+  &>:nth-child(1):not(:only-child){
     grid-area: 1 / 1 / 2 / 2;
   }
 
@@ -69,11 +76,12 @@ const Content = styled.div`
 `;
 
 const Footer = ({ children }: any) => {
+  
   return (
     <Styled>
       <Grid>
         <Content>
-          {children}
+          {Array.isArray(children) ? children: [children]}
         </Content>
       </Grid>
     </Styled>

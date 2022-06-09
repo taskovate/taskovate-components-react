@@ -20,7 +20,6 @@ const Logo = styled.img<any>`
   // height: ${fontSize() * 4}px;
   width: ${fontSize() * 3}px;
   margin-right: ${gridSize() * 2}px;
-  opacity: 0.9;
 `;
 
 

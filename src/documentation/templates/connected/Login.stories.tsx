@@ -1,89 +1,240 @@
 import React from 'react';
 import styled from 'styled-components';
-import { gridSize, colors, fontSize } from '@theme/constants';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { 
-  Button,
+import { colors, gridSize } from '@theme/constants';
+import { MdLogin } from 'react-icons/md';
+import { HiOutlineChatAlt, HiOutlineBell, HiOutlineUser, HiHome, HiStar } from 'react-icons/hi';
+import {
+  Header,
+  HeaderDesignation,
+  HeaderMenuBar,
+  HeaderMenuItem,
+  HeaderGlobalBar,
+  HeaderGlobalAction,
   Plate,
-  TextField,
-  Field,
-  FormSection,
+  Button,
   Form,
+  Field,
+  FormHeader,
+  FormSection,
   FormFooter,
-  FormHeader
- } from '@components/core';
+  TextField,
+  Select,
+  HelperMessage
+} from '@components/core';
+
+import {
+  PageLayout,
+  TopNavigation,
+  Content,
+  Footer,
+  Main,
+  LeftSidebar,
+  RightSidebar
+} from '@components/core';
 
 export default {
   title: 'Templates/Login',
   parameters: {
-    componentSubtitle: 'Example',
-    status: 'legacy',
-    introText: 'Login page for legacy applications not using WFPs single sign-on',
-    previewWidth: 'full',
+    layout: 'fullscreen',
   },
-};
+} as ComponentMeta<any>;
 
-export const Default: ComponentStory<any> = () => {
-  const onSubmit = (data: any) => {
-    console.log(data);
-  };
+export const Default: ComponentStory<typeof Header> = () => (
+  <PageLayout>
+    <TopNavigation/>
+    <Content>
+      <Main>
+        <img src="/images/logo.svg" height={gridSize() * 5} />
+        <Plate appearance="display">
+          <Form>
+            {({ formState: { isSubmitting }, handleSubmit }) =>
+              <form onSubmit={handleSubmit(() => console.log('submitted'))}>
+                <FormHeader
+                  title="Log in to Taskovate"
+                  description="Enter your email address and a password."
+                />
+                <FormSection>
+                  <Field 
+                    name="email" 
+                    label="Email Address"
+                    rules={{
+                      required: { 
+                        value: true, 
+                        message: "Please fill out this field." 
+                      }
+                    }}
+                  >
+                    {({ fieldProps }) => (
+                      <TextField 
+                        {...fieldProps}
+                        placeholder="Email"
+                      />
+                    )}
+                  </Field>
+                  <Field 
+                    name="password" 
+                    label="Password"
+                    rules={{
+                      required: { 
+                        value: true, 
+                        message: "Please fill out this field." 
+                      }
+                    }}
+                  >
+                    {({ fieldProps }) => (
+                      <TextField 
+                        {...fieldProps}
+                        placeholder="Password"
+                      />
+                    )}
+                  </Field>
+                </FormSection>
+                <FormFooter>
+                  <Button appearance="primary" type="submit" isLoading={isSubmitting}>Log in</Button>
+                  <span>Don't have an account yet? <a href="/">Sign up</a></span>
+                </FormFooter>
+                <FormFooter align="center">
+                  <span><a href="/">Forgot your password?</a></span>
+                </FormFooter>
+              </form>
+            }
+          </Form>
+        </Plate>
+      </Main>
+    </Content>
+  </PageLayout>
+);
 
-  return (
-    <Plate>
-      <Form>
-        {({ formState: { isSubmitting }, handleSubmit }) => (
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <FormHeader
-              title="Let's get you set up"
-              description={<>If your team is already using Taskovate, you can <a href="/">log in</a>.</>}
-            />
-            <FormSection title="Account Details">
-              <Field name="firstName" label="First Name">
-                {({ fieldProps }) => (
-                  <TextField 
-                    {...fieldProps}
-                    placeholder="Enter your username"
-                  />
-                )}
-              </Field>
-              <Field name="lastName" label="Last Name">
-                {({ fieldProps }) => (
-                  <TextField 
-                    {...fieldProps}
-                    placeholder="Enter your username"
-                  />
-                )}
-              </Field>
-              <Field 
-                name="email" 
-                label="Email Address"
-                rules={{
-                  required: { 
-                    value: true, 
-                    message: "Please fill out this field." 
-                  }
-                }}
-              >
-                {({ fieldProps }) => (
-                  <TextField 
-                    {...fieldProps}
-                    placeholder="Enter your username"
-                  />
-                )}
-              </Field>
-            </FormSection>
-            <FormFooter>
-              <Button
-                type="submit"
-                spacing="pleasant"
-                isLoading={isSubmitting}
-              >
-                  Create Taskovate Account
-                </Button>
-            </FormFooter>
-          </form>
-        )}
-      </Form>
-    </Plate>
-  );
-};
+export const ForgotPassword: ComponentStory<typeof Header> = () => (
+  <PageLayout>
+    <TopNavigation/>
+    <Content>
+      <Main>
+        <img src="/images/logo.svg" height={gridSize() * 5} />
+        <Plate appearance="display">
+          <Form>
+            {({ formState: { isSubmitting }, handleSubmit }) =>
+              <form onSubmit={handleSubmit(() => console.log('submitted'))}>
+                <FormHeader
+                  title="Log in to Taskovate"
+                  description="Enter your email address and a password."
+                />
+                <FormSection>
+                  <Field 
+                    name="email" 
+                    label="Email Address"
+                    rules={{
+                      required: { 
+                        value: true, 
+                        message: "Please fill out this field." 
+                      }
+                    }}
+                  >
+                    {({ fieldProps }) => (
+                      <TextField 
+                        {...fieldProps}
+                        placeholder="Email"
+                      />
+                    )}
+                  </Field>
+                  <Field 
+                    name="password" 
+                    label="Password"
+                    rules={{
+                      required: { 
+                        value: true, 
+                        message: "Please fill out this field." 
+                      }
+                    }}
+                  >
+                    {({ fieldProps }) => (
+                      <TextField 
+                        {...fieldProps}
+                        placeholder="Password"
+                      />
+                    )}
+                  </Field>
+                </FormSection>
+                <FormFooter>
+                  <Button appearance="primary" type="submit" isLoading={isSubmitting}>Log in</Button>
+                  <span>Don't have an account yet? <a href="/">Sign up</a></span>
+                </FormFooter>
+                <FormFooter align="center">
+                  <span><a href="/">Forgot your password?</a></span>
+                </FormFooter>
+              </form>
+            }
+          </Form>
+        </Plate>
+      </Main>
+    </Content>
+  </PageLayout>
+);
+
+
+export const ResetPassword: ComponentStory<typeof Header> = () => (
+  <PageLayout>
+    <TopNavigation/>
+    <Content>
+      <Main>
+        <img src="/images/logo.svg" height={gridSize() * 5} />
+        <Plate appearance="display">
+          <Form>
+            {({ formState: { isSubmitting }, handleSubmit }) =>
+              <form onSubmit={handleSubmit(() => console.log('submitted'))}>
+                <FormHeader
+                  title="Log in to Taskovate"
+                  description="Enter your email address and a password."
+                />
+                <FormSection>
+                  <Field 
+                    name="email" 
+                    label="Email Address"
+                    rules={{
+                      required: { 
+                        value: true, 
+                        message: "Please fill out this field." 
+                      }
+                    }}
+                  >
+                    {({ fieldProps }) => (
+                      <TextField 
+                        {...fieldProps}
+                        placeholder="Email"
+                      />
+                    )}
+                  </Field>
+                  <Field 
+                    name="password" 
+                    label="Password"
+                    rules={{
+                      required: { 
+                        value: true, 
+                        message: "Please fill out this field." 
+                      }
+                    }}
+                  >
+                    {({ fieldProps }) => (
+                      <TextField 
+                        {...fieldProps}
+                        placeholder="Password"
+                      />
+                    )}
+                  </Field>
+                </FormSection>
+                <FormFooter>
+                  <Button appearance="primary" type="submit" isLoading={isSubmitting}>Log in</Button>
+                  <span>Don't have an account yet? <a href="/">Sign up</a></span>
+                </FormFooter>
+                <FormFooter align="center">
+                  <span><a href="/">Forgot your password?</a></span>
+                </FormFooter>
+              </form>
+            }
+          </Form>
+        </Plate>
+      </Main>
+    </Content>
+  </PageLayout>
+);
