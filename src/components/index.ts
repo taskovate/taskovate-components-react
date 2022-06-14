@@ -46,3 +46,4 @@ export {
   Grid,
   GridColumn
  } from './Page';
+ export { Card, CardGroup } from './Card';

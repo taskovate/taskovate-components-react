@@ -12,7 +12,7 @@ const Container = styled.div<any>`
   h6 {
     margin-bottom: ${gridSize() * 1}px;
   }
-  margin-bottom: ${gridSize() * 1}px;
+  margin-bottom: ${gridSize() * 2}px;
 `;
 
 const Row = styled.div`

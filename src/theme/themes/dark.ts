@@ -22,11 +22,11 @@ export const skeleton = () => colors.n[200];
 export const label = () => colors.n[100];
 
 export const elevation = {
-  100: `0 1px 1px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0008`,
-  200: `0 4px 8px -2px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0008`,
-  300: `0 8px 16px -4px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0008`,
-  400: `0 12px 24px -6px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0008`,
-  500: `0 20px 32px -8px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0008`,
+  100: `0 1px 1px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0007`,
+  200: `0 4px 8px -2px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0007`,
+  300: `0 8px 16px -4px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0007`,
+  400: `0 12px 24px -6px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0007`,
+  500: `0 20px 32px -8px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0007`,
 };
 
 export const dropdownStyles = {
@@ -56,17 +56,17 @@ export const dropdownStyles = {
 export const inputStyles = {
   background: {
     'body': {
-      default: () => colors.d[600],
-      hover: () => colors.d[500],
-      active: () => colors.d[400],
-      selected: () => colors.d[300],
+      default: () => colors.d[700],
+      hover: () => colors.d[600],
+      active: () => colors.d[500],
+      selected: () => colors.d[400],
     }
   },
   borderColor: {
     'body': {
-      default: () => colors.d[600],
-      hover: () => colors.p[500],
-      focus: () => colors.p[400]
+      default: () => colors.d[700],
+      hover: () => colors.p[600],
+      focus: () => colors.p[500]
     }
   },
   color: {

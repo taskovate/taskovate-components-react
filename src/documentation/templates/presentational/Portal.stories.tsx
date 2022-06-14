@@ -16,7 +16,10 @@ import {
   PageHeader,
   Portion,
   Grid,
-  GridColumn
+  GridColumn,
+  Card,
+  CardGroup,
+  Select
 } from '@components/core';
 
 import {
@@ -29,6 +32,7 @@ import {
   Dropdown,
   SideBar, Section, ButtonItem
 } from '@components/core';
+import { useState } from 'react';
 
 export default {
   title: 'Templates/Portal',
@@ -38,61 +42,77 @@ export default {
   },
 } as ComponentMeta<typeof Header>;
 
-export const Default: ComponentStory<typeof Header> = () => (
-  <PageLayout>
-    <TopNavigation>
-      <Header>
-        <HeaderDesignation />
-        <HeaderMenuBar>
-          <HeaderMenuItem>
-            <Dropdown />
-          </HeaderMenuItem>
-          <HeaderGlobalAction appearance="primary">
-            Create
-          </HeaderGlobalAction>
-        </HeaderMenuBar>
-        <HeaderGlobalBar>
-          <HeaderGlobalAction>
-            Messages
-          </HeaderGlobalAction>
-          <HeaderGlobalAction>
-            Notifications
-          </HeaderGlobalAction>
-          <HeaderGlobalAction>
-            Profile
-          </HeaderGlobalAction>
-        </HeaderGlobalBar>
-      </Header>
-    </TopNavigation>
-    <Content>
-      <Main>
-        <PageHeader
-          children="Welcome Elijah"
-          actions={(
-            <>
-              <Button>Your active tasks</Button>
-              <Button>Task requests</Button>
-            </>
-          )}
-        />
-        <Grid columns={3}>
-          <GridColumn medium={2}>
-            <Plate appearance='brimming'>
-              Welcome back to the site, we missed you!
-            </Plate>
-            <h4>Recent</h4>
-            
-            <Plate>
-              Welcome back to the site, we missed you!
-            </Plate>
-            <br/>
-            <h4>Projects</h4>
-          </GridColumn>
-          <GridColumn medium={1}>
-            <h5>My items</h5>
-          </GridColumn>
-        </Grid>
-      </Main>
-    </Content>
-  </PageLayout>
-);
+const options = [
+  { value: 'space', label: 'Spaces' },
+  { value: 'project', label: 'Projects' },
+];
+
+const spaces = [
+  { title: "QA Task Request", children: "24 open, 2 in progress, 192 closed" },
+  { title: "USPU Sprints", children: "24 open, 2 in progress, 192 closed" },
+  { title: "Live Release", children: "24 open, 2 in progress, 192 closed" },
+];
+
+const projects = [
+  { title: "QA", children: "12 spaces, 195 total tasks, 32 total active tasks" },
+  { title: "Live QA", children: "12 spaces, 195 total tasks, 32 total active tasks" },
+  { title: "Embedded QA", children: "12 spaces, 195 total tasks, 32 total active tasks" },
+];
+
+export const Default: ComponentStory<typeof Header> = () => {
+  const [select, setSelect] = useState();
+  const [list, setList]: any = useState([]);
+
+  return (
+    <PageLayout>
+      <TopNavigation>
+        <Header>
+          <HeaderDesignation />
+          <HeaderMenuBar>
+            <HeaderMenuItem>
+              <Dropdown />
+            </HeaderMenuItem>
+            <HeaderGlobalAction appearance="primary">
+              Create
+            </HeaderGlobalAction>
+          </HeaderMenuBar>
+          <HeaderGlobalBar>
+            <HeaderGlobalAction>
+              Messages
+            </HeaderGlobalAction>
+            <HeaderGlobalAction>
+              Notifications
+            </HeaderGlobalAction>
+            <HeaderGlobalAction>
+              Profile
+            </HeaderGlobalAction>
+          </HeaderGlobalBar>
+        </Header>
+      </TopNavigation>
+      <Content>
+        <Main>
+          <PageHeader
+            children="Welcome Elijah"
+            controls={(
+              <>
+                <Select onChange={({ value }: any) => setList(value === 'space' ? spaces : projects )} options={options} placeholder="Display"></Select>
+              </>
+            )}
+          />
+          <Grid columns={3}>
+            <GridColumn medium={2}>
+              <CardGroup>
+                {list.map((item: any) => (
+                  <Card title={item.title} children={item.children} />
+                ))}
+              </CardGroup>
+            </GridColumn>
+            <GridColumn medium={1}>
+              <h5>My items</h5>
+            </GridColumn>
+          </Grid>
+        </Main>
+      </Content>
+    </PageLayout>
+  );
+};

@@ -109,7 +109,8 @@ const DropdownIndicator = () => (
 const Select = forwardRef(({
   placeholder = 'Select',
   options,
-}: SelectProps, ref) => {
+  ...rest
+}: any, ref) => {
   return (
       <Styled
         ref={ref}
@@ -131,6 +132,7 @@ const Select = forwardRef(({
           });
           containerEl?.appendChild(clonedMenuEl!);
         }}
+        {...rest}
       />
   );
 });
