@@ -48,7 +48,8 @@ const options = [
 ];
 
 const spaces = [
-  { title: "QA Task Request", children: "24 open, 2 in progress, 192 closed" },
+  { title: "ATX QA Daily Tasks", children: "24 open, 2 in progress, 192 closed" },
+  { title: "UK QA Daily Tasks", children: "24 open, 2 in progress, 192 closed" },
   { title: "USPU Sprints", children: "24 open, 2 in progress, 192 closed" },
   { title: "Live Release", children: "24 open, 2 in progress, 192 closed" },
 ];
