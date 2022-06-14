@@ -1,7 +1,7 @@
 export { Tooltip } from './Tooltip';
 export { Button, ButtonGroup } from './Button';
 export { Spinner } from './Dropdown/Spinner';
-export { Plate } from './Plate';
+export { Plate, Portion } from './Plate';
 export { TextField } from './TextField';
 export { TextArea } from './TextArea';
 export { Select } from './Select';
@@ -31,6 +31,18 @@ export {
   LeftSidebar,
   RightSidebar,
   TopNavigation,
-  Footer       
+  BottomNavigation       
  } from './PageLayout';
- 
+ export { 
+  Footer
+ } from './Footer';
+ export { 
+  SideBar,
+  Section,
+  ButtonItem
+ } from './SideBar';
+ export {
+  PageHeader,
+  Grid,
+  GridColumn
+ } from './Page';

@@ -5,6 +5,7 @@
     "declarationDir": "./",
     "declaration": true,
     "paths": {
+      "@components/*": ["src/components/*/index.ts"],
       "@components/core": ["src/components/index.ts"],
       "@theme/core": ["src/theme/index.ts"],
       "@theme/constants": ["src/theme/constants/index.ts"],
@@ -36,7 +37,7 @@
     "jsx": "react-jsx",
     "sourceMap": true
   },
-  "include": ["src", "src/**/*", "src/**/**/*"],
+  "include": ["src", "src/**/*", "src/**/**/*", "src/types/*"],
   "exclude": [
     "./dist",
     "./dist/**/*",

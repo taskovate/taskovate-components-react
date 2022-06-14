@@ -14,7 +14,7 @@ interface PlateProps {
 const Styled = styled.div<any>`
   display: block;
   z-index: ${layers.plate()};
-  margin: ${gridSize() * 3.5}px 0;
+  // margin: ${gridSize() * 3.5}px 0;
   // :before {
   //   content: '';
   //   display: flex;
@@ -41,6 +41,8 @@ const Styled = styled.div<any>`
   //   clip-path: polygon(0% 0%, 0% 100%, ${gridSize() * 1}px 100%, ${gridSize() * 1}px 0, calc(100% - ${gridSize() * 1}px) 0, calc(100% - ${gridSize() * 1}px) 100%, 25% 100%, 25% 100%, 100% 100%, 100% 0%);
   // }
   text-align: initial;
+  max-width: ${gridSize() * 48}px;
+  min-width: ${gridSize() * 48}px;
 `;
 
 const Border = styled.div<any>`
@@ -59,7 +61,7 @@ const Border = styled.div<any>`
   }}
 `;
 
-const Content = styled.div<any>`
+const Container = styled.div<any>`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-auto-rows: minmax(min-content, max-content);
@@ -82,7 +84,6 @@ const Content = styled.div<any>`
     `;
     return ``;
   }}
-  
 `;
 
 const Plate = ({
@@ -95,9 +96,9 @@ const Plate = ({
   return (
     <Styled {...rest} appearance={appearance}>
       <Border appearance={appearance}>
-        <Content appearance={appearance}>
+        <Container appearance={appearance}>
           {children}
-        </Content>
+        </Container>
       </Border>
     </Styled>
   )

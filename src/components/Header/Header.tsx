@@ -38,7 +38,7 @@ const Content = styled.div<any>`
   display: flex;
   grid-column: 1;
   grid-row: 1;
-  overflow: hidden;
+  overflow: visible;
   align-items: center;
   
   background-color: ${({ theme, mode }) => hex2rgba(mode === 'scroll' ? colors.d[900] : theme.background(), 1)};

@@ -64,34 +64,35 @@ export const Default: ComponentStory<typeof Header> = () => (
     </TopNavigation>
     <Content>
       <Main>
-        <h1>Accomplish more every day</h1>
-        <Plate appearance="brimming">
-        </Plate>
+        <center>
+          <h1>Accomplish more every day</h1>
+          <Plate appearance="brimming">
+          </Plate>
 
-        <h1>Powerfully productive</h1>
-        <h3>A daily scoped task managment tool to help you and your team stay focused, block distractions and prioritize your most important work.</h3>
-        <Plate appearance="display">
-        </Plate>
+          <h1>Powerfully productive</h1>
+          <h3>A daily scoped task managment tool to help you and your team stay focused, block distractions and prioritize your most important work.</h3>
+          <Plate appearance="display">
+          </Plate>
 
-        <h1>See the big picture</h1>
-        <h3>We help turn chaos into order with powerful features like forecasting, projects, and tagging.</h3>
-        <Plate>
-        </Plate>
+          <h1>See the big picture</h1>
+          <h3>We help turn chaos into order with powerful features like forecasting, projects, and tagging.</h3>
+          <Plate>
+          </Plate>
 
-        <h1>Focus on what matters to you</h1>
-        <h3>Your tasking list keeps track of your priorities and shows you the best task to focus on next.</h3>
-        <Plate>
-        </Plate>
+          <h1>Focus on what matters to you</h1>
+          <h3>Your tasking list keeps track of your priorities and shows you the best task to focus on next.</h3>
+          <Plate>
+          </Plate>
 
-        <h1>Stay in control</h1>
-        <h3>Weekly reports make it simple to stay up to date and focused on the work that matters most.</h3>
-        <Plate>
-        </Plate>
+          <h1>Stay in control</h1>
+          <h3>Weekly reports make it simple to stay up to date and focused on the work that matters most.</h3>
+          <Plate>
+          </Plate>
 
-        <h1>Automate your workflows today</h1>
-        <Plate appearance="display">
+          <h1>Gain the Taskovate advantage today</h1>
+          <br/>
           <Button spacing="pleasant" appearance="special">Try Taskovate for Free</Button>
-        </Plate>
+        </center>
       </Main>
     </Content>
     <Footer>

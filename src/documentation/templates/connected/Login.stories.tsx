@@ -45,62 +45,64 @@ export const Default: ComponentStory<typeof Header> = () => (
     <TopNavigation/>
     <Content>
       <Main>
-        <img src="/images/logo.svg" height={gridSize() * 5} />
-        <Plate appearance="display">
-          <Form>
-            {({ formState: { isSubmitting }, handleSubmit }) =>
-              <form onSubmit={handleSubmit(() => console.log('submitted'))}>
-                <FormHeader
-                  title="Log in to Taskovate"
-                  description="Enter your email address and password."
-                />
-                <FormSection>
-                  <Field 
-                    name="email" 
-                    label="Email Address"
-                    rules={{
-                      required: { 
-                        value: true, 
-                        message: "Please fill out this field." 
-                      }
-                    }}
-                  >
-                    {({ fieldProps }) => (
-                      <TextField 
-                        {...fieldProps}
-                        placeholder="Email"
-                      />
-                    )}
-                  </Field>
-                  <Field 
-                    name="password" 
-                    label="Password"
-                    rules={{
-                      required: { 
-                        value: true, 
-                        message: "Please fill out this field." 
-                      }
-                    }}
-                  >
-                    {({ fieldProps }) => (
-                      <TextField 
-                        {...fieldProps}
-                        placeholder="Password"
-                      />
-                    )}
-                  </Field>
-                </FormSection>
-                <FormFooter>
-                  <Button appearance="primary" type="submit" isLoading={isSubmitting}>Log in</Button>
-                  <span>Don't have an account yet? <a href="/">Sign up</a></span>
-                </FormFooter>
-                <FormFooter align="center">
-                  <span><a href="/">Forgot your password?</a></span>
-                </FormFooter>
-              </form>
-            }
-          </Form>
-        </Plate>
+        <center>
+          <img src="/images/logo.svg" height={gridSize() * 4.5} />
+          <Plate appearance="display">
+            <Form>
+              {({ formState: { isSubmitting }, handleSubmit }) =>
+                <form onSubmit={handleSubmit(() => console.log('submitted'))}>
+                  <FormHeader
+                    title="Log in to Taskovate"
+                    description="Enter your email address and password."
+                  />
+                  <FormSection>
+                    <Field 
+                      name="email" 
+                      label="Email Address"
+                      rules={{
+                        required: { 
+                          value: true, 
+                          message: "Please fill out this field." 
+                        }
+                      }}
+                    >
+                      {({ fieldProps }) => (
+                        <TextField 
+                          {...fieldProps}
+                          placeholder="Email"
+                        />
+                      )}
+                    </Field>
+                    <Field 
+                      name="password" 
+                      label="Password"
+                      rules={{
+                        required: { 
+                          value: true, 
+                          message: "Please fill out this field." 
+                        }
+                      }}
+                    >
+                      {({ fieldProps }) => (
+                        <TextField 
+                          {...fieldProps}
+                          placeholder="Password"
+                        />
+                      )}
+                    </Field>
+                  </FormSection>
+                  <FormFooter>
+                    <Button appearance="primary" type="submit" isLoading={isSubmitting}>Log in</Button>
+                    <span>Don't have an account yet? <a href="/">Sign up</a></span>
+                  </FormFooter>
+                  <FormFooter align="center">
+                    <span><a href="/">Forgot your password?</a></span>
+                  </FormFooter>
+                </form>
+              }
+            </Form>
+          </Plate>
+        </center>
       </Main>
     </Content>
     <Footer>
@@ -116,42 +118,44 @@ export const ForgotPassword: ComponentStory<typeof Header> = () => (
     <TopNavigation/>
     <Content>
       <Main>
-        <img src="/images/logo.svg" height={gridSize() * 5} />
-        <Plate appearance="display">
-          <Form>
-            {({ formState: { isSubmitting }, handleSubmit }) =>
-              <form onSubmit={handleSubmit(() => console.log('submitted'))}>
-                <FormHeader
-                  title="Reset your password"
-                  description="To reset your password, enter the email address you use to sign in."
-                />
-                <FormSection>
-                  <Field 
-                    name="email" 
-                    label="Email Address"
-                    rules={{
-                      required: { 
-                        value: true, 
-                        message: "Please fill out this field." 
-                      }
-                    }}
-                  >
-                    {({ fieldProps }) => (
-                      <TextField 
-                        {...fieldProps}
-                        placeholder="Email"
-                      />
-                    )}
-                  </Field>
-                </FormSection>
-                <FormFooter>
-                  <Button appearance="primary" type="submit" isLoading={isSubmitting}>Get reset link</Button>
-                  <span>Don't need a reset anymore? <a href="/">Take me back to login</a></span>
-                </FormFooter>
-              </form>
-            }
-          </Form>
-        </Plate>
+        <center>
+          <img src="/images/logo.svg" height={gridSize() * 4.5} />
+          <Plate appearance="display">
+            <Form>
+              {({ formState: { isSubmitting }, handleSubmit }) =>
+                <form onSubmit={handleSubmit(() => console.log('submitted'))}>
+                  <FormHeader
+                    title="Reset your password"
+                    description="To reset your password, enter the email address you use to sign in."
+                  />
+                  <FormSection>
+                    <Field 
+                      name="email" 
+                      label="Email Address"
+                      rules={{
+                        required: { 
+                          value: true, 
+                          message: "Please fill out this field." 
+                        }
+                      }}
+                    >
+                      {({ fieldProps }) => (
+                        <TextField 
+                          {...fieldProps}
+                          placeholder="Email"
+                        />
+                      )}
+                    </Field>
+                  </FormSection>
+                  <FormFooter>
+                    <Button appearance="primary" type="submit" isLoading={isSubmitting}>Get reset link</Button>
+                    <span>No longer required? <a href="/">Log in</a></span>
+                  </FormFooter>
+                </form>
+              }
+            </Form>
+          </Plate>
+        </center>
       </Main>
     </Content>
   </PageLayout>
@@ -162,59 +166,61 @@ export const ResetPassword: ComponentStory<typeof Header> = () => (
     <TopNavigation/>
     <Content>
       <Main>
-        <img src="/images/logo.svg" height={gridSize() * 5} />
-        <Plate appearance="display">
-          <Form>
-            {({ formState: { isSubmitting }, handleSubmit }) =>
-              <form onSubmit={handleSubmit(() => console.log('submitted'))}>
-                <FormHeader
-                  title="Reset your password"
-                  description="Enter your new password."
-                />
-                <FormSection>
-                  <Field 
-                    name="password" 
-                    label="New Password"
-                    rules={{
-                      required: { 
-                        value: true, 
-                        message: "Please fill out this field." 
-                      }
-                    }}
-                  >
-                    {({ fieldProps }) => (
-                      <TextField 
-                        {...fieldProps}
-                        placeholder="New password"
-                      />
-                    )}
-                  </Field>
-                  <Field 
-                    name="confirm_password" 
-                    label="Confirm Password"
-                    rules={{
-                      required: { 
-                        value: true, 
-                        message: "Please fill out this field." 
-                      }
-                    }}
-                  >
-                    {({ fieldProps }) => (
-                      <TextField 
-                        {...fieldProps}
-                        placeholder="Confirm new password"
-                      />
-                    )}
-                  </Field>
-                </FormSection>
-                <FormFooter>
-                  <Button appearance="primary" type="submit" isLoading={isSubmitting}>Reset password</Button>
-                  <span>Don't need a reset anymore? <a href="/">Take me back to login</a></span>
-                </FormFooter>
-              </form>
-            }
-          </Form>
-        </Plate>
+        <center>
+          <img src="/images/logo.svg" height={gridSize() * 4.5} />
+          <Plate appearance="display">
+            <Form>
+              {({ formState: { isSubmitting }, handleSubmit }) =>
+                <form onSubmit={handleSubmit(() => console.log('submitted'))}>
+                  <FormHeader
+                    title="Reset your password"
+                    description="Enter your new password."
+                  />
+                  <FormSection>
+                    <Field 
+                      name="password" 
+                      label="New Password"
+                      rules={{
+                        required: { 
+                          value: true, 
+                          message: "Please fill out this field." 
+                        }
+                      }}
+                    >
+                      {({ fieldProps }) => (
+                        <TextField 
+                          {...fieldProps}
+                          placeholder="New password"
+                        />
+                      )}
+                    </Field>
+                    <Field 
+                      name="confirm_password" 
+                      label="Confirm Password"
+                      rules={{
+                        required: { 
+                          value: true, 
+                          message: "Please fill out this field." 
+                        }
+                      }}
+                    >
+                      {({ fieldProps }) => (
+                        <TextField 
+                          {...fieldProps}
+                          placeholder="Confirm new password"
+                        />
+                      )}
+                    </Field>
+                  </FormSection>
+                  <FormFooter>
+                    <Button appearance="primary" type="submit" isLoading={isSubmitting}>Reset password</Button>
+                    <span>No longer required? <a href="/">Log in</a></span>
+                  </FormFooter>
+                </form>
+              }
+            </Form>
+          </Plate>
+        </center>
       </Main>
     </Content>
   </PageLayout>
@@ -225,15 +231,18 @@ export const ResetConfirmation: ComponentStory<typeof Header> = (args) => (
     <TopNavigation/>
     <Content>
       <Main>
-        <img src="/images/logo.svg" height={gridSize() * 5} />
-        <Plate appearance="display">
-          <FormHeader
-            title="Check your email"
-          />
-        </Plate>
-        <p>Check your <strong>{args.email}</strong> inbox for instructions from us on how to reset your password.</p>
-        <br/>
-        <a href="/">Go to login screen</a>
+        <center>
+          <img src="/images/logo.svg" height={gridSize() * 4.5} />
+          <Plate appearance="display">
+            <center>
+              <h1 children="Check your email"/>
+              <br/>
+              <p>Check your <strong>{args.email}</strong> inbox for instructions from us on how to reset your password.</p>
+              <br/>
+              <a href="/">Go to login screen</a>
+            </center>
+          </Plate>
+        </center>
       </Main>
     </Content>
   </PageLayout>

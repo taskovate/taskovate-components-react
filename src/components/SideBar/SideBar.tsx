@@ -5,17 +5,16 @@ import { colors, gridSize, layers, animation, borderRadius, gradients, fontSize,
 const Styled = styled.div`
   display: flex;
   flex-direction: column;
-  height: auto;
   flex-grow: 1;
-  // align-items: center;
-  // text-align: center;
-  max-width: ${gridSize() * 192}px;
-  margin: 0 auto;
-  padding: ${gridSize() * 1}px ${gridSize() * 4}px;
-  padding-bottom: ${gridSize() * 6}px
+  justify-content: start;
+  align-items: start;
+  align-content: start;
+  gap: ${gridSize() * 2}px;
 `;
 
-const Main = ({ children }: any) => {
+const SideBar = ({ 
+  children
+ }: any) => {
   return (
     <Styled>
       {children}
@@ -23,4 +22,4 @@ const Main = ({ children }: any) => {
   )
 };
 
-export default Main;
+export default SideBar;

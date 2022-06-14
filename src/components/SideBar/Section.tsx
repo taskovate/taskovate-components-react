@@ -5,22 +5,24 @@ import { colors, gridSize, layers, animation, borderRadius, gradients, fontSize,
 const Styled = styled.div`
   display: flex;
   flex-direction: column;
-  height: auto;
-  flex-grow: 1;
-  // align-items: center;
-  // text-align: center;
-  max-width: ${gridSize() * 192}px;
-  margin: 0 auto;
-  padding: ${gridSize() * 1}px ${gridSize() * 4}px;
-  padding-bottom: ${gridSize() * 6}px
+  width: 100%;
+  gap: ${gridSize() * 0.5}px;
 `;
 
-const Main = ({ children }: any) => {
+const SectionTitle = styled.small`
+  text-transform: uppercase;
+`;
+
+const SidebarSection = ({ 
+  children,
+  title
+ }: any) => {
   return (
     <Styled>
+      {title && <SectionTitle>{title}</SectionTitle>}
       {children}
     </Styled>
   )
 };
 
-export default Main;
+export default SidebarSection;

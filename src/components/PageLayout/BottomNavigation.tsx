@@ -1,21 +1,17 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { colors, gridSize, layers, animation, borderRadius, gradients, fontSize, headerFontFamily } from '@theme/constants';
+import { hex2rgba } from '@theme/helpers';
 
+// TODO: Restructure Footer into BottomNavigation component, then have Footer with grid as Footer component (like how Header and TopNavigation are setup).
 const Styled = styled.div`
   display: flex;
-  flex-direction: column;
-  height: auto;
   flex-grow: 1;
-  // align-items: center;
-  // text-align: center;
-  max-width: ${gridSize() * 192}px;
-  margin: 0 auto;
   padding: ${gridSize() * 1}px ${gridSize() * 4}px;
-  padding-bottom: ${gridSize() * 6}px
+  padding-bottom: 0;
 `;
 
-const Main = ({ children }: any) => {
+const BottomNavigation = ({ children }: any) => {
   return (
     <Styled>
       {children}
@@ -23,4 +19,6 @@ const Main = ({ children }: any) => {
   )
 };
 
-export default Main;
+BottomNavigation.prototype.name = "BottomNavigation";
+
+export default BottomNavigation;

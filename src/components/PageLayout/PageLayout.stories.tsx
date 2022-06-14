@@ -20,7 +20,7 @@ import {
   LeftSidebar,
   RightSidebar,
   TopNavigation,
-  Footer
+  BottomNavigation
 } from '.';
 
 export default {
@@ -51,7 +51,7 @@ export const Basic: ComponentStory<typeof PageLayout> = ({ children, ...rest}) =
         <Main children="Main" />
         <RightSidebar children="Right Sidebar"/>
       </Content>
-      <Footer children="Footer"/>
+      <BottomNavigation children="Footer"/>
     </PageLayout>
   </Styled>
 );

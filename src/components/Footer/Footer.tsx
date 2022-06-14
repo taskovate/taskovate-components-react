@@ -7,25 +7,22 @@ import { hex2rgba } from '@theme/helpers';
 const Styled = styled.div`
   display: flex;
   flex-grow: 1;
-  width: calc(100% - ${gridSize() * 8}px);
-  margin: 0 ${gridSize() * 4}px;
 `;
-const Grid = styled.div`
+const Grid = styled.div<any>`
   display: grid;
-  grid-template-columns: repeat(100%, 1fr);
-  grid-template-rows: 100%;
+  grid-template-columns: repeat(auto-fill, 1fr);
+  grid-auto-rows: 100%;
   background: ${gradients.primary()};
   border-top-right-radius: ${borderRadius() * 1}px;
   border-top-left-radius: ${borderRadius() * 1}px;
   box-shadow: ${({ theme }) => theme.elevation[200]}; 
-  // width: calc(100%);
-  // max-width: ${gridSize() * 192}px;
-  margin: 0 auto;
+  width: ${({ numChildren }) => numChildren === 1 ? 'auto' : '100%'};
+  margin: 0 ${({ numChildren }) => numChildren === 1 ? 'auto' : `${gridSize() * 1}px`};
 `;
 
 const Content = styled.div<any>`
-  display: ${({ children }) => children.length === 1 ? 'flex' : 'grid'};
-  grid-template-columns: repeat(2, 1fr);
+  display: ${({ numChildren }) => numChildren === 1 ? 'flex' : 'grid'};
+  grid-template-columns: repeat(auto-fill, 2fr);
   grid-auto-rows: minmax(min-content, max-content);
   grid-column-gap: ${gridSize() * 1}px;
   grid-row-gap: ${gridSize() * 1}px;
@@ -37,6 +34,7 @@ const Content = styled.div<any>`
   border-top-left-radius: ${borderRadius() * 0.75}px;
   margin: ${gridSize() * 0.25}px;
   margin-bottom: 0;
+
   h2 {
     color: ${colors.n[300]} !important;
   }
@@ -76,18 +74,16 @@ const Content = styled.div<any>`
 `;
 
 const Footer = ({ children }: any) => {
-  
+  const renderChildren = Array.isArray(children) ? children: [children];
   return (
     <Styled>
-      <Grid>
-        <Content>
-          {Array.isArray(children) ? children: [children]}
+      <Grid numChildren={renderChildren.length}>
+        <Content numChildren={renderChildren.length}>
+          {renderChildren}
         </Content>
       </Grid>
     </Styled>
   )
 };
-
-Footer.prototype.name = "Footer";
 
 export default Footer;
