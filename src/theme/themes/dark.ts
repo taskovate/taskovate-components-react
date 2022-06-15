@@ -137,6 +137,28 @@ export const navigationStyles = {
   }
 };
 
+export const toggleButtonStyles = {
+  background: {
+    'unset': {
+      default: () => colors.d[800],
+      active: () => colors.p[600],
+      hover: () => colors.d[700],
+    },
+  },
+  color: {
+    'unset': {
+      default: () => colors.n[400],
+      active: () => colors.n[100],
+      hover: () => colors.n[300],
+    },
+  },
+  outline: {
+    'unset': {
+      default: () => colors.p[600]
+    }
+  }
+};
+
 export const buttonStyles = {
   background: {
     'unset': {

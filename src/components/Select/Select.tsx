@@ -36,7 +36,8 @@ const Styled = styled<any>(ReactSelect)`
     }
     &__value-container {
       padding: 0 0 0 0;
-      min-width: calc(200px - ${gridSize() * 2.25}px);
+      margin-right: ${gridSize() * 2}px;
+      // min-width: calc(200px - ${gridSize() * 2.25}px);
     }
     &__input-container {
       padding: 0;

@@ -1,7 +1,7 @@
 export { Tooltip } from './Tooltip';
 export { Button, ButtonGroup } from './Button';
 export { Spinner } from './Dropdown/Spinner';
-export { Plate, Portion } from './Plate';
+export { Plate} from './Plate';
 export { TextField } from './TextField';
 export { TextArea } from './TextArea';
 export { Select } from './Select';
@@ -47,3 +47,4 @@ export {
   GridColumn
  } from './Page';
  export { Card, CardGroup } from './Card';
+export { ToggleButton } from './ToggleButton';

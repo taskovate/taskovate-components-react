@@ -29,6 +29,30 @@ const HeaderContainer = styled.div`
   margin-bottom: ${gridSize() * 2}px;
 `;
 
+const ControlBar = styled.div`
+  display: flex;
+  flex-direction: row;
+  // gap: ${gridSize() * 2.625}px;
+  align-items: center;
+  border-radius: ${borderRadius() * 1}px;
+  padding: ${gridSize() * 0}px;
+  // background-color: ${colors.d[800]};
+  & :first-child {
+    border-bottom-left-radius: ${borderRadius() * 1}px;
+    border-top-left-radius: ${borderRadius() * 1}px;
+  }
+  & :not(& :last-child) {
+    border-right-width: ${gridSize() * 0}px;
+  }
+  & :not(& :first-child) {
+    border-left-width: ${gridSize() * 0}px;
+  }
+  & :last-child {
+    border-bottom-right-radius: ${borderRadius() * 1}px;
+    border-top-right-radius: ${borderRadius() * 1}px;
+  }
+`;
+
 interface Props {
   breadcrumbs?: any;
   controls?: any;
@@ -54,7 +78,7 @@ const PageHeader = ({
         {description && <p>{description}</p>}
       </HeaderContainer>
       {controls && (
-        <ButtonGroup>{controls}</ButtonGroup>
+        <ControlBar>{controls}</ControlBar>
       )}
     </Container>
   )

@@ -14,7 +14,6 @@ import {
   Plate,
   Button,
   PageHeader,
-  Portion,
   Grid,
   GridColumn,
   Card,
@@ -30,9 +29,13 @@ import {
   LeftSidebar,
   RightSidebar,
   Dropdown,
-  SideBar, Section, ButtonItem
+  SideBar, Section, ButtonItem,
+  ToggleButton
 } from '@components/core';
 import { useState } from 'react';
+import { FaProjectDiagram } from 'react-icons/fa';
+import { MdWorkspaces } from 'react-icons/md';
+import { ToggleSelect } from 'src/components/ToggleButton';
 
 export default {
   title: 'Templates/Portal',
@@ -62,7 +65,7 @@ const projects = [
 
 export const Default: ComponentStory<typeof Header> = () => {
   const [select, setSelect] = useState();
-  const [list, setList]: any = useState([]);
+  const [list, setList]: any = useState(projects);
 
   return (
     <PageLayout>
@@ -96,7 +99,14 @@ export const Default: ComponentStory<typeof Header> = () => {
             children="Welcome Elijah"
             controls={(
               <>
-                <Select onChange={({ value }: any) => setList(value === 'space' ? spaces : projects )} options={options} placeholder="Display"></Select>
+                {/* <Select onChange={({ value }: any) => setList(value === 'space' ? spaces : projects )} options={options} placeholder="Display"></Select> */}
+                <ToggleSelect 
+                  onChange={({ value }: any) => setList(value === 'space' ? spaces : projects )} 
+                  options={[
+                    { value: "project", iconBefore: FaProjectDiagram },
+                    { value: "spaces", iconBefore: MdWorkspaces },
+                  ]}
+                />
               </>
             )}
           />

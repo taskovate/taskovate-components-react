@@ -27,6 +27,7 @@ declare module 'styled-components' {
     inputStyles: any;
     scrollStyles: any;
     navigationStyles: any;
+    toggleButtonStyles: any;
     buttonStyles: any;
   }
 };
