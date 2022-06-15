@@ -52,18 +52,17 @@ const Container = styled.button<any>`
 const ToggleButton = ({
   iconBefore,
   iconAfter,
-  children
+  children,
+  onClick,
+  isEnabled,
+  ...rest
 }: any) => {
-  const [isEnabled, setEnabled] = useState(false);
-  
-  const handleClick = () => {
-    setEnabled(!isEnabled);
-  };
 
   return (
     <Container
       isEnabled={isEnabled}
-      onClick={handleClick}
+      onClick={onClick}
+      {...rest}
     >
       <>
         {iconBefore && 

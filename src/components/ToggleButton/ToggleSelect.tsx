@@ -33,17 +33,22 @@ const ToggleSelect = ({
   options,
   onChange
  }: any) => {
-  const [item, setValue] = useState();
+  const [item, setValue]: any = useState();
 
   const handleClick = (item: any) => {
     setValue(item);
-    onChange(item);
+    onChange && onChange(item)
   };
   
   return (
     <Container>
-      {options.map((item: any) => (
-        <ToggleButton {...item} isEnabled={item.value == item.value} onClick={() => handleClick(item)}/>
+      {options && options.map((option: any, index: number) => (
+        <ToggleButton 
+          {...option}
+          key={index}
+          isEnabled={item && option.value === item.value} 
+          onClick={() => handleClick(option)}
+        />
       ))}
     </Container>
   )

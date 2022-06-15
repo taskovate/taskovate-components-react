@@ -101,7 +101,7 @@ export const Default: ComponentStory<typeof Header> = () => {
               <>
                 {/* <Select onChange={({ value }: any) => setList(value === 'space' ? spaces : projects )} options={options} placeholder="Display"></Select> */}
                 <ToggleSelect 
-                  onChange={({ value }: any) => setList(value === 'space' ? spaces : projects )} 
+                  onChange={({ value }: any) => setList(value === 'spaces' ? spaces : projects )} 
                   options={[
                     { value: "project", iconBefore: FaProjectDiagram },
                     { value: "spaces", iconBefore: MdWorkspaces },

@@ -141,7 +141,7 @@ export const toggleButtonStyles = {
   background: {
     'unset': {
       default: () => colors.d[800],
-      active: () => colors.p[600],
+      active: () => colors.p[700],
       hover: () => colors.d[700],
     },
   },
