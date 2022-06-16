@@ -13,8 +13,8 @@ const Container = styled.div`
   padding-top: 0;
   display: flex;
   flex-direction: column;
-  // flex-basis: ${gridSize() * 24}px;
-  flex-basis: 100%;
+  flex-basis: ${gridSize() * 24}px;
+  // flex-basis: 100%;
 `;
 
 const CardHeader = styled.div`

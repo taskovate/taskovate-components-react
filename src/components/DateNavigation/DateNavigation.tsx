@@ -15,6 +15,7 @@ const Styled = styled.div<any>`
   flex: 0 1 auto;
   height: ${gridSize() * 4}px;
   justify-content: space-between;
+  margin: ${gridSize() * 0.5}px ${gridSize() * 2.5}px;
 `;
 
 const DateGroup = styled.div<any>`
