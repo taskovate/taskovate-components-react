@@ -84,6 +84,8 @@ const Container = styled.div<any>`
   overflow: hidden;
   user-select: none;
   max-height: ${gridSize() * 4}px;
+  ${({ isAvatar }) => isAvatar && `width: ${gridSize() * 4}px !important;`}
+  ${({ isAvatar }) => isAvatar && `height: ${gridSize() * 4}px !important;`}
 
   & > span {
     display: flex;

@@ -13,7 +13,7 @@ const Grid = styled.div<any>`
   grid-template-columns: repeat(auto-fill, 1fr);
   grid-auto-rows: 100%;
   background: ${gradients.primary()};
-  border-top-right-radius: ${borderRadius() * 1}px;
+  border-top-right-radius: ${borderRadius() * 1.25}px;
   border-top-left-radius: ${borderRadius() * 1}px;
   box-shadow: ${({ theme }) => theme.elevation[200]}; 
   width: ${({ numChildren }) => numChildren === 1 ? 'auto' : '100%'};
@@ -30,8 +30,8 @@ const Content = styled.div<any>`
   padding-bottom: ${gridSize() * 3.5}px;
   background-color: ${({ theme }) => hex2rgba(colors.d[900], 0.96875)};
   // background-color: rgba(255 0 0 / 10%);
-  border-top-right-radius: ${borderRadius() * 0.75}px;
-  border-top-left-radius: ${borderRadius() * 0.75}px;
+  border-top-right-radius: ${borderRadius() * 1}px;
+  border-top-left-radius: ${borderRadius() * 1}px;
   margin: ${gridSize() * 0.25}px;
   margin-bottom: 0;
 

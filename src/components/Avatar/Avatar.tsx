@@ -5,18 +5,20 @@ import { Button } from '@components/core';
 
 const Container = styled.div<any>`
   display: flex;
-  flex-grow: 0;
-  padding: ${gridSize() * 0.375}px;
+  flex-grow: 1;
   background-color: transparent;
   border-radius: 100%;
+  align-self: center;
+  margin: auto;
 `;
 
 const AvatarImage = styled.img`
   display: flex;
+  align-self: center;
+  width: ${gridSize() * 3}px;
+  height: ${gridSize() * 3}px;
   border-radius: ${borderRadius() * 0.5}px; 
-  width: ${gridSize() * 3.3125}px;
-  height: ${gridSize() * 3.3125}px;
-  margin: auto auto;
+  margin: auto;
 `;
 
 const Avatar = ({
