@@ -8,11 +8,11 @@ import { ToggleButton } from '.';
 const Container =  styled.div`
   display: flex;
   flex-direction: row;
-  // gap: ${gridSize() * 2.625}px;
   align-items: center;
   border-radius: ${borderRadius() * 1}px;
   padding: ${gridSize() * 0}px;
   // background-color: ${colors.d[800]};
+  
   & :first-child {
     border-bottom-left-radius: ${borderRadius() * 1}px;
     border-top-left-radius: ${borderRadius() * 1}px;

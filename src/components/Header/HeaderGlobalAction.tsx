@@ -21,6 +21,7 @@ interface HeaderGlobalActionProps {
   isDisabled?: boolean;
   iconBefore?: (props?: any) => React.ReactNode;
   iconAfter?: (props?: any) => React.ReactNode;
+  isAvatar?: (props?: any) => React.ReactNode;
   children: any;
 }
 
@@ -31,6 +32,7 @@ const HeaderGlobalAction: React.FC<any> = ({
   isDisabled,
   iconBefore,
   iconAfter,
+  isAvatar,
   children
 }: HeaderGlobalActionProps) => {
 
@@ -42,6 +44,7 @@ const HeaderGlobalAction: React.FC<any> = ({
         loading={isLoading} 
         style={{ padding: typeof children === 'object' && `0 ${gridSize() * 0.75}px`}}
         hasIcon={(iconAfter||iconBefore)}
+        isAvatar={isAvatar}
       >
         
         {isLoading && <Spinner />}
@@ -70,8 +73,9 @@ const Container = styled.div<any>`
   font-size: ${fontSize() * 1}px;
   padding: ${({ hasIcon }) => hasIcon ? gridSize() * 0.75 : gridSize() * 0.75}px 
            ${({ hasIcon }) => hasIcon ? gridSize() * 0.75 : gridSize() * 1.25}px;
+  ${({ isAvatar }) => isAvatar && `padding: 0 !important;`}
   // line-height: 1.5em;
-  border-radius: ${borderRadius()}px;
+  border-radius: ${borderRadius()}px; 
   margin-left: ${gridSize() * 0.75}px;
   cursor: pointer;
   font-weight: 500;

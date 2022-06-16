@@ -48,3 +48,5 @@ export {
  } from './Page';
  export { Card, CardGroup } from './Card';
 export { ToggleButton } from './ToggleButton';
+export { Avatar } from './Avatar';
+

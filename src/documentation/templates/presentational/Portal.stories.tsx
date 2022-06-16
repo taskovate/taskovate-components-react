@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { colors, gridSize } from '@theme/constants';
-import { MdLogin } from 'react-icons/md';
+import { MdLogin, MdMessage, MdNotifications } from 'react-icons/md';
 import { HiOutlineChatAlt, HiOutlineBell, HiOutlineUser, HiHome, HiStar } from 'react-icons/hi';
 import {
   Header,
@@ -18,7 +18,9 @@ import {
   GridColumn,
   Card,
   CardGroup,
-  Select
+  Select,
+  TextField,
+  Avatar
 } from '@components/core';
 
 import {
@@ -81,14 +83,12 @@ export const Default: ComponentStory<typeof Header> = () => {
             </HeaderGlobalAction>
           </HeaderMenuBar>
           <HeaderGlobalBar>
-            <HeaderGlobalAction>
-              Messages
+            <HeaderGlobalAction iconBefore={MdMessage}>
             </HeaderGlobalAction>
-            <HeaderGlobalAction>
-              Notifications
+            <HeaderGlobalAction iconBefore={MdNotifications}>
             </HeaderGlobalAction>
-            <HeaderGlobalAction>
-              Profile
+            <HeaderGlobalAction isAvatar tooltip="Your profile and settings">
+              <Avatar />
             </HeaderGlobalAction>
           </HeaderGlobalBar>
         </Header>
@@ -97,29 +97,20 @@ export const Default: ComponentStory<typeof Header> = () => {
         <Main>
           <PageHeader
             children="Welcome Elijah"
-            controls={(
-              <>
-                {/* <Select onChange={({ value }: any) => setList(value === 'space' ? spaces : projects )} options={options} placeholder="Display"></Select> */}
-                <ToggleSelect 
-                  onChange={({ value }: any) => setList(value === 'spaces' ? spaces : projects )} 
-                  options={[
-                    { value: "project", iconBefore: FaProjectDiagram },
-                    { value: "spaces", iconBefore: MdWorkspaces },
-                  ]}
-                />
-              </>
-            )}
           />
           <Grid columns={3}>
-            <GridColumn medium={2}>
+            <GridColumn medium={3}>
+              <h5>Starred</h5>
+              <br/>
+              <h5>Recent</h5>
+              <br/>
+              <h5>Your projects</h5>
+              <br/>
               <CardGroup>
                 {list.map((item: any) => (
                   <Card title={item.title} children={item.children} />
                 ))}
               </CardGroup>
-            </GridColumn>
-            <GridColumn medium={1}>
-              <h5>My items</h5>
             </GridColumn>
           </Grid>
         </Main>

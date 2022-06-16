@@ -46,7 +46,7 @@ export const Default: ComponentStory<typeof Header> = () => (
     <Content>
       <Main>
         <center>
-          <img src="/images/logo.svg" height={gridSize() * 4.5} />
+          <img src="/images/logo.svg" height={gridSize() * 4.5} style={{ marginBottom: gridSize() * 2 }} />
           <Plate appearance="display">
             <Form>
               {({ formState: { isSubmitting }, handleSubmit }) =>
@@ -183,7 +183,7 @@ export const SignupConfirmation: ComponentStory<typeof Header> = (args) => (
     <Content>
       <Main>
         <center>
-          <img src="/images/logo.svg" height={gridSize() * 4.5} />
+          <img src="/images/logo.svg" height={gridSize() * 4.5} style={{ marginBottom: gridSize() * 2 }} />
           <Plate appearance="display">
             <center>
               <h1 children="Check your email"/>

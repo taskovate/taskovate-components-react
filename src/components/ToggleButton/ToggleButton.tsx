@@ -13,7 +13,7 @@ const Container = styled.button<any>`
   text-align: center;
   vertical-align: center;
   line-height: 1em;
-  padding: ${gridSize() * 0.375}px ${gridSize() * 1}px;
+  padding: ${gridSize() * 0.53125}px ${gridSize() * 1}px;
   cursor: pointer;
   font-weight: 500;
   transition: ${animation.normal()};
@@ -25,7 +25,6 @@ const Container = styled.button<any>`
     align-content: center;
     width: ${gridSize() * 2.5}px;
     height: ${gridSize() * 2.5}px;
-    // margin: -${gridSize() * 1}px 0;
   }
   border: ${gridSize() * 0.25}px solid ${({ theme: { toggleButtonStyles }, isEnabled }) => !isEnabled ? toggleButtonStyles.background['unset'].active() : 'transparent' };
 
