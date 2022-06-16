@@ -6,8 +6,22 @@ import { FaChevronDown } from 'react-icons/fa';
 import { HiOutlineStar, HiSearch, HiStar } from 'react-icons/hi';
 import { useStore } from '@internal/core';
 import { Button } from '..';
+import { BsChevronBarLeft, BsChevronBarRight } from 'react-icons/bs';
 
 const Styled = styled.div<any>`
+  display: flex;
+  flex-direction: row;
+  // background-color: rgba(255, 0, 0, 0.1);
+  flex: 0 1 auto;
+  height: ${gridSize() * 4}px;
+  justify-content: space-between;
+`;
+
+const DateGroup = styled.div<any>`
+  display: flex;
+  flex-direction: row;
+  gap: ${gridSize() * 1}px;
+  justify-content: center;
 `;
 
 const DateNavigation = ({ 
@@ -16,6 +30,15 @@ const DateNavigation = ({
 
   return (
     <Styled {...rest}>
+      <Button appearance="subtle" iconBefore={BsChevronBarLeft} />
+      <DateGroup>
+        <Button appearance="subtle">Monday</Button>
+        <Button appearance="subtle">Tuesday</Button>
+        <Button>Wednesday</Button>
+        <Button appearance="subtle">Thursday</Button>
+        <Button appearance="subtle">Friday</Button>
+      </DateGroup>
+      <Button appearance="subtle" iconBefore={BsChevronBarRight} />
     </Styled>
   );
 };

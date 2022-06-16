@@ -32,7 +32,8 @@ import {
   RightSidebar,
   Dropdown,
   SideBar, Section, ButtonItem,
-  ToggleButton
+  ToggleButton,
+  DateNavigation
 } from '@components/core';
 import { useState } from 'react';
 import { FaProjectDiagram } from 'react-icons/fa';
@@ -95,11 +96,11 @@ export const Default: ComponentStory<typeof Header> = () => {
       </TopNavigation>
       <Content>
         <Main>
-          <PageHeader
-          />
+          {/* <PageHeader
+          /> */}
+          <DateNavigation />
           <Grid columns={3}>
             <GridColumn medium={3}>
- 
             </GridColumn>
           </Grid>
         </Main>
