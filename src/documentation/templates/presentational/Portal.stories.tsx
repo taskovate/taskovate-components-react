@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { colors, gridSize } from '@theme/constants';
-import { MdLogin, MdMessage, MdNotifications } from 'react-icons/md';
+import { MdChevronLeft, MdChevronRight, MdDateRange, MdLogin, MdMenu, MdMessage, MdNotifications } from 'react-icons/md';
 import { HiOutlineChatAlt, HiOutlineBell, HiOutlineUser, HiHome, HiStar } from 'react-icons/hi';
 import {
   Header,
@@ -97,6 +97,14 @@ export const Default: ComponentStory<typeof Header> = () => {
         <Main>
           <PageHeader
             children="Welcome Elijah"
+            actions={(
+              <>
+                <Button iconBefore={MdMenu}></Button>
+                <Button iconBefore={MdDateRange}></Button>
+                <Button iconBefore={MdChevronLeft}></Button>
+                <Button iconBefore={MdChevronRight}></Button>
+              </>
+            )}
           />
           <Grid columns={3}>
             <GridColumn medium={3}>

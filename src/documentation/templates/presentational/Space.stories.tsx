@@ -39,6 +39,7 @@ import { useState } from 'react';
 import { FaProjectDiagram } from 'react-icons/fa';
 import { MdWorkspaces } from 'react-icons/md';
 import { ToggleSelect } from 'src/components/ToggleButton';
+import { MdChevronLeft, MdChevronRight, MdDateRange,  MdMenu } from 'react-icons/md';
 
 export default {
   title: 'Templates/Space',
@@ -108,7 +109,17 @@ export const Default: ComponentStory<typeof Header> = () => {
       <Content>
         <Main>
           <DayTabs />
-          <PageHeader />
+          <PageHeader
+            children=""
+            actions={(
+              <>
+                <Button iconBefore={MdMenu}></Button>
+                <Button iconBefore={MdDateRange}></Button>
+                <Button iconBefore={MdChevronLeft}></Button>
+                <Button iconBefore={MdChevronRight}></Button>
+              </>
+            )}
+          />
           <Grid columns={3}>
             <GridColumn medium={3}>
 

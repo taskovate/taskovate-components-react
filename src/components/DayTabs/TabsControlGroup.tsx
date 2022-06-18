@@ -4,15 +4,16 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
-  flex-grow: 1;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: stretch;
+  align-content: center;
   gap: ${gridSize() * 1}px;
-  // background-color: rgba(255, 0, 0, 0.1);
+  height: ${gridSize() * 4}px;
+  // background-color: rgba(0, 255, 0, 0.1);
 `;
 
-const TabGroup: FC<any> = ({
+const TabsControlGroup: FC<any> = ({
   children
 }) => {
 
@@ -25,4 +26,4 @@ const TabGroup: FC<any> = ({
   );
 };
 
-export default TabGroup;
+export default TabsControlGroup;

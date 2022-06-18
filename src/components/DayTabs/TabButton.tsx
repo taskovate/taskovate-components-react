@@ -8,9 +8,9 @@ const month = ["January","February","March","April","May","June","July","August"
 const Text = styled.span`
   line-height: 1em;
   font-weight: 700;
-  font-size: ${fontSize() * 1.4}px;
+  font-size: ${fontSize() * 1}px;
   margin-bottom: ${gridSize() * 0.25}px;
-  color: ${colors.n[300]};
+  color: ${colors.n[500]};
   transition: ${animation.normal()};
   font-family: ${headerFontFamily()};
   overflow: hidden;
@@ -21,36 +21,38 @@ const Text = styled.span`
 
 const Subtext = styled.span`
   font-size: ${fontSizeSmall()}px;
-  color: ${(colors.n[400])};
+  color: ${(colors.n[600])};
   line-height: 1em;
   border-radius: ${borderRadius() * 1}px; 
-  // background-color: ${colors.d[500]};
-  // padding: ${gridSize() * 0.25}px ${gridSize() * 0.5}px;
-  font-weight: 500;
+  font-weight: 600;
   transition: ${animation.normal()};
   letter-spacing: 0.03rem;
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<any>`
   display: flex;
   flex-grow: 1;
   align-self: center;
   justify-self: center;
-  // background-color: rgba(0 255 0 / 10%);
-  padding: ${gridSize() * 1}px;
+  padding: ${gridSize() * 0.75}px ${gridSize() * 1}px;
   border-radius: ${borderRadius() * 1}px;
   cursor: pointer;
   user-select: none;
   transition: ${animation.normal()};
+  background-color: ${colors.d[900]};
   &:hover {
     background-color: ${colors.d[800]};
   }
-  &:hover ${Text} {
-    color: ${colors.n[300]};
+  &:active {
+    background-color: ${colors.d[700]};
   }
-  &:hover ${Subtext} {
-    // background-color: ${colors.p[600]};
+  ${Text} {
+    color: ${({ isSelected }) => isSelected ? 'auto' : colors.d[200]};
   }
+  ${Subtext} {
+    color: ${({ isSelected }) => isSelected ? 'auto' : colors.d[300]};
+  }
+  // opacity: ${({ isSelected }) => isSelected ? 0.8 : 0.6};
 `;
 
 const Container = styled.div`
@@ -62,18 +64,22 @@ const Container = styled.div`
 
 
 const TabButton: FC<any> = ({
-  moment
+  moment,
+  isSelected
 }) => {
-  const date = new Date(moment);
   const info = {
-    day: day[date.getDay()],
-    month: month[date.getMonth()],
-    isoString: date.toISOString().substring(6, 10).concat('-'.concat(date.toISOString().substring(0, 4))).split('T')[0].split('-').join('/')
+    day: day[moment.getDay()],
+    month: month[moment.getMonth()],
+    isoString: moment.toISOString().substring(6, 10).concat('-'.concat(moment.toISOString().substring(0, 4))).split('T')[0].split('-').join('/')
   };
   
+  const onClick = () => {
+    return moment;
+  };
+
   return  (
     <>
-      <Wrapper>
+      <Wrapper onClick={onClick} isSelected={isSelected}>
         <Container>
           <Text>{info.day}</Text>
           <Subtext>{info.isoString}</Subtext>
