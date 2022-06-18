@@ -10,7 +10,7 @@ const Text = styled.span`
   font-weight: 700;
   font-size: ${fontSize() * 1}px;
   margin-bottom: ${gridSize() * 0.25}px;
-  color: ${colors.n[500]};
+  color: ${colors.n[400]};
   transition: ${animation.normal()};
   font-family: ${headerFontFamily()};
   overflow: hidden;
@@ -21,7 +21,7 @@ const Text = styled.span`
 
 const Subtext = styled.span`
   font-size: ${fontSizeSmall()}px;
-  color: ${(colors.n[600])};
+  color: ${(colors.n[500])};
   line-height: 1em;
   border-radius: ${borderRadius() * 1}px; 
   font-weight: 600;
@@ -47,12 +47,28 @@ const Wrapper = styled.div<any>`
     background-color: ${colors.d[700]};
   }
   ${Text} {
-    color: ${({ isSelected }) => isSelected ? 'auto' : colors.d[200]};
+    color: ${({ isSelected }) => isSelected ? 'auto' : colors.d[600]};
+
   }
   ${Subtext} {
-    color: ${({ isSelected }) => isSelected ? 'auto' : colors.d[300]};
+    color: ${({ isSelected }) => isSelected ? 'auto' : colors.d[600]};
   }
-  // opacity: ${({ isSelected }) => isSelected ? 0.8 : 0.6};
+  &:hover {
+    ${Text} {
+      color: ${({ isSelected }) => isSelected ? 'auto' : colors.d[200]};
+    }
+    ${Subtext} {
+      color: ${({ isSelected }) => isSelected ? 'auto' : colors.d[300]};
+    }
+  }
+  &:active {
+    ${Text} {
+      color: ${({ isSelected }) => isSelected ? 'auto' : colors.d[100]};
+    }
+    ${Subtext} {
+      color: ${({ isSelected }) => isSelected ? 'auto' : colors.d[200]};
+    }
+  }
 `;
 
 const Container = styled.div`
