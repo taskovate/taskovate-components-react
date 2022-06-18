@@ -106,11 +106,11 @@ export const Default: ComponentStory<typeof Header> = () => {
               <br/>
               <h5>Your projects</h5>
               <br/>
-              <CardGroup>
+              {/* <CardGroup>
                 {list.map((item: any) => (
                   <Card title={item.title} children={item.children} />
                 ))}
-              </CardGroup>
+              </CardGroup> */}
             </GridColumn>
           </Grid>
         </Main>

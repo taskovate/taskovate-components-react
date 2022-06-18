@@ -4,17 +4,17 @@ import styled from 'styled-components';
 import { gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall } from '@theme/constants';
 import { HiHome, HiStar } from 'react-icons/hi';
 // import { useStore } from '@internal/core';
-import { DateNavigation } from '.';
+import { DayTabs } from '.';
 
 export default {
-  title: 'Components/DateNavigation',
-  component: DateNavigation,
-} as ComponentMeta<typeof DateNavigation>;
+  title: 'Components/DayTabs',
+  component: DayTabs,
+} as ComponentMeta<typeof DayTabs>;
 
-export const Basic: ComponentStory<typeof DateNavigation> = () => {
+export const Basic: ComponentStory<typeof DayTabs> = () => {
   return (
     <>
-      <DateNavigation />
+      <DayTabs />
     </>
   );
 };

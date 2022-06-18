@@ -13,8 +13,10 @@ const Container = styled.div`
   padding-top: 0;
   display: flex;
   flex-direction: column;
-  flex-basis: ${gridSize() * 24}px;
+  // flex-basis: ${gridSize() * 24}px;
   // flex-basis: 100%;
+  border: ${gridSize() * 0.25}px solid ${colors.d[700]};
+  border-top: ${gridSize() * 0.5}px solid ${colors.d[700]};
 `;
 
 const CardHeader = styled.div`
@@ -29,7 +31,7 @@ const CardHeader = styled.div`
     width: ${gridSize() * 3.5}px;
     height: ${gridSize() * 3.5}px;
   }
-  gap: ${gridSize() * 4}px;
+  gap: ${gridSize() * 3}px;
 `;
 
 const CardTitle = styled.h4`

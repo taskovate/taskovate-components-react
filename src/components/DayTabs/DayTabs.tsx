@@ -7,15 +7,14 @@ import { HiOutlineStar, HiSearch, HiStar } from 'react-icons/hi';
 import { useStore } from '@internal/core';
 import { Button } from '..';
 import { BsChevronBarLeft, BsChevronBarRight } from 'react-icons/bs';
+import { TabGroup, TabButton } from '.';
 
-const Styled = styled.div<any>`
+const Wrapper = styled.div<any>`
   display: flex;
   flex-direction: row;
   // background-color: rgba(255, 0, 0, 0.1);
   flex: 0 1 auto;
-  height: ${gridSize() * 4}px;
   justify-content: space-between;
-  margin: ${gridSize() * 0.5}px ${gridSize() * 2.5}px;
 `;
 
 const DateGroup = styled.div<any>`
@@ -24,24 +23,22 @@ const DateGroup = styled.div<any>`
   gap: ${gridSize() * 1}px;
   justify-content: center;
 `;
+const oneDay = 60 * 60 * 24 * 1000;
+const todayTimestamp = Date.now() - (Date.now() % oneDay) + (new Date().getTimezoneOffset() * 1000 * 60);
 
-const DateNavigation = ({ 
+const DayTabs = ({ 
   ...rest
 }: any) => {
 
   return (
-    <Styled {...rest}>
-      <Button appearance="subtle" iconBefore={BsChevronBarLeft} />
-      <DateGroup>
-        <Button appearance="subtle">Monday</Button>
-        <Button appearance="subtle">Tuesday</Button>
-        <Button>Wednesday</Button>
-        <Button appearance="subtle">Thursday</Button>
-        <Button appearance="subtle">Friday</Button>
-      </DateGroup>
-      <Button appearance="subtle" iconBefore={BsChevronBarRight} />
-    </Styled>
+    <Wrapper>
+      <TabGroup>
+        {new Array(7).fill(null).map((_, i) => (
+          <TabButton key={i} moment={todayTimestamp - oneDay * 3 + oneDay * i} />
+        ))}
+      </TabGroup>
+    </Wrapper>
   );
 };
 
-export default DateNavigation;
+export default DayTabs;

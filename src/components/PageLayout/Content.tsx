@@ -4,7 +4,6 @@ import { gridSize, layers, animation, borderRadius, gradients, fontSize, headerF
 
 const Styled = styled.div`
   display: flex;
-  flex-direction: column;
   height: 100%;
   grid-area: "content" / "content" / "content";
 `;

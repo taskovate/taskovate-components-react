@@ -33,7 +33,7 @@ import {
   Dropdown,
   SideBar, Section, ButtonItem,
   ToggleButton,
-  DateNavigation
+  DayTabs
 } from '@components/core';
 import { useState } from 'react';
 import { FaProjectDiagram } from 'react-icons/fa';
@@ -106,17 +106,12 @@ export const Default: ComponentStory<typeof Header> = () => {
         </Header>
       </TopNavigation>
       <Content>
-      <DateNavigation />
-
         <Main>
+          <DayTabs />
           <PageHeader />
           <Grid columns={3}>
             <GridColumn medium={3}>
-              <CardGroup>
-                {list.map((item: any) => (
-                  <Card title={item.title} children={item.children} />
-                ))}
-              </CardGroup>
+
             </GridColumn>
           </Grid>
         </Main>
