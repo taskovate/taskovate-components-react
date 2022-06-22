@@ -2,14 +2,14 @@ import { hex2rgba, hexCombine } from '@theme/helpers';
 import * as colors from './colors';
 import * as typography from './typography';
 
-export const borderRadius = () => 3;
+export const borderRadius = () => 3.5;
 export const gridSize = () => 8;
 export const fontSize = () => 14;
 export const fontSizeSmall = () => 11;
 
-export const fontFamily = () => `'Noto Sans'`;
-export const headerFontFamily = () => `'Noto Sans Display', sans-serif`;
-export const codeFontFamily = () => `'Noto Sans Mono', monospace`;
+export const fontFamily = () => `'Assailand'`;
+export const headerFontFamily = () => `'Azeri Sans', sans-serif`;
+export const codeFontFamily = () => `'IBM Plex Mono', monospace`;
 
 export const breakpoints = {
   mobile: () => '320px',
@@ -52,7 +52,7 @@ export const animation = {
 };
 
 export const gradients = {
-  primary: () => `linear-gradient(171deg, ${hex2rgba(hexCombine(colors.b[500], colors.g[800], 0.55), 1)} 0%, ${hex2rgba(hexCombine(hexCombine(colors.b[500], colors.p[900], 0.3), colors.g[600], 0.2), 0.9)} 44%, ${hex2rgba(colors.p[600], 1)} 100%)`,
+  primary: () => `linear-gradient(0deg, ${hex2rgba(hexCombine(colors.b[500], colors.g[800], 0.55), 1)} 0%, ${hex2rgba(hexCombine(hexCombine(colors.b[500], colors.p[900], 0.3), colors.g[600], 0.2), 0.9)} 44%, ${hex2rgba(colors.p[600], 1)} 100%)`,
   secondary: () => `linear-gradient(55deg, ${hex2rgba(hexCombine(colors.b[500], colors.g[800], 0.55), 1)} 0%, ${hex2rgba(hexCombine(hexCombine(colors.b[500], colors.p[900], 0.3), colors.g[600], 0.2), 0.9)} 44%, ${hex2rgba(colors.p[600], 1)} 100%)`,
   subtle: () => `linear-gradient(-9deg, #444 0%, #333 66%, #555 100%)`,
 };

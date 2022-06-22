@@ -3,6 +3,7 @@ import {
   gridSize,
   borderRadius
 } from '@theme/constants';
+// the alias is not being read by parcel correct
 
 const baseScrollStyle = ( trackWidth = 2.25, thumbWidth = 7 ) => css<any>`
   ${({ theme: { scrollStyles } }) => `
@@ -37,10 +38,11 @@ const baseScrollStyle = ( trackWidth = 2.25, thumbWidth = 7 ) => css<any>`
 export default () => css`
   body {
     ${baseScrollStyle()}
+    // overflow-y: scroll;
   }
 
   .react-select__menu-list {
-    overflow-y: scroll;
+    // overflow-y: scroll;
     ${baseScrollStyle(1.25, 3)}
     ${({ theme: { scrollStyles } }) => `
       ::-webkit-scrollbar-thumb {

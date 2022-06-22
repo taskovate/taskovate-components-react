@@ -1,10 +1,10 @@
-import { css } from 'styled-components';
+import { DefaultTheme, css } from 'styled-components';
 import {
   colors,
   gridSize,
 } from '@theme/constants';
 
-export default () => css`
+export default () => css<DefaultTheme>`
   .sb-show-main {
     background-color: ${({ theme }) => theme.background()} !important;
   }
@@ -17,10 +17,14 @@ export default () => css`
     backface-visibility: hidden;
   }
 
-  html,
-  body {
+  html, body, #root {
     display: flex;
+    flex-direction: column;
     flex-grow: 1;
+    height: 100%;
+    margin: 0;
+    background-color: ${({ theme }) => theme.background()} !important;
+    min-width: 0;
   }
 
   /* Default margins */

@@ -1,4 +1,4 @@
-import React, { useEffect, cloneElement, useState  } from 'react';
+import React, { useEffect, cloneElement, useState, forwardRef } from 'react';
 import styled from 'styled-components';
 import { colors, gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall } from '@theme/constants';
 import ReactSelect, { Props as SelectProps } from 'react-select';
@@ -19,7 +19,7 @@ const Styled = styled<any>(ReactSelect)`
       border: ${gridSize() * 0.25}px solid ${({ theme: { inputStyles } }) => inputStyles.borderColor['body'].default()};;
       box-shadow: none;
       border-radius: ${borderRadius() * 1}px;
-      padding: ${gridSize() * 0.5625}px ${gridSize() * 1.25}px;
+      padding: ${gridSize() * 0.5}px ${gridSize() * 1}px;
       // line-height: normal;
       background-color: ${({ theme: { inputStyles } }) => inputStyles.background['body'].default()};
       color: ${({ theme: { inputStyles } }) => inputStyles.color['body'].default()};
@@ -36,7 +36,8 @@ const Styled = styled<any>(ReactSelect)`
     }
     &__value-container {
       padding: 0 0 0 0;
-      min-width: calc(200px - ${gridSize() * 2.25}px);
+      margin-right: ${gridSize() * 2}px;
+      // min-width: calc(200px - ${gridSize() * 2.25}px);
     }
     &__input-container {
       padding: 0;
@@ -106,13 +107,14 @@ const DropdownIndicator = () => (
   <FaChevronDown />
 );
 
-const Select = ({
+const Select = forwardRef(({
   placeholder = 'Select',
   options,
-}: SelectProps) => {
-
+  ...rest
+}: any, ref) => {
   return (
       <Styled
+        ref={ref}
         classNamePrefix="react-select"
         placeholder={placeholder}
         options={options}
@@ -124,18 +126,16 @@ const Select = ({
           const menuEl = document.querySelector(`.react-select__menu`);
           const containerEl = menuEl?.parentElement;
           const clonedMenuEl: any = menuEl?.cloneNode(true);
-    
           if (!clonedMenuEl) return; // safeguard
-    
           clonedMenuEl.classList.add("react-select__menu--close");
           clonedMenuEl.addEventListener("animationend", () => {
             containerEl?.removeChild(clonedMenuEl);
           });
-    
           containerEl?.appendChild(clonedMenuEl!);
         }}
+        {...rest}
       />
   );
-};
+});
 
 export default Select;

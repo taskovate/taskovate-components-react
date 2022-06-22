@@ -9,8 +9,8 @@ export const textHover = () => colors.n[100];
 export const textActive = () => colors.n[100];
 export const subtleTwext = () => colors.n[100];
 export const placeholderText = () => colors.n[100];
-export const heading = () => colors.n[100];
-export const subtleHeading = () => colors.n[400];
+export const heading = () => colors.n[200];
+export const subtleHeading = () => colors.n[600];
 export const codeBlock = () => colors.n[100];
 export const link = () => colors.n[100];
 export const linkHover = () => colors.n[100];
@@ -22,11 +22,11 @@ export const skeleton = () => colors.n[200];
 export const label = () => colors.n[100];
 
 export const elevation = {
-  100: `0 1px 1px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0008`,
-  200: `0 4px 8px -2px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0008`,
-  300: `0 8px 16px -4px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0008`,
-  400: `0 12px 24px -6px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0008`,
-  500: `0 20px 32px -8px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0008`,
+  100: `0 1px 1px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0007`,
+  200: `0 4px 8px -2px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0007`,
+  300: `0 8px 16px -4px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0007`,
+  400: `0 12px 24px -6px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0007`,
+  500: `0 20px 32px -8px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0007`,
 };
 
 export const dropdownStyles = {
@@ -56,17 +56,17 @@ export const dropdownStyles = {
 export const inputStyles = {
   background: {
     'body': {
-      default: () => colors.d[500],
-      hover: () => colors.d[500],
-      active: () => colors.d[400],
-      selected: () => colors.d[300],
+      default: () => colors.d[700],
+      hover: () => colors.d[600],
+      active: () => colors.d[500],
+      selected: () => colors.d[400],
     }
   },
   borderColor: {
     'body': {
-      default: () => colors.d[500],
-      hover: () => colors.p[500],
-      focus: () => colors.p[400]
+      default: () => colors.d[700],
+      hover: () => colors.p[600],
+      focus: () => colors.p[500]
     }
   },
   color: {
@@ -97,10 +97,10 @@ export const scrollStyles = {
 export const navigationStyles = {
   background: {
     'unset': {
-      disabled: () => background(),
-      default: () => background(),
-      hover: () => colors.d[600],
-      active: () => colors.d[500],
+      disabled: () => 'transparent',
+      default: () => 'transparent',
+      hover: () => hex2rgba(colors.d[600], 0.75),
+      active: () => hex2rgba(colors.d[500], 0.75),
     },
     'primary': {
       disabled: () => colors.p[800],
@@ -133,6 +133,28 @@ export const navigationStyles = {
       hover: () => colors.d[800],
       active: () => colors.d[600],
       disabled: () => hex2rgba(colors.d[300], 0.95),
+    }
+  }
+};
+
+export const toggleButtonStyles = {
+  background: {
+    'unset': {
+      default: () => colors.d[800],
+      active: () => colors.p[600],
+      hover: () => colors.d[700],
+    },
+  },
+  color: {
+    'unset': {
+      default: () => colors.n[400],
+      active: () => colors.n[100],
+      hover: () => colors.n[300],
+    },
+  },
+  outline: {
+    'unset': {
+      default: () => colors.p[600]
     }
   }
 };

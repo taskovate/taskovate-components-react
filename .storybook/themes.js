@@ -12,8 +12,8 @@ const base = () => ({
   appBorderRadius: 3,
 
   // Typography
-  fontBase: `'Noto Sans'`,
-  fontCode: `'Noto Sans Mono', monospace`,
+  fontBase: `'Assailand'`,
+  fontCode: `'IBM Plex Mono', monospace`,
 
   // Text colors
   textColor: '#EEEDF2',

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { colors, gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall } from '@theme/constants';
 import { BsFillExclamationSquareFill } from 'react-icons/bs';
 
-const Styled = styled.div`
-  margin-top: ${gridSize() * 0.25}px;
+const Styled = styled.p`
+  margin-top: ${gridSize() * 0.75}px;
 `;
 
 const HelperMessage = ({

@@ -8,8 +8,10 @@ import Field from './Field';
 import { 
   Button,
   Plate,
-  TextField
+  TextField,
+  Select
  } from '..';
+import HelperMessage from './HelperMessage';
 
 export default {
   title: 'Components/Form',
@@ -52,7 +54,7 @@ export const SignupForm: ComponentStory<typeof Form> = () => (
               {({ fieldProps }) => (
                 <TextField 
                   {...fieldProps}
-                  placeholder="Enter your username"
+                  placeholder="First Name"
                 />
               )}
             </Field>
@@ -60,7 +62,7 @@ export const SignupForm: ComponentStory<typeof Form> = () => (
               {({ fieldProps }) => (
                 <TextField 
                   {...fieldProps}
-                  placeholder="Enter your username"
+                  placeholder="Last Name"
                 />
               )}
             </Field>
@@ -77,15 +79,35 @@ export const SignupForm: ComponentStory<typeof Form> = () => (
               {({ fieldProps }) => (
                 <TextField 
                   {...fieldProps}
-                  placeholder="Enter your username"
+                  placeholder="Email"
                 />
+              )}
+            </Field>
+            <Field 
+              name="country" 
+              label="Country"
+              rules={{
+                required: { 
+                  value: true, 
+                  message: "Please fill out this field." 
+                }
+              }}
+            >
+              {({ fieldProps }) => (
+                <>
+                  <Select 
+                    {...fieldProps}
+                    placeholder="Country"
+                  />
+                  <HelperMessage>Enter your country of residence.</HelperMessage>
+                </>
               )}
             </Field>
           </FormSection>
           <FormFooter>
             <Button
               type="submit"
-              spacing="pleasant"
+              // spacing="pleasant"
               isLoading={isSubmitting}
             >
                 Create Taskovate Account

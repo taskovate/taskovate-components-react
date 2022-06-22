@@ -3,14 +3,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import styled from 'styled-components';
 import { gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall } from '@theme/constants';
 import { HiHome, HiStar } from 'react-icons/hi';
-import { useStore } from '@internal/core';
+// import { useStore } from '@internal/core';
 import { Dropdown } from '.';
-import {
-  Header,
-  HeaderDesignation,
-  HeaderMenuBar,
-  HeaderMenuItem
-} from '..';
 
 export default {
   title: 'Components/Dropdown',
@@ -26,17 +20,10 @@ const ScrollArea = styled.div`
   width: 100%;
 `;
 
-export const Basic: ComponentStory<typeof Header> = () => {
+export const Basic: ComponentStory<typeof Dropdown> = () => {
   return (
-    <ScrollArea>
-      <Header>
-        <HeaderDesignation />
-        <HeaderMenuBar>
-          <HeaderMenuItem>
-            <Dropdown />
-          </HeaderMenuItem>
-        </HeaderMenuBar>
-      </Header>
-    </ScrollArea>
+    <>
+      <Dropdown />
+    </>
   );
 };

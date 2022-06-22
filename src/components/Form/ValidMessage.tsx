@@ -11,7 +11,7 @@ const Styled = styled.div`
   align-items: start;
   justify-content: start;
   line-height: 20px;
-  margin-top: ${gridSize() * 0.125}px;
+  margin-top: ${gridSize() * 0.75}px;
   svg {
     height: ${gridSize() * 2.5 / fontSize()}em;
     width: ${gridSize() * 2.5 / fontSize()}em;

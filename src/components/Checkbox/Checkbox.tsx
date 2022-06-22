@@ -1,4 +1,4 @@
-import React, { useEffect, cloneElement, useState  } from 'react';
+import React, { useEffect, cloneElement, useState, forwardRef  } from 'react';
 import styled from 'styled-components';
 import { colors, gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall } from '@theme/constants';
 import ReactSelect, { Props as SelectProps } from 'react-select';
@@ -14,7 +14,7 @@ const Styled = styled.label`
   line-height: 20px !important;
 `;
 
-const Input = styled.input`
+const Input = styled.input<any>`
   margin-right: calc(1 * ${gridSize() * 0.25}px);
 `;
 
@@ -27,14 +27,15 @@ const DropdownIndicator = () => (
   <FaChevronDown />
 );
 
-const Checkbox = ({
+const Checkbox = forwardRef(({
   children,
   ...rest
-}: any) => {
+}: any, ref) => {
 
   return (
     <Styled>
       <Input
+        ref={ref}
         type="checkbox"
         {...rest}
       />
@@ -43,6 +44,6 @@ const Checkbox = ({
       </CheckboxText>
     </Styled>
   );
-};
+});
 
 export default Checkbox;

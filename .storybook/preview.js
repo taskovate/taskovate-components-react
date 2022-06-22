@@ -1,4 +1,5 @@
 import { ThemeProvider } from 'styled-components';
+import { DocsContainer } from '@storybook/addon-docs/blocks';
 import { DarkTheme, GlobalStyle } from '@theme/core';
 import { MockedProvider } from '@apollo/client/testing';
 import { cache, typeDefs } from '@internal/core';
@@ -21,13 +22,21 @@ export const parameters = {
     disable: true
   },
   previewTabs: {
-    canvas: { title: 'Sample', hidden: false },
+    canvas: { title: 'Canvas', hidden: false },
     'storybook/docs/panel': {
       title: 'Documentation',
     },
   },
   docs: {
-    theme: dark
+    theme: dark,
+    container: ({ children, context }) => (
+      <DocsContainer context={context}>
+        <ThemeProvider theme={DarkTheme}>
+          <GlobalStyle />
+          {children}
+        </ThemeProvider>
+      </DocsContainer>
+    ),
   },
   options: {
     storySort: {
@@ -44,8 +53,15 @@ export const parameters = {
         //   'Support and Feedback',
         //   'Credits',
         ],
-        // 'Documentation',
-        // 'Templates',
+        'Documentation',
+        'Templates',
+        [
+          'Landing',
+          'Portal',
+          'Profile',
+          'Project',
+          'Space'
+        ],
         'Components',
       ],
     },
