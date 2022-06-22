@@ -19,8 +19,8 @@ const Row = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-content: center;
-  align-items: center;
+  // align-content: center;
+  // align-items: center;
 `;
 
 const HeaderContainer = styled.div`
@@ -36,7 +36,7 @@ const ControlBar = styled.div`
   align-items: center;
   border-radius: ${borderRadius() * 1}px;
   // padding: ${gridSize() * 1}px;
-  // background-color: ${colors.d[800]};
+  background-color: ${colors.d[800]};
   // & :first-child {
   //   border-bottom-left-radius: ${borderRadius() * 1}px;
   //   border-top-left-radius: ${borderRadius() * 1}px;

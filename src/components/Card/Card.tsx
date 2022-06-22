@@ -15,8 +15,8 @@ const Container = styled.div`
   flex-direction: column;
   // flex-basis: ${gridSize() * 24}px;
   // flex-basis: 100%;
-  border: ${gridSize() * 0.25}px solid ${colors.d[700]};
-  border-top: ${gridSize() * 0.5}px solid ${colors.d[700]};
+  // border: ${gridSize() * 0.25}px solid ${colors.d[700]};
+  // border-top: ${gridSize() * 0.5}px solid ${colors.d[700]};
 `;
 
 const CardHeader = styled.div`

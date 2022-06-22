@@ -7,7 +7,7 @@ import { Link } from 'react-resource-router';
 const Container = styled.div<any>`
   display: flex;
   flex-direction: row;
-  gap: ${gridSize() * 4}px;
+  gap: ${gridSize() * 2}px;
   align-items: center;
   flex-wrap: wrap;
 `;

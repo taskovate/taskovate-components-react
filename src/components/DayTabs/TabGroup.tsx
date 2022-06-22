@@ -7,7 +7,8 @@ const Container = styled.div`
   flex-grow: 1;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: start;
+  align-content: center;
   gap: ${gridSize() * 1}px;
   // background-color: rgba(255, 0, 0, 0.1);
 `;

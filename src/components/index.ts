@@ -50,3 +50,4 @@ export {
 export { ToggleButton } from './ToggleButton';
 export { Avatar } from './Avatar';
 export { DayTabs } from './DayTabs';
+export { Popover } from './Popover';
