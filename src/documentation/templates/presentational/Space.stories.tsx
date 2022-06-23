@@ -110,15 +110,16 @@ export const Default: ComponentStory<typeof Header> = () => {
         <Main>
           <DayTabs />
           <PageHeader
-            children=""
-            // actions={(
-            //   <>
-            //     <Button iconBefore={MdMenu}></Button>
-            //     <Button iconBefore={MdDateRange}></Button>
-            //     <Button iconBefore={MdChevronLeft}></Button>
-            //     <Button iconBefore={MdChevronRight}></Button>
-            //   </>
-            // )}
+            children="ATX QA"
+            breadcrumbs="ATX QA / Daily tasks"
+            actions={(
+              <>
+                <Button iconBefore={MdMenu}></Button>
+                <Button iconBefore={MdDateRange}></Button>
+                <Button iconBefore={MdChevronLeft}></Button>
+                <Button iconBefore={MdChevronRight}></Button>
+              </>
+            )}
           />
           <Grid columns={3}>
             <GridColumn medium={3}>

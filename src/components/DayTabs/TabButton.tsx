@@ -4,8 +4,9 @@ import styled from 'styled-components';
 import { Button } from '@components/core';
 import { BsChevronBarRight } from 'react-icons/bs';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
-import { HiDotsVertical } from 'react-icons/hi';
+import { HiDotsHorizontal, HiDotsVertical } from 'react-icons/hi';
 import { Popover } from '..';
+import { MdOpenInNew, MdAdd, MdSearch } from 'react-icons/md';
 
 const day = ["Sunday", "Monday", "Tueday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -95,17 +96,35 @@ const DataContainer = styled.div<any>`
   align-items: center;
   gap: ${gridSize() * 0.5}px;
   visibility: ${({ isMouseOver, isMenuOpen }) => (isMouseOver||isMenuOpen) ? 'visible' : 'hidden'};
-  button { color: ${colors.n[600]} !important; }
+  svg {
+    display: flex;
+    align-content: center;
+    width: ${gridSize() * 2.5}px;
+    height: ${gridSize() * 2.5}px;
+    color: ${colors.n[800]};
+  }
 `;
 
 
 const ActionsContainer = styled.div`
   display: flex;
+  flex-direction: row;
   flex-grow: 1;
-  background: ${colors.d[800]};
-  padding: ${gridSize() * 1}px;
+  // background: ${colors.d[800]};
+  padding-top: ${gridSize() * 0.5}px 0;
+  // padding: ${gridSize() * 0.5}px ${gridSize() * 0.75}px;
   border-radius: ${borderRadius() * 1}px;
-  width: ${gridSize() * 8}px;
+  gap: ${gridSize() * 0.75}px;
+  button {
+    padding: ${borderRadius() * 3.5}px ${borderRadius() * 1.25}px;
+    box-shadow: ${({ theme }) => theme.elevation[200]};
+  } 
+  button svg {
+    display: flex;
+    align-content: center;
+    width: ${gridSize() * 2.125}px;
+    height: ${gridSize() * 2.125}px;
+  }
 `;
 
 const ControlButton = styled.button`
@@ -130,12 +149,13 @@ const TabButton: FC<any> = ({
 
   const renderActions = ({ close, ...rest}: any) => (
     <ActionsContainer {...rest}>
-      Hi
+      <Button iconBefore={MdAdd}></Button>
+      <Button iconBefore={MdOpenInNew}></Button>
     </ActionsContainer>
   );
 
   return  (
-    <Popover render={renderActions} onOpenChange={setIsMenuOpen}>
+    <Popover render={renderActions} onOpenChange={setIsMenuOpen} placement="bottom-end">
       <Wrapper 
         onClick={onClick}
         isSelected={isSelected}
@@ -148,7 +168,7 @@ const TabButton: FC<any> = ({
           {<Subtext isSelected={isSelected} isMenuOpen={isMenuOpen} isMouseOver={isMouseOver}>{info.isoString}</Subtext>}
         </TitleContainer>
         <DataContainer isMenuOpen={isMenuOpen} isMouseOver={isMouseOver}>
-          <Button appearance="subtle" spacing="none" iconBefore={HiDotsVertical} />
+          <HiDotsHorizontal />
         </DataContainer>
       </Wrapper>
     </Popover>
