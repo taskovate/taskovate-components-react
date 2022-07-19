@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { colors, gridSize } from '@theme/constants';
 import { MdLogin, MdMessage, MdNotifications, MdRecentActors } from 'react-icons/md';
-import { HiOutlineChatAlt, HiOutlineBell, HiOutlineUser, HiHome, HiStar } from 'react-icons/hi';
+import { HiOutlineChatAlt, HiOutlineBell, HiOutlineUser, HiHome, HiStar, HiOutlineClock } from 'react-icons/hi';
 import {
   Header,
   HeaderDesignation,
@@ -36,8 +36,9 @@ import {
   ToggleButton,
 } from '@components/core';
 import { useState } from 'react';
-import { FaFire, FaProjectDiagram } from 'react-icons/fa';
-import { MdWorkspaces } from 'react-icons/md';
+import { FaClock, FaFire, FaPeopleCarry, FaProjectDiagram } from 'react-icons/fa';
+import { IoIosArrowDown, IoIosClock, IoIosPeople, IoMdCalendar, IoMdTimer } from 'react-icons/io';
+import { TbUrgent } from 'react-icons/tb';
 import { ToggleSelect } from 'src/components/ToggleButton';
 import { MdChevronLeft, MdChevronRight, MdDateRange,  MdMenu } from 'react-icons/md';
 
@@ -55,25 +56,12 @@ const options = [
 ];
 
 const tasks = [
-  { title: "QATR-2068", children: "24 open, 2 in progress, 192 closed" },
-  { title: "QATR-2088", children: "24 open, 2 in progress, 192 closed" },
-  { title: "QATR-2077", children: "24 open, 2 in progress, 192 closed" },
-  { title: "Mining Checklist", children: "24 open, 2 in progress, 192 closed" },
-  { title: "Editor Smoke Checklist", children: "24 open, 2 in progress, 192 closed" },
-  { title: "Engine Tools Regressions", children: "24 open, 2 in progress, 192 closed" },
-];
-
-const spaces = [
-  { title: "ATX QA Daily Tasks", children: "24 open, 2 in progress, 192 closed" },
-  { title: "UK QA Daily Tasks", children: "24 open, 2 in progress, 192 closed" },
-  { title: "USPU Sprints", children: "24 open, 2 in progress, 192 closed" },
-  { title: "Live Release", children: "24 open, 2 in progress, 192 closed" },
-];
-
-const projects = [
-  { title: "QA", children: "12 spaces, 195 total tasks, 32 total active tasks" },
-  { title: "Live QA", children: "12 spaces, 195 total tasks, 32 total active tasks" },
-  { title: "Embedded QA", children: "12 spaces, 195 total tasks, 32 total active tasks" },
+  { title: "QATR-2068" },
+  { title: "QATR-2088" },
+  { title: "QATR-2077" },
+  { title: "Mining Checklist" },
+  { title: "Editor Smoke Checklist" },
+  { title: "Engine Tools Regressions" },
 ];
 //TODO: add filter bar
 // TODO: add gridlines?, add option to view in scheduler mode (show times, default is full day)
@@ -110,9 +98,18 @@ export const Default: ComponentStory<typeof Header> = () => {
         <Main>
           <PageHeader
             controls={(
-              <ToggleButton iconBefore={FaFire}>Recent</ToggleButton>
+              <>
+                <ToggleButton iconBefore={IoMdTimer}>Recent</ToggleButton>
+                {/* <ToggleButton iconBefore={IoIosPeople}>Collaborative</ToggleButton> */}
+                <ToggleButton iconBefore={IoMdCalendar}>Prioritize</ToggleButton>
+              </>
             )}
           />
+          <CardGroup>
+            {list.map((item: any) => (
+              <Card title={item.title} children={item.children} />
+            ))}
+          </CardGroup>
         </Main>
       </Content>
     </Layout>

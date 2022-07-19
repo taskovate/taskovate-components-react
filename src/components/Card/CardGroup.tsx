@@ -7,9 +7,10 @@ import { Link } from 'react-resource-router';
 const Container = styled.div<any>`
   display: flex;
   flex-direction: row;
-  gap: ${gridSize() * 2}px;
-  align-items: center;
+  // gap: ${gridSize() * 2}px;
+  align-items: start;
   flex-wrap: wrap;
+  overflow: hidden;
 `;
 
 const CardGroup: React.FC<any> = ({

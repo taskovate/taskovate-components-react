@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { gridSize, fontSize, borderRadius, colors, animation } from '@theme/constants';
 import { Button } from '@components/core';
+import { hexCombine } from '@theme/helpers';
 
 const Wrapper = styled.button<any>`
   display: flex;
@@ -14,8 +15,8 @@ const Wrapper = styled.button<any>`
   vertical-align: center;
   font-size: ${fontSize() * 1}px;
   line-height: 1rem;
-  padding: ${gridSize() * 1.001953125}px ${gridSize() * 1.5}px;
-  border-radius: ${borderRadius() * 1}px;
+  padding: ${gridSize() * 1}px ${gridSize() * 1.25}px ${gridSize() * 1}px ${gridSize() * 1}px;
+  border-radius: ${borderRadius() * 1.5}px;
   cursor: pointer;
   font-weight: 500;
   transition: ${animation.normal()};
@@ -24,10 +25,13 @@ const Wrapper = styled.button<any>`
   border-width: ${gridSize() * 0.125}px;
   border-style: solid;
   border-color: transparent;
+  gap: ${gridSize() * 0.625}px;
+
 
   ${({ isToggled }) => !isToggled  && `
     background-color: ${colors.d[900]};
     color: ${colors.n[600]};
+    border-color: transparent;
     &:hover {
       background-color: ${colors.d[800]};
       color: ${colors.n[500]};
@@ -41,29 +45,33 @@ const Wrapper = styled.button<any>`
   `}
 
   ${({ isToggled }) => isToggled && `
-    background-color: ${colors.p[500]};
-    color: ${colors.p[100]};
-    border-color: ${colors.p[100]};
+    background-color: ${colors.p[600]};
+    color: ${colors.p[200]};
+    border-color: ${colors.p[200]};
+    // &:hover {
+    //   background-color: ${colors.p[500]};
+    //   color: ${colors.p[100]};
+    //   border-color: ${colors.p[100]};
+    // }
     &:hover {
-      background-color: ${colors.p[600]};
-      color: ${colors.p[200]};
-      border-color: ${colors.p[200]};
-    }
-    &:active {
-      background-color: ${colors.p[700]};
-      color: ${colors.p[300]};
-      border-color: ${colors.p[300]};
+      background-color: ${colors.d[700]};
+      color: ${colors.n[400]};
+      border-color: ${colors.n[400]};
     }
   `}
 `;
 
 const Icon = styled.span<any>`
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
   svg {
     display: flex;
     align-content: center;
-    width: ${gridSize() * 2.5}px;
-    height: ${gridSize() * 2.5}px;
-    margin: -${gridSize() * 1}px 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: -0.5rem 0;
   }
 `;
 
@@ -80,13 +88,13 @@ const ToggleButton = ({
   return (
     <Wrapper isToggled={isActive} onClick={() => setIsActive(!isActive)} {...rest}>
         {iconBefore && 
-          <Icon style={children && { marginLeft: gridSize() * -0.5, marginRight: gridSize() * 0.5 }}>
+          <Icon>
             {typeof iconBefore === 'function' ? iconBefore() : iconBefore}
           </Icon>
         }
         {children}
         {iconAfter && 
-          <Icon style={children && { marginRight: gridSize() * -0.5, marginLeft: gridSize() * 0.5 }}>
+          <Icon>
             {typeof iconAfter === 'function' ? iconAfter() : iconAfter}
           </Icon>
         }

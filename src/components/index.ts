@@ -46,7 +46,7 @@ export {
   Grid,
   GridColumn
  } from './Page';
- export { Card, CardGroup } from './Button/Card';
+ export { Card, CardGroup } from './Card';
 export { ToggleButton } from './ToggleButton';
 export { Avatar } from './Avatar';
 export { Popover } from './Popover';
