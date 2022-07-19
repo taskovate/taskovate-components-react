@@ -14,7 +14,9 @@ export default {
 export const Basic: ComponentStory<typeof ToggleButton> = () => {
   return (
     <>
-      <ToggleButton />
+      <ToggleButton>
+        Top
+      </ToggleButton>
     </>
   );
 };

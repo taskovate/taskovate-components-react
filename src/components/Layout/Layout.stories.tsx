@@ -14,7 +14,7 @@ import {
   Dropdown
 } from '@components/core';
 import {
-  PageLayout,
+  Layout,
   Content,
   Main,
   LeftSidebar,
@@ -28,7 +28,7 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-} as ComponentMeta<typeof PageLayout>;
+} as ComponentMeta<typeof Layout>;
 
 const Styled = styled.div`
   width: 100%;
@@ -42,9 +42,9 @@ const Styled = styled.div`
   }
 `;
 
-export const Basic: ComponentStory<typeof PageLayout> = ({ children, ...rest}) => (
+export const Basic: ComponentStory<typeof Layout> = ({ children, ...rest}) => (
   <Styled>
-    <PageLayout>
+    <Layout>
       <TopNavigation children="Top Navigation"/>
       <Content>
         <LeftSidebar children="Left Sidebar"/>
@@ -52,7 +52,7 @@ export const Basic: ComponentStory<typeof PageLayout> = ({ children, ...rest}) =
         <RightSidebar children="Right Sidebar"/>
       </Content>
       <BottomNavigation children="Footer"/>
-    </PageLayout>
+    </Layout>
   </Styled>
 );
 Basic.storyName = "Basic";

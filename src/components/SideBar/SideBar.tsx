@@ -12,7 +12,7 @@ const Styled = styled.div`
   gap: ${gridSize() * 2}px;
 `;
 
-const SideBar = ({ 
+const Sidebar = ({ 
   children
  }: any) => {
   return (
@@ -22,4 +22,4 @@ const SideBar = ({
   )
 };
 
-export default SideBar;
+export default Sidebar;

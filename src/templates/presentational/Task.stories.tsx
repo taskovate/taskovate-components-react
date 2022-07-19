@@ -24,16 +24,15 @@ import {
 } from '@components/core';
 
 import {
-  PageLayout,
+  Layout,
   TopNavigation,
   Content,
   Main,
   LeftSidebar,
   RightSidebar,
   Dropdown,
-  SideBar, Section, ButtonItem,
+  Sidebar, Section, ButtonItem,
   ToggleButton,
-  DayTabs
 } from '@components/core';
 import { useState } from 'react';
 import { FaProjectDiagram } from 'react-icons/fa';
@@ -42,7 +41,7 @@ import { ToggleSelect } from 'src/components/ToggleButton';
 import { MdChevronLeft, MdChevronRight, MdDateRange,  MdMenu } from 'react-icons/md';
 
 export default {
-  title: 'Templates/Space',
+  title: 'Templates/Task',
   component: Header,
   parameters: {
     layout: 'fullscreen',
@@ -83,7 +82,7 @@ export const Default: ComponentStory<typeof Header> = () => {
   const [list, setList]: any = useState(tasks);
 
   return (
-    <PageLayout>
+    <Layout>
       <TopNavigation>
         <Header>
           <HeaderDesignation />
@@ -108,18 +107,17 @@ export const Default: ComponentStory<typeof Header> = () => {
       </TopNavigation>
       <Content>
         <Main>
-          <DayTabs />
           <PageHeader
-            children="ATX QA"
-            breadcrumbs="ATX QA / Daily tasks"
-            actions={(
-              <>
-                <Button iconBefore={MdMenu}></Button>
-                <Button iconBefore={MdDateRange}></Button>
-                <Button iconBefore={MdChevronLeft}></Button>
-                <Button iconBefore={MdChevronRight}></Button>
-              </>
-            )}
+            // children="ATX QA"
+            // breadcrumbs="ATX QA / Daily tasks"
+            // actions={(
+            //   <>
+            //     <Button iconBefore={MdMenu}></Button>
+            //     <Button iconBefore={MdDateRange}></Button>
+            //     <Button iconBefore={MdChevronLeft}></Button>
+            //     <Button iconBefore={MdChevronRight}></Button>
+            //   </>
+            // )}
           />
           <Grid columns={3}>
             <GridColumn medium={3}>
@@ -132,6 +130,6 @@ export const Default: ComponentStory<typeof Header> = () => {
           </Grid>
         </Main>
       </Content>
-    </PageLayout>
+    </Layout>
   );
 };

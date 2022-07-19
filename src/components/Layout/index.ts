@@ -1,4 +1,4 @@
-export { default as PageLayout } from './PageLayout';
+export { default as Layout } from './Layout';
 export { default as TopNavigation } from './TopNavigation';
 export { default as Content } from './Content';
 export { default as BottomNavigation } from './BottomNavigation';

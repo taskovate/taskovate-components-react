@@ -24,7 +24,7 @@ import {
 } from '@components/core';
 
 import {
-  PageLayout,
+  Layout,
   TopNavigation,
   Content,
   Footer,
@@ -41,7 +41,7 @@ export default {
 } as ComponentMeta<any>;
 
 export const Default: ComponentStory<typeof Header> = () => (
-  <PageLayout>
+  <Layout>
     <TopNavigation/>
     <Content>
       <Main>
@@ -107,11 +107,11 @@ export const Default: ComponentStory<typeof Header> = () => (
         <p>By signing up for Taskovate, you agree to our <a href="/">terms of service</a>.</p>
       </div>
     </Footer>
-  </PageLayout>
+  </Layout>
 );
 
 export const SignupQuestions: ComponentStory<typeof Header> = () => (
-  <PageLayout>
+  <Layout>
     <TopNavigation>
       <Header>
         <HeaderDesignation />
@@ -174,11 +174,11 @@ export const SignupQuestions: ComponentStory<typeof Header> = () => (
         </center>
       </Main>
     </Content>
-  </PageLayout>
+  </Layout>
 );
 
 export const SignupConfirmation: ComponentStory<typeof Header> = (args) => (
-  <PageLayout>
+  <Layout>
     <TopNavigation/>
     <Content>
       <Main>
@@ -196,7 +196,7 @@ export const SignupConfirmation: ComponentStory<typeof Header> = (args) => (
         </center>
       </Main>
     </Content>
-  </PageLayout>
+  </Layout>
 );
 
 SignupConfirmation.args = {

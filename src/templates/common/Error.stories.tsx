@@ -24,7 +24,7 @@ import {
 } from '@components/core';
 
 import {
-  PageLayout,
+  Layout,
   TopNavigation,
   Content,
   Footer,
@@ -34,14 +34,14 @@ import {
 } from '@components/core';
 
 export default {
-  title: 'Templates/Invitation',
+  title: 'Templates/Error',
   parameters: {
     layout: 'fullscreen',
   },
 } as ComponentMeta<any>;
 
-export const Default: ComponentStory<typeof Header> = (args) => (
-  <PageLayout>
+export const Default: ComponentStory<any> = () => (
+  <Layout>
     <TopNavigation>
       <Header>
         <HeaderDesignation />
@@ -52,25 +52,21 @@ export const Default: ComponentStory<typeof Header> = (args) => (
         <center>
           <Plate appearance="display">
             <center>
-              <h1 children={<><b style={{ fontWeight: 800 }}>{args.fullName}</b> invited you to <b style={{ fontWeight: 800 }}>{args.projectName}</b>!</>}/>
+              <h1>Oh no! Something went wrong</h1>
               <br/>
-              <Button appearance="primary">Join Project</Button>
+              <p>We apologize for the inconvenience and are working hard to rectify the issue.</p>
+              <br/>
+              <a href="/">Go to home</a>
             </center>
           </Plate>
         </center>
       </Main>
     </Content>
-  </PageLayout>
+  </Layout>
 );
 
-Default.args = {
-  fullName: 'Joe Bishop',
-  projectName: "Puppy Project",
-  email: "example@example.com"
-};
-
-export const PrivateProject: ComponentStory<typeof Header> = (args) => (
-  <PageLayout>
+export const Error401: ComponentStory<any> = () => (
+  <Layout>
     <TopNavigation>
       <Header>
         <HeaderDesignation />
@@ -80,32 +76,41 @@ export const PrivateProject: ComponentStory<typeof Header> = (args) => (
       <Main>
         <center>
           <Plate appearance="display">
-            <FormHeader
-              title="This project is private"
-              description="Submit a request for access."
-            />
             <center>
-              <br />
-              <Button appearance="primary">Send request</Button>
+              <h1>No authorization found</h1>
               <br/>
-              <p> You'll get an invitation if you're approved to join.</p>
+              <p>This page may be private. If someone gave you this link, they may need to invite you to one of their spaces or projects.</p>
+              <br/>
+              <a href="/">Go to home</a>
             </center>
           </Plate>
         </center>
       </Main>
     </Content>
-    <Footer>
-      <div>
-        <p>By requesting access, you agree to make your account, including your email address, visible to the project admins.</p>
-      </div>
-    </Footer>
-  </PageLayout>
+  </Layout>
 );
 
-Default.args = {
-  fullName: 'Joe Bishop',
-  projectName: "Puppy Project",
-  email: "example@example.com"
-};
-
-
+export const Error404: ComponentStory<any> = () => (
+  <Layout>
+    <TopNavigation>
+      <Header>
+        <HeaderDesignation />
+      </Header>
+    </TopNavigation>
+    <Content>
+      <Main>
+        <center>
+          <Plate appearance="display">
+            <center>
+              <h1>Page not found</h1>
+              <br/>
+              <p>The page you are looking for does not exist. It might have been moved or deleted.</p>
+              <br/>
+              <a href="/">Go to home</a>
+            </center>
+          </Plate>
+        </center>
+      </Main>
+    </Content>
+  </Layout>
+);

@@ -16,7 +16,7 @@ import {
 } from '@components/core';
 
 import {
-  PageLayout,
+  Layout,
   TopNavigation,
   Content,
   Footer,
@@ -34,7 +34,7 @@ export default {
 } as ComponentMeta<typeof Header>;
 
 export const Default: ComponentStory<typeof Header> = () => (
-  <PageLayout>
+  <Layout>
     <TopNavigation>
       <Header>
         <HeaderDesignation />
@@ -123,5 +123,5 @@ export const Default: ComponentStory<typeof Header> = () => (
         <p>All rights reserved. © 2022 Taskovate.com</p>
       </div>
     </Footer>
-  </PageLayout>
+  </Layout>
 );

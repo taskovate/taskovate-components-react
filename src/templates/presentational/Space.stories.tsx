@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { colors, gridSize } from '@theme/constants';
-import { MdChevronLeft, MdChevronRight, MdDateRange, MdLogin, MdMenu, MdMessage, MdNotifications } from 'react-icons/md';
+import { MdLogin, MdMessage, MdNotifications, MdRecentActors } from 'react-icons/md';
 import { HiOutlineChatAlt, HiOutlineBell, HiOutlineUser, HiHome, HiStar } from 'react-icons/hi';
 import {
   Header,
@@ -20,27 +20,29 @@ import {
   CardGroup,
   Select,
   TextField,
-  Avatar
+  Avatar,
+  ButtonGroup
 } from '@components/core';
 
 import {
-  PageLayout,
+  Layout,
   TopNavigation,
   Content,
   Main,
   LeftSidebar,
   RightSidebar,
   Dropdown,
-  SideBar, Section, ButtonItem,
-  ToggleButton
+  Sidebar, Section, ButtonItem,
+  ToggleButton,
 } from '@components/core';
 import { useState } from 'react';
-import { FaProjectDiagram } from 'react-icons/fa';
+import { FaFire, FaProjectDiagram } from 'react-icons/fa';
 import { MdWorkspaces } from 'react-icons/md';
 import { ToggleSelect } from 'src/components/ToggleButton';
+import { MdChevronLeft, MdChevronRight, MdDateRange,  MdMenu } from 'react-icons/md';
 
 export default {
-  title: 'Templates/Portal',
+  title: 'Templates/Space',
   component: Header,
   parameters: {
     layout: 'fullscreen',
@@ -50,6 +52,15 @@ export default {
 const options = [
   { value: 'space', label: 'Spaces' },
   { value: 'project', label: 'Projects' },
+];
+
+const tasks = [
+  { title: "QATR-2068", children: "24 open, 2 in progress, 192 closed" },
+  { title: "QATR-2088", children: "24 open, 2 in progress, 192 closed" },
+  { title: "QATR-2077", children: "24 open, 2 in progress, 192 closed" },
+  { title: "Mining Checklist", children: "24 open, 2 in progress, 192 closed" },
+  { title: "Editor Smoke Checklist", children: "24 open, 2 in progress, 192 closed" },
+  { title: "Engine Tools Regressions", children: "24 open, 2 in progress, 192 closed" },
 ];
 
 const spaces = [
@@ -64,13 +75,15 @@ const projects = [
   { title: "Live QA", children: "12 spaces, 195 total tasks, 32 total active tasks" },
   { title: "Embedded QA", children: "12 spaces, 195 total tasks, 32 total active tasks" },
 ];
+//TODO: add filter bar
+// TODO: add gridlines?, add option to view in scheduler mode (show times, default is full day)
 
 export const Default: ComponentStory<typeof Header> = () => {
   const [select, setSelect] = useState();
-  const [list, setList]: any = useState(projects);
+  const [list, setList]: any = useState(tasks);
 
   return (
-    <PageLayout>
+    <Layout>
       <TopNavigation>
         <Header>
           <HeaderDesignation />
@@ -96,33 +109,12 @@ export const Default: ComponentStory<typeof Header> = () => {
       <Content>
         <Main>
           <PageHeader
-            children="Welcome Elijah"
-            actions={(
-              <>
-                <Button iconBefore={MdMenu}></Button>
-                <Button iconBefore={MdDateRange}></Button>
-                <Button iconBefore={MdChevronLeft}></Button>
-                <Button iconBefore={MdChevronRight}></Button>
-              </>
+            controls={(
+              <ToggleButton iconBefore={FaFire}>Recent</ToggleButton>
             )}
           />
-          <Grid columns={3}>
-            <GridColumn medium={3}>
-              <h5>Starred</h5>
-              <br/>
-              <h5>Recent</h5>
-              <br/>
-              <h5>Your projects</h5>
-              <br/>
-              {/* <CardGroup>
-                {list.map((item: any) => (
-                  <Card title={item.title} children={item.children} />
-                ))}
-              </CardGroup> */}
-            </GridColumn>
-          </Grid>
         </Main>
       </Content>
-    </PageLayout>
+    </Layout>
   );
 };

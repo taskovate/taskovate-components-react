@@ -27,27 +27,26 @@ export {
  export { 
   Main, 
   Content,
-  PageLayout,
+  Layout,
   LeftSidebar,
   RightSidebar,
   TopNavigation,
   BottomNavigation       
- } from './PageLayout';
+ } from './Layout';
  export { 
   Footer
  } from './Footer';
  export { 
-  SideBar,
+  Sidebar,
   Section,
   ButtonItem
- } from './SideBar';
+ } from './Sidebar';
  export {
   PageHeader,
   Grid,
   GridColumn
  } from './Page';
- export { Card, CardGroup } from './Card';
+ export { Card, CardGroup } from './Button/Card';
 export { ToggleButton } from './ToggleButton';
 export { Avatar } from './Avatar';
-export { DayTabs } from './DayTabs';
 export { Popover } from './Popover';

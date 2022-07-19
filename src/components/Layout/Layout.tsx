@@ -16,7 +16,7 @@ const Styled = styled.div`
   grid-template-rows: ${gridSize() * 7.5}px auto minmax(min-content, max-content);;
 `;
 
-const PageLayout = ({ 
+const Layout = ({ 
   children 
 }: any) => {
   return (
@@ -26,4 +26,4 @@ const PageLayout = ({
   )
 };
 
-export default PageLayout;
+export default Layout;

@@ -24,7 +24,7 @@ import {
 } from '@components/core';
 
 import {
-  PageLayout,
+  Layout,
   TopNavigation,
   Content,
   Footer,
@@ -41,7 +41,7 @@ export default {
 } as ComponentMeta<any>;
 
 export const Default: ComponentStory<typeof Header> = () => (
-  <PageLayout>
+  <Layout>
     <TopNavigation/>
     <Content>
       <Main>
@@ -110,11 +110,11 @@ export const Default: ComponentStory<typeof Header> = () => (
         <p>By signing in to Taskovate, you agree to our <a href="/">terms of service</a>.</p>
       </div>
     </Footer>
-  </PageLayout>
+  </Layout>
 );
 
 export const ForgotPassword: ComponentStory<typeof Header> = () => (
-  <PageLayout>
+  <Layout>
     <TopNavigation/>
     <Content>
       <Main>
@@ -158,11 +158,11 @@ export const ForgotPassword: ComponentStory<typeof Header> = () => (
         </center>
       </Main>
     </Content>
-  </PageLayout>
+  </Layout>
 );
 
 export const ResetPassword: ComponentStory<typeof Header> = () => (
-  <PageLayout>
+  <Layout>
     <TopNavigation/>
     <Content>
       <Main>
@@ -223,11 +223,11 @@ export const ResetPassword: ComponentStory<typeof Header> = () => (
         </center>
       </Main>
     </Content>
-  </PageLayout>
+  </Layout>
 );
 
 export const ResetConfirmation: ComponentStory<typeof Header> = (args) => (
-  <PageLayout>
+  <Layout>
     <TopNavigation/>
     <Content>
       <Main>
@@ -245,7 +245,7 @@ export const ResetConfirmation: ComponentStory<typeof Header> = (args) => (
         </center>
       </Main>
     </Content>
-  </PageLayout>
+  </Layout>
 );
 
 ResetConfirmation.args = {

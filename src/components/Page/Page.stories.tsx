@@ -13,7 +13,7 @@ import {
   HeaderGlobalBar,
   HeaderGlobalAction,
   Dropdown,
-  PageLayout,
+  Layout,
   Content,
   Main,
   LeftSidebar,
@@ -33,11 +33,11 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-} as ComponentMeta<typeof PageLayout>;
+} as ComponentMeta<typeof Layout>;
 
 
-export const PageGrid: ComponentStory<typeof PageLayout> = (args) => (
-  <PageLayout>
+export const PageGrid: ComponentStory<typeof Layout> = (args) => (
+  <Layout>
     <Content>
       <Main>
       <Grid columns={3}>
@@ -71,11 +71,11 @@ export const PageGrid: ComponentStory<typeof PageLayout> = (args) => (
       </Grid>
       </Main>
     </Content>
-  </PageLayout>
+  </Layout>
 );
 
-export const PageWHeader: ComponentStory<typeof PageLayout> = (args) => (
-  <PageLayout>
+export const PageWHeader: ComponentStory<typeof Layout> = (args) => (
+  <Layout>
     <Content>
       <Main>
         <PageHeader
@@ -94,6 +94,6 @@ export const PageWHeader: ComponentStory<typeof PageLayout> = (args) => (
         <p>Content</p>
       </Main>
     </Content>
-  </PageLayout>
+  </Layout>
 );
 PageWHeader.storyName = "Page Header";

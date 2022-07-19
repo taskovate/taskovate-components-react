@@ -72,7 +72,7 @@ const Container = styled.button<any>`
   text-align: center;
   vertical-align: center;
   font-size: ${fontSize() * 1}px;
-  line-height: 1em;
+  line-height: 1rem;
   padding: ${({ spacing }) => {
     switch(spacing) {
       case 'none': return 0;

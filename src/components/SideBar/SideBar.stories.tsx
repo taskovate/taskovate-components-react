@@ -12,7 +12,7 @@ import {
   HeaderGlobalBar,
   HeaderGlobalAction,
   Dropdown,
-  PageLayout,
+  Layout,
   Content,
   Main,
   LeftSidebar,
@@ -22,7 +22,7 @@ import {
   Footer
 } from '@components/core';
 import {
-  SideBar,
+  Sidebar,
   Section,
   ButtonItem
 } from '.';
@@ -32,15 +32,15 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-} as ComponentMeta<typeof PageLayout>;
+} as ComponentMeta<typeof Layout>;
 
 
-export const Basic: ComponentStory<typeof PageLayout> = ({ children, ...rest}) => (
-  <PageLayout>
+export const Basic: ComponentStory<typeof Layout> = ({ children, ...rest}) => (
+  <Layout>
     <TopNavigation children="Top Navigation"/>
     <Content>
       <LeftSidebar>
-        <SideBar>
+        <Sidebar>
           <Section title="Projects">
             <ButtonItem>
               Starred
@@ -57,11 +57,11 @@ export const Basic: ComponentStory<typeof PageLayout> = ({ children, ...rest}) =
               Starred
             </ButtonItem>
           </Section>
-        </SideBar>
+        </Sidebar>
       </LeftSidebar>
       <Main children="Main" />
       <RightSidebar children="Right Sidebar"/>
     </Content>
-  </PageLayout>
+  </Layout>
 );
 Basic.storyName = "Basic";
