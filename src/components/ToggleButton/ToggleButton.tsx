@@ -41,16 +41,16 @@ const Wrapper = styled.button<any>`
   `}
 
   ${({ isToggled }) => isToggled && `
-    background-color: ${colors.p[600]};
-    color: ${colors.p[200]};
-    border-color: ${colors.p[200]};
+    background-color: ${colors.p[500]};
+    color: ${colors.p[100]};
+    border-color: ${colors.p[100]};
     &:hover {
-      background-color: ${colors.p[500]};
+      background-color: ${colors.p[600]};
       color: ${colors.p[200]};
       border-color: ${colors.p[200]};
     }
     &:active {
-      background-color: ${colors.p[400]};
+      background-color: ${colors.p[700]};
       color: ${colors.p[300]};
       border-color: ${colors.p[300]};
     }
