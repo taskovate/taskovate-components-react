@@ -33,12 +33,27 @@ const Wrapper = styled.button<any>`
       color: ${colors.n[500]};
       border-color: ${colors.n[500]};
     }
+    &:active {
+      background-color: ${colors.d[700]};
+      color: ${colors.n[400]};
+      border-color: ${colors.n[400]};
+    }
   `}
 
   ${({ isToggled }) => isToggled && `
     background-color: ${colors.p[600]};
     color: ${colors.p[200]};
     border-color: ${colors.p[200]};
+    &:hover {
+      background-color: ${colors.p[500]};
+      color: ${colors.p[200]};
+      border-color: ${colors.p[200]};
+    }
+    &:active {
+      background-color: ${colors.p[400]};
+      color: ${colors.p[300]};
+      border-color: ${colors.p[300]};
+    }
   `}
 `;
 
