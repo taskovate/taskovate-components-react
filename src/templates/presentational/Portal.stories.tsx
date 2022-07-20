@@ -97,28 +97,24 @@ export const Default: ComponentStory<typeof Header> = () => {
         <Main>
           <PageHeader
             children="Welcome Elijah"
-            actions={(
-              <>
-                <Button iconBefore={MdMenu}></Button>
-                <Button iconBefore={MdDateRange}></Button>
-                <Button iconBefore={MdChevronLeft}></Button>
-                <Button iconBefore={MdChevronRight}></Button>
-              </>
-            )}
           />
           <Grid columns={3}>
             <GridColumn medium={3}>
-              <h5>Starred</h5>
-              <br/>
-              <h5>Recent</h5>
-              <br/>
-              <h5>Your projects</h5>
-              <br/>
-              {/* <CardGroup>
+              <CardGroup title="Starred">
+                {spaces.map((item: any) => (
+                  <Card title={item.title} children={item.children} />
+                ))}
+              </CardGroup>
+              <CardGroup title="Recent">
+                {spaces.map((item: any) => (
+                  <Card title={item.title} children={item.children} />
+                ))}
+              </CardGroup>
+              <CardGroup title="Your projects">
                 {list.map((item: any) => (
                   <Card title={item.title} children={item.children} />
                 ))}
-              </CardGroup> */}
+              </CardGroup>
             </GridColumn>
           </Grid>
         </Main>

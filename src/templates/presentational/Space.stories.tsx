@@ -97,6 +97,7 @@ export const Default: ComponentStory<typeof Header> = () => {
       <Content>
         <Main>
           <PageHeader
+            // children="Welcome"
             controls={(
               <>
                 <ToggleButton iconBefore={IoMdTimer}>Recent</ToggleButton>

@@ -9,7 +9,7 @@ const Styled = styled.div`
   background-color: ${({ theme }) => theme.background()};
   height: calc(100% - ${gridSize() * 0.25}px);
   width: calc(100% - ${gridSize() * 1}px);
-  padding-top: ${gridSize() * 0.5}px;
+  padding-top: ${gridSize() * 1/3}px;
   z-index: ${layers.navigation()};
 `;
 

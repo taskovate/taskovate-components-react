@@ -9,6 +9,7 @@ const Wrapper = styled.div<any>`
     flex-direction: column;
     grid-column: ${medium ? `span ${medium}` : 'span'};
     // background-color: rgba(255 0 0 / 10%);
+    gap: ${gridSize() * 2}px;
   `}
 `;
 

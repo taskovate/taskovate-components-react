@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { gridSize, borderRadius, colors, fontSizeSmall } from '@theme/constants';
+import { gridSize, borderRadius, colors, fontSizeSmall, animation } from '@theme/constants';
 import { Button } from '@components/core';
 import { HiOutlineDotsHorizontal } from 'react-icons/hi';
 
@@ -13,13 +13,20 @@ const Container = styled.div`
   flex-direction: column;
   // flex-basis: 100%;
   flex-basis: ${gridSize() * 24}px;
-  box-shadow: ${({ theme }) => theme.elevation[200]};
-  background-color: ${colors.d[800]};
-  border-radius: ${borderRadius() * 1.5}px;
+  box-shadow: ${({ theme }) => theme.elevation[100]};
+  background-color: ${colors.d[700]};
+  border-radius: ${borderRadius() * 1.25}px;
   padding: ${gridSize() * 3}px;
   padding-top: 0;
-  border: ${gridSize() * 0.125}px solid ${colors.d[700]};
-  border-top: ${gridSize() * 0.5}px solid ${colors.d[700]};
+  // border: ${gridSize() * 0.125}px solid ${colors.d[600]};
+  // border-top: ${gridSize() * 0.5}px solid ${colors.d[600]};
+  // border-top-left-radius: ${borderRadius() * 1}px;
+  // border-top-right-radius: ${borderRadius() * 1}px;
+  transition: ${animation.normal()};
+  cursor: pointer;
+  &:hover {
+    background-color: ${colors.d[600]};
+  }
 `;
 
 const CardHeader = styled.div<any>`
@@ -47,13 +54,17 @@ const CardTitle = styled.h4`
 const CardContent = styled.div`
   display: flex;
   flex-grow: 1;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: start;
   gap: ${gridSize() * 1}px;
+  width: 60%;
+  flex-wrap: wrap;
+  // padding: 0 ${gridSize() * 1}px;
 `;
 
 const CardDataLabel= styled.div`
   display: flex;
-  color: ${colors.n[900]};
+  color: ${colors.n[800]};
   font-size: ${fontSizeSmall()};
   font-weight: 400;
 `;
@@ -61,14 +72,14 @@ const CardDataLabel= styled.div`
 const CardDataValue= styled.div`
   display: flex;
   color: ${colors.n[400]};
-  font-weight: 500;
+  font-weight: 600;
 `;
 
 const CardDataRow = styled.div`
   display: flex;
-  flex-grow: 1;
+  // flex-grow: 1;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: start;
   gap: ${gridSize() * 1}px;
 `;
 
