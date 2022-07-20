@@ -15,14 +15,14 @@ const Wrapper = styled.button<any>`
   vertical-align: center;
   font-size: ${fontSize() * 1}px;
   line-height: 1rem;
-  padding: ${gridSize() * 1}px ${gridSize() * 1.25}px ${gridSize() * 1}px ${gridSize() * 1}px;
+  padding: ${gridSize() * 0.875}px ${gridSize() * 1.25}px ${gridSize() * 0.875}px ${gridSize() * 1}px;
   border-radius: ${borderRadius() * 1.5}px;
   cursor: pointer;
   font-weight: 500;
   transition: ${animation.normal()};
   border: none;
   user-select: none;
-  border-width: ${gridSize() * 0.125}px;
+  border-width: ${gridSize() * 0.25}px;
   border-style: solid;
   border-color: transparent;
   gap: ${gridSize() * 0.625}px;

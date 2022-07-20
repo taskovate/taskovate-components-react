@@ -12,7 +12,7 @@ const Container = styled.div<any>`
   h6 {
     margin-bottom: ${gridSize() * 1}px;
   }
-  margin-bottom: ${gridSize() * 2}px;
+  margin-bottom: ${gridSize() * 3}px;
 `;
 
 const Row = styled.div`
@@ -32,12 +32,13 @@ const HeaderContainer = styled.div`
 const ControlBar = styled.div`
   display: flex;
   flex-direction: row;
-  gap: ${gridSize() * 1}px;
+  gap: ${gridSize() * 1.5}px;
   align-items: center;
   border-radius: ${borderRadius() * 1}px;
-  padding: ${gridSize() * 1}px ${gridSize() * 2}px;
+  // padding: ${gridSize() * 1}px ${gridSize() * 1}px;
   background-color: ${colors.d[900]};
-  // border: ${gridSize() * 0.25}px solid ${colors.d[800]};
+  // border-top: ${gridSize() * 0.25}px solid ${colors.d[800]};
+  // border-bottom: ${gridSize() * 0.25}px solid ${colors.d[800]};
   // & :first-child {
   //   border-bottom-left-radius: ${borderRadius() * 1}px;
   //   border-top-left-radius: ${borderRadius() * 1}px;

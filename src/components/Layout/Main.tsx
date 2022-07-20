@@ -9,10 +9,10 @@ const Styled = styled.div`
   flex-grow: 1;
   // align-items: center;
   // text-align: center;
-  // max-width: ${gridSize() * 96}px;
+  max-width: ${gridSize() * 96}px;
   margin: 0 auto;
   padding: ${gridSize() * 1}px ${gridSize() * 4}px;
-  padding-bottom: ${gridSize() * 6}px
+  padding-bottom: ${gridSize() * 6}px;
 `;
 
 const Main = ({ children }: any) => {
