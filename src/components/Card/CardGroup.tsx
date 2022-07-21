@@ -15,7 +15,7 @@ const Container = styled.div<any>`
   padding: ${gridSize() * 1}px;
   border-radius: ${borderRadius() * 2}px;
   gap: ${gridSize() * 1}px;
-  box-shadow: ${({ theme }) => theme.elevation[200]};
+  box-shadow: ${({ theme }) => theme.elevation[100]};
 `;
 
 const Title = styled.h5`

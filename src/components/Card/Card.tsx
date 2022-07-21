@@ -51,6 +51,7 @@ const CardTitle = styled.h4`
   flex: 1 0 0;
   flex-direction: row;
   justify-content: space=between;
+  color: ${colors.n[100]};
 `;
 
 const CardContent = styled.div`
@@ -76,7 +77,8 @@ const CardDataLabel= styled.div`
 const CardDataValue= styled.div`
   display: flex;
   color: ${colors.n[400]};
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.08rem;
 `;
 
 const CardDataRow = styled.div`
