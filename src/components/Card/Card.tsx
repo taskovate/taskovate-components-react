@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { gridSize, borderRadius, colors, fontSizeSmall, animation } from '@theme/constants';
 import { Button } from '@components/core';
 import { HiOutlineDotsHorizontal } from 'react-icons/hi';
+import { FiEdit } from 'react-icons/fi';
 
 const Wrapper = styled.div`
 `;
@@ -98,12 +99,18 @@ const Card = ({
   title = "Login V1",
   children
 }: any) => {
+  const [isMouseOver, setMouseOver] = useState(false);
+
+
   return (
     <>
-      <Container>
+      <Container
+        onMouseOver={() => setMouseOver(true)}
+        onMouseOut={() => setMouseOver(false)}
+      >
         <CardHeader>
           <CardTitle>{title}</CardTitle>
-          <Button appearance="subtle" iconBefore={HiOutlineDotsHorizontal} />
+          <Button appearance="subtle" iconBefore={isMouseOver && FiEdit} />
         </CardHeader>
           <CardContent>
             <CardDataRow>
