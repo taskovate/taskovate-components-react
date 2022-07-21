@@ -14,6 +14,7 @@ const Container = styled.div`
   flex-direction: column;
   // flex-basis: 100%;
   flex-basis: ${gridSize() * 24}px;
+  height: ${gridSize() * 32}px;
   box-shadow: ${({ theme }) => theme.elevation[100]};
   background-color: ${colors.d[700]};
   border-radius: ${borderRadius() * 1.25}px;
@@ -57,8 +58,9 @@ const CardContent = styled.div`
   flex-grow: 1;
   flex-direction: row;
   justify-content: start;
+  align-content: start;
   gap: ${gridSize() * 1}px;
-  width: 60%;
+  // width: 60%;
   flex-wrap: wrap;
   // padding: 0 ${gridSize() * 1}px;
 `;
@@ -68,6 +70,7 @@ const CardDataLabel= styled.div`
   color: ${colors.n[800]};
   font-size: ${fontSizeSmall()};
   font-weight: 400;
+  margin-right: auto;
 `;
 
 const CardDataValue= styled.div`
@@ -82,6 +85,7 @@ const CardDataRow = styled.div`
   flex-direction: row;
   justify-content: start;
   gap: ${gridSize() * 1}px;
+  flex-basis: 100%;
 `;
 
 
