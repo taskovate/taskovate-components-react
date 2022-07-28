@@ -32,7 +32,7 @@ const Content = styled.div<any>`
   grid-column-gap: ${gridSize() * 1}px;
   grid-row-gap: ${gridSize() * 1}px;
   padding: ${gridSize() * 3.5}px ${gridSize() * 4}px;
-  padding-bottom: ${gridSize() * 3.5}px;
+  padding-bottom: ${gridSize() * 12}px;
   background-color: ${({ theme }) => hex2rgba(colors.d[900], 0.96875)};
   background-color: transparent;
   // background-color: rgba(255 0 0 / 10%);
