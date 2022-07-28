@@ -10,7 +10,7 @@ const Styled = styled.div`
   width: 100%;
   max-width: ${gridSize() * 144}px;
   margin: 0 auto;
-  margin-top: ${gridSize() * 8}px;
+  margin-top: ${gridSize() * 6}px;
 `;
 const Grid = styled.div<any>`
   display: grid;
@@ -78,7 +78,7 @@ const Content = styled.div<any>`
   // links
   &>:nth-child(3) { 
     grid-area: 2 / 1 / 3 / 2;
-    align-self: end;
+    align-self: start;
     // background-color: rgba(0 255 0 / 10%);
   }
 `;
