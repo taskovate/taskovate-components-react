@@ -13,7 +13,7 @@ const Styled = styled.div`
   ;
 
   grid-template-columns: auto;
-  grid-template-rows: ${gridSize() * 7.5}px auto minmax(min-content, max-content);;
+  grid-template-rows: ${gridSize() * 7.5}px auto minmax(min-content, max-content);
 `;
 
 const Layout = ({ 

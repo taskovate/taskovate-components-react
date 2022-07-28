@@ -34,7 +34,7 @@ export const Default: ComponentStory<typeof Footer> = ({ children, ...rest}) => 
         </div>
         <div>
           <div>
-            <h4>Resources</h4>
+            <h5>Resources</h5>
             <p>Support</p>
             <p>Blog</p>
             <p>Newsletter</p>
@@ -42,12 +42,12 @@ export const Default: ComponentStory<typeof Footer> = ({ children, ...rest}) => 
             <p>Sitemap</p>
           </div>
           <div>
-            <h4>Company</h4>
+            <h5>Company</h5>
             <p>Your Privacy</p>
             <p>About us</p>
           </div>
           <div>
-            <h4>Support</h4>
+            <h5>Support</h5>
             <p>Contact Us</p>
             <p>FAQ</p>
           </div>

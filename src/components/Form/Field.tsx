@@ -7,18 +7,19 @@ import { FaAsterisk } from 'react-icons/fa';
 const Styled = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: ${gridSize() * 1}px;
+  margin-bottom: ${gridSize() * 2}px;
 
   label > svg {
-    height: ${gridSize() * 1}px;
-    width: ${gridSize() * 1}px;
-    margin-top: -${gridSize() * 0.125}px;
-    margin-left: ${gridSize() * 0.5}px;
+    height: ${gridSize() * 0.75}px;
+    width: ${gridSize() * 0.75}px;
+    margin-top: -${gridSize() * 0.25}px;
+    margin-left: ${gridSize() * 0.25}px;
     vertical-align: top;
   }
 
   label { 
-    margin-bottom: ${gridSize() * 0.5}px;
+    margin-bottom: 0.125rem;
+    margin-left: 0.25rem;
   }
 `;
 

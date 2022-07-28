@@ -7,15 +7,20 @@ import { hex2rgba } from '@theme/helpers';
 const Styled = styled.div`
   display: flex;
   flex-grow: 1;
+  width: 100%;
+  max-width: ${gridSize() * 144}px;
+  margin: 0 auto;
+  margin-top: ${gridSize() * 8}px;
 `;
 const Grid = styled.div<any>`
   display: grid;
   grid-template-columns: repeat(auto-fill, 1fr);
   grid-auto-rows: 100%;
   background: ${gradients.primary()};
+  background: transparent;
   border-top-right-radius: ${borderRadius() * 1.25}px;
   border-top-left-radius: ${borderRadius() * 1}px;
-  box-shadow: ${({ theme }) => theme.elevation[200]}; 
+  // box-shadow: ${({ theme }) => theme.elevation[200]}; 
   width: ${({ numChildren }) => numChildren === 1 ? 'auto' : '100%'};
   margin: 0 ${({ numChildren }) => numChildren === 1 ? 'auto' : `${gridSize() * 1}px`};
 `;
@@ -29,20 +34,22 @@ const Content = styled.div<any>`
   padding: ${gridSize() * 3.5}px ${gridSize() * 4}px;
   padding-bottom: ${gridSize() * 3.5}px;
   background-color: ${({ theme }) => hex2rgba(colors.d[900], 0.96875)};
+  background-color: transparent;
   // background-color: rgba(255 0 0 / 10%);
   border-top-right-radius: ${borderRadius() * 1}px;
   border-top-left-radius: ${borderRadius() * 1}px;
   margin: ${gridSize() * 0.25}px;
   margin-bottom: 0;
+  gap: ${gridSize() * 8}px;
 
-  h2 {
+  h2, h3 {
+    color: ${colors.n[200]} !important;
+  }
+  h5, h4 {
     color: ${colors.n[300]} !important;
   }
-  h4 {
+  p {
     color: ${colors.n[400]} !important;
-  }
-  p { 
-    color: ${colors.n[500]} !important;
   }
 
   // footnote
@@ -62,6 +69,9 @@ const Content = styled.div<any>`
     display: flex;
     justify-content: end;
     gap: ${gridSize() * 4}px;
+    p {
+      margin-left: ${gridSize() * 1}px;
+    }
     // background-color: rgba(0 0 255 / 10%);
   }
 

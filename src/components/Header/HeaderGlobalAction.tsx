@@ -26,6 +26,8 @@ interface HeaderGlobalActionProps {
 }
 
 const HeaderGlobalAction: React.FC<any> = ({ 
+  href,
+  to,
   tooltip,
   appearance,
   isLoading,
@@ -38,24 +40,26 @@ const HeaderGlobalAction: React.FC<any> = ({
 
   const renderComponent = (
     <Tooltip label={typeof tooltip === 'string' ? tooltip : tooltip?.label} placement={tooltip?.placement}>
-      <Container
-        appearance={themedOrNull(appearance)} 
-        disabled={isDisabled} 
-        loading={isLoading} 
-        style={{ padding: typeof children === 'object' && `0 ${gridSize() * 0.75}px`}}
-        hasIcon={(iconAfter||iconBefore)}
-        isAvatar={isAvatar}
-      >
-        
-        {isLoading && <Spinner />}
-        {!isLoading && (
-          <>
-            {iconBefore && <span style={children && { marginLeft: gridSize() * -0.5, marginRight: gridSize() * 0.5 }}>{iconBefore()}</span>}
-            {children}
-            {iconAfter && <span style={children && { marginRight: gridSize() * -0.5, marginLeft: gridSize() * 0.5 }}>{iconAfter()}</span>}
-          </>
-        )}
-      </Container>
+      <Link to={to} href={href}>
+        <Container
+          appearance={themedOrNull(appearance)} 
+          disabled={isDisabled} 
+          loading={isLoading} 
+          style={{ padding: typeof children === 'object' && `0 ${gridSize() * 0.75}px`}}
+          hasIcon={(iconAfter||iconBefore)}
+          isAvatar={isAvatar}
+        >
+          
+          {isLoading && <Spinner />}
+          {!isLoading && (
+            <>
+              {iconBefore && <span style={children && { marginLeft: gridSize() * -0.5, marginRight: gridSize() * 0.5 }}>{iconBefore()}</span>}
+              {children}
+              {iconAfter && <span style={children && { marginRight: gridSize() * -0.5, marginLeft: gridSize() * 0.5 }}>{iconAfter()}</span>}
+            </>
+          )}
+        </Container>
+      </Link>
     </Tooltip>
   );
 

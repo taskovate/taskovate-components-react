@@ -22,7 +22,9 @@ interface HeaderMenuItemProps {
   children: any;
 }
 
-const HeaderMenuItem: React.FC<any> = ({ 
+const HeaderMenuItem: React.FC<any> = ({
+  href,
+  to,
   tooltip,
   appearance,
   isLoading,
@@ -31,16 +33,18 @@ const HeaderMenuItem: React.FC<any> = ({
 }: HeaderMenuItemProps) => {
   const renderComponent = (
     <Tooltip label={tooltip?.label} placement={tooltip?.placement}>
-      <Container 
-        appearance={themedOrNull(appearance)} 
-        disabled={isDisabled} 
-        loading={isLoading} 
-        style={{ padding: typeof children === 'object' && `0 ${gridSize() * 0.75}px`}}
-        type={typeof children}
-      >
-        {isLoading && <Spinner />}
-        {!isLoading && children}
-      </Container>
+      <Link to={to} href={href}>
+        <Container 
+          appearance={themedOrNull(appearance)} 
+          disabled={isDisabled} 
+          loading={isLoading} 
+          style={{ padding: typeof children === 'object' && `0 ${gridSize() * 0.75}px`}}
+          type={typeof children}
+        >
+          {isLoading && <Spinner />}
+          {!isLoading && children}
+        </Container>
+      </Link>
     </Tooltip>
   );
 
