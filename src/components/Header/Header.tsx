@@ -28,7 +28,7 @@ const Border = styled.div<any>`
   border-top-right-radius: ${borderRadius() * 1}px;
   border-bottom-right-radius: ${borderRadius() * 1}px;
   
-  transition: all ${animation.normal()}, opacity ${animation.slow()}-out, top ${animation.slow()}-out;
+  transition: all ${animation.fast()}, opacity ${animation.normal()}-out, top ${animation.normal()}-out;
   will-change: top, transform, margin, opacity;
   
   z-index: ${layers.navigation() - 1};
@@ -56,7 +56,7 @@ const Content = styled.div<any>`
   z-index: ${layers.navigation() + 1};
 
   
-  transition: all ${animation.normal()};
+  transition: all ${animation.fast()};
   will-change: background-color;
 `;
 
@@ -66,7 +66,7 @@ const Header: React.FC<any> = ({
   const [mode, setMode] = useState('noscroll');
 
   const onScroll = () => {
-    setMode(window.pageYOffset >= gridSize() * 1 ? 'scroll' : 'noscroll');
+    setMode(window.pageYOffset >= gridSize() * 2 ? 'scroll' : 'noscroll');
   };
 
   useEffect(() => {

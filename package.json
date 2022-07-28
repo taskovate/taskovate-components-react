@@ -1,6 +1,6 @@
 {
   "name": "@taskovate/ui",
-  "version": "0.1.27",
+  "version": "0.1.29",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/index.d.ts",
@@ -42,13 +42,10 @@
     "@react-tiny-grid/core": "^0.1.7",
     "graphql": "^16.5.0",
     "graphql-tag": "^2.12.6",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0",
     "react-hook-form": "^7.31.2",
     "react-icons": "^4.4.0",
     "react-lorem-ipsum": "^1.4.10",
-    "react-select": "^5.3.2",
-    "styled-components": "^5.3.5"
+    "react-select": "^5.3.2"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.17.12",
@@ -100,9 +97,6 @@
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "typescript": "^4.7.2",
     "webpack": "^5.72.1"
-  },
-  "peerDependencies": {
-    "parcel": "^2.0.0"
   },
   "description": "* Storybook\r * TypeScript\r * React-Resource-Router\r * Styled-Components",
   "repository": {

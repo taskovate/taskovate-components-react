@@ -11,26 +11,27 @@ const Container = styled.div<any>`
   justify-content: start;
   flex-wrap: wrap;
   // overflow: hidden;
-  background-color: ${colors.d[800]};
+  background-color: ${colors.d[700]};
   padding: ${gridSize() * 1}px;
   border-radius: ${borderRadius() * 2}px;
-  gap: ${gridSize() * 1}px;
-  box-shadow: ${({ theme }) => theme.elevation[100]};
+  box-shadow: ${({ theme }) => theme.elevation[200]};
 `;
 
 const Title = styled.h5`
   display: flex;
   color: ${colors.n[400]};
   padding: ${gridSize() * 1}px;
+  padding-top: ${gridSize() * 0.5}px;
 `;
 
 const Row = styled.div<any>`
   display: flex;
   flex-direction: row;
-  gap: ${gridSize() * 1}px;
+  gap: ${gridSize() * 1.5}px;
   align-items: start;
   justify-content: start;
   flex-wrap: wrap;
+  width: 100%;
   // overflow: hidden;
 `;
 

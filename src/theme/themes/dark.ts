@@ -22,11 +22,11 @@ export const skeleton = () => colors.n[200];
 export const label = () => colors.n[100];
 
 export const elevation = {
-  100: `0 1px 1px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0007`,
-  200: `0 4px 8px -2px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0007`,
-  300: `0 8px 16px -4px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0007`,
-  400: `0 12px 24px -6px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0007`,
-  500: `0 20px 32px -8px ${hex2rgba('#000007', 0.35)}, 0 1px 1px #0007`,
+  100: `0 1px 1px ${hex2rgba('#000007', 0.435)}, 0 1px 1px #0001`,
+  200: `0 4px 8px -2px ${hex2rgba('#000007', 0.435)}, 0 1px 1px #0001`,
+  300: `0 8px 16px -4px ${hex2rgba('#000007', 0.435)}, 0 1px 1px #0001`,
+  400: `0 12px 24px -6px ${hex2rgba('#000007', 0.435)}, 0 1px 1px #0001`,
+  500: `0 20px 32px -8px ${hex2rgba('#000007', 0.435)}, 0 1px 1px #0001`,
 };
 
 export const dropdownStyles = {

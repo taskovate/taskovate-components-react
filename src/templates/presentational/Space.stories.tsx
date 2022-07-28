@@ -79,6 +79,15 @@ export const Default: ComponentStory<typeof Header> = () => {
             <HeaderMenuItem>
               <Dropdown />
             </HeaderMenuItem>
+            {/* <HeaderMenuItem>
+              Planner
+            </HeaderMenuItem>
+            <HeaderMenuItem>
+              Stats
+            </HeaderMenuItem>
+            <HeaderMenuItem>
+              Tasks
+            </HeaderMenuItem> */}
             <HeaderGlobalAction appearance="primary">
               Create
             </HeaderGlobalAction>
@@ -96,22 +105,21 @@ export const Default: ComponentStory<typeof Header> = () => {
       </TopNavigation>
       <Content>
         <Main>
-          <PageHeader
-            // children="Welcome"
-            controls={(
-              <>
-                <ToggleButton iconBefore={IoMdTimer}>Recent</ToggleButton>
-                {/* <ToggleButton iconBefore={IoIosPeople}>Collaborative</ToggleButton> */}
-                <ToggleButton iconBefore={IoMdCalendar}>Prioritize</ToggleButton>
-              </>
-            )}
-          />
           <CardGroup>
             {list.map((item: any) => (
               <Card title={item.title} children={item.children} />
             ))}
           </CardGroup>
         </Main>
+        <RightSidebar>
+          <Sidebar>
+            <CardGroup title="Project tasks">
+              {list.map((item: any) => (
+                <Card title={item.title} children={item.children} />
+              ))}
+            </CardGroup>
+          </Sidebar>
+        </RightSidebar>
       </Content>
     </Layout>
   );

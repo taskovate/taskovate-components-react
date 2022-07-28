@@ -92,7 +92,9 @@ const Popover: FC<Props> = ({
               }),
               close: () => {
                 setOpen(false);
-              }
+              },
+              labelId: labelId,
+              descriptionId: descriptionId
             })}
           </>
         </FloatingFocusManager>

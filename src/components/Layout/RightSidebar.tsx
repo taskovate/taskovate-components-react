@@ -5,8 +5,9 @@ import { colors, gridSize, layers, animation, borderRadius, gradients, fontSize,
 const Styled = styled.div`
   display: flex;
   height: auto;
-  width: ${gridSize() * 23}px;
-  padding: ${gridSize() * 1}px;
+  width: ${gridSize() * 48}px;
+  padding-top: ${gridSize() * 2}px;
+  padding-right: ${gridSize() * 4}px;
 `;
 
 const RightSidebar = ({ children }: any) => {

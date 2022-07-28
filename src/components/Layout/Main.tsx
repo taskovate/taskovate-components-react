@@ -9,10 +9,11 @@ const Styled = styled.div`
   flex-grow: 1;
   // align-items: center;
   // text-align: center;
-  // max-width: ${gridSize() * 96}px;
+  max-width: ${gridSize() * 96}px;
   margin: 0 auto;
   padding: ${gridSize() * 2}px ${gridSize() * 4}px;
   padding-bottom: ${gridSize() * 6}px;
+  background-color: red;
 `;
 
 const Main = ({ children }: any) => {
@@ -22,5 +23,7 @@ const Main = ({ children }: any) => {
     </Styled>
   )
 };
+
+Main.prototype.name = "Main";
 
 export default Main;
