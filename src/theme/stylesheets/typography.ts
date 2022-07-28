@@ -30,6 +30,7 @@ body, :root {
   -ms-overflow-style: -ms-autohiding-scrollbar;
   text-decoration-skip-ink: auto;
   backface-visibility: hidden;
+  letter-spacing: 0.01rem !important;
 }
 
 /* Headings */

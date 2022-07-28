@@ -43,13 +43,13 @@ const Content = styled.div<any>`
   gap: ${gridSize() * 8}px;
 
   h2, h3 {
-    color: ${colors.n[200]} !important;
-  }
-  h5, h4 {
     color: ${colors.n[300]} !important;
   }
-  p {
+  h5, h4 {
     color: ${colors.n[400]} !important;
+  }
+  p {
+    color: ${colors.n[500]} !important;
   }
 
   // footnote

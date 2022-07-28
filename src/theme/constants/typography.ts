@@ -5,7 +5,7 @@ import { gridSize, fontSize, headerFontFamily } from './constants';
 
 const baseHeading = (size: number, lineHeight: number) => `
   &, * { font-family: ${headerFontFamily()} !important; }
-  font-size: ${size / fontSize()}em !important;
+  font-size: ${size / fontSize()}rem !important;
   font-style: inherit !important;
   line-height: ${lineHeight / size} !important;
 `;
@@ -16,7 +16,7 @@ export const heading = {
     ${baseHeading(35, 40)}
     color: ${({ theme }) => theme.heading()};
     font-weight: 600 !important;
-    letter-spacing: -0.01em !important;
+    letter-spacing: 0.01em !important;
     margin-top: ${gridSize() * 6.5}px;
   `,
   // Empty states and feature introductions. Top level headers.
@@ -24,7 +24,7 @@ export const heading = {
     ${baseHeading(29, 32)}
     color: ${({ theme }) => theme.heading()};
     font-weight: 700 !important;
-    letter-spacing: -0.01em !important;
+    letter-spacing: 0.01em !important;
     margin-top: ${gridSize() * 5}px;
   `,
   // Main titles, use only once per page.
@@ -32,7 +32,7 @@ export const heading = {
     ${baseHeading(24, 32)}
     color: ${({ theme }) => theme.heading()};
     font-weight: 600 !important;
-    letter-spacing: -0.01em !important;
+    letter-spacing: 0.01em !important;
     margin-top: ${gridSize() * 5}px;
   `,
   // Headings that identify key functionality.
@@ -40,7 +40,7 @@ export const heading = {
     ${baseHeading(20, 24)}
     color: ${({ theme }) => theme.heading()};
     font-weight: 600 !important;
-    letter-spacing: -0.008em !important;
+    letter-spacing: 0.008em !important;
     margin-top: ${gridSize() * 3.5}px;
   `,
   // Sub-section and field group headings.
@@ -48,7 +48,7 @@ export const heading = {
     ${baseHeading(16, 20)}
     color: ${({ theme }) => theme.heading()};
     font-weight: 700 !important;
-    letter-spacing: -0.006em !important;
+    letter-spacing: 0.006em !important;
     margin-top: ${gridSize() * 3}px;
   `,
   // Deep headings and for highlighting important pieces of information.
@@ -56,7 +56,7 @@ export const heading = {
     ${baseHeading(14, 16)}
     color: ${({ theme }) => theme.heading()};
     font-weight: 700 !important;
-    letter-spacing: -0.003em !important;
+    letter-spacing: 0.003em !important;
     margin-top: ${gridSize() * 2}px;
   `,
   // Heading up a group of list items.
