@@ -117,15 +117,15 @@ export const navigationStyles = {
   },
   color: {
     'unset': {
-      default: () => colors.n[300],
-      hover: () => colors.n[200],
-      active: () => colors.n[200],
-      disabled: () => hex2rgba(colors.d[400], 0.8),
+      default: () => colors.n[400],
+      hover: () => colors.n[300],
+      active: () => colors.n[300],
+      disabled: () => hex2rgba(colors.d[500], 0.8),
     },
     'primary': {
-      default: () => colors.n[300],
-      hover: () => colors.n[200],
-      active: () => colors.n[100],
+      default: () => colors.n[400],
+      hover: () => colors.n[400],
+      active: () => colors.n[300],
       disabled: () => hex2rgba(colors.n[900], 0.8),
     },
     'special': {
