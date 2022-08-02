@@ -2,7 +2,7 @@ import { hex2rgba, hexCombine } from '@theme/helpers';
 import * as colors from './colors';
 import * as typography from './typography';
 
-export const borderRadius = () => 3.5;
+export const borderRadius = () => 4;
 export const gridSize = () => 8;
 export const fontSize = () => 14;
 export const fontSizeSmall = () => 11;

@@ -6,6 +6,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "start": "start-storybook -p 6006",
+    "dev": "rollup -cw",
     "build-storybook": "build-storybook --output-dir ./dist-storybook",
     "build": "rollup -c",
     "prepare": "npm run build"

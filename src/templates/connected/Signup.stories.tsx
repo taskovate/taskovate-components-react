@@ -87,6 +87,7 @@ export const Default: ComponentStory<typeof Header> = () => (
                         <TextField 
                           {...fieldProps}
                           placeholder="Password"
+                          type="password"
                         />
                       )}
                     </Field>

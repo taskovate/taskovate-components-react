@@ -26,11 +26,13 @@ const Input = styled.input<any>`
 `;
 
 const TextField = forwardRef(({
-  placeholder
+  placeholder,
+  ...rest
 }: any, ref) => {
 
   return (
     <Input 
+      {...rest}
       ref={ref} 
       placeholder={placeholder}
     />

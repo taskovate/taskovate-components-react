@@ -37,34 +37,36 @@ const Button: React.FC<any> = ({
 }: ButtonProps) => {
   const renderComponent = (
     <Tooltip label={tooltip?.label} placement={tooltip?.placement}>
-      <Link to={to} href={href}>
-        <Container appearance={themedOrNull(appearance)} spacing={spacing} isDisabled={isDisabled} isLoading={isLoading} {...rest}>
-          {isLoading && 
-            <span style={children && { marginTop: -gridSize() * 0.125, marginBottom: -gridSize() * 0.375 }}>
-              <Spinner />
-            </span>
-          }
-          {!isLoading && (
-            <>
-              {iconBefore && 
-                <span style={children && { marginLeft: gridSize() * -0.5, marginRight: gridSize() * 0.5 }}>
-                  {typeof iconBefore === 'function' ? iconBefore() : iconBefore}
-                </span>
-              }
-              {children}
-              {iconAfter && 
-                <span style={children && { marginRight: gridSize() * -0.5, marginLeft: gridSize() * 0.5 }}>
-                  {typeof iconAfter === 'function' ? iconAfter() : iconAfter}
-                </span>
-              }
-            </>
-          )}
-        </Container>
-      </Link>
+      <Container appearance={themedOrNull(appearance)} spacing={spacing} isDisabled={isDisabled} isLoading={isLoading} {...rest}>
+        {isLoading && 
+          <span style={children && { marginTop: -gridSize() * 0.125, marginBottom: -gridSize() * 0.375 }}>
+            <Spinner />
+          </span>
+        }
+        {!isLoading && (
+          <>
+            {iconBefore && 
+              <span style={children && { marginLeft: gridSize() * -0.5, marginRight: gridSize() * 0.5 }}>
+                {typeof iconBefore === 'function' ? iconBefore() : iconBefore}
+              </span>
+            }
+            {children}
+            {iconAfter && 
+              <span style={children && { marginRight: gridSize() * -0.5, marginLeft: gridSize() * 0.5 }}>
+                {typeof iconAfter === 'function' ? iconAfter() : iconAfter}
+              </span>
+            }
+          </>
+        )}
+      </Container>
     </Tooltip>
   );
 
-  return renderComponent;
+  return href || to ? (
+    <Link to={to} href={href}>
+      {renderComponent}
+    </Link>
+  ) : renderComponent;
 };
 
 const Container = styled.button<any>`

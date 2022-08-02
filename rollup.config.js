@@ -5,6 +5,7 @@ import { terser } from "rollup-plugin-terser";
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import typescript from "rollup-plugin-typescript2";
 import static_files from 'rollup-plugin-static-files';
+import serve from 'rollup-plugin-serve';
 
 const packageJson = require("./package.json");
 
@@ -40,6 +41,9 @@ export default [
   {
     input: "dist/esm/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
-    plugins: [dts()],
+    plugins: [
+      dts(),
+      serve('dist')
+    ],
   },
 ];

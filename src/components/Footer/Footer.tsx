@@ -7,9 +7,9 @@ import { hex2rgba } from '@theme/helpers';
 const Styled = styled.div`
   display: flex;
   flex-grow: 1;
-  width: 100%;
-  max-width: ${gridSize() * 144}px;
-  margin: 0 auto;
+  // width: 100%;
+  // max-width: ${gridSize() * 144}px;
+  // margin: 0 auto;
   margin-top: ${gridSize() * 6}px;
 `;
 const Grid = styled.div<any>`
@@ -32,7 +32,7 @@ const Content = styled.div<any>`
   grid-column-gap: ${gridSize() * 1}px;
   grid-row-gap: ${gridSize() * 1}px;
   padding: ${gridSize() * 3.5}px ${gridSize() * 4}px;
-  padding-bottom: ${gridSize() * 8}px;
+  padding-bottom: ${gridSize() * 4}px;
   background-color: ${({ theme }) => hex2rgba(colors.d[900], 0.96875)};
   background-color: transparent;
   // background-color: rgba(255 0 0 / 10%);

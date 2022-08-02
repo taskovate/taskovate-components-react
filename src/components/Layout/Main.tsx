@@ -13,7 +13,7 @@ const Styled = styled.div`
   margin: 0 auto;
   padding: ${gridSize() * 2}px ${gridSize() * 4}px;
   padding-bottom: ${gridSize() * 6}px;
-  // background-color: red;
+  // background-color: green;
 `;
 
 const Main = ({ children }: any) => {

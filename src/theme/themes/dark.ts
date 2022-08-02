@@ -4,7 +4,7 @@ import { hex2rgba, hexCombine } from '@theme/helpers';
 export const name = 'Taskovate Dark';
 export const colorScheme = () => 'dark';
 export const background = () => colors.d[900];
-export const text = () => colors.n[200];
+export const text = () => colors.n[300];
 export const textHover = () => colors.n[100];
 export const textActive = () => colors.n[100];
 export const subtleTwext = () => colors.n[100];

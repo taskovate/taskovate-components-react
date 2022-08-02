@@ -43,6 +43,7 @@ const Styled = styled.div<any>`
   text-align: initial;
   max-width: ${gridSize() * 48}px;
   min-width: ${gridSize() * 48}px;
+  background: transparent !important;
 `;
 
 const Border = styled.div<any>`
@@ -59,6 +60,7 @@ const Border = styled.div<any>`
     `;
     return ``;
   }}
+  background: transparent !important;
 `;
 
 const Container = styled.div<any>`
@@ -84,6 +86,7 @@ const Container = styled.div<any>`
     `;
     return ``;
   }}
+  background: transparent !important;
 `;
 
 const Plate = ({
