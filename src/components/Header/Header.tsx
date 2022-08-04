@@ -50,8 +50,8 @@ const Content = styled.div<any>`
   border-top-right-radius: ${borderRadius() * 0.75}px;
   border-bottom-right-radius: ${borderRadius() * 0.75}px;
 
-  padding: ${gridSize() * 0}px ${gridSize() * 2.5}px;
-  padding-right: ${gridSize() * 1.75}px;
+  padding: ${gridSize() * 0}px ${gridSize() * 4}px;
+  padding-right: ${gridSize() * 2}px;
 
   z-index: ${layers.navigation() + 1};
 
