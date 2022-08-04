@@ -5,7 +5,7 @@ import { colors, gridSize, layers, animation, fontSize, borderRadius, gradients,
 const Input = styled.textarea<any>`
   display: flex;
   transition: ${animation.normal()};
-  padding: ${gridSize() * 0.75}px ${gridSize() * 1.25}px;
+  padding: ${gridSize() * 0.75}px ${gridSize() * 1.625}px;
   border-radius: ${borderRadius() * 1}px;
   border: ${gridSize() * 0.25}px solid ${({ theme: { inputStyles } }) => inputStyles.borderColor['body'].default()};;
   background-color: ${({ theme: { inputStyles } }) => inputStyles.background['body'].default()};

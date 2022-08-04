@@ -56,7 +56,7 @@ const menuItemStyles = () => css<any>`
   vertical-align: middle;
   text-align: center;
   font-size: ${fontSize() * 1}px;
-  padding: ${gridSize() * 0.75}px ${gridSize() * 1}px;
+  padding: ${gridSize() * 0.75}px ${gridSize() * 1.625}px;
   border-radius: ${borderRadius()}px;
   // line-height: 1.5rem;
   margin-right: ${gridSize() * 0.75}px;

@@ -6,11 +6,7 @@ const Styled = styled.div`
   display: grid;
   height: 100%;
 
-  grid-template-areas: 
-    "top-navigation"
-    "content"
-    "footer"
-  ;
+  grid-template-areas: "header" "content" "footer";
 
   grid-template-columns: auto;
   grid-template-rows: ${gridSize() * 7.5}px auto minmax(min-content, max-content);

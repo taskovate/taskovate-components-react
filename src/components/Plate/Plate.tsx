@@ -52,7 +52,7 @@ const Border = styled.div<any>`
   grid-template-rows: 100%;
   background: ${gradients.secondary()};
   border-radius: ${borderRadius() * 1}px;
-  box-shadow: ${({ theme }) => theme.elevation[200]}; 
+  // box-shadow: ${({ theme }) => theme.elevation[200]}; 
 
   ${({ appearance}) => {
     if(appearance === 'display') return `

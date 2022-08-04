@@ -6,8 +6,9 @@ import { hex2rgba } from '@theme/helpers';
 // TODO: Restructure Footer into BottomNavigation component, then have Footer with grid as Footer component (like how Header and TopNavigation are setup).
 const Styled = styled.div`
   display: flex;
+  grid-area: footer;
   flex-grow: 1;
-  padding: ${gridSize() * 1}px ${gridSize() * 4}px;
+  padding: ${gridSize() * 1}px ${gridSize() * 1}px;
   padding-bottom: 0;
 `;
 

@@ -31,7 +31,7 @@ const Content = styled.div<any>`
   grid-auto-rows: minmax(min-content, max-content);
   grid-column-gap: ${gridSize() * 1}px;
   grid-row-gap: ${gridSize() * 1}px;
-  padding: ${gridSize() * 3.5}px ${gridSize() * 4}px;
+  padding: ${gridSize() * 2}px ${gridSize() * 3}px;
   padding-bottom: ${gridSize() * 4}px;
   background-color: ${({ theme }) => hex2rgba(colors.d[900], 0.96875)};
   background-color: transparent;
@@ -57,7 +57,7 @@ const Content = styled.div<any>`
     display: flex;
     // background-color: red;
     margin: 0 auto;
-    gap: ${gridSize() * 4}px;
+    gap: ${gridSize() * 2}px;
   }
   &>:nth-child(1):not(:only-child){
     grid-area: 1 / 1 / 2 / 2;
@@ -68,9 +68,9 @@ const Content = styled.div<any>`
     grid-area: 1 / 2 / 3 / 3;
     display: flex;
     justify-content: end;
-    gap: ${gridSize() * 4}px;
+    gap: ${gridSize() * 2}px;
     p {
-      margin-left: ${gridSize() * 1}px;
+      margin-left: ${gridSize() * 0}px;
     }
     // background-color: rgba(0 0 255 / 10%);
   }
@@ -95,7 +95,5 @@ const Footer = ({ children }: any) => {
     </Styled>
   )
 };
-
-Footer.prototype.name = "Footer";
 
 export default Footer;

@@ -5,7 +5,7 @@ import { gridSize, layers, animation, borderRadius, gradients, fontSize, headerF
 const Styled = styled.div`
   display: flex;
   height: 100%;
-  grid-area: "content" / "content" / "content";
+  grid-area: content / content / content;
 `;
 
 const Content = ({ children }: any) => {

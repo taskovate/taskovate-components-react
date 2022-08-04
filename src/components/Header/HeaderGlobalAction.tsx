@@ -76,7 +76,7 @@ const Container = styled.div<any>`
   text-align: center;
   font-size: ${fontSize() * 1}px;
   padding: ${({ hasIcon }) => hasIcon ? gridSize() * 0.75 : gridSize() * 0.75}px 
-           ${({ hasIcon }) => hasIcon ? gridSize() * 0.75 : gridSize() * 1.25}px;
+           ${({ hasIcon }) => hasIcon ? gridSize() * 0.75 : gridSize() * 1.625}px;
   ${({ isAvatar }) => isAvatar && `padding: 0 !important;`}
   // line-height: 1.5em;
   border-radius: ${borderRadius()}px; 

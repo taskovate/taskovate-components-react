@@ -20,7 +20,8 @@ import {
   FormFooter,
   TextField,
   Select,
-  HelperMessage
+  HelperMessage,
+  BottomNavigation
 } from '@components/core';
 
 import {
@@ -105,11 +106,13 @@ export const Default: ComponentStory<typeof Header> = () => (
         </center>
       </Main>
     </Content>
-    <Footer>
-      <div>
-        <p>By signing in to Taskovate, you agree to our <a href="/">terms of service</a>.</p>
-      </div>
-    </Footer>
+    <BottomNavigation>
+      <Footer>
+        <div>
+          <p>By signing in to Taskovate, you agree to our <a href="/">terms of service</a>.</p>
+        </div>
+      </Footer>
+    </BottomNavigation>
   </Layout>
 );
 
