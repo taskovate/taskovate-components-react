@@ -15,19 +15,19 @@ const Container = styled.div<any>`
 const AvatarImage = styled.img`
   display: flex;
   align-self: center;
-  width: ${gridSize() * 3}px;
-  height: ${gridSize() * 3}px;
-  border-radius: ${borderRadius() * 0.5}px; 
+  width: ${gridSize()  * 2.75}px;
+  height: ${gridSize() * 2.75}px;
+  border-radius: ${borderRadius() * 0.625}px; 
   margin: auto;
 `;
 
 const Avatar = ({
-  children,
+  name = 'John Dow',
 }: any) => {
 
   return (
     <Container>
-      <AvatarImage src="https://picsum.photos/96/96" />
+      <AvatarImage src={`https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&bold=true&size=128`} />
     </Container>
   );
 };
