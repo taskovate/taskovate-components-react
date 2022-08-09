@@ -9,8 +9,13 @@ const Styled = styled.div`
   background-color: ${({ theme }) => theme.background()};
   height: calc(100% - ${gridSize() * 0.25}px);
   width: calc(100% - ${gridSize() * 1}px);
-  padding-top: ${gridSize() * 0.75}px;
+  // padding-top: ${gridSize() * 0.5}px;
   z-index: ${layers.navigation()};
+  // max-width: ${gridSize() * 144}px;
+  width: 100%;
+  margin: 0;
+  // box-shadow: ${({ theme }) =>theme.elevation[300]}; 
+
 `;
 
 const Border = styled.div<any>`
@@ -21,15 +26,17 @@ const Border = styled.div<any>`
   background: ${gradients.secondary()};
 
   opacity: ${({ mode }) => mode === 'scroll' ? 1 : 0};
-  box-shadow: ${({ theme, mode }) => mode === 'scroll' ? theme.elevation[200] : 'none'}; 
-  margin: ${({ mode }) => mode === 'scroll' ? 0 : gridSize() * 0.25}px;
-  margin-left: 0;
+  box-shadow: ${({ theme, mode }) => mode === 'scroll' ? theme.elevation[400] : 'none'}; 
+  // margin: ${({ mode }) => mode === 'scroll' ? 0 : gridSize() * 0.25}px;
+  // margin-left: 0;
 
-  border-top-right-radius: ${borderRadius() * 1}px;
-  border-bottom-right-radius: ${borderRadius() * 1}px;
+  // border-top-right-radius: ${borderRadius() * 1}px;
+  // border-bottom-right-radius: ${borderRadius() * 1}px;
+  // border-top-left-radius: ${borderRadius() * 1}px;
+  // border-bottom-left-radius: ${borderRadius() * 1}px;
   
-  transition: all ${animation.fast()}, opacity ${animation.normal()}-out, top ${animation.normal()}-out;
-  will-change: top, transform, margin, opacity;
+  transition: all ${animation.slow()}, opacity ${animation.slow()}-out, top ${animation.slow()}-out;
+  will-change: top, transform, margin, opacity, box-shadow;
   
   z-index: ${layers.navigation() - 1};
 `;
@@ -44,19 +51,21 @@ const Content = styled.div<any>`
   background-color: ${({ theme, mode }) => hex2rgba(mode === 'scroll' ? colors.d[900] : theme.background(), 1)};
   // background-color: ${({ theme }) => theme.background()};
 
-  margin: ${gridSize() * 0.25}px;
-  margin-left: 0;
+  // margin-bottom: ${gridSize() * 0.25}px;
+  // margin-left: 0;
   
-  border-top-right-radius: ${borderRadius() * 0.75}px;
-  border-bottom-right-radius: ${borderRadius() * 0.75}px;
+  // border-top-right-radius: ${borderRadius() * 0.875}px;
+  // border-bottom-right-radius: ${borderRadius() * 0.875}px;
+  // border-top-left-radius: ${borderRadius() * 0.875}px;
+  // border-bottom-left-radius: ${borderRadius() * 0.875}px;
 
-  padding: ${gridSize() * 0}px ${gridSize() * 4}px;
-  padding-right: ${gridSize() * 2}px;
+  padding: ${gridSize() * 0}px ${gridSize() * 1.5}px;
+  padding-right: ${gridSize() * 1.5}px;
 
   z-index: ${layers.navigation() + 1};
 
   
-  transition: all ${animation.fast()};
+  transition: all ${animation.slow()};
   will-change: background-color;
 `;
 

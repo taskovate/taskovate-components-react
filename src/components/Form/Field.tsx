@@ -18,8 +18,8 @@ const Styled = styled.div`
   }
 
   label { 
-    margin-bottom: 0.125rem;
-    margin-left: 0.25rem;
+    margin-bottom: ${gridSize() * 0.125}px;
+    margin-left: ${gridSize() * 0.25}px;
   }
 `;
 

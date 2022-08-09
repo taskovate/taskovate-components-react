@@ -6,7 +6,7 @@ const Input = styled.input<any>`
   display: flex;
   flex-grow: 1;
   transition: ${animation.normal()};
-  padding: ${gridSize() * 0.5}px ${gridSize() * 1.625}px;
+  padding: ${gridSize() * 0.5}px ${gridSize() * 1}px;
   border-radius: ${borderRadius() * 1}px;
   border: ${gridSize() * 0.25}px solid ${({ theme: { inputStyles } }) => inputStyles.borderColor['body'].default()};;
   background-color: ${({ theme: { inputStyles } }) => inputStyles.background['body'].default()};

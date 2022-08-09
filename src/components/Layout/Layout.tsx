@@ -9,7 +9,7 @@ const Styled = styled.div`
   grid-template-areas: "header" "content" "footer";
 
   grid-template-columns: auto;
-  grid-template-rows: ${gridSize() * 7.5}px auto minmax(min-content, max-content);
+  grid-template-rows: ${gridSize() * 8}px auto minmax(min-content, max-content);
 `;
 
 const Layout = ({ 

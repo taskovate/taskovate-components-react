@@ -3,7 +3,7 @@ import { hex2rgba, hexCombine } from '@theme/helpers';
 
 export const name = 'Taskovate Dark';
 export const colorScheme = () => 'dark';
-export const background = () => colors.d[900];
+export const background = () => hexCombine(colors.d[900], colors.n[900], 0.1/3);
 export const text = () => colors.n[300];
 export const textHover = () => colors.n[100];
 export const textActive = () => colors.n[100];
@@ -22,11 +22,11 @@ export const skeleton = () => colors.n[200];
 export const label = () => colors.n[100];
 
 export const elevation = {
-  100: `0 1px 1px ${hex2rgba('#000007', 0.435)}, 0 1px 1px #0001`,
-  200: `0 4px 8px -2px ${hex2rgba('#000007', 0.435)}, 0 1px 1px #0001`,
-  300: `0 8px 16px -4px ${hex2rgba('#000007', 0.435)}, 0 1px 1px #0001`,
-  400: `0 12px 24px -6px ${hex2rgba('#000007', 0.435)}, 0 1px 1px #0001`,
-  500: `0 20px 32px -8px ${hex2rgba('#000007', 0.435)}, 0 1px 1px #0001`,
+  100: `0 1px 1px ${hex2rgba('#000007', 0.3)}, 0 1px 1px #0001`,
+  200: `0 4px 8px -2px ${hex2rgba('#000007', 0.3)}, 0 1px 1px #0001`,
+  300: `0 8px 16px -4px ${hex2rgba('#000007', 0.3)}, 0 1px 1px #0001`,
+  400: `0 12px 24px -6px ${hex2rgba('#000007', 0.3)}, 0 1px 1px #0001`,
+  500: `0 20px 32px -8px ${hex2rgba('#000007', 0.3)}, 0 1px 1px #0001`,
 };
 
 export const dropdownStyles = {

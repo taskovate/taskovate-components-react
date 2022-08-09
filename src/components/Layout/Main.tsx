@@ -11,8 +11,8 @@ const Styled = styled.div`
   // text-align: center;
   max-width: ${gridSize() * 144}px;
   margin: 0 auto;
-  padding: ${gridSize() * 2}px ${gridSize() * 4}px;
-  padding-bottom: ${gridSize() * 6}px;
+  padding: ${gridSize() * 0}px ${gridSize() * 1}px;
+  // padding-bottom: ${gridSize() * 6}px;
   // background-color: green;
 `;
 

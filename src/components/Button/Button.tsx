@@ -82,9 +82,9 @@ const Container = styled.button<any>`
   padding: ${({ spacing }) => {
     switch(spacing) {
       case 'none': return 0;
-      case 'compact': return  `${gridSize() * 0.625}px ${gridSize() * 1.5}px`;
-      case 'default': return  `${gridSize() * 1.125}px ${gridSize() * 2}px`;
-      case 'pleasant': return `${gridSize() * 1.625}px ${gridSize() * 2.5}px`;
+      case 'compact': return  `${gridSize() * 0.625}px ${gridSize() * 1}px`;
+      case 'default': return  `${gridSize() * 1.125}px ${gridSize() * 1.5}px`;
+      case 'pleasant': return `${gridSize() * 1.625}px ${gridSize() * 2}px`;
       default: return ``;
     }
   }};

@@ -17,9 +17,8 @@ const logo = '/images/logo.svg';
 const Logo = styled.img<any>`
   display: flex;
   align-self: center;
-  // height: ${fontSize() * 4}px;
   width: ${fontSize() * 3}px;
-  margin-left: ${gridSize() * 1}px;
+  margin-left: ${gridSize() * 1.5}px;
   margin-right: ${gridSize() * 2}px;
 `;
 
