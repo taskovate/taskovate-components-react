@@ -12,9 +12,11 @@ const Styled = styled.div`
   line-height: 20px;
   justify-content: start;
   margin-top: ${gridSize() * 0.75}px;
+  gap: ${gridSize() * 0.75}px;
   svg {
-    height: ${gridSize() * 2.5 / fontSize()}em;
-    width: ${gridSize() * 2.5 / fontSize()}em;
+    height: ${fontSize()}px;
+    width: ${fontSize()}px;
+    margin-top: ${gridSize() * 0.4}px;
   }
 `;
 
@@ -26,7 +28,6 @@ const ErrorMessage = ({
   return (
     <Styled style={style}>
       {!disableIcon && <BsFillExclamationSquareFill />}
-      <span style={{ marginLeft: gridSize() * 0.25 }} />
       {children}
     </Styled>
   );

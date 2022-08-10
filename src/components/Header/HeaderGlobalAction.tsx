@@ -69,7 +69,7 @@ const HeaderGlobalAction: React.FC<any> = ({
 const Container = styled.div<any>`
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   align-content: center;
   vertical-align: middle;

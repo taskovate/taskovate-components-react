@@ -14,7 +14,7 @@ const DropdownIndicator = () => <FaChevronDown />;
 
 const Dropdown = ({
   placeholder = 'Select',
-  defaultValue,
+  defaultValue = { value: "chocolate", label: "Home", image: HiHome },
 }: SelectProps) => {
   const store: any = useStore();
   const { data: { starredItems } } = useQuery(GET_STARRED_ITEMS);

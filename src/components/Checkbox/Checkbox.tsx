@@ -8,19 +8,21 @@ const Styled = styled.label`
   display: flex;
   flex-direction: row;
   align-content: center;
+  align-items: center;
   justify-content: start;
   align-items: center;
   padding-left: 0;
-  line-height: 20px !important;
+  line-height: ${fontSize()}px !important;
+  gap: ${gridSize() * 0.5}px;
 `;
 
 const Input = styled.input<any>`
-  margin-right: calc(1 * ${gridSize() * 0.25}px);
 `;
 
 const CheckboxText = styled.span`
-  margin: auto 0;
+  margin: 0;
   user-select: none;
+  margin-bottom: -${gridSize() * 0.33}px;
 `;
 
 const DropdownIndicator = () => (

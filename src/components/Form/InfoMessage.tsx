@@ -12,9 +12,11 @@ const Styled = styled.div`
   justify-content: start;
   line-height: 20px;
   margin-top: ${gridSize() * 0.75}px;
+  gap: ${gridSize() * 0.75}px;
   svg {
-    height: ${gridSize() * 2.5 / fontSize()}em;
-    width: ${gridSize() * 2.5 / fontSize()}em;
+    height: ${fontSize()}px;
+    width: ${fontSize()}px;
+    margin-top: ${gridSize() * 0.375}px;
   }
 `;
 
@@ -25,7 +27,6 @@ const InfoMessage = ({
   return (
     <Styled>
       {!disableIcon && <BsFillInfoSquareFill />}
-      <span style={{ marginLeft: gridSize() * 0.125 }} />
       {children}
     </Styled>
   );

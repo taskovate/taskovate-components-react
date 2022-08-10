@@ -7,27 +7,30 @@ const Container = styled.div<any>`
   display: flex;
   flex-grow: 1;
   background-color: transparent;
-  align-self: center;
-  margin: auto;
+  ${({size}) => `
+    height: ${size}px !important;
+    width: ${size}px !important;
+  `}
 `;
 
-const AvatarImage = styled.img`
+const AvatarImage = styled.img<any>`
   display: flex;
-  align-self: center;
-  width: calc(100% - ${gridSize() * 1}px);
-  height: calc(100% - ${gridSize() * 1}px);
-  border-radius: ${borderRadius() * 0.25}px; 
-  margin: auto;
+  ${({ size }) => `
+    height: ${size}px !important;
+    width: ${size}px !important;
+  `}
+  border-radius: ${borderRadius() * 0.5}px; 
+  border: ${borderRadius() * 0.25}px solid ${colors.n[100]};
+  background: ${colors.n[100]};
 `;
 
 const Avatar = ({
   name = 'John Dow',
+  size = 20
 }: any) => {
 
   return (
-    <Container>
-      <AvatarImage src={`https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&bold=true&size=128&font-size=0.5&background=${colors.p[100].replace('#', '')}&color=${colors.d[900].replace('#', '')}`} />
-    </Container>
+    <AvatarImage size={size} src={`https://ui-avatars.com/api/?name=${encodeURIComponent(name)}`}/>
   );
 };
 
