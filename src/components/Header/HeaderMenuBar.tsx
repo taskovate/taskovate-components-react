@@ -19,6 +19,14 @@ const Container = styled.div<any>`
   flex: 0 1 auto;
   align-items: center;
   height: 100%;
+  :only-child {
+    margin: 0 auto;
+    > div {
+      margin: 0;
+      padding: 0;
+      margin-top: auto;
+    }
+  }
 `;
 
 const HeaderMenuBar: React.FC<any> = ({ children }: any) => {

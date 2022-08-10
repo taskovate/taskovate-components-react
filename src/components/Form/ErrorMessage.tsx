@@ -14,9 +14,9 @@ const Styled = styled.div`
   margin-top: ${gridSize() * 0.75}px;
   gap: ${gridSize() * 0.75}px;
   svg {
-    height: ${fontSize()}px;
-    width: ${fontSize()}px;
-    margin-top: ${gridSize() * 0.4}px;
+    height: ${fontSize() * 1.5}px;
+    width: ${fontSize() * 1.5}px;
+    margin-top: ${gridSize() * 0}px;
   }
 `;
 

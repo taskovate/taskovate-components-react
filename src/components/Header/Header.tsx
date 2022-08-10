@@ -26,7 +26,7 @@ const Border = styled.div<any>`
   background: ${gradients.secondary()};
 
   opacity: ${({ mode }) => mode === 'scroll' ? 1 : 0};
-  box-shadow: ${({ theme, mode }) => mode === 'scroll' ? theme.elevation[400] : 'none'}; 
+  box-shadow: ${({ theme, mode }) => mode === 'scroll' ? theme.elevation[200] : 'none'}; 
   // margin: ${({ mode }) => mode === 'scroll' ? 0 : gridSize() * 0.25}px;
   // margin-left: 0;
 
@@ -61,7 +61,8 @@ const Content = styled.div<any>`
 
   padding: ${gridSize() * 0}px ${gridSize() * 1.5}px;
   padding-right: ${gridSize() * 1.5}px;
-
+  padding-left: ${gridSize() * 3.75}px;
+ 
   z-index: ${layers.navigation() + 1};
 
   

@@ -33,22 +33,24 @@ const HeaderMenuItem: React.FC<any> = ({
 }: HeaderMenuItemProps) => {
   const renderComponent = (
     <Tooltip label={tooltip?.label} placement={tooltip?.placement}>
-      <Link to={to} href={href}>
-        <Container 
-          appearance={themedOrNull(appearance)} 
-          disabled={isDisabled} 
-          loading={isLoading} 
-          style={{ padding: typeof children === 'object' && `0 ${gridSize() * 0.75}px`}}
-          type={typeof children}
-        >
-          {isLoading && <Spinner />}
-          {!isLoading && children}
-        </Container>
-      </Link>
+      <Container 
+        appearance={themedOrNull(appearance)} 
+        disabled={isDisabled} 
+        loading={isLoading} 
+        style={{ padding: typeof children === 'object' && `0 ${gridSize() * 0.75}px`}}
+        type={typeof children}
+      >
+        {isLoading && <Spinner />}
+        {!isLoading && children}
+      </Container>
     </Tooltip>
   );
-
-  return renderComponent;
+  
+  return href || to ? (
+    <Link to={to} href={href}>
+      {renderComponent}
+    </Link>
+  ) : renderComponent;
 };
 
 const menuItemStyles = () => css<any>`

@@ -43,11 +43,17 @@ export default {
 
 export const Default: ComponentStory<typeof Header> = () => (
   <Layout>
-    <TopNavigation/>
+    <TopNavigation>
+      <Header>
+        <HeaderMenuBar>
+          <HeaderDesignation/>
+        </HeaderMenuBar>
+      </Header>
+    </TopNavigation>
     <Content>
       <Main>
         <center>
-          <img src="/images/logo.svg" height={gridSize() * 4.5} style={{ marginBottom: gridSize() * 2 }} />
+          {/* <img src="/images/logo.svg" height={gridSize() * 4.5} style={{ marginBottom: gridSize() * 2 }} /> */}
           <Plate appearance="display">
             <Form>
               {({ formState: { isSubmitting }, handleSubmit }) =>

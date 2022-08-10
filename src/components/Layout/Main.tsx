@@ -7,12 +7,12 @@ const Styled = styled.div`
   flex-direction: column;
   height: auto;
   flex-grow: 1;
-  // align-items: center;
+  align-items: center;
   // text-align: center;
-  max-width: ${gridSize() * 144}px;
+  // max-width: ${gridSize() * 144}px;
   margin: 0 auto;
-  padding: ${gridSize() * 0}px ${gridSize() * 1}px;
-  // padding-bottom: ${gridSize() * 6}px;
+  padding: ${gridSize() * 0}px ${gridSize() * 3}px;
+  margin-left: ${gridSize() * 2.35}px;
   // background-color: green;
 `;
 

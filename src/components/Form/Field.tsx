@@ -10,8 +10,8 @@ const Styled = styled.div`
   margin-bottom: ${gridSize() * 2}px;
 
   label > svg {
-    height: ${gridSize() * 0.75}px;
-    width: ${gridSize() * 0.75}px;
+    height: ${gridSize() * 1}px;
+    width: ${gridSize() * 1}px;
     margin-top: -${gridSize() * 0.25}px;
     margin-left: ${gridSize() * 0.25}px;
     vertical-align: top;
@@ -46,7 +46,7 @@ const Field = ({
       {label && (
         <label htmlFor={name}>
           {label}
-          {rules?.required && <FaAsterisk color={colors.r[700]}/>}
+          {rules?.required && <FaAsterisk color={colors.r[500]}/>}
         </label>
       )}
       {children({ fieldProps, ...rest })}
