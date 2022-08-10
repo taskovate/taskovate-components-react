@@ -38,25 +38,35 @@ const baseScrollStyle = ( trackWidth = 2.25, thumbWidth = 7 ) => css<any>`
 export default () => css`
   body {
     ${baseScrollStyle()}
-    // overflow-y: scroll;
+    overflow-y: scroll;
   }
 
-  .react-select__menu-list {
-    // overflow-y: scroll;
-    ${baseScrollStyle(1.25, 3)}
-    ${({ theme: { scrollStyles } }) => `
-      ::-webkit-scrollbar-thumb {
-        background: ${scrollStyles.background['dropdown'].default()};
-        border-color:${scrollStyles.background['dropdown'].track()};
-      }
-            
-      ::-webkit-scrollbar-thumb:hover {
-        background: ${scrollStyles.background['dropdown'].hover()};
-      }
+  .react-select {
+    &__menu-list {
+      overflow-y: scroll !important;
+      width: calc(100% + ${gridSize() * 1.5}px) !important;
+      ${baseScrollStyle(1.25, 3)}
+      ${({ theme: { scrollStyles } }) => `
+        ::-webkit-scrollbar-track {
+          background: transparent !important;
+        }
 
-      ::-webkit-scrollbar-thumb:active {
-        background: ${scrollStyles.background['dropdown'].active()};
-      }
-  `}
+        ::-webkit-scrollbar-thumb {
+          background: ${scrollStyles.background['dropdown'].default()};
+          border-color:${scrollStyles.background['dropdown'].track()};
+        }
+              
+        ::-webkit-scrollbar-thumb:hover {
+          background: ${scrollStyles.background['dropdown'].hover()};
+        }
+
+        ::-webkit-scrollbar-thumb:active {
+          background: ${scrollStyles.background['dropdown'].active()};
+        }
+      `}
+    }
+    &__option {
+      width: calc(100% - ${gridSize() * 0.25}px) !important;
+    }
   }
 `;

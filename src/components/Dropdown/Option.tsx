@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { colors, gridSize, layers, animation, fontSize, borderRadius, gradients, fontSizeSmall, typography } from '@theme/constants';
 import ReactSelect, { Props as SelectProps, components } from 'react-select';
 import { FaChevronDown } from 'react-icons/fa';
-import { HiOutlineStar, HiSearch, HiStar } from 'react-icons/hi';
+import { BsBookmarkStarFill, BsBookmarkStar } from 'react-icons/bs';
 import { useStore } from '@internal/core';
 import { SpaceImage } from '.';
 import { Button } from '..';
@@ -20,17 +20,17 @@ const Styled = styled.div<any>`
     button svg {
       display: flex;
       align-content: center;
-      width: ${gridSize() * 2.5}px;
-      height: ${gridSize() * 2.5}px;
+      width: ${gridSize() * 2.25}px;
+      height: ${gridSize() * 2.25}px;
       margin: -${gridSize() * 1}px 0;
-      transition: ${animation.normal()};
+      transition: ${animation.fast()};
     }
   }
 `;
 
-const StarredIcon = styled(HiStar)`
+const StarredIcon = styled(BsBookmarkStarFill)`
 `;
-const UnstarredIcon = styled(HiOutlineStar)`
+const UnstarredIcon = styled(BsBookmarkStar)`
   opacity: 0.375;
 `;
 

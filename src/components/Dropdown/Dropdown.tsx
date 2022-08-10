@@ -166,7 +166,7 @@ const Styled = styled<any>(ReactSelect)`
       background-color: ${({ theme: { dropdownStyles } }) => dropdownStyles.background['body'].default()};
       box-shadow: ${({ theme }) => theme.elevation[300]};
       z-index: ${layers.select()};
-      border-radius: ${borderRadius() * 1.25}px;
+      border-radius: ${borderRadius() * 1}px;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
       border: ${gridSize() * 0.25}px solid ${({ theme: { dropdownStyles } }) => dropdownStyles.borderColor['body'].focus()};
@@ -187,13 +187,13 @@ const Styled = styled<any>(ReactSelect)`
         animation: fadeIn ${animation.normal()};
         animation-direction: reverse;
       }
-      padding-bottom:${gridSize() * 0.75}px;
+      padding-bottom:${gridSize() * 1}px;
+      padding-top: ${gridSize() * 1}px;
     }
     &__menu-list {
       padding: 0;
       max-height: 60vh;
       // padding-left: ${gridSize() * 0.25}px;
-      overflow-y: scroll;
     }
     &__menu-notice {
       padding: ${gridSize() * 0.75}px ${gridSize() * 1.25}px;
@@ -210,12 +210,12 @@ const Styled = styled<any>(ReactSelect)`
       & > svg {
         height: ${gridSize() * 2.5}px;
         width: ${gridSize() * 2.5}px;
-        margin-right: ${gridSize() * 1.25}px;
+        margin-right: ${gridSize() * 1}px;
         margin-left: 0;
       }
       // border-radius: ${borderRadius() * 1}px;
-      border-top-right-radius: ${borderRadius() * 1}px;
-      border-bottom-right-radius: ${borderRadius() * 1}px;
+      // border-top-right-radius: ${borderRadius() * 1}px;
+      // border-bottom-right-radius: ${borderRadius() * 1}px;
       transition: ${animation.normal()};
       padding: ${gridSize() * 0.75}px ${gridSize() * 2}px;
       // padding-right: ${gridSize() * 2.5}px;
@@ -253,8 +253,8 @@ const Styled = styled<any>(ReactSelect)`
     }
     &__group-heading {
       ${typography.heading.h100()}
-      margin: ${gridSize() * 0.75}px 0;
-      margin-top: ${gridSize() * 1}px;
+      margin: ${gridSize() * 1}px 0;
+      margin-top: ${gridSize() * 0}px;
       // margin-top: 0;
     }
   }

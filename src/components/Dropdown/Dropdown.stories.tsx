@@ -13,17 +13,21 @@ export default {
 
 const ScrollArea = styled.div`
   display: flex;
-  position: absolute;
   top: 0;
   left: 0;
-  height: calc(100% + ${gridSize() * 10}px);
+  max-height: 100px !important;
   width: 100%;
+  .react-select__menu-list {
+    padding: 0;
+    max-height: 40vh !important;
+    // padding-left: ${gridSize() * 0.25}px;
+  }
 `;
 
 export const Basic: ComponentStory<typeof Dropdown> = () => {
   return (
-    <>
+    <ScrollArea>
       <Dropdown />
-    </>
+    </ScrollArea>
   );
 };

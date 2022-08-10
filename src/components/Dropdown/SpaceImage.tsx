@@ -8,9 +8,9 @@ import { useStore } from '@internal/core';
 import { Button } from '..';
 
 const SpaceImage = styled.img<any>`
-  height: ${gridSize() * 2}px;
-  width: ${gridSize() * 2}px;
-  margin-right: ${gridSize() * 1.25}px;
+  height: ${gridSize() * 2.25}px;
+  width: ${gridSize() * 2.25}px;
+  margin-right: ${gridSize() * 1}px;
   margin-left: 0;
   background-color: ${({ theme: { dropdownStyles } }) => dropdownStyles.borderColor['body'].hover()};
   padding: ${gridSize() * 0.25}px;
