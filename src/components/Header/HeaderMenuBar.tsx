@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled, { useTheme } from 'styled-components';
-import { gridSize, layers, animation, borderRadius, gradients } from '@theme/constants';
+import { gridSize, layers, fontSize, animation, borderRadius, gradients } from '@theme/constants';
 
 // type User = {
 //   name: string;
@@ -21,6 +21,11 @@ const Container = styled.div<any>`
   height: 100%;
   :only-child {
     margin: 0 auto;
+    
+    // img {
+    //   width: ${fontSize() * 3.5}px !important;
+    // }
+    
     > div {
       margin: 0;
       padding: 0;

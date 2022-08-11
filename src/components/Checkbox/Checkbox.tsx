@@ -14,6 +14,7 @@ const Styled = styled.label`
   padding-left: 0;
   line-height: ${fontSize()}px !important;
   gap: ${gridSize() * 0.5}px;
+  margin-left: -${gridSize() * 0.25}px !important;
 `;
 
 const Input = styled.input<any>`
@@ -22,7 +23,7 @@ const Input = styled.input<any>`
 const CheckboxText = styled.span`
   margin: 0;
   user-select: none;
-  margin-bottom: -${gridSize() * 0.33}px;
+  margin-bottom: -${fontSizeSmall() * 0.25}px;
 `;
 
 const DropdownIndicator = () => (

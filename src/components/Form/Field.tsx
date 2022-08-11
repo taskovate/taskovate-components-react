@@ -21,6 +21,13 @@ const Styled = styled.div`
     margin-bottom: ${gridSize() * 0.125}px;
     margin-left: ${gridSize() * 0.25}px;
   }
+  
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 50000s ease-in-out 0s;
+  }
 `;
 
 interface FieldProps extends Omit<UseControllerReturn, 'field'> {

@@ -3,6 +3,7 @@ import styled, { css, useTheme } from 'styled-components';
 import { colors, gridSize, layers, animation, borderRadius, gradients } from '@theme/constants';
 import { hex2rgba } from '@theme/helpers';
 
+// make header fade to nothing if it has only one child on scroll
 const Styled = styled.div`
   display: grid;
   grid-template-columns: repeat(100%, 1fr);

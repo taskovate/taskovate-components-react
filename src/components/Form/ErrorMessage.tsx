@@ -16,7 +16,7 @@ const Styled = styled.div`
   svg {
     height: ${fontSize() * 1.5}px;
     width: ${fontSize() * 1.5}px;
-    margin-top: ${gridSize() * 0}px;
+    margin-top: ${gridSize() * 0.01}px;
   }
 `;
 

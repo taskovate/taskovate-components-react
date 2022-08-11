@@ -7,16 +7,16 @@ const Styled = styled.div`
   color: ${colors.g[200]};
   display: inline-flex;
   flex-direction: row;
-  align-content: start;
-  align-items: center;
-  justify-content: start;
+  align-content: center;
+  align-items: start;
   line-height: 20px;
+  justify-content: start;
   margin-top: ${gridSize() * 0.75}px;
   gap: ${gridSize() * 0.75}px;
   svg {
     height: ${fontSize() * 1.5}px;
     width: ${fontSize() * 1.5}px;
-    margin-top: ${gridSize() * 0.375}px;
+    margin-top: ${gridSize() * 0.08}px;
   }
 `;
 
