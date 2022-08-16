@@ -25,7 +25,7 @@ const Grid = styled.div<any>`
   margin: 0 ${({ numChildren }) => numChildren === 1 ? 'auto' : `${gridSize() * 1}px`};
 `;
 
-const Content = styled.div<any>`
+const Main = styled.div<any>`
   display: ${({ numChildren }) => numChildren === 1 ? 'flex' : 'grid'};
   grid-template-columns: repeat(auto-fill, 2fr);
   grid-auto-rows: minmax(min-content, max-content);
@@ -88,9 +88,9 @@ const Footer = ({ children }: any) => {
   return (
     <Styled>
       <Grid numChildren={renderChildren.length}>
-        <Content numChildren={renderChildren.length}>
+        <Main numChildren={renderChildren.length}>
           {renderChildren}
-        </Content>
+        </Main>
       </Grid>
     </Styled>
   )

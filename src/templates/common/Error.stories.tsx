@@ -26,9 +26,9 @@ import {
 import {
   Layout,
   TopNavigation,
-  Content,
-  Footer,
   Main,
+  Footer,
+  Content,
   LeftSidebar,
   RightSidebar
 } from '@components/core';
@@ -47,8 +47,8 @@ export const Default: ComponentStory<any> = () => (
         <HeaderDesignation />
       </Header>
     </TopNavigation>
-    <Content>
-      <Main>
+    <Main>
+      <Content>
         <center>
           <Plate appearance="display">
             <center>
@@ -60,8 +60,8 @@ export const Default: ComponentStory<any> = () => (
             </center>
           </Plate>
         </center>
-      </Main>
-    </Content>
+      </Content>
+    </Main>
   </Layout>
 );
 
@@ -72,8 +72,8 @@ export const Error401: ComponentStory<any> = () => (
         <HeaderDesignation />
       </Header>
     </TopNavigation>
-    <Content>
-      <Main>
+    <Main>
+      <Content>
         <center>
           <Plate appearance="display">
             <center>
@@ -85,8 +85,8 @@ export const Error401: ComponentStory<any> = () => (
             </center>
           </Plate>
         </center>
-      </Main>
-    </Content>
+      </Content>
+    </Main>
   </Layout>
 );
 
@@ -97,8 +97,8 @@ export const Error404: ComponentStory<any> = () => (
         <HeaderDesignation />
       </Header>
     </TopNavigation>
-    <Content>
-      <Main>
+    <Main>
+      <Content>
         <center>
           <Plate appearance="display">
             <center>
@@ -110,7 +110,7 @@ export const Error404: ComponentStory<any> = () => (
             </center>
           </Plate>
         </center>
-      </Main>
-    </Content>
+      </Content>
+    </Main>
   </Layout>
 );

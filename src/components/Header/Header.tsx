@@ -42,7 +42,7 @@ const Border = styled.div<any>`
   z-index: ${layers.navigation() - 1};
 `;
 
-const Content = styled.div<any>`
+const Main = styled.div<any>`
   display: flex;
   grid-column: 1;
   grid-row: 1;
@@ -90,9 +90,9 @@ const Header: React.FC<any> = ({
   return (
     <Styled>
       <Border mode={mode} />
-      <Content mode={mode}>
+      <Main mode={mode}>
         {children}
-      </Content>
+      </Main>
     </Styled>
   );
 };

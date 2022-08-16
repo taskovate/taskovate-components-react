@@ -23,7 +23,7 @@ const Input = styled.input<any>`
 const CheckboxText = styled.span`
   margin: 0;
   user-select: none;
-  margin-bottom: -${fontSizeSmall() * 0.25}px;
+  margin-bottom: -${fontSizeSmall() * 0.3125}px;
 `;
 
 const DropdownIndicator = () => (

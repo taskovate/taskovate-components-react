@@ -25,8 +25,8 @@ export {
   HeaderMenuItem
  } from './Header';
  export { 
-  Main, 
-  Content,
+  Content, 
+  Main,
   Layout,
   LeftSidebar,
   RightSidebar,

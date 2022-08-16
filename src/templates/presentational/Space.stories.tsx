@@ -27,8 +27,8 @@ import {
 import {
   Layout,
   TopNavigation,
-  Content,
   Main,
+  Content,
   LeftSidebar,
   RightSidebar,
   Dropdown,
@@ -103,14 +103,14 @@ export const Default: ComponentStory<typeof Header> = () => {
           </HeaderGlobalBar>
         </Header>
       </TopNavigation>
-      <Content>
-        <Main>
+      <Main>
+        <Content>
           <CardGroup>
             {list.map((item: any) => (
               <Card title={item.title} children={item.children} />
             ))}
           </CardGroup>
-        </Main>
+        </Content>
         <RightSidebar>
           <Sidebar>
             <CardGroup title="Project tasks">
@@ -120,7 +120,7 @@ export const Default: ComponentStory<typeof Header> = () => {
             </CardGroup>
           </Sidebar>
         </RightSidebar>
-      </Content>
+      </Main>
     </Layout>
   );
 };

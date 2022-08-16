@@ -14,8 +14,8 @@ import {
   HeaderGlobalAction,
   Dropdown,
   Layout,
-  Content,
   Main,
+  Content,
   LeftSidebar,
   RightSidebar,
   TopNavigation,
@@ -38,11 +38,11 @@ export default {
 
 export const PageGrid: ComponentStory<typeof Layout> = (args) => (
   <Layout>
-    <Content>
-      <Main>
+    <Main>
+      <Content>
       <Grid columns={3}>
         <GridColumn medium={2}>
-          <h1>Main heading</h1>
+          <h1>Content heading</h1>
           <p>
             Lorem ipsum dolor sit amet and consectetur adipisicing elit.
             Blanditiis voluptatum perspiciatis doloribus dignissimos accusamus
@@ -60,7 +60,7 @@ export const PageGrid: ComponentStory<typeof Layout> = (args) => (
           </p>
         </GridColumn>
         <GridColumn medium={3}>
-          <h2>Content below which takes up remaining space</h2>
+          <h2>Main below which takes up remaining space</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
             voluptatum perspiciatis doloribus dignissimos accusamus commodi, nobis
@@ -69,15 +69,15 @@ export const PageGrid: ComponentStory<typeof Layout> = (args) => (
           </p>
         </GridColumn>
       </Grid>
-      </Main>
-    </Content>
+      </Content>
+    </Main>
   </Layout>
 );
 
 export const PageWHeader: ComponentStory<typeof Layout> = (args) => (
   <Layout>
-    <Content>
-      <Main>
+    <Main>
+      <Content>
         <PageHeader
           breadcrumbs={"some project"}
           children="Title describing content"
@@ -91,9 +91,9 @@ export const PageWHeader: ComponentStory<typeof Layout> = (args) => (
             </>
           )}
         />
-        <p>Content</p>
-      </Main>
-    </Content>
+        <p>Main</p>
+      </Content>
+    </Main>
   </Layout>
 );
 PageWHeader.storyName = "Page Header";

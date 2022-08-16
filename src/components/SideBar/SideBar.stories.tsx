@@ -13,8 +13,8 @@ import {
   HeaderGlobalAction,
   Dropdown,
   Layout,
-  Content,
   Main,
+  Content,
   LeftSidebar,
   RightSidebar,
   TopNavigation,
@@ -38,7 +38,7 @@ export default {
 export const Basic: ComponentStory<typeof Layout> = ({ children, ...rest}) => (
   <Layout>
     <TopNavigation children="Top Navigation"/>
-    <Content>
+    <Main>
       <LeftSidebar>
         <Sidebar>
           <Section title="Projects">
@@ -59,9 +59,9 @@ export const Basic: ComponentStory<typeof Layout> = ({ children, ...rest}) => (
           </Section>
         </Sidebar>
       </LeftSidebar>
-      <Main children="Main" />
+      <Content children="Content" />
       <RightSidebar children="Right Sidebar"/>
-    </Content>
+    </Main>
   </Layout>
 );
 Basic.storyName = "Basic";

@@ -26,9 +26,9 @@ import {
 import {
   Layout,
   TopNavigation,
-  Content,
-  Footer,
   Main,
+  Footer,
+  Content,
   LeftSidebar,
   RightSidebar
 } from '@components/core';
@@ -43,8 +43,8 @@ export default {
 export const Default: ComponentStory<typeof Header> = () => (
   <Layout>
     <TopNavigation/>
-    <Content>
-      <Main>
+    <Main>
+      <Content>
         <center>
           <img src="/images/logo.svg" height={gridSize() * 4.5} style={{ marginBottom: gridSize() * 2 }} />
           <Plate appearance="display">
@@ -101,8 +101,8 @@ export const Default: ComponentStory<typeof Header> = () => (
             </Form>
           </Plate>
         </center>
-      </Main>
-    </Content>
+      </Content>
+    </Main>
     <Footer>
       <div>
         <p>By signing up for Taskovate, you agree to our <a href="/">terms of service</a>.</p>
@@ -118,8 +118,8 @@ export const SignupQuestions: ComponentStory<typeof Header> = () => (
         <HeaderDesignation />
       </Header>
     </TopNavigation>
-    <Content>
-      <Main>
+    <Main>
+      <Content>
         <center>
           <Plate appearance="display">
             <Form>
@@ -173,16 +173,16 @@ export const SignupQuestions: ComponentStory<typeof Header> = () => (
             </Form>
           </Plate>
         </center>
-      </Main>
-    </Content>
+      </Content>
+    </Main>
   </Layout>
 );
 
 export const SignupConfirmation: ComponentStory<typeof Header> = (args) => (
   <Layout>
     <TopNavigation/>
-    <Content>
-      <Main>
+    <Main>
+      <Content>
         <center>
           <img src="/images/logo.svg" height={gridSize() * 4.5} style={{ marginBottom: gridSize() * 2 }} />
           <Plate appearance="display">
@@ -195,8 +195,8 @@ export const SignupConfirmation: ComponentStory<typeof Header> = (args) => (
             </center>
           </Plate>
         </center>
-      </Main>
-    </Content>
+      </Content>
+    </Main>
   </Layout>
 );
 

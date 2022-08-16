@@ -26,8 +26,8 @@ import {
 import {
   Layout,
   TopNavigation,
-  Content,
   Main,
+  Content,
   LeftSidebar,
   RightSidebar,
   Dropdown,
@@ -105,8 +105,8 @@ export const Default: ComponentStory<typeof Header> = () => {
           </HeaderGlobalBar>
         </Header>
       </TopNavigation>
-      <Content>
-        <Main>
+      <Main>
+        <Content>
           <PageHeader
             // children="ATX QA"
             // breadcrumbs="ATX QA / Daily tasks"
@@ -128,8 +128,8 @@ export const Default: ComponentStory<typeof Header> = () => {
               </CardGroup> */}
             </GridColumn>
           </Grid>
-        </Main>
-      </Content>
+        </Content>
+      </Main>
     </Layout>
   );
 };

@@ -18,9 +18,9 @@ import {
 import {
   Layout,
   TopNavigation,
-  Content,
-  Footer,
   Main,
+  Footer,
+  Content,
   LeftSidebar,
   RightSidebar
 } from '@components/core';
@@ -62,8 +62,8 @@ export const Default: ComponentStory<typeof Header> = () => (
         </HeaderGlobalBar>
       </Header>
     </TopNavigation>
-    <Content>
-      <Main>
+    <Main>
+      <Content>
         <center>
           <h1>Accomplish more every day</h1>
           <Plate appearance="brimming">
@@ -93,8 +93,8 @@ export const Default: ComponentStory<typeof Header> = () => (
           <br/>
           <Button spacing="pleasant" appearance="special">Try Taskovate for Free</Button>
         </center>
-      </Main>
-    </Content>
+      </Content>
+    </Main>
     <Footer>
       <div>
       </div>

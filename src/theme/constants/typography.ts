@@ -28,7 +28,7 @@ export const heading = {
     letter-spacing: -0.01em !important;
     margin-top: ${gridSize() * 4.5}px;
   `,
-  // Main titles, use only once per page.
+  // Content titles, use only once per page.
   h700: () => css`
     ${baseHeading(24, 32)}
     color: ${({ theme }) => theme.heading()};

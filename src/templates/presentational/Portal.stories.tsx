@@ -26,8 +26,8 @@ import {
 import {
   Layout,
   TopNavigation,
-  Content,
   Main,
+  Content,
   LeftSidebar,
   RightSidebar,
   Dropdown,
@@ -93,8 +93,8 @@ export const Default: ComponentStory<typeof Header> = () => {
           </HeaderGlobalBar>
         </Header>
       </TopNavigation>
-      <Content>
-        <Main>
+      <Main>
+        <Content>
           <PageHeader
             children="Welcome Elijah"
           />
@@ -117,8 +117,8 @@ export const Default: ComponentStory<typeof Header> = () => {
               </CardGroup>
             </GridColumn>
           </Grid>
-        </Main>
-      </Content>
+        </Content>
+      </Main>
     </Layout>
   );
 };

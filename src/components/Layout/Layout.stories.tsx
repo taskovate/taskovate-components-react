@@ -15,8 +15,8 @@ import {
 } from '@components/core';
 import {
   Layout,
-  Content,
   Main,
+  Content,
   LeftSidebar,
   RightSidebar,
   TopNavigation,
@@ -46,11 +46,11 @@ export const Basic: ComponentStory<typeof Layout> = ({ children, ...rest}) => (
   <Styled>
     <Layout>
       <TopNavigation children="Top Navigation"/>
-      <Content>
+      <Main>
         <LeftSidebar children="Left Sidebar"/>
-        <Main children="Main" />
+        <Content children="Content" />
         <RightSidebar children="Right Sidebar"/>
-      </Content>
+      </Main>
       <BottomNavigation children="Footer"/>
     </Layout>
   </Styled>

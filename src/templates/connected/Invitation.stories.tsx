@@ -26,9 +26,9 @@ import {
 import {
   Layout,
   TopNavigation,
-  Content,
-  Footer,
   Main,
+  Footer,
+  Content,
   LeftSidebar,
   RightSidebar
 } from '@components/core';
@@ -47,8 +47,8 @@ export const Default: ComponentStory<typeof Header> = (args) => (
         <HeaderDesignation />
       </Header>
     </TopNavigation>
-    <Content>
-      <Main>
+    <Main>
+      <Content>
         <center>
           <Plate appearance="display">
             <center>
@@ -58,8 +58,8 @@ export const Default: ComponentStory<typeof Header> = (args) => (
             </center>
           </Plate>
         </center>
-      </Main>
-    </Content>
+      </Content>
+    </Main>
   </Layout>
 );
 
@@ -76,8 +76,8 @@ export const PrivateProject: ComponentStory<typeof Header> = (args) => (
         <HeaderDesignation />
       </Header>
     </TopNavigation>
-    <Content>
-      <Main>
+    <Main>
+      <Content>
         <center>
           <Plate appearance="display">
             <FormHeader
@@ -92,8 +92,8 @@ export const PrivateProject: ComponentStory<typeof Header> = (args) => (
             </center>
           </Plate>
         </center>
-      </Main>
-    </Content>
+      </Content>
+    </Main>
     <Footer>
       <div>
         <p>By requesting access, you agree to make your account, including your email address, visible to the project admins.</p>
